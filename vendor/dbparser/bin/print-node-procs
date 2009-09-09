@@ -1,0 +1,16 @@
+#!/bin/tcsh -f
+
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+set printNodesScript = $scriptDir/print-nodes
+
+if (-f "$cwd/nodes") then
+    set nodes  = (`cat $cwd/nodes`)
+else
+    set nodes = (`$printNodesScript`)
+endif
+
+foreach host ($nodes)
+    echo $host
+    rsh $host ps aux | grep $USER | grep -v "ps aux"
+end

@@ -1,0 +1,16 @@
+#!/bin/tcsh -f
+
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+set parent = $scriptDir:h
+set jarFile = $parent/dbparser.jar
+
+# prepend parent of this script's directory to a shell variable version
+# of CLASSPATH, so we use jar file of this particular sandbox
+if ($?CLASSPATH) then
+    set classpath = $jarFile\:$CLASSPATH
+else
+    set classpath = $jarFile
+endif
+
+exec java -Xms200m -Xmx200m -cp $classpath danbikel.parser.util.AddFakePos $argv

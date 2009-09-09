@@ -1,0 +1,25 @@
+#!/bin/tcsh -f
+
+set java = $1
+set classpath = $2
+set settingsFile = $3
+set host = $4
+set logDir = $5
+set args = ($argv[6-$#argv])
+
+set settingsProp = "-Dparser.settingsFile=$settingsFile"
+
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+set parent = $scriptDir:h
+set classes = $parent/classes
+set jarFile = $parent/dbparser.jar
+set clientPolicy = "-Djava.security.policy=$parent/policy-files/client.policy"
+#set clientCodebase = "-Djava.rmi.server.codebase=file://$classes/"
+set clientCodebase = "-Djava.rmi.server.codebase=file://$jarFile"
+set disableHttp = "-Djava.rmi.server.disableHttp=true"
+
+# start the parser
+$java -server -cp $classpath -Xms1g -Xmx2g $settingsProp $clientPolicy \
+    $clientCodebase $disableHttp \
+    danbikel.parser.Parser $args >& $logDir/$host.log

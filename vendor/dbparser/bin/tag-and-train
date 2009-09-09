@@ -1,0 +1,69 @@
+#!/bin/tcsh -f
+
+if ($#argv != 4) then
+    echo "usage: <mxpost dir> <settings file> <training data> <test data>"
+    echo "where"
+    echo "	<settings file> is a settings file for the parsing engine"
+    echo "	<mxpost dir> is the mxpost install dir"
+    echo "	<training data> is the file of training parse trees"
+    echo "	<test data> is the file of test parse trees"
+    exit 1
+endif
+
+# collect args
+set mxpostDir = $1
+set trainmxpost = $mxpostDir/trainmxpost
+set mxpost = $mxpostDir/mxpost
+
+set settingsFile = $2
+set settings = "-Dparser.settingsFile=$settingsFile"
+
+set training = $3
+set test = $4
+
+# figuring out our location
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+set parent = `cd $scriptDir/.. ; echo $cwd`
+
+set adwait2bikel = $scriptDir/adwait2bikel.pl
+set bikel2adwait = $scriptDir/bikel2adwait.pl
+
+# java stuff
+set java = (java -server)
+set smallMem = (-Xms200m -Xmx200m)
+set jarFile = $parent/dbparser.jar
+set classpath = $jarFile
+if ($?CLASSPATH) then
+    set classpath = $jarFile\:$CLASSPATH
+endif
+set parse2sent = danbikel.parser.util.ParseToSentence
+
+set adwaitTagged = $training:r.adwait
+
+echo "Creating $adwaitTagged from $training"
+
+($java $smallMem -cp $classpath $settings $parse2sent -tags $training | \
+    $bikel2adwait > $adwaitTagged) >& /dev/null
+
+set mxpostProjectDir = $training:r.mxpost
+set mxpostTrainingLog = $mxpostProjectDir.log
+
+echo "Creating MXPOST project dir $mxpostProjectDir and training tagging model"
+echo "	(training log file is $mxpostTrainingLog)"
+mkdir $mxpostProjectDir
+$trainmxpost $mxpostProjectDir $adwaitTagged >& $mxpostTrainingLog
+
+set testWords = $test:r.words
+
+echo "Creating 1-sent-per-line words-only version of test corpus: $testWords"
+($java $smallMem -cp $classpath $settings $parse2sent $test | \
+    perl -pe 's/^\((.*)\)$/\1/;' > $testWords) >& /dev/null
+
+set testTagged = $test:r.tagged
+
+echo "Creating MXPOST-tagged version of $testWords\: $testTagged"
+($mxpost $mxpostProjectDir < $testWords) | $adwait2bikel > $testTagged
+
+echo "Training parsing model from $training"
+$scriptDir/train 800 $settingsFile $training

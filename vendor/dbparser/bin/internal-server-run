@@ -1,0 +1,291 @@
+#!/bin/tcsh -f
+
+goto afterUsage
+
+usage:
+    echo "usage: [ [-ln | -cp]  [-o <output dir>] ]"
+    echo "	<settings file> <derived data file> <input file>+"
+    echo "where"
+    echo "	-ln: indicates to put a symbolic link to each output (parsed)"
+    echo "		file in the input file's directory, or, if"
+    echo "		<output dir> is specified, to put a link to each"
+    echo "		output file in <output dir>"
+    echo "	-cp: indicates to copy each output (parsed) file to"
+    echo "		its input file's directory, or, if <output dir>"
+    echo "		is specified, to copy each output file to"
+    echo "		<output dir>"
+    exit 1
+
+afterUsage:
+
+set numRequiredArgs = 3
+
+# process arguments
+set requiredArgs = ()
+@ i = 1
+while ($i <= $#argv)
+    set arg = $argv[$i]
+    switch ("$arg")
+	case "-*":
+	    # we have a flag to process
+	    switch ("$arg")
+		case "-ln":
+		    set linkOutputFiles
+		    breaksw
+		case "-cp":
+		    set copyOutputFiles
+		    breaksw
+		case "-o":
+		    if ($i + 1 > $#argv) then
+			echo "error: argument required after $arg"
+			goto usage
+		    else
+			@ i++
+			set copyOutputDir = $argv[$i]
+		    endif
+		    breaksw
+		default:
+		    echo "error: unrecognized command-line option: $arg"
+		    goto usage
+		    breaksw
+	    endsw
+	    breaksw
+	default:
+	    set requiredArgs = ($requiredArgs "$arg")
+	    breaksw
+    endsw
+    @ i++;
+end
+
+if ($#requiredArgs < $numRequiredArgs) then
+    echo "error: need at least $numRequiredArgs args; saw only" $#requiredArgs
+    echo -n "	"
+    echo $requiredArgs
+    echo ""
+    goto usage
+endif
+
+
+if ($?linkOutputFiles && $?copyOutputFiles) then
+    echo "error: cannot use both -ln and -cp options"
+    goto usage
+endif
+
+if ($?linkOutputFiles || $?copyOutputFiles) then
+    if ($?linkOutputFiles) then
+	echo -n "Putting links to output files in "
+    else
+	echo -n "Copying output files to "
+    endif
+    if ($?copyOutputDir) then
+	echo "$copyOutputDir"
+    else
+	echo "respective input files' directories"
+    endif
+else if ($?copyOutputDir) then
+    echo "error: cannot use -o option without using either -ln or -cp"
+    goto usage
+endif
+
+set RSH = ssh
+set java = $JAVA_HOME/bin/java
+
+set reap
+
+# date, time and jobUID variables, upon which $outputDir is based
+# --these will be modified when this script is time-stamped and copied
+# to $outputDir
+set date = `date '+%Y.%m.%d'`
+set time = `date '+%H.%M'`
+set jobUID = $JOBID
+
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+#set parent = `cd $scriptDir/.. ; echo $cwd`
+set parent = $scriptDir:h
+set jarFile = $parent/dbparser.jar
+
+# prepend parent of this script's directory to a shell variable version
+# of CLASSPATH, so we use jar file of this particular sandbox
+set classpath = $jarFile
+if ($?CLASSPATH) then
+    set classpath = $jarFile\:$CLASSPATH
+endif
+
+# the all-important output directory for this experiment
+set outputDir = ~/experiments/$date/$time-$jobUID
+
+# the three required arguments
+# --these will be modified when this script is time-stamped and copied
+# to $outputDir
+set settingsFile = $requiredArgs[1]
+set derivedDataFile = $requiredArgs[2]
+set inFiles = ($requiredArgs[3-$#requiredArgs])
+
+# scripts used by this script
+set startClientScript = $scriptDir/start-client
+set rmiregistryScript = $scriptDir/start-rmiregistry
+set scorerScript = $scriptDir/score
+
+# bookkeeping output files (pid files, node file script file)
+set pidFile = $outputDir/pids
+set rmiregistryPidFile = $outputDir/rmiregistry-pid
+set nodeFile = $outputDir/nodes
+set scriptFile = $outputDir/$0:t
+
+# make all switchboard output files be in output directory
+set sbMsgFile = $outputDir/switchboard.messages
+set outFileDir = $outputDir
+set logFileDir = $outputDir
+
+# arguments for switchboard java process
+# set variable to indicate switchboard policy file to JVM
+set sbPolicy = "-Djava.security.policy=$parent/policy-files/switchboard.policy"
+set sbCodebase = "-Djava.rmi.server.codebase=file://$jarFile"
+set disableHttp = "-Djava.rmi.server.disableHttp=true"
+set settingsProp = "-Dparser.settingsFile=$settingsFile"
+
+# scorer directory
+set scorerDir = $parent/scorer
+
+set nodes = ($NODES)
+
+# the following is only necessary when NOT using bpsh: we need
+# to prepend "node" to every nodename (which is simply an integer)
+set tmpNodes = ()
+foreach node ($nodes)
+    set tmpNodes = ($tmpNodes node$node)
+end
+set nodes = ($tmpNodes)
+
+if ($#nodes == 0) then
+    echo "No nodes found!"
+    exit 1
+endif
+
+# set switchboard host to be the first in the list of nodes
+set sbHost = $nodes[1]
+
+# set client nodes to be all nodes except the one on which the switchboard
+# is running
+set clientHosts = ($nodes[2-$#nodes])
+
+# make experiment output directory, if possible
+echo "Making directory"
+echo "	$outputDir"
+mkdir -p $outputDir
+if ($status != 0) then
+    echo "Couldn't create output directory.  Exiting."
+    exit -1
+endif
+
+# start rmiregistry on switchboard host
+$rmiregistryScript $sbHost $rmiregistryPidFile
+
+echo "Creating pid file"
+echo "	$pidFile"
+
+/bin/rm -f $pidFile
+
+# start clients
+#
+# the script that starts the client uses the name of the host simply
+# as the basis of its output log; since sometimes to nodes can have the
+# same name (when they are multiprocessors), we append a unique integer
+# to the hostname that is passed to the start client script
+set sbNameRMI = "//$sbHost/Switchboard"
+@ i = 1
+foreach host ($clientHosts)
+    echo Starting client on $host
+    $RSH -n $host $startClientScript $java $classpath $settingsFile $host-$i \
+	$outputDir -is $derivedDataFile $sbNameRMI &
+    echo -n "$! " >> $pidFile
+    @ i++
+end
+
+echo "Putting nodes used in this experiment into"
+echo "	$nodeFile"
+echo $nodes > $nodeFile
+
+# if this is *not* a time-stampted script, copy it into log directory
+set timeStamp = "# time-stamped script"
+if (`tail -1 $0` != "$timeStamp") then
+    echo ""
+    echo "Copying settings file to experiment directory: "
+    echo "	$outputDir/$settingsFile:t"
+    cp $settingsFile $outputDir
+    set settingsFile = $outputDir/$settingsFile:t
+    echo ""
+    echo "Creating time-stamped version of this shell script:"
+    echo "	$scriptFile"
+    echo $inFiles > $outputDir/inFilenames
+    # we need to put a backslash before every forward slash, since
+    # the shell will process the sed expression before sed processes it
+    set sedScriptDir = `echo $scriptDir | sed -e 's/\//\\\//g'`
+    set sedDDF = `echo $derivedDataFile | sed -e 's/\//\\\//g'`
+    set sedSettingsFile = `echo $settingsFile | sed -e 's/\//\\\//g'`
+    sed -e "s/^\(set scriptDir = \).*/\1$sedScriptDir/" \
+	-e "s/^\(set date = \).*/\1$date/" -e "s/^\(set time = \).*/\1$time/" \
+	-e "s/^\(set jobUID = \).*/\1$jobUID/" \
+	-e 's/^\(set inFiles = \).*)/\1(`cat $outputDir\/inFilenames`)/' \
+        -e "s/^\(set derivedDataFile = \).*/\1$sedDDF/" \
+	-e "s/^\(set settingsFile = \).*/\1$sedSettingsFile/" $0 > $scriptFile
+    echo $timeStamp >> $scriptFile
+    chmod +x $scriptFile
+endif
+
+# start switchboard
+echo Starting switchboard on $sbHost
+set sbCmd = ($RSH -n $sbHost $java -server -cp $classpath -Xms100m -Xmx100m \
+	     $sbPolicy "$sbCodebase" $disableHttp $settingsProp \
+	     danbikel.parser.StartSwitchboard \
+	     -msg $sbMsgFile $inFiles -odir $outFileDir -logdir $logFileDir)
+echo -n "	"
+echo $sbCmd
+$sbCmd
+
+# if gold file exists, try to score
+foreach inFile ($inFiles)
+    set goldFile = $inFile.gold
+    if (-f $goldFile) then
+	# make sure scorer has been compiled
+	set outFile = $outFileDir/$inFile:t.parsed
+	if (-f $outFile) then
+	    (cd $scorerDir ; make)
+	    $scorerScript $goldFile $outFile > $outFile.score
+	endif
+    endif
+end
+
+# do any copying or linking of output files requested by user
+if ($?linkOutputFiles || $?copyOutputFiles) then
+    foreach inFile ($inFiles)
+	set outFile = $outFileDir/$inFile:t.parsed
+	if (-f $outFile) then
+	    if ($?copyOutputDir) then
+		set copyDir = $copyOutputDir
+	    else
+		set copyDir = `dirname $inFile`
+	    endif
+	    rm $copyDir/$outFile:t
+	    if ($?linkOutputFiles) then
+		ln -s $outFile $copyDir/$outFile:t
+	    else
+		cp $outFile $copyDir
+	    endif
+	endif
+    end
+endif
+
+if ($?reap) then
+    # kill off rmi registry proc
+    echo "Killing rmiregistry"
+    #kill `cat $rmiregistryPidFile`
+    $RSH $sbHost 'killall rmiregistry'
+
+    echo "Killing clients, if any are still alive"
+    #kill `cat $pidFile`
+    foreach clientHost ($clientHosts)
+	$RSH $clientHost 'killall java'
+    end
+endif

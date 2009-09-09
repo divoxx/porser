@@ -1,0 +1,42 @@
+#!/bin/tcsh -f
+
+goto afterUsage
+
+usage:
+    echo "usage: [-p paramFile] <gold file> <parser output file>"
+    exit 1
+    
+afterUsage:
+
+# check that args are correct
+if (!($#argv == 2 || $#argv == 4)) then
+    goto usage
+endif
+if ($#argv == 4 && !("$argv[1]" == "-p")) then
+    goto usage
+endif
+
+set dir = `dirname $0`
+set scriptDir = `cd $dir  ; echo $cwd`
+set scorerDir = `cd $scriptDir/../scorer; echo $cwd`
+set addFakePos = $scriptDir/addFakePos
+
+set scorer = $scorerDir/evalb
+set paramFile = $scorerDir/BIKEL.prm
+
+# if user has specified param file, grab it and shift argv over by two
+if ("$argv[1]" == "-p") then
+    set paramFile = $argv[2]
+    set argv = ($argv[3-$#argv])
+endif
+
+set goldFile = $argv[1]
+set parserFile = $argv[2]
+set scorableFile = $parserFile.scorable
+
+# add fake parts of speech to unparsed sentences and stick output into
+# .scorable file
+$addFakePos $goldFile $parserFile > $scorableFile
+
+# finally, call scorer
+exec $scorer -p $paramFile $goldFile $scorableFile
