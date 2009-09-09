@@ -6,6 +6,8 @@ Porser is a Portuguese language probabilistic parser based on top of Dan Bikel's
 
 == Project Structure
 
+The overall project structure is the following:
+
   + corpus/           # Folder that contains all corpus and subsets of it
    |- originals/      # The complete corpus in it's original format
    |- pre-processed   # The complete corpus pre-processed and ready to be used for selections
@@ -18,6 +20,17 @@ Porser is a Portuguese language probabilistic parser based on top of Dan Bikel's
   - scripts/          # Executable scripts
   + vendor/           # Third-part stuff
    |- dbparser/       # Bikel's parser
+
+Inside the corpus folder, the selections are going to be organized in this way:
+
+  + 20090910130000/
+   |- _info.txt
+   |- _head-rules.lisp
+   |- dev.txt
+   |- test.gold.txt
+   |- test.txt
+   |- train.gold.txt 
+   |- train.txt
 
 == Authors
 
