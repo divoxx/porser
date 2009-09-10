@@ -15,4 +15,4 @@ module Porser
   end
 end
 
-Porser.include_paths.each { |path| $:.unshift(path) }
+Porser.include_paths.each { |path| $:.unshift(path.to_s) }
