@@ -47,13 +47,15 @@ The overall project structure is the following:
     vendor/                                                 # Third-part stuff
     |  dbparser.jar                                         # Bikel's parser
 
-== Dependencies
+Dependencies
+------------
 
 Most ruby dependencies are bundled with the project in the vendor/ folder. But some non-ruby dependencies must be installed:
 
 * wc command (available in all unix variants)
 
-== Authors
+Authors
+-------
 
 * Rodrigo Kochenburger <divoxx@gmail.com>
 * Marglon Gomes Lopes <marlonglopes@gmail.com>
