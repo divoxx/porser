@@ -17,7 +17,7 @@ module Porser
               "y/n"
         end
         
-        @output.puts "#{@question} [#{answers}] "
+        @output.print "#{@question} [#{answers}] "
         answer      = @input.gets.chomp
         is_downcase = (answer.downcase == answer)
         default     = is_downcase && @default
