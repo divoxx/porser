@@ -55,9 +55,13 @@ module Porser
         mapper.map(10) { |what| devel_gold_io.write(self.class.annot(what)); devel_parseable_io.write(self.class.clean(what)) }
         mapper.map(10) { |what| test_gold_io.write(self.class.annot(what)); test_parseable_io.write(self.class.clean(what)) }
         
+        info "Separating files into \"#{target_folder.to_s.gsub(/^#{Regexp.escape(Porser.path)}/, '')}\"\n"
+        
         corpus_file.each_line do |line|
           mapper.run(corpus_file.lineno, line)
         end
+        
+        info "Done.\n"
       end
     
     protected
@@ -82,11 +86,9 @@ module Porser
       
       def number_of_lines
         unless @number_of_lines
-          @number_of_lines = 0
-          byte = nil
-          corpus_file.each_byte { |byte| @number_of_lines += 1 if byte == NEW_LINE }
-          @number_of_lines += 1 if byte != NEW_LINE 
-          corpus_file.rewind
+          info "Calculating number of lines..."
+          @number_of_lines = `cat #{@corpus_path} | wc -l`.to_i
+          info "#{@number_of_lines}\n"
         end
         @number_of_lines
       end      

@@ -41,6 +41,12 @@ Inside the corpus folder, the selections are going to be organized in this way:
     |- test.txt
     |- train.gold.txt 
     |- train.txt
+    
+== Dependencies
+
+Most ruby dependencies are bundled with the project in the vendor/ folder. But some non-ruby dependencies must be installed:
+
+* wc command (available in all unix variants)
 
 == Authors
 
