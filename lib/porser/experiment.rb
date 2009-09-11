@@ -12,33 +12,34 @@ module Porser
     end
     
     def initialize(path)
-      @path      = path
+      @path      = Pathname.new(path.to_s).check!
       @selection = Selection.new(File.dirname(@path))
       @filters   = File.basename(@path).split("-").map { |fiter_name| puts filter_name }
     end
     
-    def train_parseable_path
-      @path.join('corpus.train.parseable.txt')
+    def train!(heap_size = 700)
+      cmd = "/usr/bin/env java"
+      cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
+      cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""
+      cmd << " -Ddanbikel.parser.Model.printPrunedEvents=false"
+      cmd << " -Dparser.settingsDir=\"#{@path}\""
+      cmd << " -Dparser.settingsFile=\"#{settings_path.check!}\""
+      cmd << " danbikel.parser.Trainer"
+      cmd << " -i #{gold_path_for(:train).check!} -o #{observed_path} -od #{objects_path}"
+      cmd << " > #{log_path_for(:train)} 2>&1"
+      `#{cmd}`
     end
     
-    def train_gold_path
-      @path.join('corpus.train.gold.txt')
+    def parseable_path_for(what)
+      @path.join("corpus.#{what}.parseable.txt")
     end
     
-    def devel_parseable_path
-      @path.join('corpus.devel.parseable.txt')
+    def gold_path_for(what)
+      @path.join("corpus.#{what}.gold.txt")
     end
     
-    def devel_gold_path
-      @path.join('corpus.devel.gold.txt')
-    end
-    
-    def test_parseable_path
-      @path.join('corpus.test.parseable.txt')
-    end
-    
-    def test_gold_path
-      @path.join('corpus.test.gold.txt')
+    def log_path_for(what)
+      @path.join("log.#{what}.txt")
     end
     
     def head_rules_path
@@ -48,19 +49,7 @@ module Porser
     def score_path
       @path.join('score.txt')
     end
-    
-    def train_log_path
-      @path.join('train.log')
-    end
-    
-    def devel_parse_log_path
-      @path.join('parse.devel.log')
-    end
-    
-    def test_parse_log_path
-      @path.join('parse.test.log')
-    end
-    
+        
     def objects_path
       @path.join('objects.gz')
     end
@@ -71,10 +60,6 @@ module Porser
     
     def settings_path
       @path.join('settings.properties')
-    end
-    
-    def head_rules_path
-      @path.join('head-rules.list')
     end
   end
 end
