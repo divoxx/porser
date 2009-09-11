@@ -1,9 +1,0 @@
-#!/bin/tcsh -f
-
-set dir = `dirname $0`
-set scriptDir = `cd $dir  ; echo $cwd`
-#set parent = `cd $scriptDir/.. ; echo $cwd`
-set parent = $scriptDir:h
-set jarFile = $parent/dbparser.jar
-
-exec java -cp $jarFile danbikel.parser.util.PrettyPrint $argv

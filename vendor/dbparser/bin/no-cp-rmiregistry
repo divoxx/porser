@@ -1,4 +1,0 @@
-#!/bin/tcsh -f
-
-unsetenv CLASSPATH
-$JAVA_HOME/bin/rmiregistry
