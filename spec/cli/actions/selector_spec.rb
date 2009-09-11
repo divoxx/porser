@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + "/../../spec_helper"
-require 'porser/cli/actions/selection'
+require 'porser/cli/actions/selector'
 include Porser::CLI::Actions
 
-describe Selection do
+describe Selector do
   before :each do
     @file      = StringIO.new((1..10).map{ |n| "(S (N #{n}))" }.join("\n"))
     @file_path = "dummy/path"
@@ -25,7 +25,7 @@ describe Selection do
   end
   
   def run
-    Selection.run(@file_path)
+    Selector.run(@file_path)
   end
   
   it "should create annotated train file" do

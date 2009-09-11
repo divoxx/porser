@@ -3,7 +3,7 @@ require 'porser/cli/actions/base'
 module Porser
   module CLI
     module Actions
-      class Selection < Base
+      class Selector < Base
         NEW_LINE = 10
       
         class Mapper        

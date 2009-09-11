@@ -1,4 +1,4 @@
-require 'porser/cli/actions/selection'
+require 'porser/cli/actions/selector'
 
 namespace :selections do
   def selections_path
@@ -11,7 +11,7 @@ namespace :selections do
     file_list   = Components::FileList.new(corpus_path, :title => "Available corpus", :question => "Select the corpus you want to use")
     
     if corpora_path = file_list.ask
-      Actions::Selection.run(corpora_path)
+      Actions::Selector.run(corpora_path)
     else
       puts "None selected, aborting."
     end
