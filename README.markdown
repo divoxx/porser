@@ -6,6 +6,15 @@ Project Description
 
 Porser is a Portuguese language probabilistic parser based on top of Dan Bikel's parser.
 
+Dependencies
+------------
+
+Most ruby dependencies are bundled with the project in the vendor/ folder. But some non-ruby dependencies must be installed:
+
+* wc command (available in all unix variants)
+* ruby
+* rake (usually bundled with ruby)
+
 Project Structure
 -----------------
 
@@ -46,13 +55,13 @@ The overall project structure is the following:
     |  tasks/                                               # Rake tasks for the appication
     vendor/                                                 # Third-part stuff
     |  dbparser.jar                                         # Bikel's parser
+    
+Running
+-------
 
-Dependencies
-------------
+Almost every possible thing to do in the environment is doable by running a rake task.
 
-Most ruby dependencies are bundled with the project in the vendor/ folder. But some non-ruby dependencies must be installed:
-
-* wc command (available in all unix variants)
+To see all available tasks, run "rake -T". To run a task, call "rake <task_name>"
 
 Authors
 -------
