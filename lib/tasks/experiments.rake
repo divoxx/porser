@@ -12,7 +12,7 @@ namespace :experiments do
         experiment = Experiment.new(experiment_path)
         experiment.train!
         puts "Done."
-        exec("less #{experiment.log_for(:devel)}")
+        exec("less #{experiment.log_path_for(:train)}")
       else
         puts "No experiment selected, aborting."
       end        
