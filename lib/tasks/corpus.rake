@@ -1,5 +1,6 @@
 require 'porser/cli/selection'
 require 'porser/cli/question'
+require 'porser/cli/file_list'
 
 namespace :corpus do
   namespace :selections do
@@ -10,18 +11,10 @@ namespace :corpus do
     desc "Create a selection of a corpus splitted in train, dev and test samples"
     task :create do
       corpus_path = Porser.path.join("corpus", "pre-processed")
-      options     = Dir["#{corpus_path}/*"]
+      file_list   = Porser::CLI::FileList.new(corpus_path, :title => "Available corpus", :question => "Select the corpus you want to use")
       
-      puts "Available corpus:"
-      options.each_with_index do |opt, i|
-        puts "  [#{"%1d" % i}] #{File.basename(opt)}"
-      end
-      
-      print "Select the corpus you want to use: "
-      selected_idx = Integer($stdin.gets) rescue ArgumentError
-      
-      if selected_idx
-        Porser::CLI::Selection.run(options[selected_idx])
+      if corpora_path = file_list.ask
+        Porser::CLI::Selection.run(corpora_path)
       else
         puts "None selected, aborting."
       end
