@@ -37,9 +37,12 @@ The overall project structure is the following:
     |  src/                               # Java package extensions source code
     |  build/                             # Java package extensions compiled
     lib/                                  # Libraries used in the project such as filters for processing corpus and building selections
-    |  cli/                               # Command line libraries, used by scripts/*
-    |  filters/                           # Filters to be run over a corpora to process it
+    |  porser/                            # Porser's libraries
+    |  |  cli/                            # Command line libraries, used by scripts/*
+    |  |  filters/                        # Filters to be run over a corpora to process it
+    |  |  ...                             # Other library files, mostly *.rb
     |  porser.rb                          # Base ruby file that setups all the paths and common settings
+    |  tasks/                             # Rake tasks for the appication
     vendor/                               # Third-part stuff
     |  dbparser.jar                       # Bikel's parser
 
