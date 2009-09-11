@@ -12,7 +12,7 @@ module Porser
         def initialize(opts = {})
           @ios    = {}
           @opts   = opts.freeze
-          @output = opts.has_key?(:output) ? opts.delete(:output) : $stderr
+          @output = opts.has_key?(:output) ? opts[:output] : $stderr
         end
       
         def info(str)
