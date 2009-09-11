@@ -50,5 +50,5 @@ Most ruby dependencies are bundled with the project in the vendor/ folder. But s
 
 == Authors
 
-Rodrigo Kochenburger <divoxx at gmail dot com>
-Marglon Lopes 
+* Rodrigo Kochenburger <divoxx@gmail.com>
+* Marglon Gomes Lopes <marlonglopes@gmail.com>
