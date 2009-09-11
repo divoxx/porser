@@ -21,6 +21,8 @@ module Porser
           print "#{@question}: "
         
           selected_idx = Integer($stdin.gets) rescue ArgumentError
+          puts ""
+
           files[selected_idx]
         end
       end
