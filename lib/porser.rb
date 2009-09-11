@@ -44,6 +44,7 @@ module Porser
 end
 
 Porser.boot!
+require 'active_support'
 
 # Monkey patches
 class Pathname 
