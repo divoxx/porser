@@ -3,18 +3,26 @@ module Porser
     attr_reader :path
     
     def self.create!(selection, filters = [])
-      experiment = new(selection.join("#{Time.now.utc.strftime(TimeFormat)}-#{filters.join("-")}"))
+      filter_str = filters.empty? ? 'unchanged' : filters.join("-")
+      experiment = new(selection.path.join("#{Time.now.utc.strftime(TimeFormat)}-#{filter_str}"))
       Dir.mkdir(experiment.path)
-      
-      # Apply filters on corpus
-      
+      experiment.generate_corpus!      
       experiment
     end
     
+    attr_reader :path, :selection
+    
     def initialize(path)
-      @path      = Pathname.new(path.to_s).check!
+      @path      = Pathname.new(path.to_s)
       @selection = Selection.new(File.dirname(@path))
-      @filters   = File.basename(@path).split("-").map { |fiter_name| puts filter_name }
+    end
+    
+    def filters
+      unless @filters
+        token_list = File.basename(@path).split("-")[1..-1]
+        @filters = token_list == ['unchanged'] ? [] : token_list.map { |filter_name| puts filter_name }
+      end
+      @filters
     end
     
     def train!(heap_size = 700)
@@ -28,6 +36,23 @@ module Porser
       cmd << " -i #{gold_path_for(:train).check!} -o #{observed_path} -od #{objects_path}"
       cmd << " > #{log_path_for(:train)} 2>&1"
       `#{cmd}`
+    ensure
+      `rm -rf #{Porser.path.join('*.prune-log')}`
+    end
+    
+    def generate_corpus!
+      copy_proc = Proc.new do |path|
+        File.open(path, "r") do |infp|
+          File.open(@path.join("corpus.#{File.basename(path)}"), "w") do |outfp|
+            while line = infp.gets
+              outfp.write(line)
+            end
+          end
+        end
+      end
+      
+      @selection.parseable_paths.each(&copy_proc)
+      @selection.gold_paths.each(&copy_proc)
     end
     
     def parseable_path_for(what)

@@ -32,9 +32,18 @@ module Porser
   def self.java_ext_build_path
     java_ext_path.join('build')
   end
+  
+  def self.boot!
+    include_paths.each { |path| $:.unshift(path.to_s) }
+  end
+  
+  def self.require_all!
+    paths = Dir["#{path.join('lib')}/**/**.rb"] - [File.expand_path(__FILE__)]
+    paths.each { |path| require(path)}
+  end
 end
 
-Porser.include_paths.each { |path| $:.unshift(path.to_s) }
+Porser.boot!
 
 # Monkey patches
 class Pathname 

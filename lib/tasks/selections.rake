@@ -1,5 +1,3 @@
-require 'porser/selection'
-
 namespace :selections do
   desc "Create a selection of a corpus splitted in train, dev and test samples"
   task :create do
@@ -24,18 +22,6 @@ namespace :selections do
       puts "Cleared."
     else
       puts "Aborted."
-    end
-  end
-  
-  desc "Run the training process for the given selection"
-  task :train do
-    selections_path = Porser.path.join("corpus", "selections")
-    file_list       = CLI::Components::FileList.new(selections_path, :title => "Available selections", :question => "Choose the selection to train")
-    
-    if selection_path = file_list.ask
-      # Actions::Runner.new(selection_path, ENV['HEAP_SIZE'] ? ENV['HEAP_SIZE'].to_i : 700).train!
-    else
-      puts "None selected, aborting."
     end
   end
 end
