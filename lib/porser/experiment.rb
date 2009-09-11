@@ -20,7 +20,7 @@ module Porser
     def filters
       unless @filters
         token_list = File.basename(@path).split("-")[1..-1]
-        @filters = token_list == ['unchanged'] ? [] : token_list.map { |filter_name| puts filter_name }
+        @filters = token_list == ['unchanged'] ? [] : token_list
       end
       @filters
     end
