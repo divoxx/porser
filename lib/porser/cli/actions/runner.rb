@@ -6,7 +6,7 @@ module Porser
     module Actions
       class Runner < Base
         def initialize(selection_timestamp, heap_size, *args)
-          @selection = Selection.find(selection_timestamp)
+          @selection = Selection.new(selection_timestamp)
           @heap_size = heap_size
           super(*args)
         end

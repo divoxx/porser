@@ -44,7 +44,7 @@ module Porser
         end
             
         def run!
-          selection = Selection.create!(@corpus_path)
+          selection = Selection.create!
         
           train_gold_io      = file(selection.train_gold_path, "w")
           train_parseable_io = file(selection.train_parseable_path, "w")
