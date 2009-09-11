@@ -1,6 +1,6 @@
 module Porser
   module CLI
-    class Base
+    class Runnable
       def self.run(*args)
         instance = new(*args)
         instance.run!

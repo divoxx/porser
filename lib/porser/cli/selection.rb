@@ -1,8 +1,8 @@
-require 'porser/cli/base'
+require 'porser/cli/runnable'
 
 module Porser
   module CLI
-    class Selection < Base
+    class Selection < Runnable
       NEW_LINE = 10
       
       class Mapper        
