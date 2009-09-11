@@ -1,6 +1,8 @@
 require 'pathname'
 
 module Porser  
+  TimeFormat = "%Y.%m.%d_%H:%M:%S"
+  
   def self.include_paths
     unless @include_paths
       @include_paths = []
