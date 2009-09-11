@@ -10,13 +10,13 @@ module Porser
         end
       
         def initialize(opts = {})
-          @ios  = {}
-          @opts = opts.freeze
+          @ios    = {}
+          @opts   = opts.freeze
+          @output = opts.fetch(:output, $stderr)
         end
       
         def info(str)
-          STDERR.print(str)
-          STDERR.flush
+          @output.flush if @output
         end
       
         def file(file_name, mode = "r")

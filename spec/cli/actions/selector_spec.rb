@@ -21,11 +21,10 @@ describe Selector do
     @time_mock.stub!(:utc).and_return(@time_mock)
     Time.stub!(:now).and_return(@time_mock)
     
+    @selector = Selector.new(@file_path, :output => nil)
+    @selector.should_receive(:`).with("cat dummy/path | wc -l").once.and_return(10)
+    
     srand(0)
-  end
-  
-  def run
-    Selector.run(@file_path)
   end
   
   it "should create annotated train file" do
@@ -37,34 +36,34 @@ describe Selector do
     
     File.should_receive(:open).with(Porser.path.join('corpus', 'selections', @time_mock.strftime, 'train.txt').to_s, "w").and_return(file_mock)
     
-    run
+    @selector.run!
   end
   
   it "should create annotated (gold) development file" do
     file_mock = mock(:dev_gold_file, :close => true)
     file_mock.should_receive(:write).with("(S (N 3))\n").ordered
     File.should_receive(:open).with(Porser.path.join('corpus', 'selections', @time_mock.strftime, 'devel.gold.txt').to_s, "w").and_return(file_mock)
-    run
+    @selector.run!
   end
   
   it "should create clean (parseable) development file" do
     file_mock = mock(:dev_parseable_file, :close => true)
     file_mock.should_receive(:write).with("(3)\n").ordered
     File.should_receive(:open).with(Porser.path.join('corpus', 'selections', @time_mock.strftime, 'devel.parseable.txt').to_s, "w").and_return(file_mock)
-    run
+    @selector.run!
   end
     
   it "should create annotated (gold) test file" do
     file_mock = mock(:test_gold_file, :close => true)
     file_mock.should_receive(:write).with("(S (N 4))\n").ordered
     File.should_receive(:open).with(Porser.path.join('corpus', 'selections', @time_mock.strftime, 'test.gold.txt').to_s, "w").and_return(file_mock)
-    run
+    @selector.run!
   end
   
   it "should create clean test file" do
     file_mock = mock(:test_parseable_file, :close => true)
     file_mock.should_receive(:write).with("(4)\n").ordered
     File.should_receive(:open).with(Porser.path.join('corpus', 'selections', @time_mock.strftime, 'test.parseable.txt').to_s, "w").and_return(file_mock)
-    run
+    @selector.run!
   end
 end

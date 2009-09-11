@@ -52,9 +52,20 @@ module Porser
           test_parseable_io  = file(target_folder.join('test.parseable.txt'), "w")
         
           mapper = Mapper.new(number_of_lines)
-          mapper.map(80) { |what| train_io.write(self.class.annot(what)) }
-          mapper.map(10) { |what| devel_gold_io.write(self.class.annot(what)); devel_parseable_io.write(self.class.clean(what)) }
-          mapper.map(10) { |what| test_gold_io.write(self.class.annot(what)); test_parseable_io.write(self.class.clean(what)) }
+          
+          mapper.map(80) do |what|
+            train_io.write(self.class.annot(what))
+          end
+          
+          mapper.map(10) do |what|
+            devel_gold_io.write(self.class.annot(what))
+            devel_parseable_io.write(self.class.clean(what))
+          end
+          
+          mapper.map(10) do |what|
+            test_gold_io.write(self.class.annot(what))
+            test_parseable_io.write(self.class.clean(what))
+          end
         
           info "Separating files into \"#{target_folder.to_s.gsub(/^#{Regexp.escape(Porser.path)}/, '')}\"\n"
         
