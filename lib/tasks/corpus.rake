@@ -1,6 +1,6 @@
-require 'porser/cli/selection'
-require 'porser/cli/question'
-require 'porser/cli/file_list'
+require 'porser/cli/components/question'
+require 'porser/cli/components/file_list'
+require 'porser/cli/actions/selection'
 
 namespace :corpus do
   namespace :selections do
