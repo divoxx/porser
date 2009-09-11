@@ -1,5 +1,3 @@
-require 'porser/cli/components/question'
-require 'porser/cli/components/file_list'
 require 'porser/cli/actions/selection'
 
 namespace :corpus do
@@ -11,10 +9,10 @@ namespace :corpus do
     desc "Create a selection of a corpus splitted in train, dev and test samples"
     task :create do
       corpus_path = Porser.path.join("corpus", "pre-processed")
-      file_list   = Porser::CLI::FileList.new(corpus_path, :title => "Available corpus", :question => "Select the corpus you want to use")
+      file_list   = Components::FileList.new(corpus_path, :title => "Available corpus", :question => "Select the corpus you want to use")
       
       if corpora_path = file_list.ask
-        Porser::CLI::Selection.run(corpora_path)
+        Actions::Selection.run(corpora_path)
       else
         puts "None selected, aborting."
       end
@@ -22,7 +20,7 @@ namespace :corpus do
     
     desc "Remove all foders in corpus/selections/"
     task :clear do
-      question = Porser::CLI::Question.new("Are you sure you wanna remove corpus/selections/* ?", :default => "n")
+      question = Components::Question.new("Are you sure you wanna remove corpus/selections/* ?", :default => "n")
 
       if question.ask
         selections_path = Porser.path.join("corpus", "selections")

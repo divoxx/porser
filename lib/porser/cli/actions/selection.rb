@@ -1,4 +1,4 @@
-require 'porser/cli/runnable'
+require 'porser/cli/actions/base'
 
 module Porser
   module CLI
