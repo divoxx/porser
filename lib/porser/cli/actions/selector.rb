@@ -1,3 +1,4 @@
+require 'porser/selection'
 require 'porser/cli/actions/base'
 
 module Porser
@@ -43,13 +44,13 @@ module Porser
         end
             
         def run!
-          Dir.mkdir(target_folder)
+          selection = Selection.create!(@corpus_path)
         
-          train_io           = file(target_folder.join('train.txt'), "w")
-          devel_gold_io      = file(target_folder.join('devel.gold.txt'), "w")
-          devel_parseable_io = file(target_folder.join('devel.parseable.txt'), "w")
-          test_gold_io       = file(target_folder.join('test.gold.txt'), "w")
-          test_parseable_io  = file(target_folder.join('test.parseable.txt'), "w")
+          train_io           = file(selection.train_path, "w")
+          devel_gold_io      = file(selection.devel_gold_path, "w")
+          devel_parseable_io = file(selection.devel_parseable_path, "w")
+          test_gold_io       = file(selection.test_gold_path, "w")
+          test_parseable_io  = file(selection.test_parseable_path, "w")
         
           mapper = Mapper.new(number_of_lines)
           
@@ -87,11 +88,7 @@ module Porser
         def self.clean(line)
           line.gsub(/\([^\s]+|\)/, "").gsub(/^\s*(.*)\s*$/, "(\\1)\n").squeeze(" ")
         end
-      
-        def target_folder
-          @target_folder ||= Porser.path.join('corpus', 'selections', Time.now.utc.strftime("%Y%m%d%H%M%S"))
-        end
-      
+        
         def corpus_file
           file(@corpus_path)
         end

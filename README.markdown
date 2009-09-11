@@ -34,7 +34,7 @@ Inside the corpus folder, the selections are going to be organized in this way:
    |- train.txt
    + 01-verb_without_hiphens-....
     |- head-rules.lisp
-    |- settings
+    |- settings.properties
     |- score.txt
     |- dev.txt
     |- test.gold.txt
