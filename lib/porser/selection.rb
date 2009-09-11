@@ -21,12 +21,20 @@ module Porser
       @path = Pathname.new(path.to_s).check!
     end
     
-    def train_path
-      @path.join('train.txt')
+    def parseable_paths
+      Dir["#{path}/*.parseable.txt"]
     end
     
-    def train_log_path
-      @path.join('train.log')
+    def gold_paths
+      Dir["#{path}/*.gold.txt"]
+    end
+    
+    def train_parseable_path
+      @path.join('train.parseable.txt')
+    end
+    
+    def train_gold_path
+      @path.join('train.gold.txt')
     end
     
     def devel_parseable_path
@@ -43,6 +51,10 @@ module Porser
     
     def test_gold_path
       @path.join('test.gold.txt')
+    end
+    
+    def train_log_path
+      @path.join('train.log')
     end
     
     def objects_path

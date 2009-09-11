@@ -24,7 +24,7 @@ module Porser
           cmd << " -Dparser.settingsDir=\"#{@selection.path.check!}\""
           cmd << " -Dparser.settingsFile=\"#{@selection.settings_path.check!}\""
           cmd << " danbikel.parser.Trainer"
-          cmd << " -i #{@selection.train_path.check!} -o #{@selection.observed_path} -od #{@selection.objects_path}"
+          cmd << " -i #{@selection.train_gold_path.check!} -o #{@selection.observed_path} -od #{@selection.objects_path}"
           cmd << " > #{@selection.train_log_path}"
           cmd << "; rm -rf *.pune-log"
           info "#{cmd}\n"; `#{cmd}`

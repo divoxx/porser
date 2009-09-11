@@ -46,7 +46,8 @@ module Porser
         def run!
           selection = Selection.create!(@corpus_path)
         
-          train_io           = file(selection.train_path, "w")
+          train_gold_io      = file(selection.train_gold_path, "w")
+          train_parseable_io = file(selection.train_parseable_path, "w")
           devel_gold_io      = file(selection.devel_gold_path, "w")
           devel_parseable_io = file(selection.devel_parseable_path, "w")
           test_gold_io       = file(selection.test_gold_path, "w")
@@ -55,7 +56,8 @@ module Porser
           mapper = Mapper.new(number_of_lines)
           
           mapper.map(80) do |what|
-            train_io.write(self.class.annot(what))
+            train_gold_io.write(self.class.annot(what))
+            train_parseable_io.write(self.class.clean(what))
           end
           
           mapper.map(10) do |what|
@@ -68,7 +70,7 @@ module Porser
             test_parseable_io.write(self.class.clean(what))
           end
         
-          info "Separating files into \"#{target_folder.to_s.gsub(/^#{Regexp.escape(Porser.path)}/, '')}\"\n"
+          info "Separating files into \"#{selection.path.to_s.gsub(/^#{Regexp.escape(Porser.path)}/, '')}\"\n"
         
           corpus_file.each_line do |line|
             mapper.run(corpus_file.lineno, line)

@@ -16,21 +16,22 @@ The overall project structure is the following:
     |  pre-processed/                     # The complete corpus pre-processed and ready to be used for selections
     |  selections/                        # The corpus splitted in selections for train, dev and test
     |  |  20090910130000/                 # A selection of train, dev and test named with the timestamp of the creation time
-    |  |  |  devel.gold.txt               # The gold file for the development corpus
-    |  |  |  devel.parseable.txt          # The development corpus without annotation with each line wrapped in parens
-    |  |  |  test.gold.txt                # The gold file for the test corpus
-    |  |  |  test.txt                     # The test corpus without annotation with each line wrapped in parens
-    |  |  |  train.txt                    # The training corpus
+    |  |  |  devel.gold.txt               # The development corpus with annotation
+    |  |  |  devel.parseable.txt          # The development corpus without annotations with each line wrapped in parens
+    |  |  |  test.gold.txt                # The test corpus with annotation
+    |  |  |  test.parseable.txt           # The test corpus without annotations with each line wrapped in parens
+    |  |  |  train.gold.txt               # The training corpus with annotations
+    |  |  |  train.parseable.txt          # The training corpus without annotations with each line wrapped in parens
     |  |  |  01-verb_without_hiphens-.... # An experiment on top of the selection, with changes to corpus, settings and head-rules
+    |  |  |  |  corpus.dev.gold.txt       # The development gold corpus with filters and modifications applied
+    |  |  |  |  corpus.dev.parseable.txt  # The development parseable corpus with filters and modifications applied
+    |  |  |  |  corpus.test.gold.txt      # The test gold corpus with filters and modifications applied
+    |  |  |  |  corpus.test.parseable.txt # The test parseable corpus with filters and modifications applied
+    |  |  |  |  corpus.train.log          # The log of the training process
+    |  |  |  |  corpus.train.txt          # The training corpus with filters applied
     |  |  |  |  head-rules.lisp           # The head rules finding for the experiment
-    |  |  |  |  settings.properties       # The settings for the experiment
     |  |  |  |  score.txt                 # The score result for the experiment
-    |  |  |  |  dev.gold.txt              # The development gold corpus with filters and modifications applied
-    |  |  |  |  dev.parseable.txt         # The development parseable corpus with filters and modifications applied
-    |  |  |  |  test.gold.txt             # The test gold corpus with filters and modifications applied
-    |  |  |  |  test.parseable.txt        # The test parseable corpus with filters and modifications applied
-    |  |  |  |  train.log                 # The log of the training process
-    |  |  |  |  train.txt                 # The training corpus with filters applied
+    |  |  |  |  settings.properties       # The settings for the experiment
     |  |  |  ...                          # More experiments
     |  |  ...                             # More selections  
     ext/                                  # All custom packages and custom extensions for Bikel's parser
