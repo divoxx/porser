@@ -12,11 +12,14 @@ module Porser
         def initialize(opts = {})
           @ios    = {}
           @opts   = opts.freeze
-          @output = opts.fetch(:output, $stderr)
+          @output = opts.has_key?(:output) ? opts.delete(:output) : $stderr
         end
       
         def info(str)
-          @output.flush if @output
+          if @output
+            @output.print(str)
+            @output.flush 
+          end
         end
       
         def file(file_name, mode = "r")
