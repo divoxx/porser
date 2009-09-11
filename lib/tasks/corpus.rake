@@ -1,4 +1,5 @@
 require 'porser/cli/selection'
+require 'porser/cli/question'
 
 namespace :corpus do
   namespace :selections do
@@ -28,9 +29,9 @@ namespace :corpus do
     
     desc "Remove all foders in corpus/selections/"
     task :clear do
-      print "Are you sure you wanna remove corpus/selections/* ? [Y/n] "
+      question = Porser::CLI::Question.new("Are you sure you wanna remove corpus/selections/* ?", :default => "n")
 
-      if $stdin.gets.downcase.chomp == "y"
+      if question.ask
         selections_path = Porser.path.join("corpus", "selections")
         Dir["#{selections_path}/*"].each { |path| rm_rf(path) }
         puts "Removed."
