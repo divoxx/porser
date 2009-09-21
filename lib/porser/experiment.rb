@@ -1,3 +1,5 @@
+require 'porser/filter_runner'
+
 module Porser
   class Experiment
     attr_reader :path
@@ -41,11 +43,13 @@ module Porser
     end
     
     def generate_corpus!
+      filter_runner = FilterRunner.new(*filters)
+      
       copy_proc = Proc.new do |path|
         File.open(path, "r") do |infp|
           File.open(@path.join("corpus.#{File.basename(path)}"), "w") do |outfp|
             while line = infp.gets
-              outfp.write(line)
+              outfp.write(filter_runner.run(line))
             end
           end
         end
