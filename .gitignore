@@ -1,2 +1,3 @@
 *.prune-log
 .DS_Store
+vendor/scorer/evalb

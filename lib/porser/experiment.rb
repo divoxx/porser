@@ -27,7 +27,7 @@ module Porser
       @filters
     end
     
-    def train!(heap_size = 700)
+    def train!(what = :train, heap_size = 700)
       cmd = "/usr/bin/env java"
       cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
       cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""
@@ -35,11 +35,31 @@ module Porser
       cmd << " -Dparser.settingsDir=\"#{@path}\""
       cmd << " -Dparser.settingsFile=\"#{settings_path.check!}\""
       cmd << " danbikel.parser.Trainer"
-      cmd << " -i #{gold_path_for(:train).check!} -o #{observed_path} -od #{objects_path}"
-      cmd << " > #{log_path_for(:train)} 2>&1"
+      cmd << " -i #{gold_path_for(what).check!} -o #{observed_path} -od #{objects_path}"
+      cmd << " > #{log_path_for(:train, what)} 2>&1"
       `#{cmd}`
     ensure
       `rm -rf #{Porser.path.join('*.prune-log')}`
+    end
+    
+    def parse!(what = :dev, heap_size = 700)
+      cmd = "/usr/bin/env java"
+      cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
+      cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""
+      cmd << " -Ddanbikel.parser.Model.printPrunedEvents=false"
+      cmd << " -Dparser.settingsDir=\"#{@path}\""
+      cmd << " -Dparser.settingsFile=\"#{settings_path.check!}\""
+      cmd << " danbikel.parser.Parser"
+      cmd << " -is #{objects_path} -sa #{parseable_path_for(what)}"
+      cmd << " > #{log_path_for(:parse, what)} 2>&1"
+      `#{cmd}`
+    end
+    
+    def score!(what = :dev)
+      cmd = "/usr/bin/env java -Xms200m -Xmx200m -cp \"#{Porser.java_classpath}:#{@path}\" danbikel.parser.util.AddFakePos #{gold_path_for(what)} #{parsed_path_for(what)} > #{scorable_file_for(what)}"
+      cmd << " &&"
+      cmd << " ./vendor/scorer/evalb #{gold_path_for(what)} #{scorable_file_for(what)} > #{log_path_for(:score, what)} 2>&1"
+      `#{cmd}`
     end
     
     def generate_corpus!
@@ -67,8 +87,16 @@ module Porser
       @path.join("corpus.#{what}.gold.txt")
     end
     
-    def log_path_for(what)
-      @path.join("log.#{what}.txt")
+    def parsed_path_for(what)
+      "#{parseable_path_for(what)}.parsed"
+    end
+    
+    def log_path_for(action, what)
+      @path.join("log.#{action}.#{what}.txt")
+    end
+    
+    def scorable_file_for(what)
+      "#{parseable_path_for(what)}.scorable"
     end
     
     def head_rules_path
@@ -80,11 +108,11 @@ module Porser
     end
         
     def objects_path
-      @path.join('objects.gz')
+      @path.join("objects.gz")
     end
     
     def observed_path
-      @path.join('observed.gz')
+      @path.join("observed.gz")
     end
     
     def settings_path

@@ -2,7 +2,7 @@ module Porser
   module Filters
     class RemoveTagHyphen
       def tag(tag)
-        tag.gsub(/-/, '')
+        tag.gsub(/(\w)-(\w)/, '\1\2')
       end
     end
   end

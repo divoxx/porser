@@ -18,12 +18,34 @@ namespace :experiments do
     puts "Experiment created at #{experiment.path}"
   end
   
-  desc "Run the training process for a experiment"
+  desc "Run the training process for an experiment"
   task :train do
     experiment = Experiment.new(ask_experiment_path(ask_selection_path))
     puts "Training..."
     experiment.train!
     puts "Done."
-    exec("less #{experiment.log_path_for(:train)}")
+    exec("less #{experiment.log_path_for(:train, :train)}")
+  end
+  
+  desc "Run the parsing process for an experiment"
+  task :parse do
+    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    puts "Parsing..."
+    experiment.parse!(:dev)
+    puts "Done."
+    exec("less #{experiment.log_path_for(:parse, :dev)}")
+  end
+  
+  desc "Run the scoring process for an experiment"
+  task :score do
+    unless uptodate?('vendor/scorer/evalb', 'vendor/scorer/evalb.c')
+      `cd vendor/scorer && make`
+    end
+    
+    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    puts "Scoring..."
+    experiment.score!(:dev)
+    puts "Done."
+    exec("less #{experiment.log_path_for(:score, :dev)}")
   end
 end
