@@ -1,12 +1,12 @@
 namespace :experiments do
   def ask_selection_path
-    selections_path      = Porser.path.join("corpus", "selections")
+    selections_path = Porser.path.join("corpus", "selections")
     selections_file_list = CLI::Components::FileList.new(selections_path, :title => "Available selections", :question => "Choose the selection that contains the experiment", :only_folder => true)
     selections_file_list.ask or puts "No selection selected, aborting" && exit(1)
   end
   
-  def ask_experiment_path(selection_path)
-    experiments_file_list = CLI::Components::FileList.new(selection_path, :title => "Available experiments", :question => "Choose the experiment to train", :only_folder => true)
+  def ask_experiment_path(selection_path, multiple = false)
+    experiments_file_list = CLI::Components::FileList.new(selection_path, :title => "Available experiments", :question => "Choose the experiment to train", :only_folder => true, :multiple => multiple)
     experiments_file_list.ask or puts "No experiment selected, aborting" && exit(1)
   end
   
@@ -47,5 +47,31 @@ namespace :experiments do
     experiment.score!(:dev)
     puts "Done."
     exec("less #{experiment.log_path_for(:score, :dev)}")
+  end
+  
+  desc "Run the whole process for many experiments"
+  task :run do
+    experiments = ask_experiment_path(ask_selection_path, true).map { |path| Experiment.new(path) }
+    
+    experiments.each do |experiment|
+      puts "Running experiment #{experiment.path}"
+      print " * Training..."
+      experiment.train!
+      puts "Done."
+      
+      print " * Parsing..."
+      experiment.parse!(:dev)
+      puts "Done."
+      
+      print " * Scoring..."
+      experiment.score!(:dev)
+      puts "Done."
+    end
+  end
+  
+  desc "Prettyprint"
+  task :pretty_print, :what do |t, args|
+    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment.pretty_print!(args.what || "dev")
   end
 end

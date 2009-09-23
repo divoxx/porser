@@ -14,8 +14,13 @@ module Porser
       
         def ask        
           files = Dir["#{@path}/*"]
-
+          
           puts "#{@title}:" if @title
+          
+          if files.empty?
+            puts "No file available!"
+            exit(1)
+          end
         
           if @allow_none
             puts "  [0] None"
