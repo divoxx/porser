@@ -56,9 +56,9 @@ module Porser
     end
     
     def score!(what = :dev)
-      cmd = "/usr/bin/env java -Xms200m -Xmx200m -cp \"#{Porser.java_classpath}:#{@path}\" danbikel.parser.util.AddFakePos #{gold_path_for(what)} #{parsed_path_for(what)} > #{scorable_file_for(what)}"
+      cmd = "/usr/bin/env java -Xms200m -Xmx200m -cp \"#{Porser.java_classpath}:#{@path}\" danbikel.parser.util.AddFakePos #{gold_path_for(what)} #{parsed_path_for(what)} > #{scorable_file_for(what)} 2> #{log_path_for(:score, what)}"
       cmd << " &&"
-      cmd << " ./vendor/scorer/evalb #{gold_path_for(what)} #{scorable_file_for(what)} > #{log_path_for(:score, what)} 2>&1"
+      cmd << " ./vendor/scorer/evalb -p vendor/scorer/BIKEL.prm #{gold_path_for(what)} #{scorable_file_for(what)} > #{score_path_for(what)} 2>&1"
       `#{cmd}`
     end
     
@@ -103,8 +103,8 @@ module Porser
       @path.join('head-rules.lisp')
     end
     
-    def score_path
-      @path.join('score.txt')
+    def score_path_for(what)
+      @path.join("score.#{what}.txt")
     end
         
     def objects_path

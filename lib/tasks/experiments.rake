@@ -16,6 +16,13 @@ namespace :experiments do
     filters    = CLI::Components::FileList.new(Porser.path.join('lib', 'porser', 'filters'), :title => "Available filters", :question => "Choose the filters to apply", :multiple => true, :full_path => false, :allow_none => true).ask
     experiment = Experiment.create!(selection, filters)
     puts "Experiment created at #{experiment.path}"
+    
+    print "\nCopy config files from sample/ to the experiment directory? "
+    
+    if $stdin.gets.chomp.downcase == "y"
+      `cp samples/* #{experiment.path}`
+      puts "Copied."
+    end
   end
   
   desc "Run the training process for an experiment"
@@ -36,36 +43,42 @@ namespace :experiments do
     exec("less #{experiment.log_path_for(:parse, :dev)}")
   end
   
+  file 'vendor/scorer/evalb' => 'vendor/scorer/evalb.c' do |t|
+    `cd vendor/scorer && make`
+  end
+  
   desc "Run the scoring process for an experiment"
-  task :score do
-    unless uptodate?('vendor/scorer/evalb', 'vendor/scorer/evalb.c')
-      `cd vendor/scorer && make`
-    end
-    
+  task :score => 'vendor/scorer/evalb' do
     experiment = Experiment.new(ask_experiment_path(ask_selection_path))
     puts "Scoring..."
     experiment.score!(:dev)
     puts "Done."
-    exec("less #{experiment.log_path_for(:score, :dev)}")
+    exec("less #{experiment.score_path_for(:dev)}")
   end
   
   desc "Run the whole process for many experiments"
-  task :run do
+  task :run => 'vendor/scorer/evalb' do
     experiments = ask_experiment_path(ask_selection_path, true).map { |path| Experiment.new(path) }
     
     experiments.each do |experiment|
-      puts "Running experiment #{experiment.path}"
-      print " * Training..."
+      $stdout.puts "Running experiment #{experiment.path}"
+      $stdout.print " * Training..."
+      $stdout.flush
       experiment.train!
-      puts "Done."
+      $stdout.puts "Done."
+      $stdout.flush
       
-      print " * Parsing..."
+      $stdout.print " * Parsing..."
+      $stdout.flush
       experiment.parse!(:dev)
-      puts "Done."
+      $stdout.puts "Done."
+      $stdout.flush
       
-      print " * Scoring..."
+      $stdout.print " * Scoring..."
+      $stdout.flush
       experiment.score!(:dev)
-      puts "Done."
+      $stdout.puts "Done."
+      $stdout.flush
     end
   end
   

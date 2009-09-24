@@ -31,13 +31,17 @@ module Porser
           end
         
           print "#{@question}"
-          print " (Multiple options allowed, separated by comma)" if @multiple
+          print " (Multiple options allowed, separated by comma, or * for all)" if @multiple
           print ": "
           input = $stdin.gets.chomp
           puts ""
           
           if @multiple
-            selected_idx = input.split(/,/).map { |token| Integer(token) }
+            if input == "*"
+              selected_idx = (0...files.size)
+            else
+              selected_idx = input.split(/,/).map { |token| Integer(token) }
+            end
           else
             selected_idx = Array(Integer(input))
           end
