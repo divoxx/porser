@@ -1,0 +1,12 @@
+As medidas de avaliação do \emph{parser} seguirão a proposta de GEIC/Parseval \cite{black91}, possivelmente adaptado conforme \cite{collins97} para ignorar pontuação e não considerar a marcação de POS na avaliação. Em particular, serão usadas as medidas de \emph{Labeled Precision} (LP) e \emph{Labeled Recall} (LR) e sua média harmônica ($F_{\beta=1}$), descritas abaixo:
+\\
+$$LP = \frac{n\acute{u}mero\; de\; constituintes\; corretas\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; da\; an\acute{a}lise\; proposta}$$
+\\
+$$LR = \frac{n\acute{u}mero\; de\; constituintes\; corretas\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; do\; \mathit{treebank}\; analisado}$$
+\\
+$$F_{\beta=1} = \frac{2*LP*LR}{LP+LR}$$
+\\
+O termo \emph{Labeled} se refere ao fato de que uma constituinte, para contar como corretamente recuperado, deve acertar a extensão correta do texto bem como o rótulo do constituinte.
+
+
+

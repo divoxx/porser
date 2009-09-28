@@ -1,0 +1,55 @@
+\select@language {brazil}
+\contentsline {chapter}{Lista de Figuras}{v}
+\contentsline {chapter}{Lista de Tabelas}{vi}
+\contentsline {chapter}{Lista de Abreviaturas}{vii}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
+\contentsline {chapter}{\numberline {2}Motiva\IeC {\c c}\IeC {\~a}o}{3}
+\contentsline {chapter}{\numberline {3}Objetivos}{5}
+\contentsline {chapter}{\numberline {4}Metodologia}{6}
+\contentsline {chapter}{\numberline {5}Referencial Te\IeC {\'o}rico}{7}
+\contentsline {section}{\numberline {5.1}An\IeC {\'a}lise de Senten\IeC {\c c}a}{7}
+\contentsline {subsection}{\numberline {5.1.1}An\IeC {\'a}lise morfol\IeC {\'o}gica ou \emph {Part-of-Speech Tagging}}{7}
+\contentsline {subsection}{\numberline {5.1.2}An\IeC {\'a}lise sint\IeC {\'a}tica ou \emph {Parsing}}{9}
+\contentsline {section}{\numberline {5.2}\emph {Corpus} Anotado}{10}
+\contentsline {subsection}{\numberline {5.2.1}Extens\IeC {\~a}o do \emph {Corpus}}{11}
+\contentsline {subsection}{\numberline {5.2.2}Corpus para processamento de linguagem natural}{13}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Corpora da L\IeC {\'\i }ngua Inglesa}{13}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Penn TreeBank}{13}
+\contentsline {subsubsection}{\numberline {5.2.2.3}Corpus da L\IeC {\'\i }ngua Portuguesa}{14}
+\contentsline {subsubsection}{\numberline {5.2.2.4}Floresta Sint\IeC {\'a}tica (Projeto Linguateca)}{14}
+\contentsline {paragraph}{\numberline {5.2.2.4.1}Esquema de anota\IeC {\c c}\IeC {\~a}o}{17}
+\contentsline {subsubsection}{\numberline {5.2.2.5}Corpus do projeto Semantic Share}{18}
+\contentsline {section}{\numberline {5.3}Diagrama geral do processo de \emph {parsing} estat\IeC {\'\i }stico baseado em \emph {corpus}}{19}
+\contentsline {section}{\numberline {5.4}\emph {Parsers} para Portugu\IeC {\^e}s}{20}
+\contentsline {chapter}{\numberline {6}Projeto Semantic Share}{22}
+\contentsline {section}{\numberline {6.1}Objetivos principais}{22}
+\contentsline {section}{\numberline {6.2}Caracter\IeC {\'\i }sticas principais}{22}
+\contentsline {subsection}{\numberline {6.2.1}Abrang\IeC {\^e}ncia}{22}
+\contentsline {subsection}{\numberline {6.2.2}Acessibilidade}{22}
+\contentsline {subsection}{\numberline {6.2.3}Precis\IeC {\~a}o}{23}
+\contentsline {subsection}{\numberline {6.2.4}Profundidade}{23}
+\contentsline {subsection}{\numberline {6.2.5}Evolu\IeC {\c c}\IeC {\~a}o}{23}
+\contentsline {section}{\numberline {6.3}Infra-estrutura de investiga\IeC {\c c}\IeC {\~a}o}{23}
+\contentsline {section}{\numberline {6.4}Apoio de uma comunidade internacional de investigadores}{24}
+\contentsline {subsection}{\numberline {6.4.1}Esquema de Anota\IeC {\c c}\IeC {\~a}o do Projeto Semantic Share}{25}
+\contentsline {chapter}{\numberline {7}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{27}
+\contentsline {section}{\numberline {7.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{27}
+\contentsline {section}{\numberline {7.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN }{30}
+\contentsline {section}{\numberline {7.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{32}
+\contentsline {section}{\numberline {7.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{32}
+\contentsline {section}{\numberline {7.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{33}
+\contentsline {section}{\numberline {7.6}History-Base Models}{33}
+\contentsline {section}{\numberline {7.7}Modelos de Michael Collins}{34}
+\contentsline {subsection}{\numberline {7.7.1}Modelo 1}{34}
+\contentsline {subsubsection}{\numberline {7.7.1.1}Adicionando Distancia}{36}
+\contentsline {subsection}{\numberline {7.7.2}Modelo 2}{37}
+\contentsline {subsection}{\numberline {7.7.3}Modelo 3}{37}
+\contentsline {section}{\numberline {7.8}Casos especiais}{38}
+\contentsline {chapter}{\numberline {8}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{39}
+\contentsline {chapter}{\numberline {9}Dan Bikel \emph {Statistical Parsing Engine}}{40}
+\contentsline {section}{\numberline {9.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{40}
+\contentsline {section}{\numberline {9.2}Formato do arquivo de par\IeC {\^a}metros}{43}
+\contentsline {section}{\numberline {9.3}Formato do arquivo de \emph {head-find rules}}{44}
+\contentsline {chapter}{\numberline {10}Resultados Parciais}{46}
+\contentsline {chapter}{\numberline {11}Considera\IeC {\c c}\IeC {\~o}es Finais}{50}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{51}

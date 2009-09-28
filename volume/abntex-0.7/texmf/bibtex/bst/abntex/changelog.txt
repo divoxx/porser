@@ -1,0 +1,517 @@
+$Header: /home/cvsroot/abntex/texmf/bibtex/bst/abntex/changelog.txt,v 1.31 2003/03/16 20:57:54 gweber Exp $
+
+Este arquivo não é mais atualizado, veja os logs nos próprios abnt-alf.bst
+e abnt-num.bst
+
+*** abnt-(alf,num).bst  1.35/1.32 2003/03/07
+- Corrigido bug que não colocava "et al." nos labels com mais de três
+  autores.
+
+*** abnt-(alf,num).bst  1.34/1.31 2003/03/01
+- Adicionada a opção abnt-substyle. Primeiro subestilo é UFLA que
+  usa "&" no lugar de "e" na chamada quando há dois autores.
+
+*** abnt-(alf,num).bst  1.33/1.30 2003/02/12
+- Alterado o modo com que são tratados os sobrenomes, agora
+  seguem um formato mais próximo da 'norma' sem necessidade
+  de mexer no campo author manualmente.
+  Em funcão disso foi adicionada a opção abnt-last-names com
+  opção abnt (default) e bibtex (volta ao modo anterior).
+
+*** abnt-(alf,num).bst  1.32/1.29 2003/02/06
+- Nova função write.entry.verbatim que mostra a entrada em modo
+  verbatim. Opção: abnt.verbatim.entry
+- Uma entrada do tipo @thesis (base de @mastersthesis, @phdthesis e
+  @monography) permite usar o campo type livremente.
+
+*** abnt-(alf,num).bst  1.31/1.28 2002/12/13
+- Melhorado a mensagem sobre o abntex, não é exibido mais como warning.
+- @book passa a usar o campo howpublished.
+- tanto number como volume são formatados, antes se houvesse volume o
+  campo number era ignorado.
+- incluídos os campos reprinted-from e reprinted-text. O primeiro é a
+  referência a uma outra entrada bibtex. O segundo é o texto, algo
+  como "Separata de". Ainda não é possível incluir a segunda
+  referência completa, isso depende de alterações no estilo \abntrefinfo.
+  Por enquanto é criado um \nocite antes do preâmbulo junto com a
+  definição do comando \abntreprintinfo.
+- o campo reprinted-text indica também que se trata de uma separata
+  simples, isto é, uma reimpressão  de artigo de revista.
+- Acrescentados os campos conference-number, conference-year, conference-location
+  para um melhor tratamento de proceedings e inproceedings
+- A função format.in.ed.booktitle foi reescrita para fazer uso das funções
+  output e da nova função format.conference.info
+>>Nomes com \" parecem estar dando problemas para o abncite, precisa ser
+  investigado.
+
+*** abnt-(alf,num).bst 1.30/1.27 2002/12/07
+- adicionado o string previous.author e previous.title
+- retirada a FUNCTION {format.author.or.editor}
+- abnt.repeated.field.omit trocado por abnt.repeated.author.omit
+- implementada as opções abnt-repeated-author-omit e abnt-repeated-title-omit
+- pequena correção em format.title
+- retirado expaço extra gerado em emphasize.
+- implementada a opção abnt-nbr10520=1988 para obter a formatação da antiga
+  10520/1988.
+
+*** abnt-(alf,num).bst 2002/11/22
+
+- Adicionada a opção abnt-refinfo, com a opção padrão "yes". No caso em
+  que for "no" retira do arquivo bbl o comando \abntrefinfo
+- Alterado o padrão da opção abnt-ldots-type que passa a ser "normal"
+  (\ldots) e não mais "math" ($\ldots$).
+- Correção do comportamento de abnt-no-etal-label.
+
+*** abnt-(alf,num).bst 2002/11/21
+
+- Adicionado string abnt.bst.revision que contém o número de revisão
+  atribuido pelo cvs.
+- O arquivo abnt-alf e abnt-num agora se autodeteta. Isso significa
+  o seguinte: abnt-alf e abnt-num não essencialmente iguais com duas
+  pequenas diferenças, a variável abnt-alf=1 quando se trata de abnt-alf.bst
+  e 0 para abnt-num.bst. O abnt-alf tem um SORT que abnt-num não tem.
+  Poderia acontecer que ao colocar um desses arquivos no cvs ocorresse
+  um esquecimento, por exemplo abnt-alf=0 para abnt-alf.bst gerando assim
+  erros. Como o atual método o próprio cvs faz a correção.
+
+*** abnt-(alf,num).bst 2002/11/02
+
+- Resolvida a questão de colocar a primeira palavra de um título
+  em maiúsculas quando temos um "{\c c}"
+- introduzido o campo org-short que possibilida fazer chamadas (isto é
+  \cite} que coloca apenas a abreviação ou sigla ao invés de organization.
+  Apenas para abnt-alf.
+- Alterações importantes na função format.field.address, que define
+  como deve ser formatada a dupla publisher/address.
+  A regra é a seguinte:
+  publisher | organization | address | url        | formatação
+  não tem   | não tem      | não tem | não tem    | [S.l.:s.n.]
+  tem       | tem ou não   | não tem | tem ou não | [S.l.] : publisher
+  tem       | tem ou não   | tem     | tem ou não | address: publisher
+  tem       | tem ou não   | não tem | tem        | publisher
+  não tem   | não tem      | tem     | tem ou não | address : [s.n.]
+  não tem   | tem          | tem     | tem ou não | address
+
+*** abnt-(alf,num).bst 2002/09/02
+
+- /abntrefinfo deixa de ser marcado como experimental.
+
+
+*** abnt-(alf,num).bst 2002/08/26
+
+- @inbook passa a usar o campo furtherresp.
+- no arquivo abnt-def os campos note foram passados para howpublished.
+
+*** abnt-(alf,num).bst 2002/08/19
+
+- @misc passa a usar campos dimensions, illustrated e formatar series
+  como @book.
+
+
+*** abnt-(alf,num).bst 2002/08/13
+
+- @misc passa a formatar páginas como @book.
+
+
+*** abnt-(alf,num).bst 2002/06/24
+
+- retirada a função capitalize sem uso e os comandos \captialize após o
+  thebibliography
+- criada nova função calc.simple.label para gerar um label simplificado.
+- função calc.extended.label (aniga calc.label) foi simplificada.
+- (experimental) gera bibitem de maneira tradicional e coloca as informações
+  em \abntrefinfo
+
+*** abnt-(alf,num).bst 2002/06/15
+
+- introduzida a opção abnt-experimental para simplificar o teste de
+  código experimental.
+- removida a função format.tr.number que não era usada.
+- edition agora só adiciona "ed." se o primeiro carater do campo
+  for um número. Assim situações como "Ed. fac-sim" no exemplo 7.1.3-10
+  são resolvidas.
+- adicionada a nova entrada journalpart para partes inteiras de
+  periódicos que não podem ser atendidas pela entrada book.
+- alterado o modo de funcionamento de format.title.as.author, quando
+  a entrada é do tipo journalpart para o uppercase em "." ou ":"
+- a função format.org.or.pub chama-se agora format.field.address e foi
+  reescrita. Foi tirada desta função a formatação do ano que agora está
+  em format.year. Quando há uma url interpreta-se como a existência de um
+  address e não se coloca [s.l] quando este último estiver faltando.
+  A função format.publisher.address.year passou a ser format.publisher.address
+  assim como format.organization.address.year passou a ser
+  format.organization.address.
+- reescrita a função format.journal.pages para poder ser usado com output.
+- reescrito format.title.as.author, antes o uppercase era feito letra a letra,
+  agora a primeira palavra é identificada e feito o change.case$ de uma vez
+- reescrito format.title.for.label, semelhante a format.title.as.author.
+  Agora quando o título é composto de uma palavra só não usa o $\ldots$.
+- Acrescentada a função bbl.ldots e a opção abnt.ldots.type.
+- Criada a função process.early.abnt.options que nos permite processar
+  opções antes do presort.
+- Criada a função set.default.abnt.variables que define o valor da
+  variáveis abnt.* através de um comando EXECUTE. Isso passou a ser a
+  primeira coisa a ser feita.
+- Entrada @misc agora usa format.btitle no lugar de format.title
+- Criada a função format.publisher.address.relax para uso em @misc.
+  A idéia é usar format.publisher.address apenas se publisher ou address
+  estiverem presentes.
+- Adicionada format.furtherresp em @misc.
+
+*** abnt-(alf,num).bst 2002/06/06
+
+- introduzida a opção abnt-missing-year, default é "void". Se selecionado
+  "sd" colocará [s.d.] quando o campo year estiver ausente.
+- uma série de mensagens de erro foram passados para ao português
+- MUDANÇA IMPORTANTE. O grifo passa a ser \emph por default não mais
+  \bf.
+- adicionado o campo section para seções de revistas.
+- se há organization não colocamos [s.n.] quando falta publisher em book.
+  Com isso reproduzimos corretamente o exemplo 7.3.2-3
+
+*** abnt-(alf,num).bst 2002/06/06
+
+- removidas todas as funções que tratam de crossref, desta maneira garantimos
+  que qualquer referência que use crossref esteja herdando todos os campos
+  faltantes.
+- removidas todas as instâncias de \newblock que não fazem sentido para
+  as 'normas' ABNT.
+
+*** abnt-(alf,num).bst 2002/06/05
+
+- adicionadas as funções bbl.url.begin e bbl.url.end
+- retirado \newblock da função output.nonull.
+- adicionada a função format.bvolume.if.no.series, a função
+  format.volume.number.series não formata mais o volume caso
+  não haja série. Isso se fez necessário pois o local de formatação
+  da série nem sempre coincide com o local de formatação do volume.
+  Esta nova função é usada nas entradas inbook, incollection,
+  inproceedings, manual.
+- diversas funções tiveram retiradas o crossref. A 'norma' abnt não
+  admite a existência de crossref.
+- acescentada a função any.sort que substitui todas as funções de
+  ordenação alfabética. Acertado o modo de ordenamento de author e
+  editor. Com esta alteração podemos remover todos os key que havia
+  em abnt-def.bib.
+
+*** abnt-(alf,num).bst 2002/05/29
+
+- alterado o nome de number.or.volume para format.number.of.volume.
+- format.volume checa se o primeiro carater é um número, se não
+  for formatará o volume sem o "v."
+- funções format.bvolume e format.number.or.volume passam a usar
+  format.volume trazendo um pouco de coerência no código.
+- introduzidas as funções format.author.or.editor,
+  format.author.or.organization, format.author.or.editor.or.organization
+  todas as entradas utilizam agora uma destas formas. Assim temos
+  uma uniformização no trato da autoria nessas entradas e simplificamos
+  o código um pouco.
+
+*** abnt-(alf,num).bst 2002/05/28
+
+abnt-alf voltou a gerar o segundo label em \bibitem em letras
+maiúsculas.
+
+*** abnt-(alf,num).bst 2002/05/25
+
+removido o comando \let\C\c e \let\I=I do preâmbulo. A formatação
+correta de "ç" deve ser "{\c c}" e do "í" deve ser {\'\i}.
+
+*** abnt-(alf,num).bst 2002/05/24
+
+corrigido um problema que colocava vírgula ao invés de ponto
+no final do organization em inbook.
+
+Retirado format.bvolume de incollection e inbook.
+
+Acrescentado o uso de organization em entradas tipo journal.
+
+*** abnt-(alf).bst 2002/05/24
+
+o segundo label no bibitem não é mais colocado em maiúsculas.
+
+*** abnt-(alf).bst 2002/05/23
+
+implementado o uso de "et al." para labels em abnt-alf.
+Também acrescentado o campo abnt-no-etal-label e abnt.no.etal.label
+mas ainda sem condições de uso.
+
+*** abnt-(num).bst 2002/05/22
+
+a parte que acerta a posição à equerda em abnt-num foi
+passada para abnt-num.sty
+
+*** abnt-(alf).bst 2002/05/21
+
+acrescentado
+  "\setlength{\labelsep}{0pt}" write$
+antes de
+  "\begin{thebibliography}{}\setlength{\rightskip}{0pt plus 2cm}"  write$ newline$
+
+
+*** abnt-(alf,num).bst 2002/05/19
+
+Resolvido problema na função format.thesis.type
+que resultava neste tipo de erro:
+You can't pop an empty literal stack for entry Giraffa:1999
+while executing---line 1409 of file abnt-alf.bst
+
+Foi reescrita a função format.thesis.type eliminando
+o string thesisname.
+
+*** abnt-(alf,num).bst 2002/05/08
+
+modificados os comandos \C e \I. Retirado tudo relativo a
+longest.label dado que é desnecessário.
+
+
+*** abnt-(alf,num).bst 2001/11/06
+
+Transferência do projeto para www.codigoaberto.org.br.
+
+Acrescentado o campo furtherresp na entrada book.
+
+
+*** abnt-(alf,num)-20011017
+
+Corrigido problema com um volume que aparecia duas vezes em entradas
+tipo inproceedings.
+
+*** abnt-(alf,num)-20010917
+
+Acrescentado campo pagename e illustrated.
+
+Modificada a função book para colocar o volume junto com a série.
+
+Acrescentado o comando \I para resolver problemas de conversão
+para letras maiúsculas, \i para \I.
+
+Alteradas dimensões \labelwidth (=0) e \itemindent (=\labelsep)
+que acerta o alinhamento das margens à esquerda.
+
+*** abnt-(alf,num)-20010831
+
+Acrescentado campo editortype.
+
+*** abnt-(alf,num)-20010813
+
+As entradas tipo techreport são tratadas igual a manual.
+
+Nova opção dinâmica abnt-dont-use-etal.
+
+
+*** abnt-(alf,num)-20010805
+
+Para contornar problemas com o bibtex do MikTeX estamos convertendo de STRINGS
+para INTERGERS: abnt.alf, abnt.full.initials, abnt-repeated-field-omit,
+abnt-show-options, abnt-thesis-year. Foram removidos os STRINGS old.title
+e new.title.
+
+*** abnt-(alf,num)-20010801
+
+Melhora nas opções dinâmicas selecionáveis por entradas do tipo
+abnt-options. Agora é possível selecionar como as alterações dinâmicas
+são mostradas, podendo inclusive aparecer na própria lista de referências.
+As opções são detalhadas na documentação descrita em abnt-bibtex-doc.tex,
+que passa a ser a referência para o uso dos estilos.
+
+Alterada a formatação de organization nos labels de abnt-alf. Agora o problema
+ficou que nesses casos estamos gerando labels enormes. Nós só vamos voltar
+a atacar esse problema quando tiver acesso à 10520.
+
+Acertos na entrada incollection.
+
+Função format.publisher.address renomeada para format.publisher.address.year
+para refletir melhor o que essa função faz.
+
+Simplificações em format.org.or.pub
+
+Acertadas as entradas tipo proceedings e inproceedings.
+
+*** abnt-(alf,num)-20010713
+
+A partir desta versão temos a citação em ordem alfabética também (arquivos
+abnt-alf-AAAAMMDD.bst). A geração dos labels do estilo abnt-alf ainda
+é precário por falta de acesso à `norma' 10520.
+
+Os arquivos abnt-alf e abnt-num são idênticos exceto por dois detalhes no final
+do arquivo: abnt-alf tem SORT e abnt-num essa linha está comentada;
+Na função longest.label.pass colocamos "yes" para abnt-alf e "no" abnt-num
+na variável abnt.alf.
+
+*** abnt-num-20010703
+
+Acrescido comando "\C" no preâmbulo da lista bibliográfica. Isto se fez necessário
+para que as letras maiúsculas convertidas ç para Ç saíssem corretamente.
+No caso em que tinhamos "\c c" convertido para "\C C" o latex reclama
+que o comando "\C" não era definido.
+
+Nova função format.title.as.author coloca a primeira palavra em letras
+maiúsculas quando não há author, editor ou organization.
+
+Acertada a entrada tipo booklet e manual.
+
+Acertada uma questão com inbook, não é necessário especificar author+editor
+igual para obter "IN: ______".
+
+Removida a função bold, todas as suas ocorrências foram trocadas pela
+função emphasize. Na função emphasize foi incluido o string abnt.emphasize
+que pode ser acessado pela opção abnt-emphasize. Veja exemplos
+em abnt-options.bib. O default é "\bf"
+
+Removida a função eng.ord já que não há qualquer problema com a
+questão de numeração.
+
+*** abnt-num-20010627
+
+A função format.names.ed agora é exatamente igual a format.names, garantindo
+assim que os editores em incollection sejam formatados da mesma maneira
+que os autores.
+
+As entradas incollection e inbook foram acertadas.
+
+Acertada a função format.in.ed.booktitle para colocar "(Ed.)" nos
+editores de incollection.
+
+Inclusão dos novos campos subtitle e booksubtitle.
+
+Criada uma entrada ABNT-options que permite o controle do estilo
+no próprio arquivo .bib sem necessidade de alteração do estilo .bst.
+O usuário deve editar um arquivo .bib (veja como exemplo abnt-options.bib)
+e dizer "yes" para as entradas que desejar ativar. No arquivo .tex deve
+fazer um \nocite para essa entrada. As opções só serão ativadas a
+partir do ponto em que se encontra o \nocite.
+O inconveniente fica por conta dos warnings de referências não definidas do latex. 
+
+Acertada a posição do "von" (no nosso caso "de") em nomes, para
+refletir o exemplo 7.7.3.2
+
+
+*** abnt-num-20010619
+
+Retirada a função format.vol.num.pages e criadas duas funções novas
+format.volume e format.number. Na função article a antiga função 
+foi removida e adicionadas as novas funções. Isto permite uma visão
+mais homogênea das formatações de cada entrada.
+
+Nova função thesis que é chamada por phdthesis, mastersthesis e a nova
+monography (monografias).
+
+Novas funções output.nonull.dash output.dash que fazem exatamente
+a mesma coisa que output.nonull e output só que colocam um dash ("---")
+no lugar de vírgula.
+
+A função format.urlaccesdate foi colocada dentro de format.url,
+essa última agora é chamada em todas as entradas.
+
+*** abnt-num-20010608
+
+Modificada a função format.org.or.pub para mostrar "[S.l]" quando não há o campo address,
+"[S.n.] quando não há o campo publisher, e [S.l.: S.n.] quando não há os dois.
+
+Eliminado problema que colocava um espaço antes de ; após algum autor.
+
+Acertado o espaço em format.book.pages de modo a colocar um hard space (~) entre o
+número da página e o símbolo "p."
+
+Várias quebras de linhas foram removidas para melhorar a legibilidade do arquivo.
+
+
+*** abnt-num-20010529
+
+acrescentado o campo url e a função format.url, isto permite formatar documentos
+acessados via internet. Por enquanto ativado apenas para documentos tipo article
+e misc.
+
+format.book.type virou format.type
+
+alteração da copyright notice e licença LPPL
+
+linha 419: para { "" * }
+           OBS: com isso não teremos mais a vírgula entre o nome do último autor e o et al.
+           conforme exemplo 8.1.1.2
+linha 428: para bbl.etal
+
+função bbl.etal: para { " et al."} (inclusão de espaço)
+
+adaptação das macros jan a dec para o anexo A de abreviação de meses em português.
+
+alteração da função article para inlcuir o endereço e número da revista.
+
+*** abnt-num-20010528
+
+criada a função format.book.type permitindo que se crie "tipos" de livro,
+tais como constituições (7.7). O exemplo 7.7.1.2-1 é reproduzido corretamente.
+
+acréscimo de \setlength{\rightskip}{0pt plus 2cm} na função begin.bib. Segundo o 
+ítem 6.3 as referências devem ser alinhadas somente à margem esquerda. Fica feio, 
+mas...fazer o quê?
+
+alteração em format.btitle para que o título não seja bold quando não há autor nem
+editor.
+
+*** abnt-num-20010523
+
+linha 236: para { "Ed." }
+linha 246: para { "n." }
+linha 249: para { "n." }
+           obs: de acordo com o exemplo da página 5 em 6023/2000
+
+Retiradas as linhas 344 a 383. Estas macros deveriam ser definidas no arquivo 
+bib de cada pessoa. 
+
+linha 1061 passou para 1063 de modo que o ISBN seja o último dado de um livro.
+Retirado o new.block antes do format.note.
+
+format.number.series e format.book: alterações extensas para reproduzir o exemplo
+de livro em 7.1.3 
+
+format.editors: alteração para gerar (Ed.) após os editores. 
+Vide exemplo na seção 7.3
+
+
+*** abnt-num-20010514
+
+linha 231: de { "\bbled{}" } para { "editor" }
+linha 234: de { "\bbledby{}" } para { "editado por" }
+linha 240: de { "v.~" } para { "v." }
+           obs: esta alteração não tinha sido efetivada na versão anterior
+linha 243: de { "\bblof{}" } para { "de" }
+           obs: não estou certo se "de" é a melhor tradução, depende do contexto.
+linha 246: de { "\bblno{}" } para { "N\'umero" }
+linha 249: de { "\bblnr{}" } para { "Nr." }
+linha 261: de { "\bblchap{}" } para { "cap." }
+linha 264: de { "\bbltechrep{}" } para { "Rel. Tec." }
+linha 267: de { "\bblmthesis{}" } para { "Dissertação de mestrado" }
+linha 270: de { "\bblphdthesis{}" } para { "Tese de doutorado" }
+linha 288: de { "\bblst{}" } para { "." }
+linha 291: de { "\bblnd{}" } para { "." } 
+linha 291: de { "\bblnd{}" } para { "." } 
+linha 294: de { "\bblrd{}" } para { "." } 
+linha 298: de { "\bblth{}" } para { "." }
+
+
+*** abnt-num-20010507
+
+linha 240 de: { "~v." }
+        para: { "v." } 
+        correção do bug que provocava um duplo espaço no volume 
+
+
+linha 1518: %SORT
+            adiçãod e comentário, desta forma as referências são na ordem do texto
+
+*** abnt-num-20000504 (devia ter sido 20010504)
+
+linhas 272-278: Alteradas funções bbl.first etc para "1." etc. 
+
+linhas 439-441: acertado para colocar et al. para artigos com + de 3 autores.
+
+*** abnt-num-20000503 (devia ter sido 20010503)
+
+Primeira versão, obtida a partir de makebst e com modificações à mão.
+
+linha 434: de format.name$  para format.name$ "u" change.case$, isto formata
+           os nomes em letra maiúscula.
+
+linha 1545: comentado a linha "\input{babelbst.tex}" write$ newline$

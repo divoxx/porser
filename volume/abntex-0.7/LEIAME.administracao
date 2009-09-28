@@ -1,0 +1,95 @@
+$Header: /home/cvsroot/abntex/LEIAME.administracao,v 1.3 2002/12/07 21:33:42 gweber Exp $
+
+Descrição das tarefas de administração do abnTeX
+
+
+** I  *********  Adicionar membros ao projeto **************
+0) o novo membro precisa ter conta no codigolivre.org
+1) na página Administração do projeto
+  https://codigolivre.org.br/project/admin/?group_id=46
+  adicionar o nome unix do novo membro
+2) É necessário editar as perissões e papeis em
+  https://codigolivre.org.br/project/admin/userperms.php?group_id=46
+
+** II ******** Liberação de Versão nova ********************
+
+Versão: o número sequencial que distingue uma edição da outra
+do abnTeX, exemplo: 0.7
+
+Release: o número que distingue uma versão da outra, normalmente
+é simplesmente 1. Só é usado quando uma edição precisa ser corrigida
+por causa de um bug.
+
+Tag: uma etiqueta do diretório cvs que identifica o conjunto de
+arquivos numa determinada hora e dia. Também chamado de freeze.
+Exemplo: pacote7
+
+1) editar os arquivos abntex_version e abntex_release para
+   que contenham os números corretos de versão e release
+
+2) selecionar um tag novo e atribuir ao atual estado do diretório cvs:
+   Exemplo: cvs tag pacote7
+2a) atribuir um tag a uma versão expecífica de um documento. Isto às vezes
+   é usado quando o arquivo que se encontra no cvs é diferente daquele
+   que precisa ser distribuído.
+   Exemplo:  cvs tag -F -r 1.7 pacote6-2 abntex_version
+2b) baixar o diretório cvs com um tag expecífico. Isso às vezes é usado
+   para regerar pacotes de uma versão específica
+   Exemplo: cvs update -dP -r pacote5
+   OBS: fazendo isso o tag pacote5 "gruda" no seu diretório, para reverter:
+   cvs update -AdP
+2c) desfazer um tag (caso você tenha colocado um sem querer)
+   exemplo:  cvs tag -F -d pacote6-1
+
+3) gerar a documentação:
+   make doc
+
+4) gerar o tar.gz para linux:
+   make linux-tgz
+   o arquivo abntex-0.7-1.tgz estará no diretório acima
+
+5) gerar o zip para windows:
+   make windows-zip
+   o arquivo abntex-0.7-1.zip estará no diretório acima
+
+6) gerar o rpm para Conectiva-Linux e similares
+6a) logar como root
+6b) make conectiva-linux
+   o arquivo abntex-0.7-1.noarch.rpm estará em /usr/src/rpm/RPMS/noarch
+   o arquivo abntex-0.7-1.src.rpm estará em /usr/src/rpm/SRPMS
+
+7) transferir esses arquivos via ftp anônimo (user=anonymous)
+   ftp upload.codigolivre.org.br
+   user=anonymous
+   password=email
+   cd incoming
+   put abntex-0.7-1.tgz
+   etc.
+
+8) usar um browser e dar login em www.codigolivre.org.br
+8a) ir até o projeto,
+    clicar em "administração do projeto"
+    -> Release de Arquivos/Editar adicionar release
+    Versões novas: Releases -> Adicionar Release
+    Correções: Editar Release
+    vai aparecer uma lista de arquivos que foram transferidos via ftp
+    e estão no incoming. Selecione os seus arquivos. A página é regerada.
+    Agora seus arquivos aparecem numa lista com opções tipo pull-down.
+    Faça os comentários pertinentes. No caso do abnTeX o Processador é "Any".
+    o arquivo .tgz é tipo .gz, o restante é igual a sua extensão. Mas
+    a seleção precisa ser feita senão ele não disponibiliza.
+
+** III ****** Liberação Release de correção de bug ********
+Pode ocorrer a necessidade de corrigir um bug menor numa versão estável.
+Por outro lado a versão mais recente no cvs está bem mais adiantada do
+que a versão estável. Neste caso deve ser criado um "branch" (ramo)
+da versão estável. Suponha que a versão estável tenha o tag pacote6-2:
+0) primeiro crie um novo diretório cvs:
+   a) dê login onde "user" é seu nome de usuário no codigolivre
+   cvs -d:pserver:user@abntex.codigolivre.org.br:/home/cvsroot login
+   b) crie o novo diretório (neste caso abntex-bug)
+   cvs -d:pserver:user@abntex.codigolivre.org.br:/home/cvsroot -q checkout -d abntex-bug -r pacote6-2 abntex
+   c) crie o branch, digamos pacote6-3:
+   cvs -q tag -b pacote6-3
+1) faça as correções e o commit:
+   cvs commit -r pacote6-3 

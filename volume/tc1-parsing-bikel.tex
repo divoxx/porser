@@ -1,0 +1,269 @@
+Dan Bikel desenvolveu uma ferramenta de \emph{parsing} estatístico extensível que permite diferentes tipos de configuração de modelos estatísticos e gerativos, incluindo emulação dos modelos de \emph{parsing} de Michael Collins com performance semelhante. Pode ser facilmente estendida para novos domínios e novas linguagens. Baseada no modelo 2 de Collins, permite uma grande gama de parametrizações.
+
+A ferramenta de Dan Bikel faz uso de parâmetros que definem particularidades do seu funcionamento, sendo alterados dependendo de sua aplicação. Os parâmetros não só permitem alterar alguns comportamentos como também ``\emph{plugar}'' classes customizadas para serem usadas no lugar das classes padrões, para fazer tratamento especifico do processamento de linguagem definidos algoritmicamente.
+
+As regras de identificação dos núcleos dos sintagmas também são configuráveis e utiliza-se para isto um arquivo de parâmetros de \emph{head-rules}, necessário para a implementação dos modelos baseados na noção \emph{head-centering}, em que o núcleo é o elemento principal e direcionador de todo o processo de geração de uma árvore sintática como falado anteriormente.
+
+Os parâmetros estão separados em dois arquivos, arquivo de parâmetros e arquivo de regras de \emph{head-rules}, e são utilizados no momento de treinamento do \emph{parser} e no momento de analisar as frases. Os principais parâmetros são:
+
+\section{Parâmetros de utilização do \emph{parser} de Dan Bikel}
+\label{sec:bikelest_param}
+
+\scriptsize
+
+\textbf{O Conjunto de parâmetros abaixo permite com que o \emph{parser} de Bikel Emule o Modelo 2 definito por Michael Collins.}\\
+
+\textbf{parser.language=english}\\
+Especifica o idioma que será analisado.
+
+\textbf{parser.language.package=danbikel.parser.english}\\
+Especifica o pacote referente ao idioma analisado
+
+\textbf{parser.language.wordFeatures=danbikel.parser.english.SimpleWordFeatures}\\
+Especifica o nome da classe que estende WordFeatures no pacote da língua.
+
+\textbf{parser.downcaseWords=false}\\
+Especifica se as palavras devem ser convertidas para minúsculas durante o treino e decodificação.
+
+\textbf{parser.subcatFactoryClass=danbikel.parser.SubcatBagFactory}\\
+Especifica qual subclasse de SubcatFactory deve ser utilizada como instanciador.
+
+\textbf{parser.shifterClass=danbikel.parser.BaseNPAwareShifter}\\
+Especifica qual classe deve ser utilizada como \emph{Shifter}.
+
+\textbf{parser.language.training=portuguese.NPArgThreadTraining}\\
+Especifica qual classe que implementa a interface Training deve ser utilizada para efetuar o treinamento.
+
+\HRule \\
+
+\textbf{Parâmetros para classe danbikel.parser.Model}\\
+
+\textbf{parser.model.precomputeProbabilities=true}\\
+A propriedade especifica se deve ou não pré-calcular probabilidades no treino e utilização desses probabilidades pré-computada na decodificação.
+
+\textbf{parser.model.collinsDeficientEstimation=true}\\
+A propriedade especifica se deve ou não fazer estimativa deficiente de probabilidades, como o bug descrito na tese de Michael Collins.
+
+\textbf{parser.model.prevModMapperClass=danbikel.parser.Collins}\\
+Especifica qual classe que implementa a interface NonterminalMapper deve ser utilizada pelo NTMapper para mapear não-terminais que são modificadores previamente gerados de algum não-terminal \emph{head}.
+
+\textbf{parser.model.doPruning=true}\\
+A propriedade especifica se os parâmetros redundantes de cada instancia da classe Model devem ser removidos.
+
+\textbf{parser.model.pruningThreshold=0.05}\\
+A propriedade especifica um fator de quando o \emph{pruning} deve ser realizado.
+
+\HRule \\
+
+\textbf{Parâmetros para Modelos de Bikel, mas é ignorado quando o parâmetro danbikel.model.precomputeProbabilities é ajustado como true}\\
+
+\textbf{parser.modelCollection.writeCanonicalEvents=true}\\
+A propriedade indica ou não se a classe ModelCollection deverá salvar o (grande) \emph{HashMap} contendo as versões canônicas das instancias de \emph{Event} quando é serializado em disco. Ao decodificar usando caches ao invés de probabilidades pré-computadas (ver precomputeProbs), a criação da tabela de eventos canônicos economiza tempo, deixando o decodificador salvar no cache os eventos observados durante o treino ao invés de sempre ter que criar os eventos canônicos, dinamicamente, durante a decodificação.
+
+\HRule \\
+
+\textbf{Parâmetros necessários para o treinamento do parser}\\
+
+\textbf{parser.training.addGapInfo=false}\\
+Propriedade para especificar se Training.addGapInformation(Sexp) adiciona a informação de \emph{gap} ou deixa a formação da árvores intocadas.
+
+\textbf{parser.training.collinsRelabelHeadChildrenAsArgs=true}\\
+A propriedade especifica se o Training.identifyArguments(Sexp) deve re-rotular as os nodo filhos que são \emph{head} como argumentos. Essa rerotulação é desnecessária, uma vez que os \emph{heads} já são inerentemente distintos dos outros filhos, mas é realizada (e possivelmente um bug) no \emph{parser} de Collins e, por isso, está disponível como uma configuração aqui, a fim de simular o mesmo modelo.
+
+\textbf{parser.training.collinsRepairBaseNPs=true}\\
+A propriedade especifica se Training.repairBaseNPs(Sexp) altera a estrutura da árvore ou a deixa intacta.
+
+\HRule \\
+
+\textbf{Parâmetros para classe danbikel.parser.Trainer}\\
+
+\textbf{parser.trainer.unknownWordThreshold=6}\\
+A propriedade especifica o limite de ocorrência em que abaixo as palavras são consideradas desconhecidos pelo treinador.
+
+\textbf{parser.trainer.countThreshold=1}\\
+A propriedade especifica o limite em que abaixo as instancias de TrainerEvent são descartadas pelo treinador.
+
+\textbf{parser.trainer.reportingInterval=1000}\\
+A propriedade especifica o intervalo (em número de períodos) em que o treinador emite relatórios para System.err enquanto treina.
+
+\textbf{parser.trainer.numPrevMods=1}\\
+A propriedade especifica quantos modificadores anteriores a instancia de \emph{Trainer} deve gerar saída.
+
+\textbf{parser.trainer.numPrevWords=1}\\
+A propriedade especifica quantos núcleos (\emph{heads}) dos modificadores anteriores a instancia de \emph{Trainer} deve gerar saída.
+
+\textbf{parser.trainer.keepAllWords=true}\\
+A propriedade especifica se a instancia de \emph{Trainer} deve manter registro de todas as palavras. Normalmente, as palavras abaixo de um limite de ocorrência são mapeados como desconhecidas.
+
+\textbf{parser.trainer.keepLowFreqTags=true}\\
+A propriedade especifica se a instancia de \emph{Trainer} inclui palavras de baixa freqüência no seu mapa de POS.
+
+\textbf{parser.trainer.collinsSkipWSJSentences=true}\\
+A propriedade especifica se algumas frases são ignoradas durante o treino, a fim de emular o \emph{parser} de Michael Collins. Essa opção só deve ser utilizada com o \emph{Penn Treebank Wall Street Journal}.
+
+\HRule \\
+
+\textbf{Parâmetros para a classe danbikel.parser.Decoder}\\
+
+\textbf{parser.decoder.useLowFreqTags=true}\\
+A propriedade especifica se deve utilizar \emph{tags} coletadas de palavras de baixa frequência pelo treinador.
+
+\textbf{parser.decoder.useCellLimit=false}\\
+A propriedade especifica se o decodificador deve impor um limite no número de itens por célula na tabela.
+
+\textbf{parser.decoder.cellLimit=10}\\
+A propriedade especifica o limite para o número de itens que o decodificador terá por célula. Este tipo de poda só irá ocorrer se decoderUseCellLimit está ativado.
+
+\textbf{parser.decoder.usePruneFactor=true}\\
+A propriedade indica se o algoritmo deve podar ou não as arvores geradas dentro de um determinado fator.
+
+\textbf{parser.decoder.pruneFactor=4}\\
+A propriedade para especificar o fator pelo qual o decodificador deverá podar as arvores geradas. 
+
+\textbf{parser.decoder.useCommaConstraint=true}\\
+A propriedade  especifica se o decodificador deve empregar restrições sobre como vírgulas podem aparecer segundo uma regra de CFG.
+$Z --> <.. X Y..>$
+
+\textbf{parser.decoder.useHeadToParentMap=true}\\
+A propriedade para especificar se o decodificador deve usar o mapeamento de nodos \emph{heads} para seus pais, derivados durante o treino.
+
+\textbf{parser.decoder.useSimpleModNonterminalMap=true}\\
+Este é mecanismo pelo qual o decodificador tenta calcular a probabilidade de um não-terminal ser modificador no contexto de um nodo pai e um núcleo.
+
+Exemplo:\\
+Se existe um NP a esquerda de um VP, cujo nodo pai é um S durante o treinamento, então o modificador não-terminal iria conter o mapeamento S, VP, left --> NP.
+
+\textbf{Parâmetros de configuração do pacote, substitua <língua> pelo nome do pacote}\\
+\textbf{parser.wordfeatures.<língua>.useUnderscores=true}\\
+Propriedade que define se o símbolo ``\_'' será incluído ou não no vetor de caracteres.
+
+\textbf{parser.headtable.<língua>=data/head-rules.lisp}\\
+Define onde estão as regras de determinação dos núcleos.
+
+\HRule \\
+
+%\scriptsize
+%\setlongtables
+%\begin{longtable}{|p{3.5cm}|p{7.5cm}|p{5cm}|}
+%\caption{Parâmetros do parser de Dan Bikel} \\
+%\hline
+%Parâmetro & Descrição & Valores válidos \\
+%\hline
+%\endhead
+%\hline
+%\endfoot
+%parser.language & Especifica o idioma que será usado com a configuração & Nome do idioma, exemplo: ``portuguese'' \\
+%\hline
+%parser.language.package & O nome do pacote Java que será usado contendo as classes especificas para a lingua definida & Nome do pacote java, exemplo: ``parser.portuguese'' \\
+%\label{tab:parâmetros}
+%\end{longtable}
+
+
+
+
+\section{Formato do arquivo de parâmetros}
+\label{sec:bikel_formato_aqrquivo}
+
+
+\scriptsize
+\begin{verbatim}
+
+#     WordNet Parser
+#    Settings to emulate Mike Collins' 1997 Model 2
+#
+parser.language=english
+parser.language.package=danbikel.parser.english
+parser.language.wordFeatures=danbikel.parser.english.SimpleWordFeatures
+parser.downcaseWords=false
+parser.subcatFactoryClass=danbikel.parser.SubcatBagFactory
+parser.shifterClass=danbikel.parser.BaseNPAwareShifter
+#
+# settings for danbikel.parser.Model
+parser.model.precomputeProbabilities=true
+parser.model.collinsDeficientEstimation=true
+parser.model.prevModMapperClass=danbikel.parser.Collins
+#
+# settings for danbikel.parser.ModelCollection
+#    the following property is ignored when
+#    danbikel.model.precomputeProbabilities is true
+parser.modelCollection.writeCanonicalEvents=true
+#
+# settings for danbikel.parser.Training
+parser.training.addGapInfo=false
+parser.training.collinsRelabelHeadChildrenAsArgs=true
+parser.training.collinsRepairBaseNPs=true
+#
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=6
+parser.trainer.countThreshold=1
+parser.trainer.reportingInterval=1000
+parser.trainer.numPrevMods=1
+parser.trainer.numPrevWords=1
+parser.trainer.keepAllWords=true
+parser.trainer.keepLowFreqTags=true
+parser.trainer.globalModelStructureNumber=1
+parser.trainer.collinsSkipWSJSentences=true
+parser.trainer.modNonterminalModelStructureNumber=2
+parser.trainer.modWordModelStructureNumber=2
+#
+# settings for danbikel.parser.CKYChart
+parser.chart.itemClass=danbikel.parser.CKYItem$MappedPrevModBaseNPAware
+parser.chart.collinsNPPruneHack=true
+#
+# settings for danbikel.parser.Decoder
+parser.decoder.useLowFreqTags=true
+parser.decoder.useCellLimit=false
+parser.decoder.cellLimit=10
+parser.decoder.usePruneFactor=true
+parser.decoder.pruneFactor=4
+parser.decoder.useCommaConstraint=true
+parser.decoder.useHeadToParentMap=true
+parser.decoder.useSimpleModNonterminalMap=true
+#
+#
+# settings specific to language package danbikel.parser.english
+#
+parser.wordfeatures.english.useUnderscores=true
+parser.headtable.english=data/head-rules.lisp
+parser.training.metadata.english=data/training-metadata.lisp
+\end{verbatim}
+
+\normalsize
+
+\section{Formato do arquivo de \emph{head-find rules}}
+\label{sec:bikel_formato_aqrquivo_head_find}
+
+
+O arquivo de \emph{head-rules} contem as regras que determinam a construção das árvores sintáticas necessárias, definindo as sentenças e seu núcleo sintático.
+
+Abaixo segue um exemplo de definição das \emph{head-rules} utilizadas em testes de utilização do \emph{parser}.
+
+\textbf{Regras de \emph{head-find} para anotação do Bosque}
+
+\scriptsize
+
+\begin{verbatim}
+
+(
+(NP (l N PROP PRONPERS PRONINDP NADJ NP))
+(VP (l VFIN VINF VPCP VGER) (l VP))
+(ADJP (l ADJ ADJP) (l PRONDET))
+(ADVP (r ADV ADVP))
+(CU (r CONJC CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+\end{verbatim}
+
+\normalsize
+
+As regras definidas acima são essenciais para que no momento de treino o \emph{parser} defina exatamente a qual classe pertence as palavras classificando-as de maneira correta sintaticamente.
+
+Por exemplo, a regra (VP (l VFIN VINF VPCP VGER) (l VP)) define que o núcleo deve ser o primeiro nodo filho, da esquerda para direita, que seja um VFIN, VINF, VPCP ou VGER. Caso não exista, então o núcleo será o mesmo do primeiro elemento, da esquerda para a direita, que seja um VP.
+
+Serão experimentadas algumas alterações nos valores de alguns parâmetros acima citados para avaliação dos seus efeitos, e analisaremos os resultados obtidos no capitulo posterior.
+

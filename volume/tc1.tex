@@ -1,0 +1,116 @@
+\documentclass[a4paper]{abnt}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage[portuges,brazil]{babel}
+\usepackage{boxedminipage}
+\usepackage{listings}
+\usepackage{ifpdf}
+\usepackage{longtable}
+\usepackage{url}
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\begin{document}
+
+\input{tc1-capa}
+
+\pagestyle{plain}
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{tc1-abreviaturas}
+
+	%\lista de aberviacoes/simbolos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\begin{resumo}
+
+
+
+
+%	\end{resumo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\begin{abstract}
+
+
+
+%	\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introdução}
+\label{cha:introducao}
+    \input{tc1-introducao}
+
+\chapter{Motivação}
+\label{cha:motivacao}
+	\input{tc1-motivacao}
+
+\chapter{Objetivos}
+\label{cha:objetivos}
+	\input{tc1-objetivos}
+
+\chapter{Metodologia}
+\label{cha:metodologia}
+	\input{tc1-metodologia}
+
+\chapter{Referencial Teórico}
+\label{cha:referencial_teorico}
+	\input{tc1-referencial-teorico}
+
+\chapter{Projeto Semantic Share}
+\label{cha:proj_semantic}
+	\input{tc1-semantic}
+
+\chapter{Modelos Probabilísticos de Michael Collins}
+\label{cha:michael_collins}
+	\input{tc1-collins}
+
+
+\chapter{Método de Avaliação}
+\label{cha:avaliacao}
+	\input{tc1-avaliacao}
+
+
+\chapter{Dan Bikel \emph{Statistical Parsing Engine}}
+\label{cha:dan_bikel1}
+	\input{tc1-parsing-bikel}
+
+
+\chapter{Resultados Parciais}
+\label{cha:resultados_parciais}
+	\input{tc1-result-parciais}
+
+
+\chapter{Considerações Finais}
+\label{cha:consuderacoes_finais}
+	\input{tc1-consideracoes-finais}
+
+
+\bibliographystyle{abnt}
+%	\bibliography{tc1}
+
+%\bibliographystyle{apalike}
+
+\renewcommand{\bibname}{Referência Bibliografia}
+\bibliography{references}
+
+\end{document} 

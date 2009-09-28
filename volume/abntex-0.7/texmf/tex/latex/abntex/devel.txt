@@ -1,0 +1,258 @@
+
+Classe ABNT - funcionamento das partes principais
+=================================================
+
+Escrito por Miguel Frasson (frasson@math.leidenuniv.nl)
+
+Obs.: o resumo das normas pertinentes ao desenvolvimento da classe está
+junto com o manual da classe.
+
+
+Índice
+------
+  
+  1. Alteração dos ambientes figure e table
+  2. Esquemas de paginação
+
+  (aguarde mais)
+
+
+
+1. Alteração dos ambientes figure e table
+-----------------------------------------
+
+De acordo com a norma, as figuras e tabelas tem numeracao separada do resto
+das coisas. Em geral, pode-se alterar tudo no LaTeX por (re)definições. No
+entanto, contadores são um caso a parte. No report.cls, que é lido pela
+classe, lê-se 
+
+\newcounter{figure}[chapter]
+\newcounter{table}[chapter]
+
+Isso significa que o contador das figuras e tabelas será resetado para 1
+quando o contador do chapter for incrementado com \stepcounter ou
+\refstepcounter. Esses comandos são chamados pelo comando \chapter e
+\chapter* (não exatamente, como veremos a seguir)
+
+Uma vez adicionado um contador à lista de "reset" de outro, nada mais pode
+ser feito.
+
+A minha primeira tentativa de fazer os ambientes figure e table funcionarem
+foi copiando e adaptando uma parte do codigo do eport, alterando os
+contadores para ABNTfigure e ABNTtable. Segue o codigo antigo:
+
+--------------------------- inicio do codigo -----------------------------
+%%%%%% Figures and Tables not as subcounters of chapter
+
+\newcounter{ABNTfigure}
+\renewcommand\theABNTfigure{\arabic{ABNTfigure}}
+\def\fps@ABNTfigure{tbp}
+\def\ftype@ABNTfigure{1}
+\def\ext@ABNTfigure{lof}
+\def\fnum@ABNTfigure{\figurename~\theABNTfigure}
+\renewenvironment{figure}
+               {\@float{ABNTfigure}}
+               {\end@float}
+\renewenvironment{figure*}
+               {\@dblfloat{ABNTfigure}}
+               {\end@dblfloat}
+\newenvironment{figura}
+               {\@float{ABNTfigure}}
+               {\end@float}
+\newenvironment{figura*}
+               {\@dblfloat{ABNTfigure}}
+               {\end@dblfloat}
+\newcounter{ABNTtable}
+\renewcommand\thetable{\arabic{ABNTtable}}
+\def\fps@ABNTtable{tbp}
+\def\ftype@ABNTtable{2}
+\def\ext@ABNTtable{lot}
+\def\fnum@ABNTtable{\tablename~\theABNTtable}
+\renewenvironment{table}
+               {\@float{ABNTtable}}
+               {\end@float}
+\renewenvironment{table*}
+               {\@dblfloat{ABNTtable}}
+               {\end@dblfloat}
+\newenvironment{tabela}
+               {\@float{ABNTtable}}
+               {\end@float}
+\newenvironment{tabela*}
+               {\@dblfloat{ABNTtable}}
+               {\end@dblfloat}
+
+\newcommand*\l@ABNTfigure{\@dottedtocline{1}{1.5em}{2.3em}}
+\let\l@ABNTtable\l@ABNTfigure\relax
+--------------------------- fim do codigo -----------------------------
+
+No entanto, fica algo de estranho no ar. Suponha que um usuário queira
+mexer (onde não deveria :-) nos contadores. É claro que iria tentar
+redefinir o \thefigure e alteraria o contador figure. 
+
+Dilema: como redeclarar o contador figure para que ele nao fosse incluido
+na lista de reset do chapter?
+
+Solução: Ja que nao da para alterar o report, vamos alterar o \newcounter
+ANTES de ler o report, para que o comportamento seja controlado pela classe
+ABNT, e depois desfazemos a definicao do \newcounter. É assim: 
+
+- salvamos o comando \newcounter original em um comando.
+
+  \let\ABNToldnewcounter\newcounter\relax
+
+  Obs.: o comando \let\(comando_novo)\(comando_velho) define
+  \(comando_novo) com a mesma definicao do \(comando_velho).
+
+- a ideia agora é redefinir o \newcounter para definir diferente os
+  contadores figure e table, e comportar-se normalmente com outros
+  contadores.
+
+\renewcommand{\newcounter}[1]%
+  {\ifthenelse{\equal{#1}{figure}\or\equal{#1}{table}}%
+     {\ABNToldnewcounter{#1}\@ifnextchar[{\eatbrackets}{}}%
+     {\ABNToldnewcounter{#1}}%
+  }%
+
+  Isso não significa que esse comando não tem outros parâmetros. Isso se
+  aprende vendo como o LaTeX faz as coisas (de uma olhada em como as coisas
+  são feitas no arquivo /texmf/tex/latex/base/latex.ltx e no report.cls)
+
+  Vamos ver o que o novo \newcounter faz:
+
+  Primeiro: ele tem um parametro. Isso significa, na verdade, que esse
+  comando "come" um parametro de qualquer maneira. Esse parametro é o nome
+  do novo contador.
+  
+  * Se o novo contador é igual a figure ou table, entao (veja o codigo acima)
+
+      \ABNToldnewcounter{#1}\@ifnextchar[{\eatbrackets}{}%
+
+      define o novo contador (que so pode ser figure ou table) sem
+      adicionar o [chapter] (o novo contador nao eh mais resetado com o
+      chapter). Sobrou no codigo do report um "[chapter]", não é verdade?
+      Use o comado \eatbrackets para comer isso e não fazer nada com a
+      informacao. Olha a definicao do \eatbrackets:
+
+      \def\eatbrackets[#1]{\relax}
+
+      É interessante aprender a definir comandos com o \def puro do TeX. É
+      muitíssimo mais geral que o \newcommand, mas quando dá para fazer com
+      o \newcommand, é preferível.
+
+      O \@ifnextchar[{ ...  }{} é so para ter certeza absoluta que a seguir
+      vem os colchetes. Isso garante que o codigo da classe ateh poderia
+      ser portado para outra classe...
+
+      Obs.: \@ifnextchar(caracter){comandos do "se"}{comandos do "senao"}
+      é um comado interno do LaTeX muito útil.
+
+   * Senão (se o novo contador não é figure ou table)
+
+      \ABNToldnewcounter{#1}%
+
+     Lembremos que o parametro com o nome do novo contador já foi
+     comido. Temos entao que "devolve-lo". Se na sequencia tem colchetes ou
+     não, o \ABNToldnewcounter (velho \newcounter) vai testar. 
+
+- Depois de lido o report (com o \LoadClass{report}), desfaz-se o a
+  redefinição do \newcommand
+
+  \let\newcounter\ABNToldnewcounter\relax
+
+  E se redefine os \the(figure e table), alterados pelo report.
+
+  \renewcommand{\thefigure}{\arabic{figure}}
+  \renewcommand{\thetable}{\arabic{table}}
+
+
+2. Esquemas de paginação
+------------------------
+
+A norma diz que as paginas sao contadas desde a folha de rosto, mas só são
+numeradas a partir da *parte textual*. Muita gente pede aquele esquema de
+numeração em romanos minusculos antes da parte textual, e na parte textual
+a numeraçao recomeça e agora é em arabicos.
+
+Por sua ez, o Sumário deve conter as principais divisões do texto. Mas há
+paginas que não sao numeradas! Decidi (alguem pode contestar) que só é
+relevante ao trabalho aquilo que está *depois* do Sumario. O ue está antes
+é so identificação ou apresentação do trabalho.
+
+Entao temos dois momentos críticos: 
+  - depois do sumario (comeco da inclusao de topicos no sumario)
+  - inicio da parte textual (mudanca do comportamento da paginacao)
+
+Em minhas divagações, conclui que tudo é feito na base de "capitulos". Isso
+inclui apendices, anexos, sumario, resumos, referencias... talvez umas
+poucas excessoes a essa regra aparecam ANTES do sumario: dedicatoria, folha
+de aprovacao.. não me vem à mente outra excessão à regra acima, num texto
+"normal".
+
+Entao pensei: o \chapter e seus "sub-comandos" \@chapter e \@schapter
+("s" de "star") poderiam checar esses dois eventos e determinarem o
+comportamento de tudo. Isso é o que foi implementado.
+
+Foram criados dois "booleans": ABNTinpretext e ABNTaftertoc.
+
+ABNTinpretext só é "true" na parte pre-textual. A parte pre-textual é por
+definicao:
+
+  "Desde o comeco do docmento até o primeiro capitulo depois do
+   sumario que não é capitulo pre-textual". 
+
+O sumario esta sempre na parte pre-textual. Depois dele, de acordo com a
+norma, so a lista de figura, lista de tabelas e lista de símbolos. Entao
+esses "capitulos" nao podem executar os comandos do comeco da parte
+textual.
+
+Veja parte do codigo do novo \chapter (isso vale para \chapter e \chapter*;
+voce ja conhece o comando \secdef?):
+
+   \ifthenelse{\boolean{ABNTinpretext}}%
+     {%
+      \ifthenelse{\boolean{ABNTaftertoc}}%
+        {% change to textual part
+         \setboolean{ABNTinpretext}{false}%
+         \ABNTBeginOfTextualPart%
+        }%
+        {}%
+     }% 
+     {}%
+
+Entao o comando \chapter(*) procura a fronteira da parte textual. Se esta
+na parte pre-textual e depois do toc, entao esta na parte textual!!
+Achando a fronteira, altera o ABNTinpretext para "false" (para nao procurar
+mais a fronteira) e executa o \ABNTBeginOfTextualPart, definido para fazer
+as alteracoes de paginacao de acordo com o esquema de paginacao dado.
+
+Mas e as listas de figuras, tabelas e simbolos? -- voce deve estar se
+perguntando... 
+
+para isso fiz um comando IGUAL o \chapter, que não busca a fronteira. (Veja
+a definicao do comando \pretextualchapter no codigo da classe.) Entao eles
+não alteram o ABNTinpretext.
+
+E sobre a inclusao dos capitulo só depois do sumário? Veja o codigo do
+\@chapter e \@schapter para ver que os  capitulos so sao incluidos de
+ABNTaftertoc é verdade, e o \@schapter so inclui se ABNTaftertoc e
+ABNTincludeintoc (boolean regulao pela opcao "sumariocompleto").
+
+Agora os tres esquemas de paginacao: 
+
+pnumplain: não seta nada. para ter o comportamento anterior do LaTeX, o
+           ABNTinpretext é falso e o ABNTaftertoc é true. Assim nao ha
+           restricoes para inclusao no sumario, e a "fronteira da parte
+           textual" nao é procurada nunca. Se supoe tudo na parte textual.
+
+pnumabnt:  Seta-se o pagestyle da parte pretextual para empty.
+           Seta o \ABNTAtBeginOfTextualPart de acordo com tipo de cabecalho
+	   selecionado pelo usuario. 
+
+pnumromarab: Seta o pagestyle de acordo com o cabecalho de pagina escolhido
+           pelo usuario, mas comeca definindo o \thepage para numeros
+	   romanos minusculos e no \ABNTAtBeginOfTextualPart o \thepage é
+	   mudado para arabicos e o contador page é resetado.
+
+Obs.: Note que o pagestyle tem que ser setado para o texto comum e para as
+paginas que cotem titulos de capitulos (na classe ABNT, dado pelo
+\chaptertitlepagestyle). 

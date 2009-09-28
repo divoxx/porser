@@ -1,0 +1,234 @@
+%% $Id: tabela-simbolos.sty,v 1.5 2003/03/19 21:04:44 gweber Exp $
+%% name of this file tabela-simbolos.sty
+%% Copyright 2003 by the abnTeX group at http://abntex.codigolivre.org.br
+%%
+%% Mantainer: Gerald Weber <gweber@codigolivre.org.br>
+%%
+%% This file is distributed under the LaTeX-Project Public License (LPPL)
+%%            http://www.latex-project.org/lppl.html
+%% You are free to modify this file under the LPPL.
+%%
+%% $Log: tabela-simbolos.sty,v $
+%% Revision 1.5  2003/03/19 21:04:44  gweber
+%% Corrigida uma incompatibilidade com hyperref e consequentemente
+%% com pdflatex. O estilo agora passa a opção hyperindex=false para
+%% o hypereref.
+%%
+%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tabela-simbolos}[2003/02/27]
+
+\RequirePackage{index,ifthen}
+
+\PassOptionsToPackage{hyperindex=false}{hyperref}
+
+\newboolean{tsspages}
+\DeclareOption{paginas=sim}{\setboolean{tsspages}{true}}
+\DeclareOption{paginas=nao}{\setboolean{tsspages}{false}}
+
+\newboolean{AlphaSort}
+\DeclareOption{ordem=alf}{\setboolean{AlphaSort}{true}}
+\DeclareOption{ordem=oc}{\setboolean{AlphaSort}{false}}
+
+\newboolean{SeparateSortScheme}
+\DeclareOption{esquema=separado}{\setboolean{SeparateSortScheme}{true}}
+\DeclareOption{esquema=misto}{\setboolean{SeparateSortScheme}{false}}
+
+\newboolean{CaseSortScheme}
+\newboolean{UpperCaseLast}
+\DeclareOption{caixa=mM}{\setboolean{CaseSortScheme}{true}\setboolean{UpperCaseLast}{true}}
+\DeclareOption{caixa=Mm}{\setboolean{CaseSortScheme}{true}\setboolean{UpperCaseLast}{false}}
+\DeclareOption{caixa=mista}{\setboolean{CaseSortScheme}{false}\setboolean{UpperCaseLast}{false}}
+
+\newboolean{SeparateListDisplay}
+\DeclareOption{lista=separada}{\setboolean{SeparateListDisplay}{true}}
+\DeclareOption{lista=unica}{\setboolean{SeparateListDisplay}{false}}
+
+\DeclareOption{romanos=1}{\def\RomanOrder{1}}
+\DeclareOption{romanos=2}{\def\RomanOrder{2}}
+\DeclareOption{romanos=3}{\def\RomanOrder{3}}
+
+\DeclareOption{gregos=1}{\def\GreekOrder{1}}
+\DeclareOption{gregos=2}{\def\GreekOrder{2}}
+\DeclareOption{gregos=3}{\def\GreekOrder{3}}
+
+\DeclareOption{simbolos=1}{\def\SymbolOrder{1}}
+\DeclareOption{simbolos=2}{\def\SymbolOrder{2}}
+\DeclareOption{simbolos=3}{\def\SymbolOrder{3}}
+
+\ExecuteOptions{romanos=1,gregos=2,simbolos=3}
+
+\DeclareOption{estilo=UFPR}{%
+\ExecuteOptions{paginas=nao,ordem=alf,esquema=separado,caixa=mM,lista=unica}%
+\ExecuteOptions{romanos=1,gregos=2,simbolos=3}}
+
+\DeclareOption{estilo=14724:2001}{%
+\ExecuteOptions{paginas=sim,ordem=oc,esquema=misto,caixa=mista,lista=unica}}
+
+\ExecuteOptions{estilo=14724:2001}
+
+\ProcessOptions*
+
+\ifthenelse{\boolean{SeparateSortScheme}}{%
+\ifnum\RomanOrder=\GreekOrder%
+\typeout{ADVERTENCIA: simbolos gregos e romanos com a mesma ordem, voltando ao padrao}
+\def\RomanOrder{1}\def\GreekOrder{2}\def\SymbolOrder{3}\fi
+\ifnum\RomanOrder=\SymbolOrder%
+\typeout{ADVERTENCIA: simbolos romanos e outros simbolos com a mesma ordem, voltando ao padrao}
+\def\RomanOrder{1}\def\GreekOrder{2}\def\SymbolOrder{3}\fi
+\ifnum\GreekOrder=\SymbolOrder%
+\typeout{ADVERTENCIA: simbolos gregos e outros simbolos com a mesma ordem, voltando ao padrao}
+\def\RomanOrder{1}\def\GreekOrder{2}\def\SymbolOrder{3}\fi}{}
+
+%See p. 345 in The Thexbook, D. E. Knuth
+%\newcommand{\testuppercase}[1]{%
+%\expandafter\ifnum\the\sfcode`#1=999 true\else false\fi}
+
+\newindex{sigla}{siglax}{sigla}{Lista de abreviaturas e siglas}
+
+\ifthenelse{\boolean{SeparateSortScheme}}{%
+\newindex{romanlow}{romanlowx}{romanlow}{Lista de símbolos romanos minúsculos}%
+\newindex{romanupp}{romanuppx}{romanupp}{Lista de símbolos romanos maiúsculos}%
+\newindex{greeklow}{greeklowx}{greeklow}{Lista de símbolos gregos minúsculos}%
+\newindex{greekupp}{greekuppx}{greekupp}{Lista de símbolos gregos maiúsculos}%
+\newindex{miscelan}{miscelanx}{miscelan}{Lista de outros símbolos}%
+\def\RomanLow{romanlow}%
+\def\GreekLow{greeklow}%
+\ifthenelse{\boolean{CaseSortScheme}}{\def\RomanUpp{romanupp}\def\GreekUpp{greekupp}}
+{\def\RomanUpp{romanlow}\def\GreekUpp{greeklow}}
+\def\Miscelan{miscelan}}{%
+\newindex{symbols}{symbolsx}{symbols}{Lista de símbolos}%
+\def\RomanLow{symbols}%
+\def\RomanUpp{symbols}%
+\def\GreekLow{symbols}%
+\def\GreekUpp{symbols}%
+\def\Miscelan{symbols}}
+
+
+
+\newcounter{Ocorrencia}
+\setcounter{Ocorrencia}{0}
+
+\ifthenelse{\boolean{AlphaSort}}{\def\TheOcor{}}{\def\TheOcor{\arabic{Ocorrencia}\space}}
+%the following was extracted form texmf/tex/latex/misc/index.sty (v3.02)
+\def\@wrindex#1#2{%
+    \begingroup
+        \let\thepage\relax
+        \def\@tempa{#2}%
+        \edef\@tempa{%
+           \write\@auxout{%
+              \string\@vwritefile{#1}{%
+                  \string\indexentry{\TheOcor\@nearverbatim\@tempa}{\thepage}%
+              }%
+           }%
+        }%
+    \expandafter\endgroup\@tempa
+    \if@nobreak\ifvmode\nobreak\fi\fi
+}
+
+
+\newcommand{\IndexCommand}[3]{%
+\ifthenelse{\boolean{AlphaSort}}{\index[#1]{#2@#3|TSSThePage}}%
+{\addtocounter{Ocorrencia}{1}%
+\index[#1]{@#3|TSSThePage}}}
+
+\newcommand{\sigla}[2]{\IndexCommand{sigla}{#1 #2}{#1& #2}}
+
+\newcommand{\rsimpsymbol}[2]{\IndexCommand{\RomanLow}{#1 #2}{$#1$& #2}}
+\newcommand{\rcompsymbol}[3]{\IndexCommand{\RomanLow}{#2 #3}{#1& #3}}
+\newcommand{\Rsimpsymbol}[2]{\IndexCommand{\RomanUpp}{#1 #2}{$#1$& #2}}
+\newcommand{\Rcompsymbol}[3]{\IndexCommand{\RomanUpp}{#2 #3}{#1& #3}}
+
+\newcommand{\gsimpsymbol}[2]{\IndexCommand{\GreekLow}{#1 #2}{$#1$& #2}}
+\newcommand{\gcompsymbol}[3]{\IndexCommand{\GreekLow}{#2 #3}{#1& #3}}
+\newcommand{\Gsimpsymbol}[2]{\IndexCommand{\GreekUpp}{#1 #2}{$#1$& #2}}
+\newcommand{\Gcompsymbol}[3]{\IndexCommand{\GreekUpp}{#2 #3}{#1& #3}}
+
+\newcommand{\msimpsymbol}[2]{\IndexCommand{\Miscelan}{#1 #2}{$#1$& #2}}
+\newcommand{\mcompsymbol}[3]{\IndexCommand{\Miscelan}{#2 #3}{#1& #3}}
+
+\newcommand{\simbolo}[3][0]{%
+\ifthenelse{\equal{#1}{0}}{\rsimpsymbol{#2}{#3}}{\rcompsymbol{#1}{#2}{#3}}}
+
+\newcommand{\Simbolo}[3][0]{%
+\ifthenelse{\equal{#1}{0}}{\Rsimpsymbol{#2}{#3}}{\Rcompsymbol{#1}{#2}{#3}}}
+
+\newcommand{\simbologrego}[3][0]{%
+\ifthenelse{\equal{#1}{0}}{\gsimpsymbol{#2}{#3}}{\rgcompsymbol{#1}{#2}{#3}}}
+
+\newcommand{\Simbologrego}[3][0]{%
+\ifthenelse{\equal{#1}{0}}{\Gsimpsymbol{#2}{#3}}{\Gcompsymbol{#1}{#2}{#3}}}
+
+\newcommand{\simbolomisc}[3][0]{%
+\ifthenelse{\equal{#1}{0}}{\msimpsymbol{#2}{#3}}{\mcompsymbol{#1}{#2}{#3}}}
+
+\ifthenelse{\boolean{tsspages}}%
+{\newcommand{\TSSThePage}[1]{& p.~#1}}%
+{\newcommand{\TSSThePage}[1]{&}}
+
+\providecommand{\pretextualchapter}[1]{\chapter*{#1}}
+
+\newcommand{\listofabreviationsname}{Lista de abreviaturas e siglas}
+\newcommand{\listofsymbolsname}{Lista de símbolos}
+\newcommand{\romansymbolsname}{Símbolos romanos}
+\newcommand{\greeksymbolsname}{Símbolos gregos}
+\newcommand{\othersymbolsname}{Outros símbolos}
+
+\newcommand{\abrevtablewidth}{0.7\textwidth}
+\newcommand{\abrevcolumns}{lp{\abrevtablewidth}l}
+\newcommand{\Babrevtable}{\begin{center}\begin{tabular}{\abrevcolumns}}
+\newcommand{\Eabrevtable}{\end{tabular}\end{center}}
+
+
+\newenvironment{tabeladesiglas}{%
+\pretextualchapter{\listofabreviationsname}\Babrevtable}{\Eabrevtable}
+
+\newcommand{\symboltablewidth}{0.7\textwidth}
+\newcommand{\symbolcolumns}{lp{\symboltablewidth}l}
+\newcommand{\Bsymboltable}{\begin{center}\begin{tabular}{\symbolcolumns}}
+\newcommand{\Esymboltable}{\end{tabular}\end{center}}
+
+\newenvironment{tabeladesimbolos}{%
+\pretextualchapter{\listofsymbolsname}\Bsymboltable}{\Esymboltable}
+
+\ifcase\RomanOrder\or\def\FirstList{1}\or\def\SecondList{1}\or\def\ThirdList{1}\fi
+\ifcase\GreekOrder\or\def\FirstList{2}\or\def\SecondList{2}\or\def\ThirdList{2}\fi
+\ifcase\SymbolOrder\or\def\FirstList{3}\or\def\SecondList{3}\or\def\ThirdList{3}\fi
+
+\newcommand{\ShowListOrder}[1]{%
+\ifcase#1\or Romanos\or Gregos\or Simbolos\fi}
+\typeout{Ordem: 1: \ShowListOrder{\FirstList} 2: \ShowListOrder{\SecondList} %
+3: \ShowListOrder{\ThirdList}}
+
+
+\newcommand{\PrintRomanList}{%
+\ifthenelse{\boolean{SeparateListDisplay}}{\\ &\multicolumn{1}{c}{\emph{\romansymbolsname}}& }{}%
+\ifthenelse{\boolean{UpperCaseLast}}{\printindex[romanlow]\printindex[romanupp]}%
+{\printindex[romanupp]\printindex[romanlow]}}
+
+\newcommand{\PrintGreekList}{%
+\ifthenelse{\boolean{SeparateListDisplay}}{\\ &\multicolumn{1}{c}{\emph{\greeksymbolsname}}& }{}%
+\ifthenelse{\boolean{UpperCaseLast}}{\printindex[greeklow]\printindex[greekupp]}%
+{\printindex[greekupp]\printindex[greeklow]}}
+
+\newcommand{\PrintSymbolList}{%
+\ifthenelse{\boolean{SeparateListDisplay}}{\\ &\multicolumn{1}{c}{\emph{\othersymbolsname}}& }{}%
+\printindex[miscelan]}
+
+\newcommand{\PrintList}[1]{%
+\ifcase#1\or\PrintRomanList\or\PrintGreekList\or\PrintSymbolList\fi}
+
+\newcommand{\listadesiglas}{
+\begin{tabeladesiglas}%
+\printindex[sigla]
+\end{tabeladesiglas}}
+\newcommand{\listadesimbolos}{
+\begin{tabeladesimbolos}%
+\ifthenelse{\boolean{SeparateSortScheme}}{%
+\PrintList{\FirstList}
+\PrintList{\SecondList}
+\PrintList{\ThirdList}}{%
+\printindex[symbols]}
+\end{tabeladesimbolos}}
+

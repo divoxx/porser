@@ -1,0 +1,178 @@
+/* Century Schoolbook font is very similar to Computer Modern Math: cmmi */
+.MATH    { font-family: "Century Schoolbook", serif; }
+.MATH I  { font-family: "Century Schoolbook", serif; font-style: italic }
+.BOLDMATH { font-family: "Century Schoolbook", serif; font-weight: bold }
+
+/* implement both fixed-size and relative sizes */
+SMALL.XTINY		{ font-size : xx-small }
+SMALL.TINY		{ font-size : x-small  }
+SMALL.SCRIPTSIZE	{ font-size : smaller  }
+SMALL.FOOTNOTESIZE	{ font-size : small    }
+SMALL.SMALL		{  }
+BIG.LARGE		{  }
+BIG.XLARGE		{ font-size : large    }
+BIG.XXLARGE		{ font-size : x-large  }
+BIG.HUGE		{ font-size : larger   }
+BIG.XHUGE		{ font-size : xx-large }
+
+/* heading styles */
+H1		{ font-size: x-large }
+H2		{ font-size: large }
+H3		{ font-size: medium }
+H4		{ font-size: medium }
+H5		{ font-size: medium }
+
+/* mathematics styles */
+DIV.displaymath		{ }	/* math displays */
+TD.eqno			{ }	/* equation-number cells */
+
+
+/* document-specific styles come next */
+DIV.navigation		{   }
+PRE.preform		{   }
+
+span.textit {font-style : italic}
+
+span.textsl {font-style : oblique}
+
+span.textbf {font-weight : bold}
+
+body {
+  margin: 1em 1em 1em 1em;
+  font-family: sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  }
+
+h1 {
+  font-weight : bold;
+  font-style: italic;
+  margin : 1em 0em;
+  }
+
+h2 {
+  font-weight : bold;
+  background : #FFFFFF;
+  color : #880000; 
+  }
+
+
+
+h3,h4,h5 {
+  font-weight : bold;
+  font-size: medium;
+  background : #FFFFFF;
+  color : #884422;
+  }
+
+
+dl dt {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+dl.sl dt {
+  font-style: italic;
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+dl.ref dt {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+dl.rodape dt {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+pre {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+code {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+p tt {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+li tt {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+span.sc {
+  font-variant : small-caps;
+  }
+
+.blue {
+  background : #FFFFFF;
+  color : #002277;
+  }
+
+span.reftitle {
+  font-style: oblique;
+  }
+
+ul.plain {
+  list-style-type: none;
+  }
+
+ul li.lih1 {
+  margin-left: -1em;
+  }
+
+ul li.lih2 {
+  margin-left: 0em;
+  }
+
+ul li.lih3 {
+  margin-left: 1.5em;
+  }
+
+ul li.lih4 {
+  margin-left: 3em;
+  }
+
+ul li.lih5 {
+  margin-left: 5em;
+  }
+
+ul li.lih6 {
+  margin-left: 7em;
+  }
+
+img.noborder {
+  border: none;
+  }
+
+span.ingl {
+  font-style: oblique;
+  }
+
+p.longcit {
+  margin-left: 7em;
+  font-size: smaller;
+  }
+
+span.nota {
+  background : #FFFFFF;
+  color : #BB0000;
+  }
+
+p.center {
+  text-align: center
+  }
+
+p.noskip {
+  margin-top : 0em;
+  margin-bottom : 0em;
+  }
+
+

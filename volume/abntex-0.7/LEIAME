@@ -1,0 +1,165 @@
+
+====================   abnTeX LEIAME   =====================
+
+
+
+Sumário
+=======
+
+ O que são a classe e os estilos bibTeX "abnt" ?
+
+    Formatação de texto em geral (feito pela classe)
+    Sobre a norma de referências bibliográficas da ABNT
+    Então até que ponto os estilos bibTeX cumprem as normas?
+
+
+ Instalação
+    Licensa e informações
+    MikTeX, fpTeX (windows) ou teTeX (linux ou unix)
+    Outros TeX's (geral)
+
+
+
+
+
+O que são a classe e os estilos bibTeX "abnt" ?
+===============================================
+
+  A ABNT publicou normas que determinam como cada parte de um texto
+  acadêmico (tese ou dissertação) deve ser escrito e formatado. Entre essas
+  diversas partes está a folha de rosto, resumo, paginação, formatação de
+  texto em geral e referências bibliográficas. A aplicação das normas
+  começa a ser exigida por diversas instituições de ensino superior. No
+  entanto, a divulgação das normas é pobre, sendo escassa sua presença em
+  bibliotecas, mesmo nas instituições que as exigem. Então como (tentar)
+  cumpri-las? 
+
+  LaTeX tem a capacidade de ser moldado de acordo com pacotes ou classes
+  usados. Paralelamente, existem ferramentas para formatar as referências
+  bibliográficas, usando-se o programa bibTeX. Dividiu-se então a tarefa de
+  implementar as normas em LaTeX em duas partes: "referências
+  bibliográficas" e "formatação de texto geral". 
+
+
+Formatação de texto em geral (feito pela classe)
+------------------------------------------------
+
+  Encabeçando as normas para documentos acadêmicos, está a NBR 14724, de
+  julho de 2001 "Informação e apresentação - Trabalhos acadêmicos -
+  documentação" de 6 páginas. Prescreve outras normas para alguns itens
+  específios, como resumo, citações, numeração de seções e sumário. Define
+  e comenta (não trivialmente) os diversos elementos de um documento
+  acadêmico, e determina a formatação dos diversos elementos. 
+
+  A ideia da classe é ser a classe report, que usuários de LaTeX são
+  familiarizados, com as alterações necessárias para cumprir os requisitos
+  de formatação descritos na norma. o que foi implementado compreende: 
+
+  - títulos de capítulos e seções
+  - esquema ABNT de numeração de páginas
+  - espaçamento 1 1/2 correto
+  - citações longas
+  - inclusão automática de vários itens no sumário 
+  - inclusão de alguns pacotes comuns (quando não há prejuizo ao usuário)
+  - numeração correta das figuras e tabelas
+  - folha de rosto 
+  - resumo e abstract
+  - tabulação normal dos primeiros parágrafos de seções
+  entre outras coisas
+
+  O que ainda falta fazer?
+
+  - título de anexos e apêndices
+  - detalhes em seções numeradas mas sem título
+  - folha de aprovação
+  - quem sabe a ficha catalografica?
+
+
+Sobre a norma de referências bibliográficas da ABNT
+---------------------------------------------------
+
+  A norma para referências bibliográficas NBR 6023 de julho de 2001 tem
+  indigestas 19 páginas. É mais do que a soma das páginas das outras normas
+  para documentos acadêmicos juntas! Infelizmente para a comunidade
+  acadêmica brasileira, ao contrário dos principais estilos bibliográficos
+  em voga, nossa norma para referências não foi elaborado em cima de uma
+  linha de raciocínio lógica, onde casos omissos poderiam ser deduzidos. Ao
+  contrário, a "norma" NBR 6023 propõe 202 modelos para se formatar
+  referências a todo e qualquer objeto que pode ser posto em uma biblioteca
+  (com excessão da bibliotecária e da samanbáia :-)   É complicada e cheia
+  de inconsistências. Talvez seja a herança de ter que manter
+  compatibilidade com a antiga norma para isso, escrita em 1989, em máquina
+  de escrever :-)   Naquela época, provavelmente pensavam que tudo seria
+  feito a mão mesmo, então meros modelos seriam suficientes, sem a
+  necessidade de uma regra mais geral. A comissão da ABNT para essa norma
+  deu exemplo de incompetência. Da forma em que a "norma" está escrita,
+  ficou impossível desenvolver um estilo 100% compatível com ela. Se você
+  não acredita no que acabou de ler nesta parágrafo, 1) ou leia a
+  documentação do nosso estilo bibTeX (arquivos abnt-bibtex-doc e
+  abnt-bibtex-alf-doc, no formato preferido) ou 2) leia a própria norma, o
+  original, e tire suas próprias conclusões. Fuja de interpretações
+  encontradas na internet ou resumos encontrados por ai. 
+
+
+Então até que ponto os estilos bibTeX cumprem as normas?
+--------------------------------------------------------
+
+  Você tem dois estilos de referências de acordo com a "norma": 
+
+  * Ordem (numérica) em que a citação aparece no documento 
+ 
+      Use o abnt-num. Funciona bem e deve gerar uma lista bibliográfica
+      bastantecompatível. O uso deste estilo já dá um resultado bastante
+      seperior a umalista formatada à mão, principalmente se você não tem
+      acesso ao original da"norma". Leia a documentação para os detalhes.
+      
+
+  * Ordem alfabética
+
+      Este é mais complexo. Está em desenvolvimento, mas ainda é a maneira
+      mais confiável de ter suas referências formatadas de acordo com a
+      "norma". Dos 202 exemplos da "norma" NBR 6023-2001, 110 já estão
+      funcionando corretamente e 6 parciamente. Com certeza os tipo de
+      referências úteis já foram cobertos. Por favor leia a documentação
+      para evitar maiores surpresas (a "norma" introduz algumas
+      incompatibilidades com outros estilos bibliográficos, explicadas na
+      documentação, e talvez algumas entradas de sua base bibtex devam
+      sofrer pequenas modificações para se adequarem à "norma ABNT")
+
+
+
+Instalação
+==========
+
+
+Licença e informações
+---------------------
+
+  Os arquivos do abnTeX são distribuidos sobre a licensa "LaTeX Project
+  Public License" (LPPL) http://www.latex-project.org/lppl.html  
+
+  Grosso modo, a licensa diz que:
+
+  - os arquivos são distribuídos "como estão", nenhuma garantia é dada.
+  - o usuário pode modificar os arquivos, mas DEVE atribuir outros nomes
+    aos arquivos, mesmo localmente em seu computador.
+  - se for distribuir a versão modificada, deve citar a autoria dos
+    originais. 
+
+
+MikTeX, fpTeX (windows) e teTeX (linux ou unix)
+-----------------------------------------------
+
+  Essas três distribuições modernas de TeX seguem a recomendação "TeX
+  Directory Structure" (TDS), o que permite uma instalação similar em
+  todas.
+
+  Veja os arquivos LEIAME correspondentes. 
+
+
+
+
+
+
+
+
