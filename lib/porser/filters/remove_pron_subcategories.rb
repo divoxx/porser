@@ -1,8 +1,8 @@
 module Porser
   module Filters
-    class RemoveTagHyphen
+    class RemovePronSubcategories
       def tag(tag)
-        tag.gsub(/(\w)-(\w)/, '\1\2')
+        tag =~ /^PRON_/ ? "PRON" : tag
       end
     end
   end
