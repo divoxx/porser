@@ -1,7 +1,7 @@
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.5]{fases.pdf}
-		\caption{\label{fases} Estágios do processamento de linguagem natural}		
+		\caption{\label{fases} Estágios do processamento de linguagem natural propostos neste trabalho}		
 	\end{center}
 \end{figure}
 
@@ -12,7 +12,7 @@ No texto que segue, abordaremos alguns assuntos que fundamentam nosso trabalho.
 \section{Análise de Sentença} % (fold)
 \label{sec:analise_da_sentenca}
 
-O processo de analise de sentença em linguagem natural é geralmente apresentado na literatura subdividido em vários níveis:
+O processo de análise de sentença em linguagem natural é geralmente apresentado na literatura subdividido em vários níveis:
 
 \begin{itemize}
 	\item Análise morfológica
@@ -21,7 +21,7 @@ O processo de analise de sentença em linguagem natural é geralmente apresentad
 	\item Análise pragmática
 \end{itemize}
 
-Este trabalho foca os dois primeiros níveis de análise acima citados. A seguir faremos uma breve introdução aos níveis acima citados.
+Este trabalho foca os dois primeiros níveis de análise acima citados.
 
 Uma abordagem mais completa de todos os níveis pode ser vista em \cite{allen95,vera01} entre outros.
 
@@ -29,11 +29,11 @@ Uma abordagem mais completa de todos os níveis pode ser vista em \cite{allen95,
 \subsection{Análise morfológica ou \emph{Part-of-Speech Tagging}} % (fold)
 \label{sub:analise_morfologica_ou_part_of_speech_tagging}
 
-O analisador morfológico identifica palavras ou expressões isoladas em uma sentença, sendo este processo auxiliado por delimitadores (pontuação e espaços em branco). As palavras identificadas são classificadas de acordo com seu tipo de uso ou, em linguagem natural, categoria gramatical.
+O analisador morfológico identifica palavras ou expressões isoladas em uma sentença, sendo este processo auxiliado por delimitadores (pontuação e espaços em branco). As palavras identificadas são classificadas de acordo com seu tipo de uso ou, em linguagem natural, de acordo com sua categoria gramatical.
 
 Neste contexto, uma instância de uma palavra em uma sentença gramaticalmente válida pode ser substituída por outra do mesmo tipo (exemplo: substantivos, pronomes, verbos, etc.), configurando uma sentença ainda válida. Para um mesmo tipo de palavra, existem grupos de regras que caracterizam o comportamento de um subconjunto de vocábulos da linguagem (exemplo: formação do plural de substantivos terminados em ``ão'', flexões dos verbos regulares terminados em ``ar'', etc.). Assim, a morfologia trata as palavras quanto à sua estrutura, forma, flexão e classificação, no que se refere a cada um dos tipos de palavras.
 
-Esta fase é frequentemente chamada de \emph{part-of-speech tagging}, pois seu principal resultado é a determinação da categoria sintática das palavras individuais como ocorrem na sentença, também conhecida como \emph{part-of-speech} (POS). Entre essas categorias estão tipicamente as de nome (ou substantivo), verbo, preposição, etc. Outras características importantes podem ser obtidas nesta fase, como gênero (masculino ou feminino), número (singular ou plural), etc. Estas características secundárias, chamadas \emph{features} ou traços, de certa forma estendem a POS. Cada POS tem um conjunto diferenciado de \emph{features} apropriado que depende da aplicação do analisador e das concepções teóricas de quem a define. Na medida em que uma palavra é caracterizada pela sua categoria principal mais traços secundários, não é surpresa que haja uma razoável variabilidade na separação entre que características já devem estar embutidas na POS, e quais devem ser relegadas a \emph{features}. Por exemplo, algumas propostas podem selecionar como POS nome e como \emph{feature} número (singular ou plural). Outras podem atribuir POS \emph{tag} (marcações de POS) separados para nome-singular e nome-plural.
+Esta fase é frequentemente chamada de \emph{part-of-speech tagging}, pois seu principal resultado é a determinação da categoria sintática das palavras individuais como ocorrem na sentença, também conhecida como \emph{part-of-speech} (POS). Entre essas categorias estão tipicamente as de nome (ou substantivo), verbo, preposição, etc. Outras características importantes podem ser obtidas nesta fase, como gênero (masculino ou feminino), número (singular ou plural), etc. Estas características secundárias, chamadas \emph{features} ou traços, de certa forma estendem a POS. Cada POS tem um conjunto diferenciado de \emph{features} apropriado que depende da aplicação do analisador e das concepções teóricas de quem a define. Na medida em que uma palavra é caracterizada pela sua categoria principal mais traços secundários, não é surpresa que haja uma razoável variabilidade na separação entre que características já devem estar embutidas na POS, e quais devem ser relegadas a \emph{features}. Por exemplo, algumas propostas podem selecionar como POS nome e como \emph{feature} número (singular ou plural). Outras podem atribuir POS \emph{tags} (marcações de POS) separados para nome-singular e nome-plural.
 
 Os algoritmos para etiquetagem fundamentam-se em dois modelos mais conhecidos: os baseados em regras e os estocásticos. Os algoritmos baseados em regras, como o nome diz, fazem uso de bases de regras para identificar a categoria de um certo item lexical. Neste caso, novas regras vão sendo integradas à base à medida que novas situações de uso do item vão sendo encontradas. Os algoritmos baseados em métodos estocásticos costumam resolver as ambiguidades através de um \emph{corpus} de treino, marcado corretamente (muitas vezes através de esforço manual), calculando a probabilidade que uma certa palavra ou item lexical terá de receber uma certa etiqueta em certo contexto. O etiquetador de Eric Brill \cite{brill95}, bastante conhecido na literatura, faz uso de uma combinação desses modelos.
 
@@ -55,12 +55,12 @@ A tarefa de um \emph{parser} para a linguagem natural é construir a estrutura s
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.5]{tree.pdf}
-		\caption{\label{tree} Árvore gramatical da frase \emph{O João vendeu para Maria o seu velho computador de mesa}}
+		\caption{\label{tree} Árvore gramatical da frase \emph{O João vendeu para Pedro o seu velho computador de mesa}}
 
 	\end{center}
 \end{figure}
 
-Por exemplo, a frase "O João vendeu para Maria o seu velho computador de mesa", seria anotada gramaticalmente da seguinte forma:
+Por exemplo, a frase "O João vendeu para Pedro o seu velho computador de mesa", seria anotada gramaticalmente da seguinte forma:
 
 \begin{verbatim}
   (S
@@ -88,12 +88,12 @@ A Figura \ref{tree} ilustra a mesma árvore em formato gráfico.
 
 Segundo \cite{sardinha04}, \emph{corpus} é um conjunto de dados linguísticos (pertencentes ao uso oral ou escrito da língua, ou a ambos), sistematizado segundo alguns critérios, suficientemente extenso em amplitude e profundidade, de maneira que seja representativo da totalidade do uso linguístico ou de algum de seus âmbitos, disposto de tal modo que possa ser processado por computador, com a finalidade de propiciar vários, e úteis, resultados para a descrição e análise.
 
-\emph{Corpora} anotados sintaticamente, também conhecidos como \emph{treebanks} \cite{abeille03}, são - simplificadamente - bancos de dados de sentenças anotadas com informações sintáticas e semânticas que servem como fonte de aprendizado para os sistemas estatísticos. A qualidade e o tamanho do \emph{treebank} influenciam diretamente a qualidade do resultado obtido pelo \emph{parser}. A criação do primeiro \emph{corpus} anotado data do inicio dos anos 60, e foi desenvolvido inicialmente para o inglês. O objetivo era prover um esquema de anotação mais completo possível, para ser utilizado por esses métodos empíricos, isto tendo em vista processamento dos corpora linguísticos. Para outras finalidades há coisas bem mais antigas
+\emph{Corpora} anotados sintaticamente, também conhecidos como \emph{treebanks} \cite{abeille03}, são - simplificadamente - bancos de dados de sentenças anotadas com informações sintáticas e semânticas que servem como fonte de aprendizado para os sistemas estatísticos. A qualidade e o tamanho do \emph{treebank} influenciam diretamente a qualidade do resultado obtido pelo \emph{parser}. A criação do primeiro \emph{corpus} anotado data do início dos anos 60, e foi desenvolvido inicialmente para o inglês. O objetivo era prover um esquema de anotação mais completo possível, para ser utilizado por esses métodos empíricos, isto tendo em vista processamento dos corpora linguísticos. Para outras finalidades há coisas bem mais antigas
 
 \subsection{Extensão do \emph{Corpus}} % (fold)
 \label{sub:extensao_do_corpus}
 
-A extensão e diversidade dos \emph{corpora} são definitivas na qualidade do aprendizado dos \emph{parsers} estatísticos. Segundo \cite{sardinha04}, pode-se definir três abordagens para a constituição de um \emph{corpus}.
+A extensão e diversidade dos \emph{corpora} são definitivas na qualidade do aprendizado dos \emph{parsers} estatísticos. Conforme \cite{sardinha04}, pode-se definir três abordagens para a constituição de um \emph{corpus}.
 
 \begin{enumerate}
 \item Impressionista: baseia-se em constatações derivadas da prática da criação e da exploração de \emph{corpora}, em geral feitas por autoridades da área. Por exemplo, Aston \cite{aston97} menciona patamares que caracterizariam um \emph{corpus} pequeno (20 a 200 mil palavras) e um grande (100 milhões ou mais).
@@ -159,7 +159,7 @@ Leech \cite{leech91} fala de 1 milhão de palavras com uma taxa usual (\emph{goi
 \subsubsection{Corpora da Língua Inglesa}
 \label{sub:corpus_ingles}
 
-A tabela \ref{tbl:corpora} lista alguns dos corpora anotado sintaticamente mais relevantes, que são da língua inglesa.
+A tabela \ref{tbl:corpora} lista alguns dos corpora anotados sintaticamente mais relevantes, que são da língua inglesa.
 
 \begin{table}
    \centering
@@ -188,13 +188,13 @@ A tabela \ref{tbl:corpora} lista alguns dos corpora anotado sintaticamente mais 
         Brown Corpus ( Brown University Standart Corpus of Present-day American English ) & 1964 & 1 milhão  & ingles americano, escrito\\
         \hline
    \end{tabular}
-   \footnotemark[1]{Data refere-se ao Birmingham Corpus, do qual o Bank of English Derivou}
+   \footnotemark[1]{Data refere-se ao Birmingham Corpus, do qual o Bank of English derivou}
    \label{tbl:corpora}
 \end{table}
 
-Existem outros corpus alem dos acima elencados, que possuem um numero menor de palavras. Três corpus da lista servem como marcos de referencia históricos:
+Existem outros corpora além dos acima elencados, que possuem um número menor de palavras. Três corpora da lista servem como marcos de referência históricos:
 
-Brown, BNC e Bank of English. O corpus Brown é um marco por razoes obvias: é o primeiro. O BNC é de destaque porque foi o primeiro a conter 100 milhões de palavras. Enquanto o Brown e o BNC são corpus de amostragem, planejados e fechados, O Bank of English é um corpus monitor, orgânico e em crescente expansão.
+Brown, BNC e Bank of English. O corpus Brown é um marco por razões óbvias: é o primeiro. O BNC é de destaque porque foi o primeiro a conter 100 milhões de palavras. Enquanto o Brown e o BNC são corpus de amostragem, planejados e fechados, O Bank of English é um corpus monitor, orgânico e em crescente expansão.
 
 
 \subsubsection{Penn TreeBank}
@@ -235,7 +235,7 @@ O conjunto de rótulos sintáticos e de POS (\emph{tagset}) usado no Penn Treeba
       \hline
 		JJS & Adjetivo superlativo      &		UH & Interjeição\\
       \hline
-		LS & Macador de item em listas      &		VB & Verbo infinitivo\\
+		LS & Marcador de item em listas      &		VB & Verbo infinitivo\\
       \hline
 		MD & Verbo auxiliar ou modal      &		VBD & Verbo passado\\
       \hline
@@ -289,7 +289,7 @@ O conjunto de rótulos sintáticos e de POS (\emph{tagset}) usado no Penn Treeba
    \hline
 		SBARQ & Sintagma de sentença interrogativa 	& 	SINV & Sintagma declarativo com inversão de sujeito\\
    \hline
-		SQ & SIntagma de questão sim/não e subconstituintes de SBARQ excluindo elemento interrogativo 	& 	 VP & Sintagma verbal\\
+		SQ & Sintagma de questão sim/não e subconstituintes de SBARQ excluindo elemento interrogativo 	& 	 VP & Sintagma verbal\\
    \hline
 		WHADVP & Sintagma adverbial interrogativo 	& 	WHNP & Sintagma nominal interrogativo\\
    \hline
@@ -355,7 +355,7 @@ A Floresta Sintática é um subconjunto dos corpora CETEM Público e CETEM Folha
 
 Atualmente, o corpus da Floresta Sintá(c)tica tem 4 partes, que diferem quanto ao gênero textual, quanto ao modo (escrito vs falado) e quanto ao grau de revisão lingüística: o Bosque, totalmente revisto por lingüistas; a Selva, parcialmente revisto, a Floresta Virgem e a Amazônia, não revistos. Junto, todo esse material soma cerca de 261 mil frases (6.7 milhões de palavras) sintaticamente analisadas.
 
-Para nosso estudos de desenvolvimento de um \emph{parser} probabilístico para a língua portuguesa e treino da ferramenta desenvolvida por Bikel , será utilizado o Bosque, parte da floresta sintática completamente revisada por lingüistas.
+Para nosso estudos de desenvolvimento de um \emph{parser} probabilístico para a língua portuguesa e treino da ferramenta desenvolvida por Bikel , será utilizado o Bosque, parte da floresta sintática completamente revisada por linguistas.
 
 O Bosque é composto por 9.368 frases, retiradas os primeiros 1000 extratos (aproximadamente) dos corpora CETENFolha e CETEMPúblico. Desde 2007, o Bosque vem passando por um novo processo de revisão, em que foram corrigidas algumas pequenas inconsistências e acrescentadas novas etiquetas. A versão final, disponível para consulta e download, é o Bosque 8.0.
 
@@ -385,7 +385,7 @@ Uma descrição detalhada do tagset da Floresta é encontrado no website do proj
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Tags de Part-of-Speech da Floresta Sinática.}
+   \caption{\it Tags de Part-of-Speech da Floresta Sintática.}
 
     \begin{tabular}{ | p{3cm} | p{10cm} |}
       \hline
@@ -440,7 +440,7 @@ Uma descrição detalhada do tagset da Floresta é encontrado no website do proj
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Tags Sintáticos da Floresta Sintática .}
+   \caption{\it Tags Sintáticos da Floresta Sintática}
 
     \begin{tabular}{ | p{3cm} | p{10cm} | }
       \hline
@@ -506,11 +506,11 @@ O Corpus definido no projeto Semantic Share será detalhado posteriormente neste
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.5]{parser_schema.pdf}
-		\caption{\label{schema} Estágios do processamento de linguagem natural}		
+		\caption{\label{schema} Estágios do processamento de linguagem natural proposto pelo trabalho}		
 	\end{center}
 \end{figure}
 
-Uma visão geral do processo de \emph{parsing} estatístico pode ser observado na Figura \ref{schema}.
+Uma visão geral do processo de \emph{parsing} estatístico pode ser observada na Figura \ref{schema}.
 
 No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o \emph{corpus} anotado é dividido em 3 partes:
 
@@ -527,16 +527,21 @@ Sentenças que o sistema usa para aprender.
 
 Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtido a cada passo do desenvolvimento. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{``overfitting''}.
 
+
+VERIFICAR REALMENTE SE É OVERFITTING ............................................................
+
+
+
 % subsection desenvolvimento_ou_teste_de_desenvolvimento_ (end)
 
 \item{Teste final} % (fold)
 \label{sub:teste_final}
 
-É semelhante ao de desenvolvimento, porem é proibida a análise qualitativa sobre o mesmo.
+É semelhante ao de desenvolvimento, porém é proibida alterações a partir da análise qualitativa sobre o mesmo.
 
 \end{enumerate}
 
-O modulo de geração do \emph{parser} tem como entrada os exemplos do \emph{corpus} de treino e gera os parâmetros estatísticos que serão utilizados pelo \emph{parser} para tomar as decisões. Este módulo é parametrizável com informações linguísticas fornecidas pelo desenvolvedor, que guiam a interpretação do \emph{corpus} de treino. Por exemplo, a informação de que, quando um constituinte tem dois nomes seguidos, o núcleo é o da esquerda para o português e é o da direita para o inglês.
+O módulo de geração do \emph{parser} tem como entrada os exemplos do \emph{corpus} de treino e gera os parâmetros estatísticos que serão utilizados pelo \emph{parser} para tomar as decisões. Este módulo é parametrizável com informações linguísticas fornecidas pelo desenvolvedor, que guiam a interpretação do \emph{corpus} de treino. Por exemplo, a informação de que, quando um constituinte tem dois nomes seguidos, o núcleo é o da esquerda para o português e é o da direita para o inglês.
 
 O \emph{parser} gerado é composto pelo módulo de \emph{parsing} que recebe as sentenças de entrada e toma as decisões de análise guiado pelos parâmetros estatísticos aprendidos, gerando a sentença analisada.
 
@@ -547,6 +552,12 @@ Cada vez que uma nova versão (ou seja, um novo conjunto de parâmetros estatís
 \label{sec:parsers_para_portugues}
 
 Conforme mencionado anteriormente, existem alguns trabalhos de construção de \emph{parsers} para o português. Dentre eles, os de Eckhard Bick \cite{bick00}, baseado em regras, e portanto difícil de ser expandido ou adaptado; \cite{baldridge06} e \cite{bonfante03}, que também são estatísticos, baseados no modelo de Collins. Entretanto, revisando o que já referimos, os resultados até agora obtidos ainda estão distantes dos desejados.
+
+
+
+\section{\emph{CORPUS X CORPORA .....}} % (fold)
+\label{sec:CORPUSXCORPORA}
+
 
 % section parsers_para_portugues (end)
 

@@ -1,17 +1,17 @@
 \section{Gramática Livre de Contexto Probabilística}
 \label{sec:pcfg}
 
-Para descrever os modelos  probabilísticos  de \emph{parsing} de Michael Collins   antes precisamos entender um pouco Gramática Livre de Contexto Probabilística, que a partir de agora vamos nos referir como PCFG (\emph{Probabilistic context-free grammar}).
+Para descrever os modelos  probabilísticos  de \emph{parsing} de Michael Collins   antes precisamos entender um pouco Gramática Livre de Contexto Probabilística, que a partir de agora vamos nos referenciar como PCFG (\emph{Probabilistic context-free grammar}).
 
-PCFGs são uma extensão de uma gramática livre de contexto, só que existe uma probabilidade associada a cada regra de de substituição.
+PCFGs são uma extensão de uma gramática livre de contexto, só que existe uma probabilidade associada a cada regra de substituição.
 
-Segundo Collins (1999), o uso de técnicas estatísticas para o aprendizado de gramáticas foi inspirado no sucesso dessas técnicas para o processamento de fala. O modelo proposto em PCFG faz uma suposição de independência que considera a probabilidade de cada regra de substituição independente de todos as outras regras usadas na derivação da sentença. A ordem de derivação não afeta o modelo. As probabilidades atribuídas às regras nas PGFGs, são encaradas como a probabilidade do sintagma-pai usando tal regra, nos subelementos descritos, em comparação a todas as outras regras que expandem o mesmo sintagma.
+Segundo Collins (1999), o uso de técnicas estatísticas para o aprendizado de gramáticas foi inspirado no sucesso dessas técnicas para o processamento de fala. O modelo proposto em PCFG faz uma suposição de independência que considera a probabilidade de cada regra de substituição independente de todas as outras regras usadas na derivação da sentença. A ordem de derivação não afeta o modelo. As probabilidades atribuídas às regras nas PGFGs, são encaradas como a probabilidade do sintagma-pai usando tal regra, nos subelementos descritos, em comparação a todas as outras regras que expandem o mesmo sintagma.
 
 As gramáticas probabilísticas têm muitas vantagens. Sendo elas extensões óbvias das gramáticas livres de contexto, os algoritmos usados para GLCs podem ser transportados para as PCFGs, permitindo que todas as possíveis análises possam ser encontradas num tempo de ordem $n^3$, em que n é o tamanho da sentença.
 
-Um algoritmo bastante usado é o \emph{Inside-Outside} (Charniak 1993). Usando um corpus grande e o algoritmo, o modelo pode ser treinado automaticamente , considerando todas as análises possíveis da sentença no corpus de treinamento.
+Um algoritmo bastante usado é o \emph{Inside-Outside} (Charniak 1993). Usando um corpus grande e o algoritmo, o modelo pode ser treinado automaticamente, considerando todas as análises possíveis da sentença no corpus de treino.
 
-A Ambigüidade é o maior problema na análise de sentenças. Uma gramática probabilística oferece solução para este problema, escolhendo a interpretação mais provável no momento da analise.
+A ambigüidade é o maior problema na análise de sentenças. Uma gramática probabilística oferece solução para este problema, escolhendo a interpretação mais provável no momento da análise.
 \\ \\
 Vamos exemplificar:
 \\ \\
@@ -41,22 +41,22 @@ Supondo a gramática parcial:
 Existe grande quantidade de árvores geradas, pois seria possível relacionar "os binóculos" com "no monte" com vários núcleos de sentença como argumento ou modificador.
 
 
-O caso anterior é genuinamente ambíguo (ambiguidade semântica), mas há muitos casos de ambiguidade que se devem apenas à gramática em si, ou seja ,leitores percebem apenas uma interpretação.
+O caso anterior é genuinamente ambíguo (ambiguidade semântica), mas há muitos casos de ambiguidade que se devem apenas à gramática em si, ou seja,leitores percebem apenas uma interpretação.
 \\ \\
 
 
  Portanto, temos um problema quanto a descobrir qual a árvore de análise correta.
 
- Como solução poderíamos deixar que as situações de ambigüidade sejam resolvidas pela análise semântica,usar regras de desambiguação manuais ou usar modelos probabilísticos para atribuir probabilidades às diferentes arvores.
+ Como solução poderíamos deixar que as situações de ambigüidade sejam resolvidas pela análise semântica, usar regras de desambiguação manuais ou usar modelos probabilísticos para atribuir probabilidades às diferentes árvores.
 
 
- Uma gramática livre de contexto probabilística (PCFG) é uma quadrupla (N, T, $S_0$, R) onde por:
+ Uma gramática livre de contexto probabilística (PCFG) é uma quádrupla (N, T, $S_0$, R) onde:
 
  \begin{itemize}
 
    \item N: Conjunto de símbolos não-terminais
    \item T: Conjunto de símbolos terminais
-   \item $S_0$: símbolos não-terminal, designado por símbolo inicial
+   \item $S_0$: símbolo não-terminal, designado por símbolo inicial
    \item R: Conjunto de regras da forma $ A \rightarrow \alpha [p] $, onde:
 
     \begin{itemize}
@@ -102,8 +102,7 @@ Consegue-se deste modo associar probabilidades às regras e construir uma gramá
   \item  $SV \rightarrow Verbo SN SN [.05]$
 \end{enumerate}
 
-
-Dado que uma árvore é constituída pelo conjunto de regras que participam na sua derivação, 
+% Dado que uma árvore é constituída pelo conjunto de regras que participam na sua derivação.
 
 
 \section{Trabalhos Anteriores, histórico de \emph{Parsing} Probabilístico para PLN }
@@ -112,7 +111,7 @@ Dado que uma árvore é constituída pelo conjunto de regras que participam na s
 Segundo Bonfante (2003), o aprendizado estatístico se insere num contexto cuja linha de pesquisa é chamada de empírica, uma vez que se baseia em exemplos já prontos e aprende como lidar com aqueles ainda não vistos. A linha empiricista, que entre as décadas de 60 e 80 ficou nas sombras de crenças racionalistas encabeçadas por Chomsky (1965), cujo reflexo dentro da Inteligência Artificial caracterizava-se pela criação de sistemas inteligentes com grande quantidade de conhecimento inicial codificado à mão, ressurgiu na década de 90, com a idéia de que o conhecimento pode ser induzido a partir de algumas operações básicas de associação e generalização. Assim, segundo o empiricismo, uma máquina poderia aprender a estrutura de uma linguagem apenas observando uma grande quantidade de exemplos, usando procedimentos estatísticos gerais e métodos de associação e generalização indutiva, como aprendizado indutivo de regras.
 
 
-Tendo a ambigüidade como o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambigüidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença "A menina viu o menino de binóculo", a atribuição dos sintagmas sintáticos pode mudar a interpretação que se faz da frase. duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
+Tendo a ambiguidade como o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambiguidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença "A menina viu o menino de binóculo", a atribuição dos sintágmas sintáticos pode mudar a interpretação que se faz da frase. Duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
 
 
 
@@ -120,7 +119,7 @@ Tendo a ambigüidade como o maior obstáculo encontrado pelos sistemas automáti
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.5]{ambig.jpg}
-		\caption{\label{ambiguidade} Imagem das árvores da frase, \emph{A menina viu o menino}}		
+		\caption{\label{ambiguidade} Imagem das árvores da frase \emph{A menina viu o menino}}		
 	\end{center}
 \end{figure}
 
@@ -131,14 +130,14 @@ Os \emph{parsers} estatísticos utilizam medidas de probabilidades observadas em
 
 Um importante fator influenciador nas pesquisas no campo de PLN foi a disponibilização de grandes corpora (\emph{treebanks}) anotados usados para treino dos analisadores probabilísticos.
 
-A falta de \emph{treebanks} no inicio das pesquisas com \emph{parsers} estatísticos gerou um grande numero de abordagens quanto ao treino e avaliação dos \emph{parsers} existentes.
+A falta de \emph{treebanks} no início das pesquisas com \emph{parsers} estatísticos gerou um grande numero de abordagens quanto ao treino e avaliação dos \emph{parsers} existentes.
 
 
 
 \section{Problemas encontrados  na Gramática Livre de Contexto Probabilística}
 \label{sec:prob_encontrados}
 
-PCFGs foi o ponto de inicio natural para as pesquisas em desenvolvimento de \emph{parsers} estatísticos para PLN. Suas propriedades formais foram bem compreendidas, algoritmos eficientes para \emph{parsing} eram bem conhecidos e descritos.
+PCFGs foi o ponto de início natural para as pesquisas em desenvolvimento de \emph{parsers} estatísticos para PLN. Suas propriedades formais foram bem compreendidas, algoritmos eficientes para \emph{parsing} eram bem conhecidos e descritos.
 
 Desafortunadamente, após algumas  pesquisas descobriu-se que o uso apenas de PCFGs  era insuficiente para  PLN.
 
@@ -146,8 +145,8 @@ A percepção dessas falhas na utilização de PCFGs em PLN gerou estudos profun
 
 \begin{enumerate}
   \item Desenvolvimento de modelos mais sensíveis quanto as estruturas de linguagem.
-  \item O desenvolvimento de modelos contendo parâmetros correspondentes as dependências léxicas.
-  \item E o desenvolvimento dos chamados ``\emph{history-based models}'' ou modelos baseados em históricos.
+  \item Desenvolvimento de modelos contendo parâmetros correspondentes às dependências léxicas.
+  \item Desenvolvimento dos chamados ``\emph{history-based models}'' ou modelos baseados em históricos.
 \end{enumerate}
 
 
@@ -157,7 +156,7 @@ A percepção dessas falhas na utilização de PCFGs em PLN gerou estudos profun
 
 Segundo Collins (1999), muitas pesquisas foram voltadas ao objetivo de aumentar a sensibilidade ao contexto de uma PCFG, tendo resultados encorajadores.
 Considerando um modelo baseado em regras, mais uma vez, com mais sensibilidade ao contexto que PCFG. Outras pesquisas considerando versões parcialmente supervisionadas do algoritmo Inside-Outside:
-Considerando a idéia de que o \emph{treebank} como TBI, relativamente plano, com arvores não tão anotadas, e que o algoritmo de aprendizagem seria capaz de usar as informações desse \emph{treebank}, enquanto aprendia mais detalhes de maneira não supervisionada.
+Considerando a idéia de que o \emph{treebank} como TBI, relativamente plano, com árvores não tão anotadas, e que o algoritmo de aprendizagem seria capaz de usar as informações desse \emph{treebank}, enquanto aprendia mais detalhes de maneira não supervisionada.
 
 Todos esses modelos continuavam com falta de sensibilidade lexical.
 
@@ -169,12 +168,12 @@ Segundo Collins (1999), existem pelo menos duas razões para o desenvolvimento d
 Segundo, o mais importante apontado por Michael Collins para seus estudos, pesquisas sugeriram que a dependência de probabilidade seria poderosa para abordar o problema da ambigüidade.
 
 
-\section{History-Base Models}
+\section{History-based Models}
 \label{sec:hbm}
 
 
-Uma terceira linha de pesquisa, \emph{history-based models}, foi desenvolvida por pesquisadores da IBM. Estes modelos foram caracterizados por duas diferenças de uma simples PCFG. Primeiro. A arvore de analise representada foi incrementada de duas maneiras: \emph{tags} não terminais foram estendidos para incluir informação como itens léxicos (\emph{heads}, \emph{words}), ou categoria semântica; o condicionamento ao contexto foi estendido para prever a potencialidade de todas as estruturas anteriores geradas, ao invés de apenas expandir os símbolos não terminais como na PCFG.
-Segundo, mais poderoso método de aprendizado de maquina, em particular, arvores de decisão, foram usadas para estimar os parâmetros. A idéia básica foi expandir as funcionalidades e o contexto, incluindo todas as fontes de informação para desambiguação ; então usar arvores de decisão para aprender exatamente qual conjunto de combinações era importante para analisar.
+Uma terceira linha de pesquisa, \emph{history-based models}, foi desenvolvida por pesquisadores da IBM. Estes modelos foram caracterizados por duas diferenças de uma simples PCFG. Primeiro, árvore de análise representada foi incrementada de duas maneiras: \emph{tags} não terminais foram estendidos para incluir informação como itens léxicos (\emph{heads}, \emph{words}), ou categoria semântica; o condicionamento ao contexto foi estendido para prever a potencialidade de todas as estruturas anteriores geradas, ao invés de apenas expandir os símbolos não terminais como na PCFG.
+Segundo, mais poderoso método de aprendizado de máquina, em particular, árvores de decisão, foram usadas para estimar os parâmetros. A idéia básica foi expandir as funcionalidades e o contexto, incluindo todas as fontes de informação para desambiguação ; então usar árvores de decisão para aprender exatamente qual conjunto de combinações era importante para analisar.
 Um importante avanço nessa pesquisa foi a troca de uso de gramática ``\emph{hand-crafted}''  por modelos de treino utilizando \emph{treebanks}.
 
 \emph{History-based}, é um modelo gerativo probabilístico que usa a vantagem de possuir informação lingüística detalhada para resolver ambigüidade. Os autores abordam o sentido de contexto da forma mais fiel possível com o que nós humanos consideramos, racionalizando a quantidade de informação da sentença
@@ -190,7 +189,7 @@ Após isso, Collins (1997) propõe três novos modelos gerativos de \emph{parsin
 
 Collins define uma probabilidade conjunta P(AS; S) sobre pares árvore-sentença. Ele usa um modelo baseado no histórico de análise: uma árvore sintática é representada como uma seqüência de decisões, a partir de uma derivação \emph{top-down} e centrada no núcleo da árvore sintática. Segundo o autor, a representação da árvore sintática dessa forma permite que suposições de independência sejam feitas, levando a parâmetros condicionados a núcleos lexicais: parâmetros de projeção do núcleo, subcategorização, colocação de complemento/adjunto, dependência, distância, ente outros parâmetros.
 
-A seguir são apresentados cada um dos modelos. O Modelo 2 representa uma
+A seguir é apresentado cada um dos modelos. O Modelo 2 representa uma
 evolução em relação ao Modelo 1; e o Modelo 3, em relação ao Modelo 2.
 
 
@@ -240,10 +239,10 @@ A geração de um lado direito de um regra, dado o lado esquerdo, é então feit
 três passos, sucessivamente, até que toda a árvore seja construída: (1) gera-se o núcleo (NUC); (2) geram-se modificadores à esquerda (E) e (3) geram-se modificadores à direita (D).
 
 
-\subsubsection{Adicionando Distancia}
+\subsubsection{Adicionando Distância}
 \label{sub:distancia}
 
-Assim como em (Collins 1996), Michael Collins também adiciona distância a esse modelo (Collins 1997). Essa adição é importante para capturar preferências relacionadas a modificação à direita (por exemplo, \emph{right pp attachment}) por estruturas de ligação à direita (que quase sempre traduz a preferência por dependências entre palavras adjacentes) e a preferência por dependências que não cruzam um verbo. A distância pode ser incorporada adicionando uma quantidade de dependência entre os modificadores.
+Collins (1996, 1997), também adiciona distância a esse modelo. Essa adição é importante para capturar preferências relacionadas a modificação à direita (por exemplo, \emph{right pp attachment}) por estruturas de ligação à direita (que quase sempre traduz a preferência por dependências entre palavras adjacentes) e a preferência por dependências que não cruzam um verbo. A distância pode ser incorporada adicionando uma quantidade de dependência entre os modificadores.
 
 $$P_{esq}(E_i(pe_i)|Pai,NUC, nuc,E_1(pe_1)...E_{i-1}(pe_{i - 1}) = $$
 $$P_{esq}(E_i(pe_i)|NUC, Pai, nuc, distancia_{esq}(i - 1))$$
@@ -252,7 +251,7 @@ $$P_{dir}(D_i(pd_i)|Pai,NUC, nuc,D_1(pd_1)...D_{i-1}(pd_{i - 1}) = $$
 $$P_{dir}(D_i(pd_i)-NUC, Pai, nuc, distancia_{dir}(i - 1))$$
 \\
 
-A distância é um vetor contendo duas informações: adjacência (que permite aprender preferências associadas à modificadores à direita) e existência de um verbo entre eles (que permite aprender a preferência pela modificação do verbo mais recente).
+A distância é um vetor contendo duas informações: adjacência (que permite aprender preferências associadas a modificadores à direita) e existência de um verbo entre eles (que permite aprender a preferência pela modificação do verbo mais recente).
 
 \subsection{Modelo 2}
 \label{sub:modelo2}
@@ -280,7 +279,7 @@ Conforme os complementos são gerados, eles são removidos do conjunto de subcat
 \label{sub:modelo3}
 
 
-O Modelo 3 é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-moviment}\footnote{A modificação do modelo 3 não se mostra relevante e não contemplado no \emph{parser} do Bikel, nem neste trabalho}. Introduz parâmetros TRACES e Wh-Moviment. Por exemplo, na frase "The store that IBM bought last week", o modelo usaria as regras para gerá-la:
+O Modelo 3 é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-movement}\footnote{A modificação do modelo 3 não se mostra relevante e não é contemplada no \emph{parser} do Bikel, nem neste trabalho.}. Introduz parâmetros TRACES e Wh-Movement. Por exemplo, na frase "The store that IBM bought last week", o modelo usaria as regras para gerá-la:
 
 \begin{enumerate}
   \item $SN \rightarrow SN SBAR(+gap)$
@@ -290,9 +289,7 @@ O Modelo 3 é estendido da gramática de estrutura de frase generalizada para po
 \end{enumerate}
 
 
-
 SBAR é a representação para subcláusula; gap é a indicação de que falta algo naquele espaço
-
 
 
 \section{Casos especiais}
