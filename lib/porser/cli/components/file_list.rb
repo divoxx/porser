@@ -13,7 +13,7 @@ module Porser
         end
       
         def ask        
-          files = Dir["#{@path}/*"]
+          files = Dir["#{@path}/*"].sort
           
           puts "#{@title}:" if @title
           
@@ -26,8 +26,12 @@ module Porser
             puts "  [0] None"
           end
           
-          files.each_with_index do |path, i|
-            puts "  [#{"%1d" % [@allow_none ? i+1 : i]}] #{File.basename(path)}#{File.directory?(path) ? '/' : nil}" if !@only_folder || File.directory?(path)
+          idx = 0
+          files.each do |path|
+            if !@only_folder || File.directory?(path)
+              puts "  [#{"%1d" % [@allow_none ? idx + 1 : idx]}] #{File.basename(path)}#{File.directory?(path) ? '/' : nil}"
+              idx += 1
+            end
           end
         
           print "#{@question}"
