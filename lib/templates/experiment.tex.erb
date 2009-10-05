@@ -1,0 +1,39 @@
+\section{<%= name %>} % (fold)
+\label{sec:exp:<%= name %>}
+
+Filtros Aplicados:
+
+\begin{itemize}
+  <% for filter in filters %>
+  \item{\emph{<%= filter.name.demodulize %>}: <%= filter.description %>}
+  <% end %>
+\end{itemize}
+
+\emph{Head-Find rules} utilizada:
+
+\scriptsize
+\begin{verbatim}
+<%= head_find_rules %>
+\end{verbatim}
+
+\normalsize
+
+Configurações do parser:
+
+\scriptsize
+\begin{verbatim}
+<%= settings %>
+\end{verbatim}
+
+\normalsize
+
+Resultados obtidos:
+
+\scriptsize
+\begin{verbatim}
+<%= score(what) %>
+\end{verbatim}
+
+\normalsize
+
+% section exp:<%= name %> (end)

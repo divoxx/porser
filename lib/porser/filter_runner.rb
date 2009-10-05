@@ -27,7 +27,7 @@ module Porser
     end
     
     def initialize(*filters)
-      @filters = filters.map { |filter_name| Filters.const_get(filter_name.camelize).new }
+      @filters = filters.map(&:new)
     end
     
     def run(sentence_str)

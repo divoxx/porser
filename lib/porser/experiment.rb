@@ -1,5 +1,3 @@
-require 'porser/filter_runner'
-
 module Porser
   class Experiment
     attr_reader :path
@@ -19,10 +17,14 @@ module Porser
       @selection = Selection.new(File.dirname(@path))
     end
     
+    def name
+      self.path.basename
+    end
+    
     def filters
       unless @filters
         token_list = File.basename(@path).split("-")[1..-1]
-        @filters = token_list == ['unchanged'] ? [] : token_list
+        @filters = token_list.map { |filter_name| Filters.const_get(filter_name.camelize) unless filter_name == 'unchanged' }.compact
       end
       @filters
     end
@@ -62,6 +64,11 @@ module Porser
       `#{cmd}`
     end
     
+    def document!(what = :dev)
+      template = ERB.new(File.read(Porser.path.join('lib', 'templates', 'experiment.tex.erb')))
+      File.open(documentation_path_for(what), "w") { |fp| fp.write(template.result(binding)) } 
+    end
+    
     def generate_corpus!
       filter_runner = FilterRunner.new(*filters)
       
@@ -77,6 +84,22 @@ module Porser
       
       @selection.parseable_paths.each(&copy_proc)
       @selection.gold_paths.each(&copy_proc)
+    end
+    
+    def head_find_rules
+      @head_find_rules ||= head_rules_path.read.reject { |l| l =~ /^(;|\s*$)/ }
+    end
+    
+    def settings
+      @settings ||= settings_path.read
+    end
+    
+    def score(what = :dev)
+      @score ||= score_path_for(what).read
+    end
+    
+    def documentation_path_for(what)
+      @path.join("document.#{what}.tex")
     end
     
     def parseable_path_for(what)

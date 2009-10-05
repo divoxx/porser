@@ -56,6 +56,15 @@ namespace :experiments do
     exec("less #{experiment.score_path_for(:dev)}")
   end
   
+  desc "Generate the LaTeX documentation for the experiment"
+  task :doc do
+    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    puts "Scoring..."
+    experiment.document!(:dev)
+    puts "Done."
+    exec("less #{experiment.documentation_path_for(:dev)}")
+  end
+  
   desc "Run the whole process for many experiments"
   task :run => 'vendor/scorer/evalb' do
     experiments = ask_experiment_path(ask_selection_path, true).map { |path| Experiment.new(path) }
@@ -77,6 +86,12 @@ namespace :experiments do
       $stdout.print " * Scoring..."
       $stdout.flush
       experiment.score!(:dev)
+      $stdout.puts "Done."
+      $stdout.flush
+      
+      $stdout.print " * Generating LaTeX documentation..."
+      $stdout.flush
+      experiment.document!(:dev)
       $stdout.puts "Done."
       $stdout.flush
     end
