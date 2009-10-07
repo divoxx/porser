@@ -1,0 +1,111 @@
+Reading default settings from resource
+	jar:file:/home/administrador/Desktop/porser/vendor/dbparser.jar!/danbikel/parser/default-settings.properties
+Reading settings from
+	/home/administrador/Desktop/porser/corpus/selections/2009.09.28_18.28.11/2009.09.30_21.40.22-unchanged/settings.properties
+danbikel.parser.Trainer: using global model structure number 1
+Training from trees in "/home/administrador/Desktop/porser/corpus/selections/2009.09.28_18.28.11/2009.09.30_21.40.22-unchanged/corpus.train.gold.txt".
+Phase 0: reading trees and finding heads
+danbikel.parser.Trainer: skipping tree No. 301: invalid tree
+danbikel.parser.Trainer: skipping tree No. 364: invalid tree
+danbikel.parser.Trainer: skipping tree No. 903: invalid tree
+danbikel.parser.Trainer: processed 1000 sentences
+danbikel.parser.Trainer: skipping tree No. 1345: invalid tree
+danbikel.parser.Trainer: skipping tree No. 1657: invalid tree
+danbikel.parser.Trainer: processed 2000 sentences
+danbikel.parser.Trainer: skipping tree No. 2037: invalid tree
+danbikel.parser.Trainer: skipping tree No. 2593: invalid tree
+danbikel.parser.Trainer: skipping tree No. 2852: invalid tree
+danbikel.parser.Trainer: processed 3000 sentences
+danbikel.parser.Trainer: skipping tree No. 3074: invalid tree
+danbikel.parser.Trainer: skipping tree No. 3170: invalid tree
+danbikel.parser.Trainer: processed 4000 sentences
+danbikel.parser.Trainer: skipping tree No. 4169: invalid tree
+Phase 1: vocabulary counts
+Original vocab size is 17670.
+Phase 2: alter low-frequency words
+Transformed 0 original vocab items into word feature vectors.
+There is 1 distinct word feature vector.
+Original vocab size was 17670; new vocab size is 17670.
+Phase 3: collect stats
+danbikel.parser.Trainer: processed 1000 sentences
+danbikel.parser.Trainer: processed 2000 sentences
+danbikel.parser.Trainer: processed 3000 sentences
+danbikel.parser.Trainer: processed 4000 sentences
+danbikel.parser.Trainer: processed 4166 sentences in total
+Creating part-of-speech map...done (map has 17671 entries).
+Observation collection completed in 00:08.296.
+Writing observations to output file "/home/administrador/Desktop/porser/corpus/selections/2009.09.28_18.28.11/2009.09.30_21.40.22-unchanged/observed.gz".
+Finished writing observations in 00:03.823.
+Deriving counts.
+Deriving events for prior probability computations...done.
+Derived transitions for danbikel.parser.ms.LexPriorModelStructure1 in 00:00.424.
+Derived transitions for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:00.348.
+Derived transitions for danbikel.parser.ms.TopNonterminalModelStructure1 in 00:00.101.
+Derived transitions for danbikel.parser.ms.TopLexModelStructure1 in 00:00.251.
+Derived transitions for danbikel.parser.ms.HeadModelStructure1 in 00:00.753.
+Derived transitions for danbikel.parser.ms.GapModelStructure1 in 00:00.000.
+Derived transitions for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:01.673.
+Derived transitions for danbikel.parser.ms.RightSubcatModelStructure1 in 00:00.626.
+Derived transitions for danbikel.parser.ms.ModNonterminalModelStructure3 in 00:04.374.
+Derived transitions for danbikel.parser.ms.ModWordModelStructure2 in 00:01.858.
+Deriving head-to-parent map.
+Deriving subcat maps.
+Deriving modifying nonterminal maps.
+Canonical events HashMap stats: size=879066; capacity=800077; load factor=1.5; non-empty buckets=482344; max. bucket size=11; avg. bucket size=1.0987267475505482; avg. bucket size (non-empty buckets)=1.8224876851375782
+Precomputed probabilities for danbikel.parser.ms.LexPriorModelStructure1 in 00:00.047.
+Computed entropy and JS divergence values for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:00.490.
+danbikel.parser.ms.NonterminalPriorModelStructure1: pruned 2514 of 3548 histories (70.857%) and of 3548 pruneable histories (70.857%) and 11588 of 14285 transitions (81.120%) in 00:01.030.
+Precomputed probabilities for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:01.195.
+Precomputed probabilities for danbikel.parser.ms.TopNonterminalModelStructure1 in 00:00.001.
+Computed entropy and JS divergence values for danbikel.parser.ms.TopLexModelStructure1 in 02:04.212.
+danbikel.parser.ms.TopLexModelStructure1: pruned 0 of 19027 histories (0.000%) and of 19027 pruneable histories (0.000%) and 0 of 30658 transitions (0.000%) in 02:07.627.
+Cleaned up in 00:00.060; removed 19004 histories and 30111 transitions.
+Precomputed probabilities for danbikel.parser.ms.TopLexModelStructure1 in 02:07.924.
+Computed entropy and JS divergence values for danbikel.parser.ms.HeadModelStructure1 in 00:04.509.
+danbikel.parser.ms.HeadModelStructure1: pruned 4189 of 36736 histories (11.403%) and of 36586 pruneable histories (11.450%) and 4610 of 37991 transitions (12.134%) in 00:05.949.
+Precomputed probabilities for danbikel.parser.ms.HeadModelStructure1 in 00:06.360.
+Computed entropy and JS divergence values for danbikel.parser.ms.GapModelStructure1 in 00:00.000.
+danbikel.parser.ms.GapModelStructure1: pruned 0 of 0 histories (�%) and of 0 pruneable histories (�%) and 0 of 0 transitions (�%) in 00:00.000.
+Precomputed probabilities for danbikel.parser.ms.GapModelStructure1 in 00:00.002.
+Computed entropy and JS divergence values for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:01.064.
+danbikel.parser.ms.LeftSubcatModelStructure1: pruned 0 of 33413 histories (0.000%) and of 32961 pruneable histories (0.000%) and 0 of 33413 transitions (0.000%) in 00:02.505.
+Precomputed probabilities for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:02.832.
+Computed entropy and JS divergence values for danbikel.parser.ms.RightSubcatModelStructure1 in 00:00.616.
+danbikel.parser.ms.RightSubcatModelStructure1: pruned 1 of 33413 histories (0.003%) and of 32962 pruneable histories (0.003%) and 1 of 33482 transitions (0.003%) in 00:01.640.
+Precomputed probabilities for danbikel.parser.ms.RightSubcatModelStructure1 in 00:02.098.
+Computed entropy and JS divergence values for danbikel.parser.ms.ModNonterminalModelStructure3 in 01:26.770.
+danbikel.parser.ms.ModNonterminalModelStructure3: pruned 5194 of 112476 histories (4.618%) and of 109983 pruneable histories (4.723%) and 6404 of 138611 transitions (4.620%) in 01:30.152.
+Precomputed probabilities for danbikel.parser.ms.ModNonterminalModelStructure3 in 01:31.677.
+Computed entropy and JS divergence values for danbikel.parser.ms.ModWordModelStructure2 in 07:25.172.
+danbikel.parser.ms.ModWordModelStructure2: pruned 5801 of 55410 histories (10.469%) and of 53542 pruneable histories (10.834%) and 10932 of 84984 transitions (12.864%) in 07:26.271.
+Cleaned up in 00:00.241; removed 1900 histories and 2424 transitions.
+Precomputed probabilities for danbikel.parser.ms.ModWordModelStructure2 in 07:27.209.
+Finished deriving counts in 11:39.052.
+Writing out all derived counts to object file "/home/administrador/Desktop/porser/corpus/selections/2009.09.28_18.28.11/2009.09.30_21.40.22-unchanged/objects.gz".
+Writing out canonicalEvents...done (00:00.000).
+Writing out lexPriorModel...done (00:00.569).
+Writing out nonterminalPriorModel...done (00:00.105).
+Writing out topNonterminalModel...done (00:00.076).
+Writing out topLexModel...done (00:00.192).
+Writing out headModel...done (00:02.325).
+Writing out gapModel...done (00:00.002).
+Writing out leftSubcatModel...done (00:01.215).
+Writing out rightSubcatModel...done (00:00.412).
+Writing out modNonterminalModel...done (00:04.030).
+Writing out modWordModel...done (00:02.248).
+Writing out vocabCounter...done (00:00.130).
+Writing out wordFeatureCounter...done (00:00.000).
+Writing out nonterminals...done (00:00.001).
+Writing out posMap...done (00:00.176).
+Writing out headToParentMap...done (00:00.010).
+Writing out leftSubcatMap...done (00:00.002).
+Writing out rightSubcatMap...done (00:00.001).
+Writing out modNonterminalMap...done (00:00.014).
+Writing out simpleModNonterminalMap...done (00:00.002).
+Writing out prunedPreterms...done (00:00.001).
+Writing out prunedPunctuation...done (00:00.000).
+Finished outputting derived counts in 00:11.674.
+
+Total elapsed time: 12:03.540.
+
+Have a nice day!

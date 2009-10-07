@@ -1,0 +1,1540 @@
+#######################################################################
+
+Primeiro experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules basica invertida
+
+(* (r))
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.05
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=5
+parser.trainer.countThreshold=1
+
+Resultados dos experimentos
+
+remove_conj_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  64.07
+Bracketing Precision      =  65.98
+Complete match            =  11.49
+Average crossing          =   3.41
+No crossing               =  34.29
+2 or less crossing        =  54.79
+Tagging accuracy          =  89.22
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  67.57
+Bracketing Precision      =  69.39
+Complete match            =  14.42
+Average crossing          =   2.01
+No crossing               =  42.79
+2 or less crossing        =  66.59
+Tagging accuracy          =  88.57
+No. of matched brackets   = 4384
+No. of gold brackets      = 6488
+No. of test brackets      = 6318
+
+
+
+remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  63.81
+Bracketing Precision      =  65.84
+Complete match            =  10.92
+Average crossing          =   3.48
+No crossing               =  35.06
+2 or less crossing        =  55.56
+Tagging accuracy          =  89.25
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  67.74
+Bracketing Precision      =  69.59
+Complete match            =  13.70
+Average crossing          =   2.01
+No crossing               =  43.75
+2 or less crossing        =  67.55
+Tagging accuracy          =  88.66
+No. of matched brackets   = 4395
+No. of gold brackets      = 6488
+No. of test brackets      = 6316
+
+
+remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  64.44
+Bracketing Precision      =  66.14
+Complete match            =  11.11
+Average crossing          =   3.38
+No crossing               =  35.44
+2 or less crossing        =  56.13
+Tagging accuracy          =  89.82
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  67.77
+Bracketing Precision      =  69.27
+Complete match            =  13.94
+Average crossing          =   2.03
+No crossing               =  43.75
+2 or less crossing        =  68.51
+Tagging accuracy          =  89.22
+No. of matched brackets   = 4397
+No. of gold brackets      = 6488
+No. of test brackets      = 6348
+
+
+unchanged
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  64.33
+Bracketing Precision      =  66.17
+Complete match            =  11.49
+Average crossing          =   3.42
+No crossing               =  34.48
+2 or less crossing        =  55.17
+Tagging accuracy          =  89.24
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  68.11
+Bracketing Precision      =  69.72
+Complete match            =  14.42
+Average crossing          =   2.00
+No crossing               =  43.03
+2 or less crossing        =  67.31
+Tagging accuracy          =  88.64
+No. of matched brackets   = 4419
+No. of gold brackets      = 6488
+No. of test brackets      = 6338
+
+
+remove_noum_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  64.40
+Bracketing Precision      =  66.23
+Complete match            =  11.49
+Average crossing          =   3.39
+No crossing               =  34.87
+2 or less crossing        =  55.36
+Tagging accuracy          =  89.36
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  68.13
+Bracketing Precision      =  69.76
+Complete match            =  14.42
+Average crossing          =   1.98
+No crossing               =  43.27
+2 or less crossing        =  67.79
+Tagging accuracy          =  88.71
+No. of matched brackets   = 4420
+No. of gold brackets      = 6488
+No. of test brackets      = 6336
+
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  64.04
+Bracketing Precision      =  66.01
+Complete match            =  11.11
+Average crossing          =   3.47
+No crossing               =  34.87
+2 or less crossing        =  54.98
+Tagging accuracy          =  89.40
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  67.49
+Bracketing Precision      =  69.40
+Complete match            =  13.94
+Average crossing          =   2.03
+No crossing               =  43.27
+2 or less crossing        =  67.07
+Tagging accuracy          =  88.72
+No. of matched brackets   = 4379
+No. of gold brackets      = 6488
+No. of test brackets      = 6310
+
+
+#######################################################################
+
+Segundo experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules basica
+
+(* (l))
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.05
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=5
+parser.trainer.countThreshold=1
+
+Resultados dos experimentos
+
+remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.32
+Bracketing Precision      =  68.32
+Complete match            =  12.26
+Average crossing          =   3.16
+No crossing               =  36.02
+2 or less crossing        =  57.85
+Tagging accuracy          =  90.23
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.92
+Bracketing Precision      =  72.04
+Complete match            =  15.38
+Average crossing          =   1.77
+No crossing               =  44.95
+2 or less crossing        =  71.15
+Tagging accuracy          =  89.55
+No. of matched brackets   = 4796
+No. of gold brackets      = 6488
+No. of test brackets      = 6657
+
+
+remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.52
+Bracketing Precision      =  68.49
+Complete match            =  12.45
+Average crossing          =   3.17
+No crossing               =  35.82
+2 or less crossing        =  58.81
+Tagging accuracy          =  90.16
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.00
+Bracketing Precision      =  72.00
+Complete match            =  15.62
+Average crossing          =   1.79
+No crossing               =  44.71
+2 or less crossing        =  71.39
+Tagging accuracy          =  89.39
+No. of matched brackets   = 4801
+No. of gold brackets      = 6488
+No. of test brackets      = 6668
+
+remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.78
+Bracketing Precision      =  67.78
+Complete match            =  11.49
+Average crossing          =   3.25
+No crossing               =  36.40
+2 or less crossing        =  58.43
+Tagging accuracy          =  90.46
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.41
+Bracketing Precision      =  71.51
+Complete match            =  14.42
+Average crossing          =   1.85
+No crossing               =  45.19
+2 or less crossing        =  70.67
+Tagging accuracy          =  89.72
+No. of matched brackets   = 4698
+No. of gold brackets      = 6488
+No. of test brackets      = 6570
+
+unchanged
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.48
+Bracketing Precision      =  68.26
+Complete match            =  12.26
+Average crossing          =   3.21
+No crossing               =  36.21
+2 or less crossing        =  57.85
+Tagging accuracy          =  90.26
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.17
+Bracketing Precision      =  72.06
+Complete match            =  15.38
+Average crossing          =   1.80
+No crossing               =  45.19
+2 or less crossing        =  70.91
+Tagging accuracy          =  89.53
+No. of matched brackets   = 4812
+No. of gold brackets      = 6488
+No. of test brackets      = 6678
+
+
+remove_noum_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.50
+Bracketing Precision      =  68.27
+Complete match            =  12.26
+Average crossing          =   3.20
+No crossing               =  36.21
+2 or less crossing        =  57.85
+Tagging accuracy          =  90.36
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.29
+Bracketing Precision      =  72.19
+Complete match            =  15.38
+Average crossing          =   1.78
+No crossing               =  45.19
+2 or less crossing        =  71.15
+Tagging accuracy          =  89.59
+No. of matched brackets   = 4820
+No. of gold brackets      = 6488
+No. of test brackets      = 6677
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.53
+Bracketing Precision      =  68.74
+Complete match            =  12.26
+Average crossing          =   3.10
+No crossing               =  35.82
+2 or less crossing        =  58.62
+Tagging accuracy          =  90.23
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.97
+Bracketing Precision      =  72.31
+Complete match            =  15.38
+Average crossing          =   1.74
+No crossing               =  44.71
+2 or less crossing        =  71.63
+Tagging accuracy          =  89.43
+No. of matched brackets   = 4799
+No. of gold brackets      = 6488
+No. of test brackets      = 6637
+
+######################################################################
+
+Terceiro Experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules completa
+
+(
+(NP (l N PROP PRON_PERS PRONPERS PRON_INDP PRONINDP PRON NADJ NP))
+(VP (l V V_FIN V_INF V_PCP V_GER VFIN VINF VPCP VGER) (l VP))
+(ADJP (l ADJ ADJP) (l PRON_DET PRONDET PRON))
+(ADVP (r ADV ADVP))
+(CU (r CONJ_C CONJC CONJ CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.05
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=5
+parser.trainer.countThreshold=1
+
+Resultados dos experimentos
+
+remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.12
+Bracketing Precision      =  70.91
+Complete match            =  15.33
+Average crossing          =   3.02
+No crossing               =  37.36
+2 or less crossing        =  60.34
+Tagging accuracy          =  90.01
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.98
+Bracketing Precision      =  74.59
+Complete match            =  19.23
+Average crossing          =   1.74
+No crossing               =  46.63
+2 or less crossing        =  73.08
+Tagging accuracy          =  89.65
+No. of matched brackets   = 4800
+No. of gold brackets      = 6488
+No. of test brackets      = 6435
+
+remove_pron_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.69
+Bracketing Precision      =  70.43
+Complete match            =  15.71
+Average crossing          =   3.14
+No crossing               =  36.40
+2 or less crossing        =  58.05
+Tagging accuracy          =  89.80
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.80
+Bracketing Precision      =  74.23
+Complete match            =  19.71
+Average crossing          =   1.80
+No crossing               =  45.67
+2 or less crossing        =  70.67
+Tagging accuracy          =  89.44
+No. of matched brackets   = 4788
+No. of gold brackets      = 6488
+No. of test brackets      = 6450
+
+remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.36
+Bracketing Precision      =  70.16
+Complete match            =  14.94
+Average crossing          =   3.10
+No crossing               =  36.21
+2 or less crossing        =  59.00
+Tagging accuracy          =  90.27
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.87
+Bracketing Precision      =  73.56
+Complete match            =  18.75
+Average crossing          =   1.83
+No crossing               =  44.95
+2 or less crossing        =  71.39
+Tagging accuracy          =  89.88
+No. of matched brackets   = 4728
+No. of gold brackets      = 6488
+No. of test brackets      = 6427
+
+
+unchanged
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.09
+Bracketing Precision      =  70.92
+Complete match            =  15.52
+Average crossing          =   3.07
+No crossing               =  37.36
+2 or less crossing        =  58.81
+Tagging accuracy          =  90.03
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.00
+Bracketing Precision      =  74.71
+Complete match            =  19.47
+Average crossing          =   1.75
+No crossing               =  46.63
+2 or less crossing        =  71.63
+Tagging accuracy          =  89.70
+No. of matched brackets   = 4801
+No. of gold brackets      = 6488
+No. of test brackets      = 6426
+
+remove_noun_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.07
+Bracketing Precision      =  70.89
+Complete match            =  15.33
+Average crossing          =   3.06
+No crossing               =  37.55
+2 or less crossing        =  59.20
+Tagging accuracy          =  90.08
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.03
+Bracketing Precision      =  74.71
+Complete match            =  19.23
+Average crossing          =   1.74
+No crossing               =  46.88
+2 or less crossing        =  71.88
+Tagging accuracy          =  89.72
+No. of matched brackets   = 4803
+No. of gold brackets      = 6488
+No. of test brackets      = 6429
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.54
+Bracketing Precision      =  70.26
+Complete match            =  15.52
+Average crossing          =   3.11
+No crossing               =  36.78
+2 or less crossing        =  58.81
+Tagging accuracy          =  89.82
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.67
+Bracketing Precision      =  74.05
+Complete match            =  19.47
+Average crossing          =   1.79
+No crossing               =  46.15
+2 or less crossing        =  71.39
+Tagging accuracy          =  89.47
+No. of matched brackets   = 4780
+No. of gold brackets      = 6488
+No. of test brackets      = 6455
+
+######################################################################
+
+
+Quarto Experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules completa
+
+(
+(NP (l N PROP PRON_PERS PRONPERS PRON_INDP PRONINDP PRON NADJ NP))
+(VP (l V V_FIN V_INF V_PCP V_GER VFIN VINF VPCP VGER) (l VP))
+(ADJP (l ADJ ADJP) (l PRON_DET PRONDET PRON))
+(ADVP (r ADV ADVP))
+(CU (r CONJ_C CONJC CONJ CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.07
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=7
+parser.trainer.countThreshold=0
+
+
+remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.15
+Bracketing Precision      =  69.96
+Complete match            =  15.52
+Average crossing          =   3.15
+No crossing               =  36.40
+2 or less crossing        =  58.43
+Tagging accuracy          =  89.73
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.07
+Bracketing Precision      =  73.72
+Complete match            =  19.47
+Average crossing          =   1.81
+No crossing               =  45.67
+2 or less crossing        =  71.39
+Tagging accuracy          =  89.32
+No. of matched brackets   = 4741
+No. of gold brackets      = 6488
+No. of test brackets      = 6431
+
+remove_pron_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.95
+Bracketing Precision      =  69.81
+Complete match            =  15.33
+Average crossing          =   3.17
+No crossing               =  36.02
+2 or less crossing        =  57.47
+Tagging accuracy          =  89.57
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.72
+Bracketing Precision      =  73.28
+Complete match            =  19.23
+Average crossing          =   1.86
+No crossing               =  45.19
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.21
+No. of matched brackets   = 4718
+No. of gold brackets      = 6488
+No. of test brackets      = 6438
+
+
+remove_verb_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.13
+Bracketing Precision      =  69.07
+Complete match            =  14.56
+Average crossing          =   3.21
+No crossing               =  35.06
+2 or less crossing        =  56.70
+Tagging accuracy          =  90.10
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  71.81
+Bracketing Precision      =  72.59
+Complete match            =  18.27
+Average crossing          =   1.89
+No crossing               =  43.99
+2 or less crossing        =  69.71
+Tagging accuracy          =  89.65
+No. of matched brackets   = 4659
+No. of gold brackets      = 6488
+No. of test brackets      = 6418
+
+
+unchanged
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.36
+Bracketing Precision      =  70.21
+Complete match            =  15.71
+Average crossing          =   3.12
+No crossing               =  36.21
+2 or less crossing        =  58.24
+Tagging accuracy          =  89.84
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.23
+Bracketing Precision      =  73.92
+Complete match            =  19.71
+Average crossing          =   1.81
+No crossing               =  45.43
+2 or less crossing        =  71.15
+Tagging accuracy          =  89.43
+No. of matched brackets   = 4751
+No. of gold brackets      = 6488
+No. of test brackets      = 6427
+
+
+remove_noum_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.44
+Bracketing Precision      =  70.26
+Complete match            =  15.52
+Average crossing          =   3.10
+No crossing               =  36.97
+2 or less crossing        =  59.00
+Tagging accuracy          =  89.89
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.34
+Bracketing Precision      =  74.09
+Complete match            =  19.47
+Average crossing          =   1.78
+No crossing               =  46.39
+2 or less crossing        =  71.88
+Tagging accuracy          =  89.48
+No. of matched brackets   = 4758
+No. of gold brackets      = 6488
+No. of test brackets      = 6422
+
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.79
+Bracketing Precision      =  69.60
+Complete match            =  14.94
+Average crossing          =   3.18
+No crossing               =  36.78
+2 or less crossing        =  58.81
+Tagging accuracy          =  89.71
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.87
+Bracketing Precision      =  73.37
+Complete match            =  18.75
+Average crossing          =   1.83
+No crossing               =  46.15
+2 or less crossing        =  72.12
+Tagging accuracy          =  89.33
+No. of matched brackets   = 4728
+No. of gold brackets      = 6488
+No. of test brackets      = 6444
+
+
+########################################################
+
+Quinto Experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules completa
+
+(
+(NP (l N PROP PRON_PERS PRONPERS PRON_INDP PRONINDP PRON NADJ NP))
+(VP (l V V_FIN V_INF V_PCP V_GER VFIN VINF VPCP VGER) (l VP))
+(ADJP (l ADJ ADJP) (l PRON_DET PRONDET PRON))
+(ADVP (r ADV ADVP))
+(CU (r CONJ_C CONJC CONJ CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.03
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=6
+parser.trainer.countThreshold=0
+
+
+remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.79
+Bracketing Precision      =  70.74
+Complete match            =  15.33
+Average crossing          =   3.10
+No crossing               =  37.93
+2 or less crossing        =  59.39
+Tagging accuracy          =  89.93
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.91
+Bracketing Precision      =  74.77
+Complete match            =  19.23
+Average crossing          =   1.75
+No crossing               =  47.36
+2 or less crossing        =  72.12
+Tagging accuracy          =  89.50
+No. of matched brackets   = 4795
+No. of gold brackets      = 6488
+No. of test brackets      = 6413
+
+remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.67
+Bracketing Precision      =  70.42
+Complete match            =  15.52
+Average crossing          =   3.17
+No crossing               =  37.55
+2 or less crossing        =  58.24
+Tagging accuracy          =  89.90
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.72
+Bracketing Precision      =  74.35
+Complete match            =  19.47
+Average crossing          =   1.81
+No crossing               =  47.12
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.50
+No. of matched brackets   = 4783
+No. of gold brackets      = 6488
+No. of test brackets      = 6433
+
+remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.13
+Bracketing Precision      =  70.16
+Complete match            =  14.56
+Average crossing          =   3.09
+No crossing               =  36.78
+2 or less crossing        =  59.20
+Tagging accuracy          =  90.26
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.64
+Bracketing Precision      =  73.46
+Complete match            =  18.27
+Average crossing          =   1.84
+No crossing               =  45.91
+2 or less crossing        =  71.39
+Tagging accuracy          =  89.84
+No. of matched brackets   = 4713
+No. of gold brackets      = 6488
+No. of test brackets      = 6416
+
+unchanged
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.20
+Bracketing Precision      =  71.08
+Complete match            =  15.52
+Average crossing          =   3.06
+No crossing               =  38.12
+2 or less crossing        =  59.39
+Tagging accuracy          =  90.04
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.24
+Bracketing Precision      =  75.00
+Complete match            =  19.47
+Average crossing          =   1.74
+No crossing               =  47.60
+2 or less crossing        =  71.88
+Tagging accuracy          =  89.66
+No. of matched brackets   = 4817
+No. of gold brackets      = 6488
+No. of test brackets      = 6423
+
+remove_noun_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.14
+Bracketing Precision      =  71.05
+Complete match            =  15.52
+Average crossing          =   3.05
+No crossing               =  38.51
+2 or less crossing        =  59.00
+Tagging accuracy          =  90.09
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.17
+Bracketing Precision      =  74.98
+Complete match            =  19.47
+Average crossing          =   1.74
+No crossing               =  48.08
+2 or less crossing        =  71.63
+Tagging accuracy          =  89.63
+No. of matched brackets   = 4812
+No. of gold brackets      = 6488
+No. of test brackets      = 6418
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.33
+Bracketing Precision      =  70.12
+Complete match            =  15.52
+Average crossing          =   3.20
+No crossing               =  37.93
+2 or less crossing        =  58.24
+Tagging accuracy          =  89.84
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.37
+Bracketing Precision      =  73.97
+Complete match            =  19.47
+Average crossing          =   1.84
+No crossing               =  47.60
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.39
+No. of matched brackets   = 4760
+No. of gold brackets      = 6488
+No. of test brackets      = 6435
+
+########################################################
+
+Sexto Experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules completa
+
+(
+(NP (l N PROP PRON_PERS PRONPERS PRON_INDP PRONINDP PRON NADJ NP))
+(VP (l V V_FIN V_INF V_PCP V_GER VFIN VINF VPCP VGER) (l VP))
+(ADJP (l ADJ ADJP) (l PRON_DET PRONDET PRON))
+(ADVP (r ADV ADVP))
+(CU (r CONJ_C CONJC CONJ CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.03
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=3
+parser.trainer.countThreshold=0
+
+
+remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.69
+Bracketing Precision      =  70.38
+Complete match            =  15.13
+Average crossing          =   3.17
+No crossing               =  36.78
+2 or less crossing        =  58.43
+Tagging accuracy          =  89.90
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.47
+Bracketing Precision      =  73.96
+Complete match            =  18.99
+Average crossing          =   1.86
+No crossing               =  45.67
+2 or less crossing        =  71.15
+Tagging accuracy          =  89.44
+No. of matched brackets   = 4767
+No. of gold brackets      = 6488
+No. of test brackets      = 6445
+
+remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.41
+Bracketing Precision      =  70.12
+Complete match            =  15.71
+Average crossing          =   3.20
+No crossing               =  36.78
+2 or less crossing        =  58.24
+Tagging accuracy          =  89.83
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.29
+Bracketing Precision      =  73.78
+Complete match            =  19.71
+Average crossing          =   1.86
+No crossing               =  45.91
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.40
+No. of matched brackets   = 4755
+No. of gold brackets      = 6488
+No. of test brackets      = 6445
+
+remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.90
+Bracketing Precision      =  69.90
+Complete match            =  14.56
+Average crossing          =   3.13
+No crossing               =  36.78
+2 or less crossing        =  58.43
+Tagging accuracy          =  90.25
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  72.30
+Bracketing Precision      =  72.99
+Complete match            =  18.27
+Average crossing          =   1.89
+No crossing               =  45.19
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.77
+No. of matched brackets   = 4691
+No. of gold brackets      = 6488
+No. of test brackets      = 6427
+
+
+unchanged
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.90
+Bracketing Precision      =  70.55
+Complete match            =  15.33
+Average crossing          =   3.17
+No crossing               =  36.78
+2 or less crossing        =  57.66
+Tagging accuracy          =  89.97
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.72
+Bracketing Precision      =  74.16
+Complete match            =  19.23
+Average crossing          =   1.86
+No crossing               =  45.67
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.55
+No. of matched brackets   = 4783
+No. of gold brackets      = 6488
+No. of test brackets      = 6450
+
+remove_noun_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.91
+Bracketing Precision      =  70.56
+Complete match            =  15.33
+Average crossing          =   3.16
+No crossing               =  36.97
+2 or less crossing        =  57.85
+Tagging accuracy          =  90.06
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.80
+Bracketing Precision      =  74.22
+Complete match            =  19.23
+Average crossing          =   1.84
+No crossing               =  45.91
+2 or less crossing        =  70.43
+Tagging accuracy          =  89.61
+No. of matched brackets   = 4788
+No. of gold brackets      = 6488
+No. of test brackets      = 6451
+
+remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  69.03
+Bracketing Precision      =  69.78
+Complete match            =  15.33
+Average crossing          =   3.24
+No crossing               =  36.40
+2 or less crossing        =  57.85
+Tagging accuracy          =  89.81
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.01
+Bracketing Precision      =  73.59
+Complete match            =  19.23
+Average crossing          =   1.86
+No crossing               =  45.43
+2 or less crossing        =  70.91
+Tagging accuracy          =  89.33
+No. of matched brackets   = 4737
+No. of gold brackets      = 6488
+No. of test brackets      = 6437
+
+
+###################################################
+
+Sétimo Experimento:
+
+Corpus "Cetem Publico" sem lematizar
+
+head-find rules modificada
+
+; Bosque
+(
+(NP (l N))
+(VP (l V) (l V_FIN)(l V_INF)(l V_PCP)(l V_GER))
+(ADJP (l ADJ))
+(ADVP (l ADV))
+(PP (l PRP))
+(FCL (l VP))
+(ICL (l VP))
+(ACL (l VP))
+(* (l))
+)
+
+setting.properties alteradas
+
+# settings for danbikel.parser.Model
+parser.model.pruningThreshold=0.05
+
+# settings for danbikel.parser.Trainer
+parser.trainer.unknownWordThreshold=5
+parser.trainer.countThreshold=0
+
+unchanged
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  71.25
+Bracketing Precision      =  71.96
+Complete match            =  16.67
+Average crossing          =   2.84
+No crossing               =  39.27
+2 or less crossing        =  60.92
+Tagging accuracy          =  90.23
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.80
+Bracketing Precision      =  75.11
+Complete match            =  20.91
+Average crossing          =   1.66
+No crossing               =  49.04
+2 or less crossing        =  73.32
+Tagging accuracy          =  89.87
+No. of matched brackets   = 4853
+No. of gold brackets      = 6488
+No. of test brackets      = 6461
+
+2009.09.28_18.35.36-remove_conj_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  71.27
+Bracketing Precision      =  71.93
+Complete match            =  16.67
+Average crossing          =   2.85
+No crossing               =  39.46
+2 or less crossing        =  61.11
+Tagging accuracy          =  90.16
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.98
+Bracketing Precision      =  75.24
+Complete match            =  20.91
+Average crossing          =   1.66
+No crossing               =  49.28
+2 or less crossing        =  73.56
+Tagging accuracy          =  89.80
+No. of matched brackets   = 4865
+No. of gold brackets      = 6488
+No. of test brackets      = 6466
+
+2009.09.28_18.36.48-remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.82
+Bracketing Precision      =  71.65
+Complete match            =  16.86
+Average crossing          =   2.91
+No crossing               =  39.66
+2 or less crossing        =  61.30
+Tagging accuracy          =  90.21
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.43
+Bracketing Precision      =  74.85
+Complete match            =  21.15
+Average crossing          =   1.70
+No crossing               =  49.52
+2 or less crossing        =  73.56
+Tagging accuracy          =  89.84
+No. of matched brackets   = 4829
+No. of gold brackets      = 6488
+No. of test brackets      = 6452
+
+2009.09.28_18.38.03-remove_verb_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.48
+Bracketing Precision      =  71.36
+Complete match            =  15.71
+Average crossing          =   2.87
+No crossing               =  39.27
+2 or less crossing        =  60.92
+Tagging accuracy          =  90.54
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  73.69
+Bracketing Precision      =  74.06
+Complete match            =  19.71
+Average crossing          =   1.73
+No crossing               =  48.08
+2 or less crossing        =  72.84
+Tagging accuracy          =  90.13
+No. of matched brackets   = 4781
+No. of gold brackets      = 6488
+No. of test brackets      = 6456
+
+2009.09.28_21.54.04-remove_noun_subcategories
+
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  71.32
+Bracketing Precision      =  72.03
+Complete match            =  17.05
+Average crossing          =   2.83
+No crossing               =  39.66
+2 or less crossing        =  61.30
+Tagging accuracy          =  90.29
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.92
+Bracketing Precision      =  75.28
+Complete match            =  21.39
+Average crossing          =   1.64
+No crossing               =  49.52
+2 or less crossing        =  73.56
+Tagging accuracy          =  89.94
+No. of matched brackets   = 4861
+No. of gold brackets      = 6488
+No. of test brackets      = 6457
+
+2009.10.01_12.15.37-remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories
+
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  70.77
+Bracketing Precision      =  71.54
+Complete match            =  17.05
+Average crossing          =   2.94
+No crossing               =  39.66
+2 or less crossing        =  60.34
+Tagging accuracy          =  90.31
+
+-- len<=40 --
+Number of sentence        =    416
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    416
+Bracketing Recall         =  74.34
+Bracketing Precision      =  74.69
+Complete match            =  21.39
+Average crossing          =   1.72
+No crossing               =  49.52
+2 or less crossing        =  72.84
+Tagging accuracy          =  89.89
+No. of matched brackets   = 4823
+No. of gold brackets      = 6488
+No. of test brackets      = 6457
