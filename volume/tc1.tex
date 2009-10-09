@@ -30,9 +30,11 @@
 \listoffigures
 \listoftables
 
-\include{tc1-abreviaturas}
+%\include{tc1-abreviaturas}
 
-	%\lista de aberviacoes/simbolos
+\input{tc1-abreviaturas}
+
+%\lista de aberviacoes/simbolos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	\begin{resumo}
@@ -55,6 +57,7 @@
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
+
 
 \chapter{Introdução}
 \label{cha:introducao}
@@ -80,17 +83,18 @@
 \label{cha:michael_collins}
 	\input{tc1-collins}
 
-\chapter{Metodologia}
-\label{cha:metodologia}
-	\input{tc1-metodologia}
+%\chapter{Metodologia}
+%\label{cha:metodologia}
+%	\input{tc1-metodologia}
 
-\section{Método de Avaliação}
-\label{cha:avaliacao}
-	\input{tc1-avaliacao}
+%\section{Método de Avaliação}
+%\label{cha:avaliacao}
+%	\input{tc1-avaliacao}
+% entraram no capitulo resultados parciais
 
-\chapter{Resultados Parciais "REFAZER ........"}
+\chapter{Resultados Obtidos "REFAZER ........"}
 \label{cha:resultados_parciais}
-	\input{tc1-result-parciais}
+	\input{tc1-result-obtidos}
 
 \chapter{Considerações Finais}
 \label{cha:consuderacoes_finais}
@@ -98,7 +102,7 @@
 
 \appendix
 
-\chapter{Dan Bikel \emph{Statistical Parsing Engine}}
+\chapter{Ferramenta de parsing estatístico de Dan Bikel}
 \label{cha:dan_bikel1}
 	\input{tc1-parsing-bikel}
 
