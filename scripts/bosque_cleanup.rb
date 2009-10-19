@@ -44,7 +44,14 @@ original.each_char do |char|
 
   when /\A(.*)\((?!FRASE)([^\s]+)\s\z/m then
     output.write "#{$1}("
-    output.write $2.include?(":") ? $2.split(":")[1].upcase.gsub(/[^a-zA-Z_]+/, '').gsub(/_$/, '') : $2
+    
+    if $2.include?(":")
+      parts = $2.split(":")
+      output.write parts[1].upcase.gsub(/[^a-zA-Z_]+/, '').gsub(/_$/, '')
+      output.write "-#{parts[2]}" if parts[2]
+    else
+      $2
+    end
     output.write " "
     substr = ""
 
