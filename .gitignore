@@ -2,3 +2,4 @@
 .DS_Store
 vendor/scorer/evalb
 vendor/scorer/evalb.dSYM/*
+*~
