@@ -1,0 +1,12 @@
+\section{Metodologia}
+\label{cha:metodologia}
+	\input{tc1-metodologia}
+
+\section{Método de Avaliação}
+\label{cha:avaliacao}
+	\input{tc1-avaliacao}
+
+\section{Resultados}
+\label{cha:resultados}
+	\input{tc1-result-parciais2}
+

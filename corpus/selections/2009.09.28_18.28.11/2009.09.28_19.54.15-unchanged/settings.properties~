@@ -13,7 +13,7 @@ parser.language.training=portuguese.NPArgThreadTraining
 parser.model.precomputeProbabilities=true
 parser.model.collinsDeficientEstimation=true
 parser.model.doPruning=true
-parser.model.pruningThreshold=0.06
+parser.model.pruningThreshold=0.05
 parser.model.prevModMapperClass=danbikel.parser.Collins
 #
 # settings for danbikel.parser.ModelCollection
@@ -27,8 +27,8 @@ parser.training.collinsRelabelHeadChildrenAsArgs=false
 parser.training.collinsRepairBaseNPs=false
 #
 # settings for danbikel.parser.Trainer
-parser.trainer.unknownWordThreshold=6
-parser.trainer.countThreshold=0
+parser.trainer.unknownWordThreshold=5
+parser.trainer.countThreshold=1
 parser.trainer.reportingInterval=1000
 parser.trainer.numPrevMods=1
 parser.trainer.numPrevWords=1

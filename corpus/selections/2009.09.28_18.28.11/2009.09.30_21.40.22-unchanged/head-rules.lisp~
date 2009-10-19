@@ -76,15 +76,13 @@
 
 ; Bosque
 (
-(NP (l N PROP PRON_PERS PRON_INDP PRON NADJ NP))
-(VP (l V_FIN V_INF V_PCP V_GER V) (l VP))
-(ADJP (l ADJ ADJP) (l PRON_DET PRON))
-(ADVP (r ADV ADVP))
-(CU (r CONJ_C CONJ CU , ;))
-(X (l VP))
-(PP (l PRP PP))
-(FCL (l VP) (l NP))
-(ICL (l VP) (l NP))
-(ACL (l VP) (l NP))
+(NP (l N))
+(VP (l V_FIN)(l V_INF)(l V_PCP)(l V_GER))
+(ADJP (l ADJ))
+(ADVP (l ADV))
+(PP (l PRP))
+(FCL (l VP))
+(ICL (l VP))
+(ACL (l VP))
 (* (l))
 )

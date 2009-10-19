@@ -1,0 +1,21 @@
+\select@language {brazil}
+\contentsline {chapter}{Lista de Figuras}{v}
+\contentsline {chapter}{Lista de Tabelas}{vi}
+\contentsline {chapter}{Lista de Abreviaturas}{1}
+\contentsline {chapter}{\numberline {1}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{4}
+\contentsline {section}{\numberline {1.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{4}
+\contentsline {section}{\numberline {1.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN }{7}
+\contentsline {section}{\numberline {1.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{9}
+\contentsline {section}{\numberline {1.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{9}
+\contentsline {section}{\numberline {1.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{10}
+\contentsline {section}{\numberline {1.6}History-based Models}{10}
+\contentsline {section}{\numberline {1.7}Modelos de Michael Collins}{11}
+\contentsline {subsection}{\numberline {1.7.1}Modelo 1}{11}
+\contentsline {subsubsection}{\numberline {1.7.1.1}Adicionando Dist\IeC {\^a}ncia}{13}
+\contentsline {subsection}{\numberline {1.7.2}Modelo 2}{14}
+\contentsline {subsection}{\numberline {1.7.3}Modelo 3}{14}
+\contentsline {chapter}{\numberline {2}Resultados Obtidos "REFAZER ........"}{16}
+\contentsline {section}{\numberline {2.1}Metodologia}{16}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{17}
+\contentsline {section}{\numberline {2.3}Resultados}{19}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{23}

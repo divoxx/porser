@@ -1,0 +1,24 @@
+\begin{thebibliography}{COL97}
+
+\bibitem[BLA91]{black91} Black, Ezra; Abney, Steven; Gdaniec, C.; Grishman,
+  Ralph; Harrison, P.; Hindle, Don; Ingria, R.; Jelinek, Fred; Klavans, Judith;
+  Liberman, Mark; Marcus, Mitchell; Roukos, Salim; Santorini, Beatrice;
+  Strzalkowski, T. {\bf A procedure for quantitatively comparing the syntactic
+  coverage of english grammars}. In: \emph{ Proceedings of the DARPA Speech and
+  Natural Language Workshop}, San Mateo, CA, USA., 1991.
+
+\bibitem[BLA93]{black93} Black, Ezra; Jelinek, Fred; Lafferty, John; Magerman,
+  David~M.; Mercer, Robin; Roukos, Salim. {\bf Towards history-based grammars}:
+  using richer models for probabilistic parsing. In: \emph{ Proceedings of 31st
+  Annual Meeting of the Association for Computational Linguistics}, Columbus,
+  OH, USA., 1993.
+
+\bibitem[COL97]{collins97} Collins, Michael. {\bf Three generative, lexicalised
+  models for statistical parsing}. In: \emph{ Proceedings of the 35th Annual
+  Meeting of the Association for Computational Linguistics}, Madrid, Spain.,
+  1997. p.16--23.
+
+\bibitem[COL99]{collins99} Collins, Michael. {\bf Head-driven statistical
+  models for natural language parsing}. 1999. Tese de Doutorado.
+
+\end{thebibliography}
