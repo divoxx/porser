@@ -29,7 +29,7 @@ module Porser
       @filters
     end
     
-    def train!(what = :train, heap_size = 700)
+    def train!(what = :train, heap_size = 1400)
       cmd = "/usr/bin/env java"
       cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
       cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""
@@ -44,7 +44,7 @@ module Porser
       `rm -rf #{Porser.path.join('*.prune-log')}`
     end
     
-    def parse!(what = :dev, heap_size = 700)
+    def parse!(what = :dev, heap_size = 1400)
       cmd = "/usr/bin/env java"
       cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
       cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""

@@ -47,6 +47,10 @@ Porser.boot!
 
 require 'active_support'
 require 'erb'
+require 'porser/corpus/part_of_speech'
+require 'porser/corpus/category'
+require 'porser/corpus/sentence'
+require 'porser/corpus/sentence_parser'
 require 'porser/selection'
 require 'porser/experiment'
 require 'porser/filter_runner'
