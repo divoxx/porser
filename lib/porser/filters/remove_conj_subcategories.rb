@@ -1,12 +1,20 @@
 module Porser
   module Filters
     class RemoveConjSubcategories
-      def self.description
-        "Remove todas as subcategorias das conjunções, transformando CONJ_* em simplesmente CONJ"
+      def run(sentence)
+        map(sentence.root_node)
       end
       
-      def tag(tag)
-        tag =~ /^CONJ_/ ? "CONJ" : tag
+    protected
+      def map(node)
+        tag = (node.tag =~ /^CONJ_/ ? "CONJ" : node.tag)
+        
+        case node
+        when Corpus::Category
+          Corpus::Category.new(tag, node.children.map { |child| map(child) })
+        when Corpus::PartOfSpeech
+          Corpus::PartOfSpeech.new(tag, node.word, node.extra)
+        end
       end
     end
   end

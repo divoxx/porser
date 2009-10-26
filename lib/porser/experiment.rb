@@ -24,7 +24,7 @@ module Porser
     def filters
       unless @filters
         token_list = File.basename(@path).split("-")[1..-1]
-        @filters = token_list.map { |filter_name| Filters.const_get(filter_name.camelize) unless filter_name == 'unchanged' }.compact
+        @filters = token_list.map { |filter_name| Filters.const_get(filter_name.camelize).new unless filter_name == 'unchanged' }.compact
       end
       @filters
     end
@@ -70,24 +70,25 @@ module Porser
     end
     
     def generate_corpus!
-      filter_runner = FilterRunner.new(*filters)
-      
-      copy_proc = Proc.new do |path|
+      @selection.corpus_paths.each do |path|
         File.open(path, "r") do |infp|
-          File.open(@path.join("corpus.#{File.basename(path)}"), "w") do |outfp|
-            while line = infp.gets
-              outfp.write(filter_runner.run(line))
+          File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.parseable.txt')), "w") do |parseable_outfp|
+            File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.gold.txt')), "w") do |gold_outfp|
+              while line = infp.gets
+                sentence = Corpus::Sentence.parse(line)
+                filters.each { |filter| sentence = filter.run(sentence) }
+                
+                gold_outfp.write("#{sentence}\n")
+                parseable_outfp.write(sentence.to_s.gsub(/\([^\s]+|\)/, "").gsub(/^\s*(.*)\s*$/, "(\\1)\n").squeeze(" "))
+              end
             end
           end
         end
       end
-      
-      @selection.parseable_paths.each(&copy_proc)
-      @selection.gold_paths.each(&copy_proc)
     end
     
     def head_find_rules
-      @head_find_rules ||= head_rules_path.read.reject { |l| l =~ /^(;|\s*$)/ }
+      @head_find_rules ||= head_rules_path.readlines.reject { |l| l =~ /^(;|\s*$)/ }.join
     end
     
     def settings

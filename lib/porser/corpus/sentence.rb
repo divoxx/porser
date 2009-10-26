@@ -1,6 +1,8 @@
 module Porser
   module Corpus
     class Sentence
+      attr_reader :root_node
+      
       def self.parse(string)
         self.new(SentenceParser.new.parse(string))
       end

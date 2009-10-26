@@ -12,13 +12,6 @@ module Porser
         @children << node
       end
       
-      def each_node(level = 0, &block)
-        children.each do |child|
-          yield(child, level)
-          child.each_node(level + 1, &block) if child.respond_to?(:each_node)
-        end
-      end
-      
       def pretty_string(level = 0)
         children_str = @children.map { |child| child.pretty_string(level + 1) }.join(" ")
         indent_str   = "  " * level

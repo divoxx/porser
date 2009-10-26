@@ -8,7 +8,7 @@ module Porser
         yield(self)
       end
     
-      def map(percent, gold_io, parseable_io)
+      def map(percent, io)
         raise ArgumentError, "percent must be >= 0 and <= 100" unless (0..100).include?(percent)
         size = (@number_of_lines * (percent / 100.0)).round
       
@@ -20,15 +20,14 @@ module Porser
           @offset += size
         end
               
-        @mappings[ranges] = {:gold => gold_io, :parseable => parseable_io}
+        @mappings[ranges] = io
       end
     
       def run(n, line)
-        @mappings.each do |ranges, ios|
+        @mappings.each do |ranges, io|
           if ranges.any? { |r| r.include?(n) }
             line << "\n" unless line =~ /\n$/
-            ios[:gold].write(line.squeeze(" "))
-            ios[:parseable].write(line.gsub(/\([^\s]+|\)/, "").gsub(/^\s*(.*)\s*$/, "(\\1)\n").squeeze(" "))
+            io.write(line.squeeze(" "))
           end
         end
       end
@@ -48,9 +47,8 @@ module Porser
       
         mapper = Mapper.new(number_of_lines) do |m|
           {:train => 80, :dev => 10, :test => 10}.each do |what, percent|
-            ios << gold_io = File.open(selection.gold_path_for(what), "w")
-            ios << parseable_io = File.open(selection.parseable_path_for(what), "w")
-            m.map percent, gold_io, parseable_io
+            io = File.open(selection.corpus_path_for(what), "w")
+            m.map percent, io
           end
         end
               
@@ -71,20 +69,12 @@ module Porser
       @path = BasePath.join(timestamp)
     end
     
-    def parseable_paths
-      Dir["#{path}/*.parseable.txt"]
+    def corpus_path_for(what)
+      @path.join("corpus.#{what}.txt")
     end
     
-    def gold_paths
-      Dir["#{path}/*.gold.txt"]
-    end
-    
-    def parseable_path_for(what)
-      @path.join("#{what}.parseable.txt")
-    end
-    
-    def gold_path_for(what)
-      @path.join("#{what}.gold.txt")
+    def corpus_paths
+      Dir["#{path}/corpus.*.txt"]
     end
   end
 end

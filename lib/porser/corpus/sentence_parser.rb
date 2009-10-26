@@ -12,7 +12,7 @@ module Porser
   module Corpus
     class SentenceParser < Racc::Parser
 
-module_eval(<<'...end sentence_parser.y/module_eval...', 'sentence_parser.y', 26)
+module_eval(<<'...end sentence_parser.y/module_eval...', 'sentence_parser.y', 27)
   def initialize(tokenizer_klass = SentenceTokenizer)
     @tokenizer_klass = tokenizer_klass
   end
@@ -24,38 +24,36 @@ module_eval(<<'...end sentence_parser.y/module_eval...', 'sentence_parser.y', 26
   ensure
     @tokenizer = nil
   end
-  
-  def next_token
-    @tokenizer.next_token
-  end
 ...end sentence_parser.y/module_eval...
 ##### State transition tables begin ###
 
 racc_action_table = [
-     1,    10,    11,     7,     9,     6,     1,    13,    14,    15 ]
+     5,    11,    13,    10,     5,     8,     6,     7,    14,    15,
+    16,    17 ]
 
 racc_action_check = [
-     8,     7,     8,     2,     6,     1,     0,     9,    13,    14 ]
+     9,     7,     9,     7,     0,     6,     1,     5,    10,    11,
+    14,    16 ]
 
 racc_action_pointer = [
-     4,     2,     3,   nil,   nil,   nil,    -1,     1,    -2,     4,
-   nil,   nil,   nil,     5,     5,   nil ]
+     2,     6,   nil,   nil,   nil,     4,     5,    -2,   nil,    -2,
+     5,     5,   nil,   nil,     7,   nil,     7,   nil ]
 
 racc_action_default = [
-    -8,    -8,    -8,    -1,    -2,    -3,    -5,    -8,    -8,    -8,
-    16,    -6,    -4,    -8,    -8,    -7 ]
+    -9,    -9,    -1,    -2,    -3,    -9,    -9,    -5,    18,    -9,
+    -9,    -9,    -4,    -6,    -9,    -8,    -9,    -7 ]
 
 racc_goto_table = [
-     3,     2,     8,   nil,   nil,   nil,   nil,   nil,    12 ]
+     2,     1,     9,   nil,   nil,   nil,   nil,   nil,   nil,    12 ]
 
 racc_goto_check = [
-     2,     1,     5,   nil,   nil,   nil,   nil,   nil,     2 ]
+     2,     1,     5,   nil,   nil,   nil,   nil,   nil,   nil,     2 ]
 
 racc_goto_pointer = [
-   nil,     1,     0,   nil,   nil,    -4 ]
+   nil,     1,     0,   nil,   nil,    -5 ]
 
 racc_goto_default = [
-   nil,   nil,   nil,     4,     5,   nil ]
+   nil,   nil,   nil,     3,     4,   nil ]
 
 racc_reduce_table = [
   0, 0, :racc_error,
@@ -65,11 +63,12 @@ racc_reduce_table = [
   2, 11, :_reduce_4,
   0, 11, :_reduce_5,
   4, 9, :_reduce_6,
-  6, 10, :_reduce_7 ]
+  6, 10, :_reduce_7,
+  4, 10, :_reduce_8 ]
 
-racc_reduce_n = 8
+racc_reduce_n = 9
 
-racc_shift_n = 16
+racc_shift_n = 18
 
 racc_token_table = {
   false => 0,
@@ -113,7 +112,7 @@ Racc_token_to_s_table = [
   "part_of_speech",
   "node_list" ]
 
-Racc_debug_parser = false
+Racc_debug_parser = true
 
 ##### State transition tables end #####
 
@@ -163,7 +162,14 @@ module_eval(<<'.,.,', 'sentence_parser.y', 13)
 
 module_eval(<<'.,.,', 'sentence_parser.y', 16)
   def _reduce_7(val, _values, result)
-     result = PartOfSpeech.new(val[1], val[3], val[4]) 
+     result = PartOfSpeech.new(val[1], val[4], :lema => val[3]) 
+    result
+  end
+.,.,
+
+module_eval(<<'.,.,', 'sentence_parser.y', 17)
+  def _reduce_8(val, _values, result)
+     result = PartOfSpeech.new(val[1], val[2]) 
     result
   end
 .,.,
