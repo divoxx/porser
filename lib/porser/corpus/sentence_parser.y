@@ -1,6 +1,6 @@
 class Porser::Corpus::SentenceParser
 rule
-  sentence        : node            { @object = Sentence.new(val[0]) }
+  sentence        : node            { @object = val[0] }
                   ;
 
   node            : category        { result = val[0] }

@@ -121,7 +121,7 @@ Racc_debug_parser = false
 
 module_eval(<<'.,.,', 'sentence_parser.y', 2)
   def _reduce_1(val, _values, result)
-     @object = Sentence.new(val[0]) 
+     @object = val[0] 
     result
   end
 .,.,

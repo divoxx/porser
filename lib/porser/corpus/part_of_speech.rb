@@ -8,6 +8,14 @@ module Porser
         @lema = lema
         @word = word
       end
+      
+      def pretty_string(level = 0)
+        "\n" + ("  " * level) + to_s
+      end
+      
+      def to_s
+        "(#{tag} #{word})"
+      end
     end
   end
 end
