@@ -20,6 +20,9 @@
   automatic grammatical analysis of portuguese in a contraint grammar
   framework}.  Aarhus University Press, 2000.
 
+\bibitem[BIK02]{bikel02} Bikel, Dan. {\bf Design of a multi-lingual,
+  parallel-processing statistical parsing engine}. 2002.
+
 \bibitem[BIK04]{bikel04} Bikel, Dan. {\bf Intricacies of collins' parsing
   model}. \emph{ Computational Linguistics}, 2004.
 

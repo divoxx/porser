@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  19 OCT 2009 00:09
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  2 NOV 2009 18:29
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -555,7 +555,7 @@ ras/facin.jpg>] [2
 (/home/administrador/Desktop/porser/volume/tc1-abreviaturas.tex [7
 
 ]
-Overfull \hbox (36.4553pt too wide) in alignment at lines 5--10
+Overfull \hbox (36.4553pt too wide) in alignment at lines 5--11
  [] [] [] 
  []
 
@@ -781,7 +781,14 @@ Overfull \hbox (35.3125pt too wide) in paragraph at lines 675--676
 .......................................... 
  []
 
-[21 </home/administrador/Desktop/porser/volume/parser_schema.pdf>]) [22]
+[21 </home/administrador/Desktop/porser/volume/parser_schema.pdf>] [22]
+[23] [24] [25]
+Overfull \hbox (13.05708pt too wide) in paragraph at lines 776--776
+[]\OT1/cmr/bx/n/14.4 Parsing pro-ba-bil^^S^^Pstico para o por-tugu^es do Bra-si
+l de Andr^^Seia
+ []
+
+[26]) [27]
 Cap\'{\i }tulo 3.
 (/home/administrador/Desktop/porser/volume/tc1-collins.tex
 Overfull \hbox (10.74171pt too wide) in paragraph at lines 8--9
@@ -804,7 +811,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
-[23
+[28
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 19--21
@@ -832,7 +839,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-[24]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
@@ -862,11 +869,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
-[25] [26] <ambig.jpg, id=398, 496.85625pt x 471.26062pt>
+[30] [31] <ambig.jpg, id=414, 496.85625pt x 471.26062pt>
 File: ambig.jpg Graphic file (type jpg)
  <use ambig.jpg>
-[27 </home/administrador/Desktop/porser/volume/ambig.jpg>] [28] [29] [30]
-[31]
+[32 </home/administrador/Desktop/porser/volume/ambig.jpg>] [33] [34] [35]
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 248--250
 
  []
@@ -876,12 +883,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
-[32]) [33] [34]
+[37]) [38] [39]
 Cap\'{\i }tulo 4.
 (/home/administrador/Desktop/porser/volume/tc1-result-obtidos.tex
-(/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [35
+(/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [40
 
-]) [36]
+]) [41]
 (/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
@@ -897,7 +904,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-[37]
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 26--29
 
  []
@@ -907,20 +914,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--33
 
  []
 
-) [38] (/home/administrador/Desktop/porser/volume/tc1-result-parciais2.tex
-<diagrama_experimentos2.jpeg, id=439, 1388.18625pt x 632.3625pt>
-File: diagrama_experimentos2.jpeg Graphic file (type jpg)
-
-<use diagrama_experimentos2.jpeg>
-Overfull \hbox (30.62836pt too wide) in paragraph at lines 5--6
- [] 
- []
-
-[39 </home/administrador/Desktop/porser/volume/diagrama_experimentos2.jpeg>]
-[40] [41])) [42]
+) [43] (/home/administrador/Desktop/porser/volume/tc1-result-parciais2.tex
+[44] [45] [46])) [47]
 Cap\'{\i }tulo 5.
 (/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex)
-[43
+[48
 
 ]
 Apendice A.
@@ -929,7 +927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-[44
+[49
 
 ]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 37--38
@@ -982,7 +980,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[45]
+[50]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 76--77
 [][] 
  []
@@ -1012,7 +1010,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-[46]
+[51]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 143--144
 [][] 
  []
@@ -1022,25 +1020,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-[47] [48]) (/home/administrador/Desktop/porser/volume/tc1.bbl [49]
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+[52] [53]) (/home/administrador/Desktop/porser/volume/tc1.bbl [54]
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[50
+[55
 
-] [51])
+] [56])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[52] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[57] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
- 4579 strings out of 94074
- 60748 string characters out of 1165153
- 132123 words of memory out of 1500000
- 7717 multiletter control sequences out of 10000+50000
+ 4578 strings out of 94074
+ 60729 string characters out of 1165153
+ 132197 words of memory out of 1500000
+ 7718 multiletter control sequences out of 10000+50000
  23402 words of font info for 86 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  29i,15n,32p,1363b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -1063,9 +1061,9 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (59 pages, 651888 bytes).
+Output written on tc1.pdf (64 pages, 570942 bytes).
 PDF statistics:
- 560 PDF objects out of 1000 (max. 8388607)
+ 575 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
