@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  2 NOV 2009 18:29
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  2 NOV 2009 20:42
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -776,19 +776,14 @@ sing \OT1/cmr/bx/n/17.28 es-tat^^S^^Pstico
 <parser_schema.pdf, id=194, 696.6025pt x 534.99875pt>
 File: parser_schema.pdf Graphic file (type pdf)
  <use parser_schema.pdf>
-Overfull \hbox (35.3125pt too wide) in paragraph at lines 675--676
-[]\OT1/cmr/m/n/12 VERIFICAR RE-AL-MENTE SE []E OVER-FIT-TING ..................
-.......................................... 
- []
-
 [21 </home/administrador/Desktop/porser/volume/parser_schema.pdf>] [22]
 [23] [24] [25]
-Overfull \hbox (13.05708pt too wide) in paragraph at lines 776--776
+Overfull \hbox (13.05708pt too wide) in paragraph at lines 775--775
 []\OT1/cmr/bx/n/14.4 Parsing pro-ba-bil^^S^^Pstico para o por-tugu^es do Bra-si
 l de Andr^^Seia
  []
 
-[26]) [27]
+[26] [27]) [28]
 Cap\'{\i }tulo 3.
 (/home/administrador/Desktop/porser/volume/tc1-collins.tex
 Overfull \hbox (10.74171pt too wide) in paragraph at lines 8--9
@@ -811,7 +806,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
-[28
+[29
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 19--21
@@ -839,7 +834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
@@ -869,11 +864,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
-[30] [31] <ambig.jpg, id=414, 496.85625pt x 471.26062pt>
+[31] [32] <ambig.jpg, id=417, 496.85625pt x 471.26062pt>
 File: ambig.jpg Graphic file (type jpg)
  <use ambig.jpg>
-[32 </home/administrador/Desktop/porser/volume/ambig.jpg>] [33] [34] [35]
-[36]
+[33 </home/administrador/Desktop/porser/volume/ambig.jpg>] [34] [35] [36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 248--250
 
  []
@@ -883,12 +878,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
-[37]) [38] [39]
+[38]) [39] [40]
 Cap\'{\i }tulo 4.
 (/home/administrador/Desktop/porser/volume/tc1-result-obtidos.tex
-(/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [40
+(/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [41
 
-]) [41]
+]) [42]
 (/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
@@ -904,7 +899,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-[42]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 26--29
 
  []
@@ -914,11 +909,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--33
 
  []
 
-) [43] (/home/administrador/Desktop/porser/volume/tc1-result-parciais2.tex
-[44] [45] [46])) [47]
+) [44] (/home/administrador/Desktop/porser/volume/tc1-result-parciais2.tex
+[45] [46] [47])) [48]
 Cap\'{\i }tulo 5.
 (/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex)
-[48
+[49
 
 ]
 Apendice A.
@@ -927,7 +922,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-[49
+[50
 
 ]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 37--38
@@ -980,7 +975,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[50]
+[51]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 76--77
 [][] 
  []
@@ -1010,7 +1005,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-[51]
+[52]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 143--144
 [][] 
  []
@@ -1020,20 +1015,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-[52] [53]) (/home/administrador/Desktop/porser/volume/tc1.bbl [54]
+[53] [54]) (/home/administrador/Desktop/porser/volume/tc1.bbl [55]
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[55
+[56
 
-] [56])
+] [57])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[57] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[58] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
  4578 strings out of 94074
  60729 string characters out of 1165153
@@ -1061,9 +1056,9 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (64 pages, 570942 bytes).
+Output written on tc1.pdf (65 pages, 572101 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
+ 578 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
