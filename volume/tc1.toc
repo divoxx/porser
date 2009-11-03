@@ -39,7 +39,7 @@
 \contentsline {subsubsection}{\numberline {3.7.1.1}Adicionando Dist\IeC {\^a}ncia}{38}
 \contentsline {subsection}{\numberline {3.7.2}Modelo 2}{39}
 \contentsline {subsection}{\numberline {3.7.3}Modelo 3}{39}
-\contentsline {chapter}{\numberline {4}Resultados Obtidos "REFAZER ........"}{41}
+\contentsline {chapter}{\numberline {4}Resultados Obtidos}{41}
 \contentsline {section}{\numberline {4.1}Metodologia}{41}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{44}
 \contentsline {section}{\numberline {4.3}Resultados}{46}
