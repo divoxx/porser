@@ -41,11 +41,11 @@
 \contentsline {subsection}{\numberline {3.7.3}Modelo 3}{39}
 \contentsline {chapter}{\numberline {4}Resultados Obtidos "REFAZER ........"}{41}
 \contentsline {section}{\numberline {4.1}Metodologia}{41}
-\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{43}
-\contentsline {section}{\numberline {4.3}Resultados}{45}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{49}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{50}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{50}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{53}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{54}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{56}
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{44}
+\contentsline {section}{\numberline {4.3}Resultados}{46}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{50}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{51}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{54}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{57}

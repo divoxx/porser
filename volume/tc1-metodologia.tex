@@ -3,6 +3,17 @@ Este trabalho possui um forte componente experimental e exploratório. Assim, em
 Será usado um sistema de controle de versão que permite que se trabalhe com diversas versões dos arquivos de trabalho
 e  versões do software durante nossos testes e implementações.
 
+Primeiramente trabalhamos com a configuração default para o inglês, com parâmetros e head-find rules definidas para a gramática definida no PTB. A segunda configuração se usou as configurações para o português definidas por Dan Bikel em seu parser e com as regras de head-find rules básicas, ou seja, primeiro o núcleo da sentença é a primeira palavra da direita para a esquerda, regra essa que é padrão na lingua inglesa, logo se alterou para que o núcleo da sentença seja a primeira palavra da esquerda para a direita, regra que ja se aproxima da regra de formação da lingua portuguesa. Após testes com essas configurações iniciais para termos paramâmetro comparativos, da evolução tanto de parametros melhores do parser quanto a definição das head-find rules para a lingua portuguesa.
+
+Verificou-se a necessidade de pré-processamento do corpus utilizado, pois o parser aceita como entrada corpus no formato PTB, mesmos obstáculos encontrados por Baldridge \cite{baldridge06} e Bonfante\cite{bonfante03} em seus trabalhos.
+
+Não sera feita alteração quanto as TAGS utilizadas no corpus de trabalho, apenas quanto a pontuação de hífen, que será sibstituida por Underline.
+
+Também será utilizado lematização das palavras do corpus, primeiro com todas as palavras das sentenças, logo apenas com os verbos. A fim de verificar a qualidade do treino executado pela ferramenta de Bikel.
+
+Nos primeiros experimentos foram feitas apenas alterações nas regras de \emph{head-find}. O Corpus de treino, desenvolvimento e teste utilizado é o Bosque da Floresta Sintática que contém um total de 5200 sentenças separadas em 4160 para treino 520 para desenvolvimento e 520 para teste, nas primeiras baterias de teste utilizamos pouco menos de 100 sentenças para ajustar parâmetros mais rapidamente, na última foi utilizado 520 sentenças na fase de desenvolvimento e teste.
+
+
 Inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos constituíntes que é o principal fator na implementação dos modelos propostos por Collins \cite{collins99}.
 
 O corpus do Bosque ja tem anotados muitos dos \emph{heads} das sentenças disponibilizadas, porém o parser de bikel precisa de todos os \emph{heads}, e verificou-se que nem todas as sentenças possuem essa informação, tendo que ser analisada e construída de forma empírica. 
@@ -20,7 +31,6 @@ Os resultados deste teste mostrou que o conjunto de regras ....
 è interessante mensionar que a construção das regras foi incremental  ... a título de curiosidade  figura tal ...
 
 O primeiro conjunto de regras usadas é o que estamos usando atualmente bem melhor que o original, conforme resultados apresentados, esses resultados foram ... na arvore de experimentos
-
 
 Formado o conjunto de regras de head-find . A segunda sequencia de experimentos tera a ver com a granilaridade das POS tags. ....
 
