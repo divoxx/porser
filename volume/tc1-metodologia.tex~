@@ -5,7 +5,15 @@ e  versões do software durante nossos testes e implementações.
 
 Foi dada uma maior atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
 
-Houve a necessidade de pré-processamento do corpus utilizado, pois o parser aceita como entrada corpus no formato PTB, mesmos obstáculos encontrados por Baldridge \cite{baldridge06} e Bonfante\cite{bonfante03} em seus trabalhos. Não foi feita alteração quanto as TAGS utilizadas no corpus de trabalho, apenas quanto a pontuação de hífen, que será sibstituida por Underline.
+Para trabalhar com o corpus no formato de entrada para o parser de Bikel foi necessário pré-processamento para eliminar ruídos e criar dados de entrada no formato PTB, mesmos obstáculos encontrados por Baldridge \cite{baldridge06} e Bonfante\cite{bonfante03} em seus trabalhos. 
+
+A presença de ruído nos dados do corpus é inevitável após análise automática, e algumas inconsistências ainda foram encontradas no decorrer do trabalho. Ruídos são possívelmente provenientes da complexidade na construções da língua que pode gerar ambiguidade ou estruturas complexas, o que dificulta a análise (em alguns casos dificulta até a análise humana). %De um modo geral, é possível separar as incorreções encontradas, decorrentes da análise automática, basicamente em dois grupos:
+
+%- aquele em que as incorreções são fruto de algum tipo de ambiguidade na classificação morfológica e/ou sintática das palavras, e que são, de alguma forma simples de resolver com a intervenção humana;
+
+%- e outro em que as incorreções são fruto de estruturas complexas da língua, de resolução difícil até para o revisor humano (tais casos requerem discussão e opinião de todo o grupo envolvido no projeto).
+
+Não foi feita alteração quanto as TAGS utilizadas no corpus de trabalho, apenas quanto a pontuação de hífen, que será sibstituida por Underline.
 
 Como experimento mais avançado foram feitos testes utilizado lematização das palavras do corpus, primeiro com todas as palavras das sentenças, logo apenas com os verbos. A fim de verificar a qualidade do treino executado pela ferramenta de Bikel.
 
