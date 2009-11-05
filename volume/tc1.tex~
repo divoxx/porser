@@ -31,13 +31,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{resumo}
 
-O objetivo desse trabalho é desenvolver uma ferramenta de \emph{parsing} para o português baseado em modelos probabilísticos. Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática. Os modelos probabilísticos estudados são os desenvolvidos por Michael collins, e usaremos como base o parser implementado por Dan Bikel, avaliando as possibilidades de parametrização e extenção possíveis. 
+%O objetivo desse trabalho é desenvolver uma ferramenta de \emph{parsing} para o português baseado em modelos probabilísticos. Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática. Os modelos probabilísticos estudados são os desenvolvidos por Michael collins, e usaremos como base o parser implementado por Dan Bikel, avaliando as possibilidades de parametrização e extenção possíveis. 
 
-Também será necessário o desenvolvimento de módulos de pré-processamento para adaptação do corpus utilizado.
+%Também será necessário o desenvolvimento de módulos de pré-processamento para adaptação do corpus utilizado.
 
-Exploramos várias configurações em termos de parametrização possíveis do parser e melhorias no corpus utilizado para treino do parser.
+%Exploramos várias configurações em termos de parametrização possíveis do parser e melhorias no corpus utilizado para treino do parser.
 
-%Nossa melhor configuração atingiu bla bla bla. 
+
+Este trabalho descreve a construção de um parser para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de corpus anotado. 
+Para este fim é utilizada a ferramenta de desenvolvimento construída por Dan Bikel para o modelo de Collins. 
+Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática.
+São descritos aqui aspectos fundamentais do desenvolvimento do parser que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, bem como algorítmos de pré e pós processamento do corpus e outras estratégias utilizadas na busca melhorar a acuidade do parser. 
+O processo é inerentemente empírico. Utilizou-se uma metodologia incremental na busca de melhores configurações baseado em rigorosa avaliação quantitativa a cada passo seguindo os critérios do PARSEVAL. 
+Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, é superior aos resultados obtidos em trabalhos semelhantes da literatura.
 
 \end{resumo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

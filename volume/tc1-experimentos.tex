@@ -1,0 +1,23 @@
+Primeiramente trabalhamos com a configuração default para o inglês, com parâmetros e head-find rules definidas para a gramática definida no PTB. A segunda configuração de testes usamos as configurações para o português definidas por Dan Bikel em seu parser e com as regras de head-find rules básicas, ou seja, primeiro o núcleo da sentença é a primeira palavra da direita para a esquerda, regra essa que é padrão na lingua inglesa, logo se alterou para que o núcleo da sentença seja a primeira palavra da esquerda para a direita, regra que ja se aproxima da regra de formação da lingua portuguesa. Após testes com essas configurações iniciais, trabalhou-se incrementalmente na evolução tanto de parametros melhores do parser quanto a definição das head-find rules para a lingua portuguesa.
+
+É interessante mensionar que a construção das regras foi incremental e experimentos foram sendo feitos para avaliar a qualidade das regras criadas como ilistrado nas figuras ....
+
+O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. Acreditamos que não teremos ganho incremento nos resultados tentando melhorar as regras de head-find, e sim se ajustarmos melhor os parâmetros da ferramenta.
+
+A segunda sequência de experimentos tera como objetivo avaliar a granularidade das POS tags no corpus utilizado. ....
+
+...
+
+
+A ideia básica é que tags devem ser distintos quando a categorias tem distribuições sintáticas diferentes, por outro lado se duas classes tem mesma distribuição ou distribuição próxima, separa-las apenas levará a perda de qualidade quanto a informação sintática constante nas sentenças ...,  ...
+
+Uma das grandes dificuldades encontradas neste trabalho, foi com relação aos verbos. No português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos com representação morfológica diferente, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica e muito a tarefa de análise morfológica. Dificuldade esta também relatada por Wing e Baldridge em seu trabalho.
+
+Verificou-se conforme esperado que para verbos é bastante relevante as sub-categorias pois a distribuição sintática das diferentes categorias verbais é bem distinta, da mesma forma para pronomes porque os possessivos tem diferente distribuição que os pessoais; os .. tem posição de pré-modificadores nominal e os outros ...
+
+Diferenciando conjunçao coordenada e subordinativa nao houve diferença significativa nos resultados.
+
+O último caso relativo a nomes refere-se  o que ... do corpus 
+
+Foi dada grande atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
+

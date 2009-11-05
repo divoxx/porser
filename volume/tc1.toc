@@ -20,7 +20,7 @@
 \contentsline {subsubsection}{\numberline {2.2.2.5}Projeto Semantic Share}{16}
 \contentsline {paragraph}{\numberline {2.2.2.5.1}Esquema de Anota\IeC {\c c}\IeC {\~a}o do Projeto Semantic Share}{19}
 \contentsline {section}{\numberline {2.3}Diagrama geral do processo de \emph {parsing} estat\IeC {\'\i }stico baseado em \emph {corpus}}{21}
-\contentsline {section}{\numberline {2.4}\emph {Parsers} para Portugu\IeC {\^e}s}{22}
+\contentsline {section}{\numberline {2.4}\emph {Parsers} para Portugu\IeC {\^e}s}{23}
 \contentsline {subsection}{\numberline {2.4.1}Trabalho de Benjamin Wing e Jason Baldridge}{23}
 \contentsline {subsubsection}{\numberline {2.4.1.1}Preparando o material de treino, adapta\IeC {\c c}\IeC {\~o}es no corpus}{23}
 \contentsline {subsubsection}{\numberline {2.4.1.2}Adapta\IeC {\c c}\IeC {\~o}es no analisador para o portugu\IeC {\^e}s}{24}
@@ -41,11 +41,12 @@
 \contentsline {subsection}{\numberline {3.7.3}Modelo 3}{39}
 \contentsline {chapter}{\numberline {4}Resultados Obtidos}{41}
 \contentsline {section}{\numberline {4.1}Metodologia}{41}
-\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{44}
-\contentsline {section}{\numberline {4.3}Resultados}{46}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{50}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{51}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{54}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{57}
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{43}
+\contentsline {section}{\numberline {4.3}Experimentos}{45}
+\contentsline {section}{\numberline {4.4}Resultados}{47}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{51}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{52}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{52}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{55}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{56}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{58}

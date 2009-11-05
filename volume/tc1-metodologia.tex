@@ -3,8 +3,6 @@ Este trabalho possui um forte componente experimental e exploratório. Assim, em
 Será usado um sistema de controle de versão que permite que se trabalhe com diversas versões dos arquivos de trabalho
 e  versões do software durante nossos testes e implementações.
 
-Foi dada uma maior atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
-
 Para trabalhar com o corpus no formato de entrada para o parser de Bikel foi necessário pré-processamento para eliminar ruídos e criar dados de entrada no formato PTB, mesmos obstáculos encontrados por Baldridge \cite{baldridge06} e Bonfante\cite{bonfante03} em seus trabalhos. 
 
 A presença de ruído nos dados do corpus é inevitável pois a maioria das sentenças são anotadas de maneira automática, e algumas inconsistências ainda foram encontradas no decorrer do trabalho. Ruídos são possívelmente provenientes da complexidade na construções da língua que pode gerar ambiguidade ou estruturas complexas, o que dificulta a análise (em alguns casos dificulta até a análise humana). %De um modo geral, é possível separar as incorreções encontradas, decorrentes da análise automática, basicamente em dois grupos:
@@ -25,22 +23,5 @@ O corpus do Bosque ja tem anotados muitos dos \emph{heads} das sentenças dispon
 
 A ferramenta de Bikel possibilita a utilização de um módulo para especificação de regras para determinar o \emph{head} de um constituinte e optou-se por se usar esse módulo e construir regras baseadas nas regras de formação da lingua portuguesa incrementalmente (já exemplificado em capítulo anterior). 
 
-Primeiramente trabalhamos com a configuração default para o inglês, com parâmetros e head-find rules definidas para a gramática definida no PTB. A segunda configuração de testes usamos as configurações para o português definidas por Dan Bikel em seu parser e com as regras de head-find rules básicas, ou seja, primeiro o núcleo da sentença é a primeira palavra da direita para a esquerda, regra essa que é padrão na lingua inglesa, logo se alterou para que o núcleo da sentença seja a primeira palavra da esquerda para a direita, regra que ja se aproxima da regra de formação da lingua portuguesa. Após testes com essas configurações iniciais, trabalhou-se incrementalmente na evolução tanto de parametros melhores do parser quanto a definição das head-find rules para a lingua portuguesa.
 
-É interessante mensionar que a construção das regras foi incremental e experimentos foram sendo feitos para avaliar a qualidade das regras criadas como ilistrado nas figuras ....
-
-O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. Acreditamos que não teremos ganho incremento nos resultados tentando melhorar as regras de head-find, e sim se ajustarmos melhor os parâmetros da ferramenta.
-
-A segunda sequência de experimentos tera como objetivo avaliar a granularidade das POS tags no corpus utilizado. ....
-
-...
-
-
-A ideia básica é que tags devem ser distintos quando a categorias tem distribuições sintáticas diferentes, por outro lado se duas classes tem mesma distribuição ou distribuição próxima, separa-las apenas levará a perda de qualidade quanto a informação sintática constante nas sentenças ...,  ...
-
-Verificou-se conforme esperado que para verbos é bastante relevante as sub-categorias pois a distribuição sintática das diferentes categorias verbais é bem distinta, da mesma forma para pronomes porque os possessivos tem diferente distribuição que os pessoais; os .. tem posição de pré-modificadores nominal e os outros ...
-
-Diferenciando conjunçao coordenada e subordinativa nao houve diferença significativa nos resultados.
-
-O último caso relativo a nomes refere-se  o que ... do corpus 
 

@@ -661,27 +661,26 @@ No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o 
 \begin{enumerate}
 
 
-\item{Treino} % (fold)
+\item{Treino: Composto por sentenças que o sistema usa para aprender.
+} % (fold)
 \label{sub:treino}
 
-Sentenças que o sistema usa para aprender.
+\item{Desenvolvimento (ou teste de desenvolvimento): 
 
-\item{Desenvolvimento (ou teste de desenvolvimento)} % (fold)
+Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do corpus, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} % (fold)
+
+
 \label{sub:desenvolvimento_ou_teste_de_desenvolvimento_}
 
-Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtido a cada passo do desenvolvimento. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{``overfitting''}.
 
-O conceito de overfitting é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizado muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Neste processo de overfitting, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.
+O conceito de \emph{overfitting} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.
 
 
 
 % subsection desenvolvimento_ou_teste_de_desenvolvimento_ (end)
 
-\item{Teste final} % (fold)
+\item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do parser. O objetivo é que a avaliação sobre este corpus seja insenta, sem efeito de \emph{overfitting}.} % (fold)
 \label{sub:teste_final}
-
-É semelhante ao de desenvolvimento, porém é proibida alterações a partir da análise qualitativa sobre o mesmo.
-
 \end{enumerate}
 
 O módulo de geração do \emph{parser} tem como entrada os exemplos do \emph{corpus} de treino e gera os parâmetros estatísticos que serão utilizados pelo \emph{parser} para tomar as decisões. Este módulo é parametrizável com informações linguísticas fornecidas pelo desenvolvedor, que guiam a interpretação do \emph{corpus} de treino. Por exemplo, a informação de que, quando um constituinte tem dois nomes seguidos, o núcleo é o da esquerda para o português e é o da direita para o inglês.
@@ -701,30 +700,26 @@ Conforme mencionado anteriormente, existem alguns trabalhos de construção de \
 \label{sec:wing_baldridge}
 
 
-Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, na tentativa de criar um parser para o português. Foi utilizado como treebank o Floresta Sintática com o parser de de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração dos diversos parâmetros possíveis na utilização do parser, e em termos de composição do treebank, fazendo alterações nas anotações originais para treino do parser. 
+Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como treebank o Floresta Sintática com o parser de de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração dos diversos parâmetros possíveis na utilização do parser, e em termos de composição do treebank, foram feitas alterações nas estruturas e rótulos do treebank. 
 
-Uma das grandes dificuldades no trabalho de Wing e Baldridge para desenvolver um parser para o português foram com relação aos verbos, no português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos sintéticos, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica e muito a tarefa de análise morfológica.
+%Uma das grandes dificuldades no trabalho de Wing e Baldridge para desenvolver um parser para o português foram com relação aos verbos, no português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos sintéticos, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica e muito a tarefa de análise morfológica.
 
-Suas métricas de desempenho utilizadas foram o PARSEVAL padrão, que tambem utilizamos nesse trabalho, e análise de dependência não rotulada para diferentes niveis de esforço e adaptação do parser.
+Suas métricas de desempenho utilizadas foram o PARSEVAL padrão, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do corpus para criação de um corpus com as relações de dependência.
 
-Foi provado que fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluínddo sensibilidade morfológica	do português, resulta em grande melhora do desempenho atingindo 63,2{\%} de PARSEVAL F-Score.
+Foi provado que fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluínddo sensibilidade morfológica	do português, resulta em sensivel melhora do desempenho atingindo 63,2{\%} de PARSEVAL F-Score em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
 
 
 \subsubsection{Preparando o material de treino, adaptações no corpus} % (fold)
 \label{sec:wing_baldridge_adapt_corpus}
  
 
-Ao usar o Floresta Sintática para treino da ferramenta, foi feita uma conversão do formato nativo para o formato PennTreebank (PTB), para este trabalho tambem tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato.
+Ao usar o Floresta Sintática para treino da ferramenta, Wing e Daldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB), para este trabalho tambem tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. O corpus do Floresta possui constituintes descontínuos, que na conversão foram mapeados em componentes separados.
 
-Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'.
+Em principio a informação de núcleo (\emph{Head}) das sentenças geralmente marcada explicitamente no corpus Florésta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em heads das sentenças usam complexos conjuntos de heurísticas para definir os heads das sentenças durante a análise. Wing e Baldridge utilizaram-se desta marcação disponível no Floresta. No entanto, como nem todas as sentenças possuem a informação de head, Wong e Baldridge, ainda tiveram que utilizar um complexo conjunto de heurísticas para resolver as omissõese casos em que discordaram da informação constante no corpus. Neste trabalhos optamos por ignorar a marcação fornecida no corpus e utilizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo das sentenças.
 
-O corpus do Floresta possui constituintes descontínuos, que na conversão foram mapeados em componentes separados.
+Outra mudança feita por Wing e Baldridge no corpus foi com relação as cláusulas conjuntivas. Cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU' (\emph{Coordinating conjunction})(Sintagma evidenciador de relação de coordenação), independente do tipo de constituintes coordenados. Isso faz com que no processo de treino de uma gramática, ocorram erros como confundir coordenação de sintagmas nominais com coordenações sentenciais com frequência. Foi necessário aumentar os tipos sintáticos de orações na tentativa de que essa situação não ocorresse.
 
-A informação de Head das sentenças geralmente marcada explicitamente no corpus, foi de grande ajuda no processo, uma vez que o formato PTB não contempla essa informação. Normalmente os analisadores baseados em heads das sentenças usam complexos conjuntos de heurísticas para definir os heads das sentenças durante a análise.
-
-Outra mudança feita no corpus foi com relação as cláusulas conjuntivas, cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU', independente do tipo de constituinte, isso faz com que no processo de treino de uma gramática, erros como confundir conjunções de frases nominais com conjunções sentenciais ocorram com frequência. Tivemos que aumentar os tipos sintáticos de orações na tentativa de que essa situação não ocorra.
-
-Na sequência outra transformações foram feitas, como aumentar cláusulas em NPs para distinguir cláusulas relativas das cláusulas em outras circunstâncias.
+Em termos de modificação das árvores do treebank outras transformações foram feitas, como aumentar cláusulas em NPs para distinguir cláusulas relativas das cláusulas em outras circunstâncias.
 
 
 \subsubsection{Adaptações no analisador para o português} % (fold)
