@@ -2,7 +2,7 @@ module Porser
   module Filters
     class LematizeAll
       def run(sentence)
-        map(sentence.root_node)
+        map(sentence.root_node, corpus)
       end
     
     protected

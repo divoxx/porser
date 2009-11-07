@@ -74,9 +74,19 @@ module Porser
         File.open(path, "r") do |infp|
           File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.parseable.txt')), "w") do |parseable_outfp|
             File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.gold.txt')), "w") do |gold_outfp|
+              corpus = $1.to_sym
+              
               while line = infp.gets
                 sentence = Corpus::Sentence.parse(line)
-                filters.each { |filter| sentence = filter.run(sentence) }
+                filters.each do |filter|
+                  method = filter.method(:run)
+                  
+                  if method.arity == 2
+                    sentence = method.call(sentence, corpus)
+                  else
+                    sentence = method.call(sentence)
+                  end
+                end
                 
                 gold_outfp.write("#{sentence}\n")
                 parseable_outfp.write(sentence.to_s.gsub(/\([^\s]+|\)/, "").gsub(/^\s*(.*)\s*$/, "(\\1)\n").squeeze(" "))

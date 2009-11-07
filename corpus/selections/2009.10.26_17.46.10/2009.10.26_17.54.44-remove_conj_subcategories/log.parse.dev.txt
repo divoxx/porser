@@ -2521,3 +2521,724 @@ processing sentence No. 340: (Já em território iraquiano contam __ em relatos 
 danbikel.parser.Decoder: current sentence length: 68 words
 danbikel.parser.Decoder: cummulative average length: 26.77647 words
 danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:19.344
+cummulative average elapsed time: 00:01.531
+processing sentence No. 341: (As bases de dados piratas existentes em Portugal dedicam se a a afixação e difusão de cópias ilegais de programas sujeitos a protecção , de resultados de experiências de penetração em sistemas informáticos , de informação acerca_de protecções , de « portas de acesso » e de « passwords » de entrada em as redes Telenet , Telepac , Itapac e , em alguns casos , números de cartões de crédito .)
+danbikel.parser.Decoder: current sentence length: 71 words
+danbikel.parser.Decoder: cummulative average length: 26.906158 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:05.623
+cummulative average elapsed time: 00:01.543
+processing sentence No. 342: (Algumas de as chamadas « portas de entrada » vendidas eram de a Lusa , de o Laboratório_Nacional_de_Engenharia_Civil { LNEC } e de a empresa Aeroportos_e_Navegação_Aérea { ANA } .)
+danbikel.parser.Decoder: current sentence length: 29 words
+danbikel.parser.Decoder: cummulative average length: 26.912281 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.262
+cummulative average elapsed time: 00:01.540
+processing sentence No. 343: (A heterogeneidade de os alunos que em os dias de hoje chegam a a escola determina diferentes atitudes e , obviamente , diferentes tipos de indisciplinas .)
+danbikel.parser.Decoder: current sentence length: 26 words
+danbikel.parser.Decoder: cummulative average length: 26.909622 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.912
+cummulative average elapsed time: 00:01.538
+processing sentence No. 344: (Durante o debate foram claramente distinguidos dois de eles ; aquele que é típico de o ensino preparatório e de as classes baixas e aquele que se verifica mais em o secundário e que é protagonizado em_conjunto por jovens de as classes médias_altas , que se sentem protegidos por a sua origem .)
+danbikel.parser.Decoder: current sentence length: 52 words
+danbikel.parser.Decoder: cummulative average length: 26.98256 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:09.976
+cummulative average elapsed time: 00:01.562
+processing sentence No. 345: (Momentos antes de este verificação , Albino_Esteves , professor de a Secundária_de_Clara_de_Resende , enunciava medidas preventivas para a indisciplina em a escola ; o olhar reprovador de o professor , o silêncio táctico , a sobrevalorização de os pequenos sucessos de os alunos mais fracos e o acompanhamento discreto de as crises de os alunos .)
+danbikel.parser.Decoder: current sentence length: 55 words
+danbikel.parser.Decoder: cummulative average length: 27.063768 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:12.263
+cummulative average elapsed time: 00:01.593
+processing sentence No. 346: (De um memorando de Jorge_Ferreira sobre a eleição anual de os líderes de os grupos parlamentares .)
+danbikel.parser.Decoder: current sentence length: 16 words
+danbikel.parser.Decoder: cummulative average length: 27.031794 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.275
+cummulative average elapsed time: 00:01.590
+processing sentence No. 347: (« Ganho a Jorge_de_Brito como ganho a os outros concorrentes , porque os sócios de o Benfica vão votar mais em mim . »)
+danbikel.parser.Decoder: current sentence length: 23 words
+danbikel.parser.Decoder: cummulative average length: 27.020174 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.219
+cummulative average elapsed time: 00:01.586
+processing sentence No. 348: (Poderá dar alguns exemplos concretos de o programa que tinha apresentado ?)
+danbikel.parser.Decoder: current sentence length: 12 words
+danbikel.parser.Decoder: cummulative average length: 26.977013 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.033
+cummulative average elapsed time: 00:01.581
+processing sentence No. 349: (Não foi verdade , por_exemplo , que os próprios livreiros se manifestaram contra a realização de concertos e debates , considerando que isso era desmobilizador de os potenciais compradores ?)
+danbikel.parser.Decoder: current sentence length: 30 words
+danbikel.parser.Decoder: cummulative average length: 26.985676 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.234
+cummulative average elapsed time: 00:01.577
+processing sentence No. 350: (Isso não pode ser dito fora_de contexto .)
+danbikel.parser.Decoder: current sentence length: 7 words
+danbikel.parser.Decoder: cummulative average length: 26.928574 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.008
+cummulative average elapsed time: 00:01.573
+processing sentence No. 351: (Em o ano passado , apresentámos com grande sucesso vários conjuntos musicais ;)
+danbikel.parser.Decoder: current sentence length: 13 words
+danbikel.parser.Decoder: cummulative average length: 26.888891 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.070
+cummulative average elapsed time: 00:01.569
+processing sentence No. 352: (fizemos um palco suspenso e as pessoas que convidámos também eram um chamariz para o imenso público que acorreu a o local .)
+danbikel.parser.Decoder: current sentence length: 22 words
+danbikel.parser.Decoder: cummulative average length: 26.875002 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.026
+cummulative average elapsed time: 00:01.567
+processing sentence No. 353: (Protestaram , com alguma razão , porque os concertos foram previstos tardiamente , visto_que as eleições para a APEL foram muito em_cima_de a data de a feira .)
+danbikel.parser.Decoder: current sentence length: 27 words
+danbikel.parser.Decoder: cummulative average length: 26.875355 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.132
+cummulative average elapsed time: 00:01.563
+processing sentence No. 354: (Mas as pessoas acabaram por admitir que tínhamos feito o nosso melhor .)
+danbikel.parser.Decoder: current sentence length: 12 words
+danbikel.parser.Decoder: cummulative average length: 26.833334 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.032
+cummulative average elapsed time: 00:01.559
+processing sentence No. 355: (Em uma reunião em o final de a feira , pedimos desculpa por o ocorrido e fomos perdoados e ovacionados , porque foi considerada uma iniciativa interessante .)
+danbikel.parser.Decoder: current sentence length: 27 words
+danbikel.parser.Decoder: cummulative average length: 26.833803 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.618
+cummulative average elapsed time: 00:01.556
+processing sentence No. 356: (Em a altura , assumi o compromisso de este ano ser dialogante com as pessoas ; de preparar a feira com_tempo , de tomar nota de um conjunto de críticas .)
+danbikel.parser.Decoder: current sentence length: 30 words
+danbikel.parser.Decoder: cummulative average length: 26.842697 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.450
+cummulative average elapsed time: 00:01.553
+processing sentence No. 357: (Mas pensava que esse modelo seria de manter em 1996 .)
+danbikel.parser.Decoder: current sentence length: 10 words
+danbikel.parser.Decoder: cummulative average length: 26.795519 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.020
+cummulative average elapsed time: 00:01.549
+processing sentence No. 358: (Por_exemplo , uma de as minhas propostas incluía um concerto com Mário_Laginha e Pedro_Burmester , e também a vinda de Eunice_Muñoz ...)
+danbikel.parser.Decoder: current sentence length: 22 words
+danbikel.parser.Decoder: cummulative average length: 26.782124 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.166
+cummulative average elapsed time: 00:01.545
+processing sentence No. 359: (O Comissário europeu para o audiovisual apelou anteontem a uma « mudança de atitude » de a indústria europeia de o sector , de_modo_a adaptar se a a globalização mundial de as redes de distribuição .)
+danbikel.parser.Decoder: current sentence length: 35 words
+danbikel.parser.Decoder: cummulative average length: 26.805014 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.401
+cummulative average elapsed time: 00:01.542
+processing sentence No. 360: (A preparar um Livro_Verde sobre a política europeia para o sector , João_de_Deus_Pinheiro , falando em um seminário sobre os media , considerou que a União_Europeia devia « encorajar o desenvolvimento de novas e mais eficazes redes de comunicação transeuropeias » .)
+danbikel.parser.Decoder: current sentence length: 41 words
+danbikel.parser.Decoder: cummulative average length: 26.844446 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.646
+cummulative average elapsed time: 00:01.539
+processing sentence No. 361: (TVI em sociedade de teledifusão)
+danbikel.parser.Decoder: current sentence length: 5 words
+danbikel.parser.Decoder: cummulative average length: 26.783936 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.011
+cummulative average elapsed time: 00:01.535
+processing sentence No. 362: (A TVI_Televisão_Independente e a TDF_Telediffusion_de_France fundaram uma sociedade de teledifusão para operarem em Portugal , a RETI , que terá sede social em Lisboa .)
+danbikel.parser.Decoder: current sentence length: 24 words
+danbikel.parser.Decoder: cummulative average length: 26.776243 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.033
+cummulative average elapsed time: 00:01.533
+processing sentence No. 363: (O acordo foi assinado em o início de o mês e , em a nova empresa , a TVI detém 55 % de o capital e a TDF 45 % , podendo o capital vir a ter mais participações portuguesas .)
+danbikel.parser.Decoder: current sentence length: 40 words
+danbikel.parser.Decoder: cummulative average length: 26.812674 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:02.053
+cummulative average elapsed time: 00:01.535
+processing sentence No. 364: (Está prevista a cobertura de 80 % de o território português , através de 19 estações repetidoras .)
+danbikel.parser.Decoder: current sentence length: 17 words
+danbikel.parser.Decoder: cummulative average length: 26.785717 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.060
+cummulative average elapsed time: 00:01.531
+processing sentence No. 365: (Sequestrado há cinco meses)
+danbikel.parser.Decoder: current sentence length: 4 words
+danbikel.parser.Decoder: cummulative average length: 26.723291 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.037
+cummulative average elapsed time: 00:01.527
+processing sentence No. 366: (As associações servem para prestar serviços a a sociedade empresarial e a os fins de os empresários .)
+danbikel.parser.Decoder: current sentence length: 17 words
+danbikel.parser.Decoder: cummulative average length: 26.696726 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.136
+cummulative average elapsed time: 00:01.523
+processing sentence No. 367: (Mas , se me pergunta se o parque de feiras de Lisboa será mais rentável que o de o Porto , eu pessoalmente digo lhe que estou convencido que sim .)
+danbikel.parser.Decoder: current sentence length: 30 words
+danbikel.parser.Decoder: cummulative average length: 26.705727 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.258
+cummulative average elapsed time: 00:01.520
+processing sentence No. 368: (Desde_logo por_causa_de o grande afluxo de público ...)
+danbikel.parser.Decoder: current sentence length: 8 words
+danbikel.parser.Decoder: cummulative average length: 26.654898 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.013
+cummulative average elapsed time: 00:01.515
+processing sentence No. 369: (Soberbo)
+danbikel.parser.Decoder: current sentence length: 1 word
+danbikel.parser.Decoder: cummulative average length: 26.585373 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.003
+cummulative average elapsed time: 00:01.511
+processing sentence No. 370: (Pet_Shop_Boys_Discography __ The_Complete_Singles_Collection)
+danbikel.parser.Decoder: current sentence length: 3 words
+danbikel.parser.Decoder: cummulative average length: 26.52163 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.009
+cummulative average elapsed time: 00:01.507
+processing sentence No. 371: (O nome diz tudo .)
+danbikel.parser.Decoder: current sentence length: 4 words
+danbikel.parser.Decoder: cummulative average length: 26.460924 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.004
+cummulative average elapsed time: 00:01.503
+processing sentence No. 372: (O nome de o disco , e o nome de o grupo que o assina .)
+danbikel.parser.Decoder: current sentence length: 15 words
+danbikel.parser.Decoder: cummulative average length: 26.430117 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.026
+cummulative average elapsed time: 00:01.499
+processing sentence No. 373: (A colecção completa de os singles de os Pet_Shop_Boys é um de aqueles registos que o consumidor ávido de música pop não pode deixar de receber de braços abertos .)
+danbikel.parser.Decoder: current sentence length: 29 words
+danbikel.parser.Decoder: cummulative average length: 26.437006 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.360
+cummulative average elapsed time: 00:01.499
+processing sentence No. 374: (Imaginem só ; 18 canções de puro sumo pop , sem bafio nem conservantes .)
+danbikel.parser.Decoder: current sentence length: 14 words
+danbikel.parser.Decoder: cummulative average length: 26.403751 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.092
+cummulative average elapsed time: 00:01.495
+processing sentence No. 375: (Se o formato é sintético __ tanto em a fórmula de a canção utilizada por o grupo como por a sonoridade que a envolve __ , em este caso o palavrão só tem conotações positivas .)
+danbikel.parser.Decoder: current sentence length: 35 words
+danbikel.parser.Decoder: cummulative average length: 26.426676 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.801
+cummulative average elapsed time: 00:01.496
+processing sentence No. 376: (Porque Neil_Tennant e Chris_Lowe têm , de_facto , uma capacidade extraordinária para surpreender e agradar .)
+danbikel.parser.Decoder: current sentence length: 15 words
+danbikel.parser.Decoder: cummulative average length: 26.396286 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.097
+cummulative average elapsed time: 00:01.492
+processing sentence No. 377: (Porque sabem ser concisos , sem falsas simplicidades , porque são inteligentes , sem armar grandes espalhafatos , porque conseguem ironizar e autoparodiar se sem fazer figuras tristes .)
+danbikel.parser.Decoder: current sentence length: 28 words
+danbikel.parser.Decoder: cummulative average length: 26.40054 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.162
+cummulative average elapsed time: 00:01.489
+processing sentence No. 378: (Mais_de mil professores de a Fenprof em manifestação)
+danbikel.parser.Decoder: current sentence length: 8 words
+danbikel.parser.Decoder: cummulative average length: 26.35186 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.013
+cummulative average elapsed time: 00:01.485
+processing sentence No. 379: (« Estrutura de carreira , não é brincadeira »)
+danbikel.parser.Decoder: current sentence length: 9 words
+danbikel.parser.Decoder: cummulative average length: 26.306076 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.020
+cummulative average elapsed time: 00:01.481
+processing sentence No. 380: (« A luta é de todos , o_que prejudica os colegas , prejudica me a mim » , disse Maria_Teresa_Feio , educadora de infância de Albergaria , enquanto se preparava para participar em a manifestação organizada por a Federação_Nacional_de_Professores { Fenprof } , ontem , em Lisboa .)
+danbikel.parser.Decoder: current sentence length: 47 words
+danbikel.parser.Decoder: cummulative average length: 26.360533 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.860
+cummulative average elapsed time: 00:01.479
+processing sentence No. 381: (« America3 » alcançou a quarta vitória)
+danbikel.parser.Decoder: current sentence length: 7 words
+danbikel.parser.Decoder: cummulative average length: 26.309717 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.015
+cummulative average elapsed time: 00:01.475
+processing sentence No. 382: (A Taça fica em San_Diego)
+danbikel.parser.Decoder: current sentence length: 5 words
+danbikel.parser.Decoder: cummulative average length: 26.253933 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.007
+cummulative average elapsed time: 00:01.472
+processing sentence No. 383: (Jean_Claude_Chauviere em San_Diego)
+danbikel.parser.Decoder: current sentence length: 3 words
+danbikel.parser.Decoder: cummulative average length: 26.193218 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.007
+cummulative average elapsed time: 00:01.468
+processing sentence No. 384: (Acabou a « America's_Cup » de 1992 , viva a de 1995 .)
+danbikel.parser.Decoder: current sentence length: 12 words
+danbikel.parser.Decoder: cummulative average length: 26.156256 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.027
+cummulative average elapsed time: 00:01.464
+processing sentence No. 385: (Os americanos conseguiram defender a posse de o troféu , mas os desafiantes prometem regressar mais fortes , de aqui por três anos , a a baía de San_Diego .)
+danbikel.parser.Decoder: current sentence length: 29 words
+danbikel.parser.Decoder: cummulative average length: 26.163643 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.242
+cummulative average elapsed time: 00:01.461
+processing sentence No. 386: (Mas aqui surge outra possibilidade ;)
+danbikel.parser.Decoder: current sentence length: 6 words
+danbikel.parser.Decoder: cummulative average length: 26.111406 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.007
+cummulative average elapsed time: 00:01.457
+processing sentence No. 387: (os cubanos podem simplesmente não acreditar que os Estados_Unidos os retenham perpetuamente em Guantanamo , ou que os enviem para outros países , e então a fuga continuará .)
+danbikel.parser.Decoder: current sentence length: 28 words
+danbikel.parser.Decoder: cummulative average length: 26.116287 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.467
+cummulative average elapsed time: 00:01.455
+processing sentence No. 388: (O estímulo imediato para a mudança de política foi o receio de que a Florida fosse invadida por uma vaga de refugiados __ uma possibilidade que traria sérios perigos políticos .)
+danbikel.parser.Decoder: current sentence length: 30 words
+danbikel.parser.Decoder: cummulative average length: 26.126297 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.929
+cummulative average elapsed time: 00:01.456
+processing sentence No. 389: (Perder o controlo de as fronteiras de os EUA seria uma desastre para qualquer Presidente ;)
+danbikel.parser.Decoder: current sentence length: 16 words
+danbikel.parser.Decoder: cummulative average length: 26.100266 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.101
+cummulative average elapsed time: 00:01.452
+processing sentence No. 390: (a incapacidade de Jimmy_Carter em conter a vaga de embarcações vindas de Mariel em 1980 contribuiu para a sua derrota a_favor_de Ronald_Reagan .)
+danbikel.parser.Decoder: current sentence length: 22 words
+danbikel.parser.Decoder: cummulative average length: 26.08975 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.335
+cummulative average elapsed time: 00:01.452
+processing sentence No. 391: (Clinton , cuja política externa tem uma pobre reputação , ficaria seguramente mais vulnerável a as críticas .)
+danbikel.parser.Decoder: current sentence length: 17 words
+danbikel.parser.Decoder: cummulative average length: 26.066504 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.057
+cummulative average elapsed time: 00:01.448
+processing sentence No. 392: (É claro que em esta perspectiva as autoridades espanholas tudo tentarão fazer para integrar o pelotão de a frente , cenário sem dúvida mais favorável a Portugal .)
+danbikel.parser.Decoder: current sentence length: 27 words
+danbikel.parser.Decoder: cummulative average length: 26.068886 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.752
+cummulative average elapsed time: 00:01.447
+processing sentence No. 393: (Mas as coisas em Espanha não estão nada fáceis .)
+danbikel.parser.Decoder: current sentence length: 9 words
+danbikel.parser.Decoder: cummulative average length: 26.025454 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.016
+cummulative average elapsed time: 00:01.443
+processing sentence No. 394: (A derrapagem de a economia acentua se .)
+danbikel.parser.Decoder: current sentence length: 7 words
+danbikel.parser.Decoder: cummulative average length: 25.977165 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.030
+cummulative average elapsed time: 00:01.439
+processing sentence No. 395: (Os números de o desemprego conhecidos em a semana passada são desastrosos ;)
+danbikel.parser.Decoder: current sentence length: 13 words
+danbikel.parser.Decoder: cummulative average length: 25.944311 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.045
+cummulative average elapsed time: 00:01.436
+processing sentence No. 396: (um em cada cinco espanhóis estão sem emprego .)
+danbikel.parser.Decoder: current sentence length: 8 words
+danbikel.parser.Decoder: cummulative average length: 25.898998 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.014
+cummulative average elapsed time: 00:01.432
+processing sentence No. 397: (O Governo socialista previa que essa fasquia fosse atingida apenas em o final de este ano , depois de um forte aperto em a economia , mas , supreendentemente , foi já alcançado .)
+danbikel.parser.Decoder: current sentence length: 33 words
+danbikel.parser.Decoder: cummulative average length: 25.916885 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.434
+cummulative average elapsed time: 00:01.430
+processing sentence No. 398: (Com este estado de coisas , iniciou se uma forte pressão de os mercados sobre a peseta .)
+danbikel.parser.Decoder: current sentence length: 17 words
+danbikel.parser.Decoder: cummulative average length: 25.89448 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.035
+cummulative average elapsed time: 00:01.426
+processing sentence No. 399: (O Banco_de_Espanha foi chamado a intervir e começarem os rumores de que a peseta poderia tomar o caminho de a libra e de a lira e abandonar o SME .)
+danbikel.parser.Decoder: current sentence length: 29 words
+danbikel.parser.Decoder: cummulative average length: 25.902264 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.329
+cummulative average elapsed time: 00:01.426
+processing sentence No. 400: (Calcula se o_que poderia posteriormente suceder a o escudo , sabendo se , como se sabe , que os técnicos de o Comité_Monetário aconselham uma desvalorização substancial de a moeda nacional .)
+danbikel.parser.Decoder: current sentence length: 31 words
+danbikel.parser.Decoder: cummulative average length: 25.915007 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.664
+cummulative average elapsed time: 00:01.424
+processing sentence No. 401: (Como em França o clima é também de incertezas , agravado por as eleições marcadas para meados de o próximo mês , a Europa passa em as próximas semanas por um período periclitante .)
+danbikel.parser.Decoder: current sentence length: 33 words
+danbikel.parser.Decoder: cummulative average length: 25.932676 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.991
+cummulative average elapsed time: 00:01.423
+processing sentence No. 402: (Tão periclitante , que se sobrevier nova tempestade cambial , o SME muito simplesmente poderá acabar e dar o lugar a a tal UEM acelerada para as economias mais fortes , e mais lenta para os que ainda têm muito que convergir .)
+danbikel.parser.Decoder: current sentence length: 42 words
+danbikel.parser.Decoder: cummulative average length: 25.972645 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:04.504
+cummulative average elapsed time: 00:01.431
+processing sentence No. 403: (O mundo , portanto , é repartido em pedaços __)
+danbikel.parser.Decoder: current sentence length: 10 words
+danbikel.parser.Decoder: cummulative average length: 25.93301 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.011
+cummulative average elapsed time: 00:01.427
+processing sentence No. 404: (cada unidade é uma unidade .)
+danbikel.parser.Decoder: current sentence length: 5 words
+danbikel.parser.Decoder: cummulative average length: 25.881195 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.006
+cummulative average elapsed time: 00:01.424
+processing sentence No. 405: (O processo de o desejo e de a sua impossível missão .)
+danbikel.parser.Decoder: current sentence length: 11 words
+danbikel.parser.Decoder: cummulative average length: 25.844452 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.029
+cummulative average elapsed time: 00:01.420
+processing sentence No. 406: (A o entregar um cargo equiparado a ministério a a representante de um partido historicamente avesso a os compromissos políticos , Itamar_Franco abriu uma crise sem precedentes em o Partido_dos_Trabalhadores { PT } .)
+danbikel.parser.Decoder: current sentence length: 33 words
+danbikel.parser.Decoder: cummulative average length: 25.862078 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:02.149
+cummulative average elapsed time: 00:01.422
+processing sentence No. 407: (« Eu curvei me a as razões de o Presidente » , disse Luiza_Erundina , que contrariou o veto público de Lula a a participação de o PT em o Governo e o próprio partido , que já havia declarado oficialmente a sua oposição a Itamar_Franco .)
+danbikel.parser.Decoder: current sentence length: 46 words
+danbikel.parser.Decoder: cummulative average length: 25.911556 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:04.081
+cummulative average elapsed time: 00:01.429
+processing sentence No. 408: (Eleita para suceder a o ex presidente Jânio_Quadros em a Prefeitura_de_São_Paulo em 1988 , Luiza_Erundina , de 58 anos , geriu até a o final de o ano passado o terceiro maior orçamento de o Brasil .)
+danbikel.parser.Decoder: current sentence length: 36 words
+danbikel.parser.Decoder: cummulative average length: 25.936283 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:02.531
+cummulative average elapsed time: 00:01.431
+processing sentence No. 409: (« Fui oposição a vida toda .)
+danbikel.parser.Decoder: current sentence length: 6 words
+danbikel.parser.Decoder: cummulative average length: 25.887539 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.009
+cummulative average elapsed time: 00:01.428
+processing sentence No. 410: (Às_vezes cheguei a ser radical e sectária , mas aprendi que a gente só interfere se estiver dentro_de o barco » , declarou a ex prefeita a a imprensa paulista , a o justificar a sua presente decisão .)
+danbikel.parser.Decoder: current sentence length: 38 words
+danbikel.parser.Decoder: cummulative average length: 25.917082 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.481
+cummulative average elapsed time: 00:01.425
+processing sentence No. 411: (Relatório de a Organização_Internacional_do_Trabalho)
+danbikel.parser.Decoder: current sentence length: 4 words
+danbikel.parser.Decoder: cummulative average length: 25.863758 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.010
+cummulative average elapsed time: 00:01.422
+processing sentence No. 412: (Conselhos de administração alérgicos a mulheres)
+danbikel.parser.Decoder: current sentence length: 6 words
+danbikel.parser.Decoder: cummulative average length: 25.815546 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.031
+cummulative average elapsed time: 00:01.419
+processing sentence No. 413: (O mundo está a tornar se « amigo de as mulheres » , mas as salas de os conselhos de administração não .)
+danbikel.parser.Decoder: current sentence length: 22 words
+danbikel.parser.Decoder: cummulative average length: 25.806307 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.082
+cummulative average elapsed time: 00:01.415
+processing sentence No. 414: (menos_de três por_cento de as empresas ocidentais são dirigidas por mulheres , revela um estudo de a Organização_Internacional_do_Trabalho { OIT } , ontem divulgado em Genebra .)
+danbikel.parser.Decoder: current sentence length: 26 words
+danbikel.parser.Decoder: cummulative average length: 25.806774 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.106
+cummulative average elapsed time: 00:01.412
+processing sentence No. 415: (O repórter de a « Rádio_Elmo » de Pinhel , Craveiro_Lopes , foi condenado em tribunal a 14 meses de prisão e 60 dias de multa por ter criticado a actuação de a PSP , informou ontem a Lusa .)
+danbikel.parser.Decoder: current sentence length: 39 words
+danbikel.parser.Decoder: cummulative average length: 25.838564 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.723
+cummulative average elapsed time: 00:01.411
+processing sentence No. 416: (A pena foi suspensa por 28 meses , atendendo a a conduta de o arguido anteriormente a os factos e por ter demonstrado « algum arrependimento por os haver praticado » .)
+danbikel.parser.Decoder: current sentence length: 31 words
+danbikel.parser.Decoder: cummulative average length: 25.850971 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.246
+cummulative average elapsed time: 00:01.410
+processing sentence No. 417: (O repórter foi accionado por , em crónicas emitidas em Julho de 1992 , ter criticado o comandante de o posto de a PSP , subchefe Amadeu_Eiras e o guarda António_Soares , críticas que o Ministério_Público considerou difamatórias .)
+danbikel.parser.Decoder: current sentence length: 38 words
+danbikel.parser.Decoder: cummulative average length: 25.880106 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:02.528
+cummulative average elapsed time: 00:01.413
+processing sentence No. 418: (De_acordo com o processo , Craveiro_Lopes fora detido , meses antes , por aqueles polícias « por factos susceptíveis de integrarem ilícito criminal » , após o que terá dito a os microfones ser « inconcebível que , em as mãos de homens sem qualquer escrúpulo , se deposite poder » .)
+danbikel.parser.Decoder: current sentence length: 51 words
+danbikel.parser.Decoder: cummulative average length: 25.9402 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.021
+cummulative average elapsed time: 00:01.412
+processing sentence No. 419: (Em tribunal , o repórter afirmou não ter tido intenção de difamar , « mas tão só de informar » , não pretendendo « atingir a honra e consideração de os visados » .)
+danbikel.parser.Decoder: current sentence length: 33 words
+danbikel.parser.Decoder: cummulative average length: 25.95705 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.310
+cummulative average elapsed time: 00:01.409
+processing sentence No. 420: (O tribunal considerou , porém , que as afirmações de Craveiro_Lopes « são objectiva e subjectivamente difamatórias e susceptíveis de atingir senão a essência de a personalidade de estes , pelo_menos o património de o seu bom nome , de o crédito e de a confiança por eles adquiridos enquanto pessoas , cidadãos e agentes de a autoridade em uma comunidade pequena onde todos se conhecem » .)
+danbikel.parser.Decoder: current sentence length: 67 words
+danbikel.parser.Decoder: cummulative average length: 26.05477 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:11.398
+cummulative average elapsed time: 00:01.433
+processing sentence No. 421: (Em declarações a a Lusa , Craveiro_Lopes disse que se limitou a tornar « públicas situações de perseguição que ainda perduram » .)
+danbikel.parser.Decoder: current sentence length: 22 words
+danbikel.parser.Decoder: cummulative average length: 26.045137 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.334
+cummulative average elapsed time: 00:01.430
+processing sentence No. 422: (E acrescentou ;)
+danbikel.parser.Decoder: current sentence length: 3 words
+danbikel.parser.Decoder: cummulative average length: 25.990528 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.004
+cummulative average elapsed time: 00:01.427
+processing sentence No. 423: (« Se hoje tiver de fazer e dizer o que disse , não hesitarei » .)
+danbikel.parser.Decoder: current sentence length: 15 words
+danbikel.parser.Decoder: cummulative average length: 25.964546 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.067
+cummulative average elapsed time: 00:01.424
+processing sentence No. 424: (Congresso de surdos por a « comunicação eficaz »)
+danbikel.parser.Decoder: current sentence length: 9 words
+danbikel.parser.Decoder: cummulative average length: 25.924536 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.035
+cummulative average elapsed time: 00:01.421
+processing sentence No. 425: (O presidente de a Associação_Portuguesa_de_Surdos advertiu ontem que o desenvolvimento de a maioria de a população surda « deixa muito a desejar » .)
+danbikel.parser.Decoder: current sentence length: 23 words
+danbikel.parser.Decoder: cummulative average length: 25.917654 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.934
+cummulative average elapsed time: 00:01.419
+processing sentence No. 426: (Falando a a Lusa de o I_Congresso_Nacional_de_Surdos , que decorrerá durante o fim_de_semana em Coimbra , José_Bettencourt considerou que « os métodos de ensino têm feito tudo ao_contrário e os resultados estão a a vista » .)
+danbikel.parser.Decoder: current sentence length: 36 words
+danbikel.parser.Decoder: cummulative average length: 25.941322 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:03.156
+cummulative average elapsed time: 00:01.423
+processing sentence No. 427: (Chamou a atenção para o facto de « sendo a língua gestual pura e rica de o ponto de vista gramatical e linguístico , e constantemente ignorada por a sociedade , importa alertar para a sua importância em a educação , formação e em a plena integração em a vida activa » .)
+danbikel.parser.Decoder: current sentence length: 52 words
+danbikel.parser.Decoder: cummulative average length: 26.00235 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:04.678
+cummulative average elapsed time: 00:01.431
+processing sentence No. 428: (Sem rejeitar o método oralista , José_Bettencourt defende que o sistema educacional de a criança surda deve contemplar língua gestual , escrita e falada .)
+danbikel.parser.Decoder: current sentence length: 24 words
+danbikel.parser.Decoder: cummulative average length: 25.997671 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.064
+cummulative average elapsed time: 00:01.430
+processing sentence No. 429: (A isto , precisou , « damos o nome de comunicação total » .)
+danbikel.parser.Decoder: current sentence length: 13 words
+danbikel.parser.Decoder: cummulative average length: 25.967375 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.071
+cummulative average elapsed time: 00:01.427
+processing sentence No. 430: (PR visitará PJ em_breve)
+danbikel.parser.Decoder: current sentence length: 4 words
+danbikel.parser.Decoder: cummulative average length: 25.916286 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.054
+cummulative average elapsed time: 00:01.424
+processing sentence No. 431: (A questão de os televisores estereofónicos tem agora alguma actualidade , uns_vez_que muitos de os consumidores que compraram aparelhos com essas características antes de o início de as emissões em estéreo são agora confrontados com o facto de os seus televisores não emitirem em estéreo o sinal que recebem de as emissoras .)
+danbikel.parser.Decoder: current sentence length: 52 words
+danbikel.parser.Decoder: cummulative average length: 25.976805 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:07.536
+cummulative average elapsed time: 00:01.438
+processing sentence No. 432: (Vindo directamente de o Algarve , de avião , chegou a as instalações de a Igreja a o volante de um Mercedes e vestindo uma « t_shirt » .)
+danbikel.parser.Decoder: current sentence length: 28 words
+danbikel.parser.Decoder: cummulative average length: 25.98149 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.328
+cummulative average elapsed time: 00:01.436
+processing sentence No. 433: (Vestiu depois um fato azul escuro , com gravata vermelha e camisa branca de riscas cinzentas .)
+danbikel.parser.Decoder: current sentence length: 16 words
+danbikel.parser.Decoder: cummulative average length: 25.958437 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.106
+cummulative average elapsed time: 00:01.432
+processing sentence No. 434: (E óculos escuros __ porque estava « muito cansado » __ que tirou para o fotógrafo .)
+danbikel.parser.Decoder: current sentence length: 16 words
+danbikel.parser.Decoder: cummulative average length: 25.935492 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.108
+cummulative average elapsed time: 00:01.429
+processing sentence No. 435: (Já se definiu uma_vez como « moço de recados » de Deus .)
+danbikel.parser.Decoder: current sentence length: 12 words
+danbikel.parser.Decoder: cummulative average length: 25.903456 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.063
+cummulative average elapsed time: 00:01.426
+processing sentence No. 436: (Qual foi o primeiro recado que recebeu ?)
+danbikel.parser.Decoder: current sentence length: 8 words
+danbikel.parser.Decoder: cummulative average length: 25.862392 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.018
+cummulative average elapsed time: 00:01.423
+processing sentence No. 437: (Dentro_de os filmes { curtas e médias metragens de 17 países } sobre temáticas actuais destaca se a presença de « Black_Harvest » de Bob_Connoly { Austrália } , « Aspen » de Frederick_Wiseman { EUA } , « Face_Value » de Johan_Van_Der_Keuken { Holanda } e « Das_Ungehobelte_Pack » de Nana_Swiczinsky { Áustria } .)
+danbikel.parser.Decoder: current sentence length: 55 words
+danbikel.parser.Decoder: cummulative average length: 25.92907 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:07.526
+cummulative average elapsed time: 00:01.437
+processing sentence No. 438: (A retrospectiva / concurso de cinema documental asiático inclui ainda a homenagem a o cineasta sueco Stefan_Jarl , a a qual a Cinemateca_Portuguesa adere apresentando duas películas suas .)
+danbikel.parser.Decoder: current sentence length: 28 words
+danbikel.parser.Decoder: cummulative average length: 25.933798 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:00.893
+cummulative average elapsed time: 00:01.436
+processing sentence No. 439: (Outras quatro obras de Jarl estarão presentes em o festival , simbolizando « a metódica abordagem de um de os cineastas suecos mais experimentais , mais radicais , traçando sempre novas vias em o documentalismo » , como salienta Manuel_Costa_e_Silva .)
+danbikel.parser.Decoder: current sentence length: 40 words
+danbikel.parser.Decoder: cummulative average length: 25.96584 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:03.810
+cummulative average elapsed time: 00:01.441
+processing sentence No. 440: (Também Portugal se encontra representado com a estreia mundial de « Crenças_e_Lendas » de João_Soares_Tavares , obra inscrita em a retrospectiva RTP , homenageada em estes III Encontros .)
+danbikel.parser.Decoder: current sentence length: 28 words
+danbikel.parser.Decoder: cummulative average length: 25.970463 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:01.383
+cummulative average elapsed time: 00:01.441
+processing sentence No. 441: (« Em as décadas de 60 e 70 , a produção documentarista em Portugal tinha um ritmo diferente e raizes de produção diversas , devido_a a estrutura de as sessões de cinema que permitia o visionamento de um bloco de filmes curtos e de noticiários antes de a apresentação de as obras ficcionais de o programa .)
+danbikel.parser.Decoder: current sentence length: 56 words
+danbikel.parser.Decoder: cummulative average length: 26.038555 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:10.779
+cummulative average elapsed time: 00:01.462
+processing sentence No. 442: (Assim , as empresas apostavam em pequenos filmes de prestígio , longe de os esforços de canalização de publicidade que a televisão hoje mobiliza , para serem projectados em as salas de cinema e esses documentários passaram a ser , para essa geração , a grande escola iniciática para quem desejava seguir a aventura de o cinema » , relembra Manuel_Costa_e_Silva .)
+danbikel.parser.Decoder: current sentence length: 61 words
+danbikel.parser.Decoder: cummulative average length: 26.117651 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
+num cache adds: 0; num canonical hits: 0
+elapsed time: 00:04.276
+cummulative average elapsed time: 00:01.469
+processing sentence No. 443: (A fase II de o terminal « multipurpose » , o novo porto de pesca com a respectiva lota , o sistema de comando e controlo de os terminais petrolífero e petroquímico , diversos acessos rodo_ferroviários e a beneficiação e tratamento paisagísticos de a zona marginal de Sines , investimentos rondando os 4,7 milhões de contos , foram as infra_estruturas que Azevedo_Soares inaugurou .)
+danbikel.parser.Decoder: current sentence length: 63 words
+danbikel.parser.Decoder: cummulative average length: 26.200907 words
+danbikel.parser.Decoder: trying with prune factor of 3.0
