@@ -8,6 +8,18 @@ module Porser
         @children = children
       end
       
+      def [](*index)
+        child = children[index.shift]
+        index.empty? ? child : child[*index]
+      end
+      
+      def each_node(index = [], &block)
+        @children.each_with_index do |child, idx|
+          yield(child, index + [idx])
+          child.each_node(index + [idx], &block) if child.respond_to?(:each_node)
+        end
+      end
+      
       def <<(node)
         @children << node
       end
