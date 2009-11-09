@@ -1,0 +1,517 @@
+ Esta é a versão em html do arquivo http://comp.ling.utexas.edu/jbaldrid/papers/WingBaldridgePROPOR06.pdf . Esta é uma versão em HTML do http://comp.ling.utexas.edu/jbaldrid/papers/WingBaldridgePROPOR06.pdf arquivo.
+G o o g l e cria automaticamente versões em texto de documentos à medida que vasculha a web. G o o g l e cria automatically versões em texto de documentos à medida que vasculha a web.
+Page 1 Page 1
+Adaptation of Data and Models Adaptação de dados e modelos
+for Probabilistic Parsing of Portuguese probabilísticos para análise de Português
+Benjamin Wing and Jason Baldridge Benjamin Wing e Jason Baldridge
+Department of Linguistics, Departamento de Lingüística,
+University of Texas at Austin, Universidade do Texas em Austin,
+Austin TX 78712, USA, Austin TX 78712, E.U.A.,
+{benwing,jbaldrid}@mail.utexas.edu (benwing, jbaldrid) @ mail.utexas.edu
+Abstract. Abstract. We present the first results for recovering word-word depen- Nós apresentamos os primeiros resultados de recuperação de palavra-depen-palavra
+dencies from a probabilistic parser for Portuguese trained on and eval- dependências de um parser probabilístico para formação em Português e ava -
+uated against human annotated syntactic analyses. uated contra humanos análises sintática anotada. We use the Floresta Usamos a Floresta
+Sintá(c)tica with the Bikel multi-lingual parsing engine and evaluate per- Sintá (c) tica com o Bikel multi-lingual mecanismo de análise e avaliação por
+formance on both PARSEVAL and unlabeled dependencies. dependências do desempenho de ambos Parseval e sem rótulo. We explore Nós exploramos
+several configurations, both in terms of parameterizing the parser and diversas configurações, tanto em termos de parametrização do analisador e
+in terms of enhancements to the trees used for training the parser. em termos de melhorias para as árvores utilizadas para a formação do analisador. Our Nosso
+best configuration achieves 80.6% dependency accuracy on unseen test melhor configuração alcança 80,6% de dependência de precisão de teste invisível
+material, well above adjacency baselines and on par with previous results material, bem acima linhas adjacência e em paridade com os resultados anteriores
+for unlabeled dependencies. para as dependências não-marcadas.
+1 Introduction 1 Introdução
+Early work on probabilistic parsing focused primarily on English; there is now Os primeiros trabalhos sobre a análise probabilística, focado principalmente em Inglês, há agora
+a growing body of work regarding building treebanks and parsers for other lan- um crescente corpo de trabalho em relação treebanks construção e parsers para outros lan -
+guages. línguas. [1] performed one of the first cross-linguistic probabilistic parsing exper- [1] realizaram um da cruz primeira exper análise lingüístico-probabilística
+iments, using the Czech Prague Dependency Treebank [2]. iments, usando o tcheco Praga Dependência Treebank [2]. They converted the Eles converteram a
+dependency representations in the treebank to tree structures and then trained representações dependência no treebank estruturas em árvore e em seguida, treinados
+various head-driven parsing models [3]. cabeça de vários modelos de análise de driven [3]. More recent work includes probabilistic Os trabalhos mais recentes inclui probabilística
+parsing for German [4, 5] and French [6]. análise para alemão [4, 5] e francês [6].
+Portuguese presents many challenges for parsing. Português apresenta muitos desafios para análise. Although its nominal in- Embora a sua nominal em
+flections are somewhat simpler than languages like Czech and its word order is flexões são um pouco mais simples do que línguas como o checo eo seu fim é a palavra
+more restricted, its verbal inflections are significantly more complex. mais restrito, suas inflexões verbais são significativamente mais complexo. Verbs are Os verbos são
+conjugated in six person-number combinations and ten synthetic tenses, as well conjugado em cada seis pessoas-número de combinações e dez tempos sintéticos, bem como
+as various non-finite forms. como não diversas formas finitas. Verbs are lexicalized into three declensional families, Os verbos são lexicalizados em três famílias declinações,
+and there are numerous subclasses and irregularities. e há inúmeras subclasses e irregularidades. In addition, many verbal Além disso, muitos verbal
+endings are identical to inflectional or derivational suffixes used to form nouns, terminações são idênticos aos sufixos flexionais ou derivacionais usados para formar substantivos,
+significantly complicating the task of morphological analysis. significativamente complica a tarefa de análise morfológica.
+A previous statistical parser for historical Portuguese, using the Tycho Brahe Um analisador estatístico anterior para Português histórico, utilizando a Tycho Brahe
+corpus, was developed by [7]. corpus, foi desenvolvido por [7]. Using roughly 2000 human-annotated sentences, Usando cerca de 2000 humanos anotado sentenças,
+PARSEVAL f-scores in the 51% to 56% range were obtained with two fairly Parseval F-scores% no intervalo de 51-56% foram obtidos com duas razoavelmente
+simple statistical models. simples modelos estatísticos. A standard Collins parser [8] was implemented by Um analisador Collins norma [8] foi implementado por
+[9,10] and trained using the CetenFolha corpus (see section 2). [9,10] e treinado usando o corpus CETENFolha (ver secção 2). However, no No entanto, não
+manual annotation was then available for this corpus. anotação manual foi então disponíveis para este corpus. As a result, the parser Como resultado, o analisador
+Page 2 Page 2
+was evaluated only qualitatively, on 23 sentences annotated by the author; it is foi avaliado apenas qualitativamente, em 23 frases anotado pelo autor, é
+unclear whether these results can be generalized. claro se esses resultados podem ser generalizados.
+There now exists a substantial corpus of Portuguese texts annotated with Existe actualmente um importante acervo de textos em Português anotado com
+quasi-dependency structures, the Floresta Sintá(c)tica [11,12]. quasi-estruturas de dependência, o Sintá Floresta (c) tica [11,12]. Like the corpus Como o corpus
+used by [10], the analyses are based on the output of the PALAVRAS parser, usado por [10], as análises são baseadas na saída do analisador PALAVRAS,
+but for the Floresta, they have been hand-corrected by human annotators to mas para o Floresta, que por ter sido corrigida por anotadores humanos
+create a gold standard corpus of analyses. criar um corpus de análise do padrão-ouro. However, this resource has until now No entanto, esse recurso tem até agora
+not been used to train probabilistic parsers for Portuguese. não foram usados para treinar parsers probabilísticos para Português.
+In this paper, we describe head-driven generative probabilistic parsing models Neste papel, nós descrevemos cabeça-driven geradora de modelos de análise probabilística
+for Portuguese using the Floresta and the Bikel multi-lingual parsing engine [13, para Português usando a Floresta eo Bikel multi-lingual mecanismo de análise [13,
+14]. 14]. We evaluate parsing performance, using both standard PARSEVAL and un- Nós avaliamos a análise de desempenho, utilizando os dois Parseval padrão e não -
+labeled dependency accuracy, for differing levels of effort in adapting the parser dependência marcado com precisão, para os diferentes níveis de esforço de adaptação do analisador
+for Portuguese data and adapting the data for the parser. Português para dados e adaptar os dados para o analisador. We show that making Nós mostramos que fazer
+relatively straightforward changes to the data itself and the parameterization mudanças relativamente simples para os dados em si e da parametrização
+of Bikel's parser – including sensitivity to Portuguese morphology – pays large analisador de Bikel - incluindo a sensibilidade à morfologia do Português - paga grandes
+dividends in performance. dividendos no desempenho. Our best model achieves 81.0% unlabeled dependency O nosso melhor modelo alcança 81,0% de dependência não marcado
+accuracy and 63.2% PARSEVAL f-score on unseen test material. precisão e 63,2% de Parseval F-score com material invisível. In section 2, Na seção 2,
+we discuss the Floresta and its properties. discute-se a Floresta e suas propriedades. The next section describes how we A próxima seção descreve como nós
+produce training material from the Floresta in the appropriate format for the produzir material de treinamento da Floresta, no formato adequado para a
+parser and make augmentations to the resulting trees to improve their training analisador e fazer aumentos para as árvores resultantes de melhorar a sua formação
+utility for the parser. utilidade para o analisador. Section 4 introduces the parsing model we use and how A secção 4 apresenta o modelo de análise que utilizamos e como
+we modify it for parsing Portuguese. podemos modificá-lo para análise Português. Section 5 describes how we run our parsing Secção 5 descreve a forma como administramos a nossa análise
+experiments and reports the performance of the various configurations we tested. experiências e os relatórios de desempenho das diferentes formações que testamos.
+The last section concludes and describes future work. A última seção conclui e descreve o trabalho futuro.
+2 The Floresta Sintá(c)tica 2 Floresta Sintá (c) tica
+The Floresta Sintá(c)tica consists of 9,374 sentences and 214,490 tokens, split O Sintá Floresta (c) tica consiste de 9.374 frases e 214.490 fichas, split
+into two parts of approximately equal size. em duas partes de tamanhos aproximadamente iguais. One part, the CetenFolha (CF), Uma parte, a CETENFolha (CF),
+consists of 4,213 sentences and 80,015 tokens taken from the Brazilian newspa- consiste de 4.213 frases e 80.015 fichas retiradas do newspa brasileira
+per Folha de S˜ao Paulo. por Folha de S ~ ao Paulo. The other, the CetemPúblico (CP), consists of 5,161 O outro, o CETEMPúblico (PB), constituído por 5.161
+sentences and 134,475 tokens taken from the Portuguese newspaper Público. frases e 134.475 tokens extraídos do Português jornal Público.
+The syntactic annotations were produced by hand-correcting the output of the As anotações sintáticas foram produzidos por mão-corrigindo a saída do
+PALAVRAS parser ([15]), a non-statistical parser containing a 75,000-word lex- PALAVRAS parser ([15]), uma organização não-analisador contendo uma estatística 75.000-lex-palavra
+icon and a 2,000-line grammar of inflectional and derivational rules. ícone e uma linha de 2.000-gramática de regras flexionais e derivacionais.
+Sentence (1) is an example from the corpus. Frase (1) é um exemplo do corpus. Its analysis is given in Figure 2. Sua análise é apresentado na Figura 2.
+(1) (1)
+Veıculos Veículos
+Vehicles Veículos
+de de
+of de
+resgate Resgate
+rescue resgate
+estavam Estavam
+were fosse
+a a
+at em
+apenas apenas
+just apenas
+500 500
+500 500
+metros metros
+meters metros
+do fazer
+from.the From.The
+Airbus Airbus
+Airbus Airbus
+300. 300.
+300. 300.
+Rescue vehicles were only 500 meters from the Airbus 300. Veículos de socorro foram apenas 500 metros do Airbus 300.
+The annotations provide full morphological analyses of each word and syntactic As anotações atribuir análises morfológicas de cada palavra e sintática
+analyses of each sentence. análise de cada frase. Each word has a functional tag and part-of-speech Cada palavra tem uma tag funcional e parte-de-discurso
+tag. tag. H:n, for example, specifies a functional tag H (head) and a POS tag n H: N, por exemplo, especifica uma tag funcional H (cabeça) e um n tag POS
+(noun). (substantivo). STA:fcl indicates a finite verbal clause (fcl) that is a statement (STA). STA: fcl indica uma cláusula verbal finita (FCL), que é uma declaração (STA).
+Morphological information for each word is given as the word's lemma and a set Informação morfológica para cada palavra é dada como lema a palavra e um conjunto
+Page 3 Página 3
+STA:fcl STA: fcl
+SUBJ:np SUBJ: np
+H:n H: n
+Veıculos Veículos
+veıculo veiculo
+mp mp
+N<:pp N <: pp
+H:prp H: prp
+de de
+de de
+P<:n P <: n
+resgate Resgate
+resgate Resgate
+ms MS
+P:v-fin P: v-fin
+estavam Estavam
+estar estar
+impf impf
+3p ind 3p ind
+SC:pp SC: pp
+H:prp H: prp
+a a
+a a
+P<:np P <: np
+>N:ap > N: ap
+>A:adv > A: adv
+apenas apenas
+apenas apenas
+H:num H: num
+500 500
+500 500
+mp mp
+H:n H: n
+metros metros
+metro metro
+mp mp
+N<:pp N <: pp
+H:prp H: prp
+de de
+de de
+P<:np P <: np
+>N:art > N: art
+o o
+o o
+ms MS
+H:prop H: prop
+Airbus 300 Airbus 300
+Airbus 300 Airbus 300
+MS MS
+. .
+Fig. Fig. 1. 1. Floresta tree analysis for sentence (1), from the arvores deitadas format. Floresta análise da árvore para a sentença (1), a partir do formato deitadas arvores.
+of grammatical features. de recursos gramaticais. For example, the annotation “metro mp” for metros Por exemplo, a anotação mp "metro" para metros
+“meters” indicates that it is masculine (m) and plural (p) and its lemma is metro. "Metros" indica que ele é masculino (M) e plural (p) e seu lema é metro.
+The tokenization of the text in the syntactic annotations differs quite radi- A geração de tokens do texto nas anotações sintática difere muito radi -
+cally from that of the raw text. mente de que o texto cru. The corpus consistently splits combinations of O corpus sempre divide combinações de
+prepositions and determiners, while many named entities and multi-word ex- preposições e determinantes, embora muitas entidades nomeadas e multi-word ex -
+pressions are joined as one token. pressions estão unidos como um símbolo. In (1), for example, do “of the” is split into Em (1), por exemplo, fazer "do" é dividido em
+de and o, and Airbus 300 is joined as Airbus 300. e de O, e Airbus 300 é como se Airbus 300.
+The Floresta explicitly indicates heads, arguments and non-argument modi- A Floresta indica explicitamente cabeças, os argumentos e não modi-argumento
+fiers. transmitentes. Heads are generally marked with a functional tag of H, P or MV, depending Chefes geralmente são marcadas com uma etiqueta funcional de H, P ou MV, dependendo
+on the constituent type. sobre o tipo de componente. Arguments are indicated using functional tags such as Argumentos são indicados usando tags funcionais, tais como
+SUBJ (subject), ACC (direct object), PIV (prepositional object), and SC (subject SUBJ sujeito (), ACC (objeto direto), PIV (objeto preposicional) e SC (sujeito
+clause). cláusula). Non-argument modifiers are indicated using functional tags containing Não-modificadores argumento são indicadas com marcas funcionais contendo
+a > or <, indicating a pre-modifier and post-modifier, respectively. a> ou <, indicando um modificador de pré-e pós-modificador, respectivamente. The analysis A análise
+in Figure 2 contains examples of nominal modifiers (N< and >N), prepositional na Figura 2 contém exemplos de modificadores nominais (N <e> N), preposicional
+modifiers (P<), and adverbial modifiers (A<). modificadores (P <), e modificadores adverbiais (A <).
+3 Preparing the training material 3 Preparando o material de treinamento
+In order to use the Floresta as training material for the Bikel parser, we converted Para poder usar a Floresta como material de treinamento para o analisador Bikel, nós convertemos
+it from its native format into the format used for the Penn Treebank (PTB). lo de seu formato nativo para o formato utilizado para a Treebank Penn (PTB).
+We did so in two ways. Fizemo-lo de duas maneiras. One is as straightforward as possible and involves no Um deles é tão simples quanto possível e não envolve
+modification to the constituent labels or structures as represented in the arvores modificação para o componente de rótulos ou estruturas representados no arvores
+deitadas (AD) format. deitadas (AD) formato. The second makes minor changes to the trees and their O segundo faz pequenas alterações para as árvores e os seus
+labels in order to improve their utility for head-driven parsing models. etiquetas, a fim de melhorar a sua utilidade para a cabeça-driven analisar modelos.
+Certain aspects of the AD format make a complete one-to-one mapping to Certos aspectos do formato de anúncio fazer um completo-para-um mapeamento para
+Penn Treebank format impossible. Penn formato Treebank impossível. As a result, we include three transformations Como resultado, nós incluímos três transformações
+Page 4 Page 4
+to create PTB-style trees. criar PTB-árvores de estilo. First, punctuation is simply listed as-is in the AD Primeiro, a pontuação é simplesmente listada como está no AD
+format, but requires an associated tag in PTB format. formato, mas requer uma etiqueta associada em formato PTB. For this, we add tags Para isso, adicionar tags
+consistent with Penn Treebank usage; eg “.”, “?” and “!”, are tagged with consistente com o uso Treebank Penn, por exemplo ".", "?" e "!", são marcados com
+“.”. ".". Second, the AD format includes some types of information that cannot Segundo, o formato do anúncio inclui alguns tipos de informação que não pode
+be encoded in PTB format, such as morphological analyses and declarations ser codificados em formato PTB, tais como análises morfológicas e declarações
+of multiple possible attachment points for some constituents. de múltiplos pontos de fixação possível para alguns eleitores. We simply delete Nós simplesmente apagar
+this information as part of the conversion. esta informação como parte da conversão. Finally, the Floresta has discontinuous Por fim, a Floresta tem descontínua
+constituents, which we map into separate constituents. 1 constituintes, que nós mapa em componentes separados. 1
+These simple transformations provide a baseline set of trees that can be used Essas transformações simples de fornecer uma base conjunto de árvores que podem ser utilizados
+to train a parser. para treinar um analisador. However, it is often the case that steps can be taken to massage No entanto, é frequentemente o caso que medidas podem ser tomadas para massagem
+the trees in a treebank to improve the parameterization of the parsing models [1, as árvores em um treebank para melhorar a parametrização dos modelos de análise [1,
+8, 14]. 8, 14]. For the Floresta, we do three main augmentations to the trees: (a) adding Para a Floresta, temos três principais aumentos para as árvores: (a) adição
+explicit head markers, (b) improving the representation of conjunctions, and (c) marcadores cabeça explícito, (b) melhorar a representação das conjunções, e (c)
+distinguishing relative clause nodes from other clause level nodes. distinguindo nós cláusula relativa de nós outro nível cláusula.
+Information regarding the heads of constituents in trees is fundamental for Informações sobre as cabeças dos componentes das árvores é fundamental para
+deriving dependency relations from treebanks and for parameterizing our pars- decorrentes das relações de dependência a partir treebanks e parametrização nosso pars -
+ing models. modelos ing. The PTB format does not mark heads explicitly, so head-driven O formato do PTB não marca cabeças explicitamente, assim o cabeça-driven
+parsers typically use a complex set of heuristics to determine the head of each analisadores geralmente usam um complexo conjunto de heurísticas para determinar a cabeça de cada
+constituent. constituinte. However, heads are (usually) marked explicitly in the Floresta, so No entanto, as cabeças são (geralmente) marcada explicitamente na Floresta, de modo
+we use this to indicate the heads in PTB format by adding /H to their label. podemos usar isto para indicar a cabeça no formato do PTB, adicionando / H para o seu selo.
+There are some cases where heads are not marked explicitly – our full test for Há alguns casos em que as cabeças não são marcadas explicitamente - o nosso teste completo para
+determining the head of a constituent is given in Figure 2. determinar a cabeça de um componente é apresentado na Figura 2.
+To derive the dependency relations, we mostly just create a link from the head Para derivar as relações de dependência, que na maior parte apenas criar um link a partir da cabeça
+word of each non-head child of a constituent to the head word of the constituent’s palavra de cada criança não-chefe de uma constituinte para a palavra chefe da Constituinte
+head child. criança cabeça. However, to be as consistent as possible with the Portuguese data No entanto, para ser mais coerente possível com os dados do Português
+in the CoNLL-X shared task on dependency parsing, we need more complex no CoNLL-X compartilhada tarefa em análise de dependência, precisamos de mais complexa
+handling of verbal groups (a constituent in the Floresta consisting of a main verb manuseamento de grupos verbal (um componente na Floresta constituído por um verbo principal
+and any corresponding auxiliaries). e qualquer auxiliares correspondentes). Verbal subjects (approximated by choosing Assuntos Verbal (aproximados, escolhendo
+constituents to the left of a verb that do not have an adverbial tag, ie /ACL, constituintes para a esquerda de um verbo que não têm uma tag adverbial, ou seja, / ACL,
+/ADV, /ADVP or /PP), as well as all punctuation, are dependents of the first Dependentes / ADV, / ou ADVP / PP), bem como toda a pontuação, são de primeira
+auxiliary, but all other constituents are dependents of the main verb. auxiliar, mas todos os outros constituintes são dependentes do verbo principal. In addition, Além disso,
+each verb in the verbal group is dependent on the verb to its left. cada verbo no grupo verbal é dependente do verbo à sua esquerda.
+Another change we make to tree labels improves the representation of con- Outra mudança que fazemos a árvore de rótulos melhora a representação das con -
+junctions. bifurcações. Conjoined clauses in the native Floresta are of type CU, regardless Cláusulas Conjoined na Floresta nativa são do tipo CU, independentemente
+of the type of constituents being conjoined. do tipo de componentes a ser siameses. This causes grammars learned from Isso faz com que aprendi de gramáticas
+the treebank to make errors such as conflating noun phrase conjunctions and treebank a fazer erros como equiparar conjunções frase nominal e
+sentential conjunctions. conjunções sentenciais. We thus augment the syntactic type of conjuncts to in- Temos, assim, aumentar o tipo sintático de orações para in -
+clude the type of the conjoined constituents by using the syntactic type of the clude o tipo de componentes unidas usando o tipo sintático da
+head child. criança cabeça. This is similar to what was done for Czech by Collins et al. Isto é semelhante ao que foi feito para a República Checa por Collins et al. [1]. [1].
+Following another transformation given in [1], we augment clauses under NPs Na sequência de uma outra transformação dado em [1], podemos aumentar cláusulas em NPs
+to distinguish relative clauses from clauses in other circumstances. para distinguir cláusulas relativas das cláusulas em outras circunstâncias. Essentially, Essencialmente,
+this creates a distinction between a “clause” and a “clause-bar”. Isso cria uma distinção entre uma "cláusula" e uma "cláusula-bar". We identify Identificamos
+such clauses by looking for acl, icl and fcl children of np constituents. tais cláusulas, olhando para as crianças do LCA, icl e FCL de constituintes np.
+1 There were other minor formatting issues in the conversion, such as standardizing 1 Havia outras questões menores de formatação na conversão, como a padronização
+open and closed quotation marks. abertas e fechadas entre aspas.
+Page 5 Page 5
+Fig. Fig. 2. 2. Test for determining the head of a node N. Ensaio para determinar a cabeça de um nó N.
+if any children have an AUX functional tag, Se todas as crianças têm uma tag AUX funcional,
+then the leftmost one of these is the head em seguida, a esquerda um deles é a cabeça
+else if any children have a head marker functional tag (H, P, MV, PMV or PAUX), else if todas as crianças têm um marcador de cabeça tag funcional (H, P, MV, ou PAUX PMV),
+then the leftmost one of these is the head em seguida, a esquerda um deles é a cabeça
+else if the constituent is a conjunction, then the leftmost conjunct is the head else if componente é um conjunto, então a conjunção da extrema esquerda é a cabeça
+else if (the label of N is acl (adverbial clause) and else if (o rótulo de N é a cláusula (ACL adverbial) e
+any children have functional tag COM (complementizer) or PRD (predicator)), todas as crianças têm tag COM funcional complementador () ou PRD predicador ()),
+then the leftmost of these is the head então o mais à esquerda destes é a cabeça
+else if a child has POS tag cu and functional tag ?, then it is the head outra coisa, se uma criança tem POS cu tag e sim funcional?, então ele é a cabeça
+else diferente
+collect the set C of children that are neither punctuation nor have a functional C recolher o conjunto de crianças que não são nem pontuação nem ter um funcional
+tag that indicates a non-head etiqueta que indica uma não-cabeça
+if C is non-empty Se C não é vazio
+if N is the root of the tree, then the leftmost of these children is the head se N é a raiz da árvore, então o mais à esquerda dessas crianças é a cabeça
+else choose the head from them in the order: outra escolha a cabeça deles na ordem:
+clause, conjunction, noun phrase, the leftmost one cláusula, conjunção, frase nominal, a um mais à esquerda
+else the leftmost child is the head mais a criança da esquerda é a cabeça
+4 Adapting the parser for Portuguese 4 Adaptar o analisador para Português
+We use Bikel's multi-lingual parsing engine [13,14] to train and run parsing Usamos Bikel multi-lingual mecanismo de análise [13,14] para treinar e executar análise
+models for Portuguese. modelos para o Português. The parser implements and extends the parsing models O analisador implementa e estende-se os modelos de análise
+of Collins [8], which include several lexicalized head-driven generative parsing de Collins [8], que incluem vários lexicalizados cabeça-driven análise generativa
+models that incorporate varying levels of structural information, such as distance modelos que incorporam diferentes níveis de informações estruturais, como a distância
+features, the complement/adjunct distinction, subcategorization and gaps. características, o complemento / adjunto distinção, subcategorização e lacunas.
+The parsing model we use is essentially Collins' model 2, with the addition O modelo de análise que utilizamos é essencialmente modelo Collins 2, com a adição
+of the first-order bigram dependencies described in [1]. da primeira-ordem dependências bigrama descrito em [1]. With this extension, the Com essa prorrogação, a
+generation of a modifier is also dependent on the previous modifier: geração de um modificador também depende do modificador anterior:
+∏ Π
+i=1...n+1 i = 1 ... n +1
+P l (L i (l i )\L i−1 L P (L i (l i) \ L i-1
+, P, h, H) , P, H, H)
+We use Bikel's default approximation of the previous modifier. Usamos aproximação Bikel do padrão do modificador anterior. It is either the É tanto o
+(a) START symbol (no previous modifiers), (b) a coordinating conjunction, (c) (a) símbolo inicial (sem modificadores anterior), (b) uma conjunção coordenativa, (c)
+a punctuation mark, or (d) MISC for all other modifiers. um sinal de pontuação, ou (d) MISC para todos os outros modificadores.
+The Bikel parser allows language-specific extensions to be created. O analisador permite Bikel língua extensões específicas para ser criado. It comes Ele vem
+out-of-the-box with support for English, Arabic and Chinese. out-of-the-box com suporte para o Inglês, o árabe eo chinês. In addition to using Além de usar
+the English package to determine a baseline parsing accuracy, we created a pack- o pacote de Inglês para determinar uma linha de base a análise de precisão, criamos um pack -
+age for Portuguese. idade para o Português. This package provides head-finding rules, special handling Este pacote fornece regras de cabeça descoberta, tratamento especial
+for when heads are explicitly marked, morphological features, argument/non- para quando as cabeças são explicitamente marcados, características morfológicas, argument/non-
+argument marking, and some tuning of parser options for the Floresta. argumento de marcação, e algumas das opções de ajuste do analisador para o Floresta.
+Head-driven parsing models must know the head child of each constituent Head-driven modelos de análise deve saber que a criança cabeça de cada componente
+during training. durante o treinamento. This information is not encoded in the PTB, so the English Esta informação não é codificado no PTB, para o Inglês
+package provides a series of head-finding heuristics. pacote fornece uma série de cabeças-heurísticas conclusão. For each constituent type, Para cada tipo de componente,
+Page 6 Page 6
+an ordered list of syntactic types is given; the parser searches in turn for a uma lista ordenada de tipos sintática é dada, as buscas por sua vez, analisador de
+child of each type, assigning the head to the first such child found. criança de cada tipo, atribuindo a cabeça para o primeiro filho não encontrada. For the Para o
+Portuguese package, we modified these rules as appropriate for the Floresta. Pacote de Português, modificamos essas regras como apropriado para a Floresta.
+We also modified the parser to be aware of the explicit /H head indications, as Nós também modificou o analisador para estar ciente dos explícitos / indicações cabeça H, como
+described in Figure 2. 2 When these indications are present, they are marked descrito na Figura 2. 2 Quando essas indicações estão presentes, eles são marcados
+for every constituent, and thus the head-finding rules are unused. para cada componente e, assim, a cabeça descoberta regras não são utilizadas. However, the No entanto, o
+parser will fall back onto these rules as necessary, as in our baseline Portuguese analisador vai cair de volta para essas regras como necessárias Português, como em nossa base
+model. modelo.
+Each language package also can encode features based on morphological prop- Cada pacote de idioma também pode codificar com base em características morfológicas prop -
+erties of a word – these are especially important for unknown words. erties de uma palavra - estas são especialmente importantes para palavras desconhecidas. Five types Cinco tipos
+of features are encoded for each word: capitalization, hyphenation, numeric, in- de características são codificados para cada palavra: capitalização, hifenização, numérico, in -
+flection, and derivation. flexão e derivação. The first three indicate, respectively, whether words are Os três primeiros indicam, respectivamente, se as palavras são
+capitalized, contain hyphens, or are in the form of numbers. capitalizados, contêm hífens, ou estão sob a forma de números. For the most part Para a maior parte
+the code to create them needed no changes. o código para criá-los não precisava de mudanças. We extensively modified the latter Nós extensivamente modificado o último
+two, however, to handle the morphology of Portuguese. dois, no entanto, para lidar com a morfologia do Português.
+The inflectional and derivational features indicate the presence of particular As características flexionais e derivacionais indicar a presença de particular
+suffixes in a word. sufixos de uma palavra. We created a list of 39 of the recognizably nominal or verbal Criamos uma lista de 39 dos reconhecidamente nominal ou verbal
+inflectional endings in Portuguese. desinências em Português. This required some care to avoid hitting false Isso exigiu alguns cuidados para evitar bater falso
+positives while at the same time avoiding spreading the features too thin. positivos e, ao mesmo tempo, evitar a propagação das características muito magro. Thus, Deste modo,
+we have a single -rem to handle the various 3rd plural future subjunctive endings, Temos um único real para lidar com as várias terminações 3 plural futuro do subjuntivo,
+but separate -ado and -ido to avoid false positives on nouns like “caldo” and mas ado-separada e-ido para evitar falsos positivos em substantivos como "caldo" e
+“medo”. "Medo". Furthermore, some endings are not listed at all (eg -o, -a) because they Além disso, algumas terminações não são listados em todas as (por exemplo-o,-um), porque eles
+are too ambiguous and are not reliably nominal or verbal. são demasiado ambígua e não confiável nominal ou verbal. We also modify the Nós também modificar a
+handling of plural -s; Portuguese plurals nearly always involve a vowel followed manipulação de plural-s; plurais Português quase sempre envolvem uma vogal seguida
+by an -s, whereas English plurals can have -s after various consonants. por um-s, enquanto plurais Inglês pode ter-s depois de consoantes diferentes.
+We list a series of stop words that should not be segmented. Listamos uma série de palavras de parada que não deve ser segmentado. This includes Isto inclui
+collocations formed by joining multiple words together – these are largely proper collocations formados pela união de várias palavras em conjunto - estas são essencialmente correcto
+names. nomes. It also includes words in -gem (confusable with verbal -em) and a series Ele também inclui palavras em-gem (confundível com em-verbal) e uma série
+of common words for the various endings. de palavras comuns para as terminações diferentes. (Eg lugar, mar, popular for verbal (Lugar Por exemplo, mar, popular por verbal
+-ar; classe, esse, interesse for verbal -sse; quer, qualquer, mulher for verbal -er). -ar; classe, esse, de interesse verbal-sse; quer, qualquer uma, mulher para verbal-er).
+We likewise made extensive modifications for the derivational features. Nós também fez modificações importantes para as características derivacionais. We Nós
+list all common derivational features that are not easily confusable with inflec- listar todas as características comuns derivacional que não são facilmente confundível com inflexão -
+tional features or that rarely occur as inflections. características tradicionais ou que raramente ocorrem como flexões. (For example, -ara is a literary (Por exemplo, ara-se uma obra literária
+pluperfect verbal form as well as a nominal ending, but the pluperfect rarely forma verbal mais que perfeito, assim como uma desinência nominal, mas raramente o Condicional
+occurs.) We also have special code to handle plurals of suffixes that end in a ocorre.) Temos também um código especial para tratar de sufixos plurais que terminam em um
+vowel, without the need to explicitly list each such plural form. vogal, sem a necessidade de explicitar a lista cada tal forma plural.
+For Collins' model 2, the parser needs to be able to distinguish arguments Para o modelo Collins 2, o analisador deve ser capaz de distinguir os argumentos
+and non-arguments during training. e não argumentos durante o treinamento. We found that the heuristic rules used for Descobrimos que as regras heurísticas utilizadas para
+handling the PTB could be adapted without major work to handle the Floresta manipulação do PTB poderia ser adaptado sem um trabalho importante para lidar com a Floresta
+as well, since they make explicit reference to the functional tags. bem, desde que fazem referência explícita às tags funcional. Although the Embora o
+PTB, unlike the Floresta, does not explicitly indicate arguments, it does include PTB, ao contrário da Floresta, não indicar explicitamente argumentos, que não inclui
+functional tags of various sorts that are identifiably not arguments: these are tags funcional de vários tipos que não são identifiably argumentos: estes são
+what are listed in the heuristic rules. Quais são enumeradas nas normas de heurística. We could in principle change how these rules Poderíamos mudar em princípio, como essas regras
+2 This augmentation is removed at the end of preprocessing to avoid encoding it in the 2 Este aumento é removido no final da pré-processamento para evitar que a codificação no
+parsing model. análise do modelo. This would create difficulties when using tags suggested by a tagger. Isto iria criar dificuldades ao utilizar etiquetas sugeridas por um pegador.
+Page 7 Page 7
+worked for the Floresta, but in practice it worked well to follow the same format trabalhou para a Floresta, mas na prática não funcionou bem para seguir o mesmo formato
+and list those functional tags that are clearly not arguments. e uma lista de tags funcionais que não são claramente argumentos. The remaining Os restantes
+nodes are identified as arguments when they occur in the appropriate contexts nós são identificados como argumentos quando eles ocorrem em contextos adequados
+(eg, a nominal or clausal child of a clausal constituent). (por exemplo, uma criança nominal ou oracional de um constituinte oracional). Thus, it sufficed simply Assim, bastava simplesmente
+to enumerate syntactic tags that identify nominal and clausal constituents and enumerar tags sintáticas que identificam nominal e oracional componentes e
+functional tags that cannot be arguments (ie modifiers, adverbials and the like). tags funcionais que não podem ser argumentos (isto é, modificadores, adverbiais e similares).
+We made other minor changes to the parser settings. Fizemos outras pequenas alterações nas configurações do analisador. For example, we use Por exemplo, usamos
+Knesser-Ney smoothing instead of the default Witten-Bell, we use an unknown Knesser-Ney suavização ao invés do padrão Witten-Bell, usamos um desconhecido
+word threshold of two rather than six, and we turn off a number of options that palavra limiar de dois em vez de seis, e desligar um número de opções que
+are quite specific to PTB trees. são bastante específicas para árvores PTB. Finally, we restrict the parser so that it makes Finalmente, restringir o analisador de modo que ele faz
+no unary productions. nenhuma produção unário.
+5 Experiments 5 Experimentos
+We consider three different parser/data configurations that vary the amount of Consideramos três diferentes analisador de dados / configurações que variam a quantidade de
+effort put into adapting the base to the Floresta: bas-eng – basic trees with the esforço colocado na adaptação da base para o Floresta: bas-eng - árvores de base com a
+standard English language package; bas-port – basic trees with the Portuguese pacote de idioma padrão Inglês; bas-port - árvores de base com o Português
+package; and aug-port– augmented trees with the Portuguese package. pacote; e agosto-port-árvores aumentou com o pacote Português. The O
+first represents the laziest approach: do nothing other than ensuring that the primeiro representa a abordagem mais preguiçoso: não faça nada que não seja garantia de que o
+trees can be used by the parser. árvores podem ser usados pelo analisador. The second makes the parser aware of the O segundo faz o analisador de conhecimento da
+language/corpus, while the third involves changing the trees themselves to be linguagem / corpus, enquanto o terceiro envolve mudar as próprias árvores a serem
+more informative to the parser, as described in section 3. mais informativo para o analisador, conforme descrito na seção 3. We use three different Usamos três diferentes
+sources of part-of-speech tags: tags obtained from the parser itself (ptags), from fontes de co-de-discurso Search tags: obtidos a partir do próprio analisador (ptags), a partir de
+a tagger 3 (ttags), and from the Floresta itself (gtags). um marcador de 3 (ttags), e da Floresta em si (gtags). The latter is used only Este último é utilizado apenas
+to show an upperbound on parser performance for each configuration. para mostrar um limite superior sobre o desempenho do analisador para cada configuração.
+We evaluate performance both in terms of standard PARSEVAL f-scores 4 Avaliamos o desempenho tanto em termos de Parseval padrão F-scores 4
+and unlabeled word-word dependencies. ea palavra unlabeled dependências palavra. We derive our gold standard dependen- Derivamos nossas dependências padrão-ouro
+cies as described in section 3. cas, como descrito na seção 3. PARSEVAL is a useful way of seeing how well Parseval é uma forma útil de ver o quão bem
+the trees themselves are being modeled by the parser, but the dependency ac- as árvores estão sendo modelado pelo analisador, mas a ac-dependência
+curacy is the true evaluation. curato é a verdadeira avaliação. It provides a more clear indication of whether the Ele fornece uma indicação mais clara se a
+fundamental relationships recorded in the Floresta are being recovered. relações fundamentais registados na Floresta estão sendo recuperados.
+For our experiments, we created a development/training set and test set by Para nossas experiências, criamos uma evolução / conjunto de treinamento e conjunto de teste por
+randomly sampling from the sentences in the Floresta. amostragem aleatória de sentenças na Floresta. The development set O desenvolvimento conjunto
+has 7497 sentences with 170,527 dependency links, and the test set has 1877 tem 7.497 sentenças com 170.527 vínculos de dependência, eo conjunto de teste foi 1877
+sentences with 42,254 dependency links. frases com 42.254 ligações de dependência. We refined our models/configurations Nós refinado nossos modelos / configurações
+using 10-fold cross validation on the development set, and give the performance utilizando 10-fold validação cruzada sobre o conjunto de desenvolvimento, e dar o desempenho
+of our best configuration on the test set. 5 da nossa melhor configuração do conjunto de teste. 5
+Figure 3 shows the PARSEVAL f-scores and dependency accuracies for the A Figura 3 mostra o Parseval F-scores e precisão de dependência para o
+various configurations. várias configurações. The bas-eng configuration unsurprisingly has the worst O bas-eng configuração Não é novidade que tem o pior
+performance. desempenho. Though it is not entirely random, we see that simply putting in the Embora não seja inteiramente aleatória, vemos que simplesmente colocar no
+relatively minimal effort to create the Portuguese language package leads to large relativamente mínimo esforço para criar o pacote de idioma Português leva a grandes
+20-25% absolute improvements in performance in the bas-port configuration. 20-25% melhorias no desempenho absoluto no bas-configuração da porta.
+3 We use the OpenNLP Toolkit maxent tagger, available from opennlp.sf.net. 3 Usamos o OpenNLP pegador Maxent Toolkit, disponível a partir opennlp.sf.net.
+4 The f-score is calculated as 2×precision×recall 4 A F-score é calculado como 2 × × precisão recall
+precision+recall . precisão + recall.
+5 We will make the sentence ids in the two sets available to facilitate future comparison. 5 Faremos as identificações de sentença nos dois conjuntos disponíveis para facilitar a comparação futura.
+Page 8 Page 8
+Model Modelo
+bas-eng bas-eng
+bas-port bas-port
+aug-port agosto-port
+ptags ttags gtags ptags ttags gtags ptags ttags gtags ptags ttags gtags ptags ttags gtags ptags gtags ttags
+F-score F-score
+36.3 36,3
+37.0 37,0
+38.6 38,6
+60.9 60,9
+60.6 60,6
+63.8 63,8
+63.2 63,2
+63.2 63,2
+67.1 67,1
+Dependency Acc. Dependência Acc. 17.4 17,4
+18.0 18,0
+18.4 18,4
+72.8 72,8
+73.2 73,2
+75.7 75,7
+80.7 80,7
+81.0 81,0
+84.0 84,0
+Fig. Fig. 3. 3. PARSEVAL f-scores and dependency accuracy for 10-fold cross-validation ex- Parseval F-scores e precisão de dependência de 10-fold cross-validation ex -
+periments with development material. periments com material de desenvolvimento.
+For example, compare ptags f-score of 36.3% for bas-eng to 60.9% for bas- Por exemplo, compare ptags F-pontuação de 36,3% para o bas-eng de 60,9% para o bas -
+port. port. The transformations to the trees in the aug-port configuration – explicit As transformações para as árvores da configuração de porta de agosto - explícito
+heads, finer-grained coordination labels, and distinguishing relative clauses – cabeças, mais fino rótulos coordenação de granulação, e distinguir cláusulas relativas --
+produce a smaller, but significant 2-3% absolute improvement in performance. produzir uma menor, mas a melhoria significativa absoluta 2-3% no desempenho.
+The different tagging configurations show that using gold tags results in the As diferentes configurações de marcação mostram que o uso de ouro nos resultados tags
+best performance. melhor desempenho. Also, despite the fact that that the tagger tags more accurately Além disso, apesar do fato de que as tags pegador de forma mais precisa
+than the parser (96.0% vs 94.1%), there is no significant difference in performance que o analisador (96,0% vs 94,1%), não há diferença significativa no desempenho
+between ptags and ttags for any of the configurations. entre ptags e ttags para qualquer uma das configurações. This is consistent with Isso é consistente com
+what was found for Czech [1]. o que foi encontrado para tcheco [1]. In the ttags configuration, we trained the parser Na configuração ttags, treinamos o analisador
+on gold standard tags, but tested it with tags from the tagger. tags padrão de ouro, mas testei com tags do pegador. Even though Mesmo
+the tagger's suggestions are less accurate than the gold standard tags, it can sugestões de Tagger são menos precisos do que as marcas do padrão-ouro, ele pode
+be actually beneficial to use its output in the training trees [1]. ser realmente útil usar a sua produção nas árvores da formação [1]. That way, the Dessa forma, o
+tags in training are more like those that the parser will see on tagger-tagged tags em formação são mais como aqueles que o analisador irá ver no Marcador-tagged
+test material. material de ensaio. Regardless of how a tagger affects performance, it does have the Independentemente de como um pegador afeta o desempenho, ele tem o
+benefit of speeding up parsing considerably. benefício de agilizar a análise consideravelmente.
+The dependency scores in Figure 3 show a similar pattern to the PARSEVAL Os escores de dependência na Figura 3 mostra um padrão semelhante ao de Parseval
+scores, apart from the bas-eng configuration. partituras, além do bas-eng configuração. These scores are compared against Estes resultados são comparados com
+left and right linking baselines (ie, words are dependents of the word to their esquerda e direita ligando linhas de base (ou seja, as palavras são dependentes da palavra a sua
+left or right), which are 26.8% and 22.6%, respectively. esquerda ou direita), que são 26,8% e 22,6%, respectivamente. The dependency scores Os escores de dependência
+for bas-eng are worse than either baseline and are relatively much lower than de bas-eng são piores do que qualquer linha de base e são relativamente muito inferior
+they were for PARSEVAL. eles foram para Parseval. This is essentially due to the complete lack of head Esta é, essencialmente, devido à falta completa de cabeça
+information, which means that the dependencies extracted from the bas-eng informação, o que significa que as dependências extraídas do bas-eng
+parser output are often incorrect because the wrong head was chosen by the saída do analisador são muitas vezes incorreta porque a cabeça errada foi escolhida pelo
+parser. analisador. PARSEVAL does not reflect this since it only concerns the label and Parseval não reflecte este, uma vez que apenas diz respeito à etiqueta e
+span of a constituent, not the relationships between its children. extensão de uma constituinte, não as relações entre seus filhos.
+The head information provided by the head heuristics in our Portuguese As informações fornecidas pela cabeça a heurística cabeça no nosso Português
+language package is the most likely influence in the considerably better perfor- pacote de idioma é a influência mais provável no desempenho consideravelmente melhor
+mance of the bas-port configuration, which overwhelmingly improves on both mance do bas-configuração da porta, o que melhora a esmagadora maioria em ambas as
+the bas-eng configuration and both baselines. o bas-eng configuração e ambas linhas de base. When adapting a parser such as Ao adaptar um analisador como
+Bikel's to a new language, it clearly pays to put in the minimal effort to write Bikel de uma nova linguagem, é claramente a pena colocar no mínimo esforço para escrever
+even a rough set of reasonably accurate head finding rules. até definir um esboço da cabeça razoavelmente preciso encontrar regras.
+The even more explicit handling of heads and the tree improvements together O tratamento ainda mais explícita de cabeças e as melhorias ordenadas juntos
+then provide a large 8% absolute improvement for aug-port. em seguida, fornecer uma grande melhora de 8% absoluto de agosto-porta. It is easy to see É fácil ver
+why the change to coordination labels can make a big difference in the discrimini- Por que a mudança de rótulos de coordenação pode fazer uma grande diferença no discrimini -
+tive capabilities of the parsing model. capacidades tiva do modelo de análise. It makes predictions mostly based on the Faz previsões principalmente com base na
+relationship between children and parent nodes rather than between grandpar- relação entre as crianças e nós pais, e não entre grandpar -
+Page 9 Page 9
+ents and grandchildren. ents e netos. It thus cannot see beyond a simple CU node to know that É, portanto, não pode ver além de um simples nó CU saber que
+it contains two NP conjuncts and thereby determine whether they together make Ele contém duas orações NP e, assim, determinar se eles fazem junto
+a good argument for a verb. um bom argumento para um verbo. The change also prevents coordination of unlike A mudança também impede a coordenação de ao contrário
+constituents [1]. componentes [1]. Distinguishing relative clauses improves the handling of subcat- Distinguir cláusulas relativas melhora a movimentação de subcat -
+egorization of different types of clause level constituents since relative clauses egorization de diferentes tipos de componentes nível desde cláusula cláusulas relativas
+nearly always lack one of the arguments of the verb. quase sempre falta um dos argumentos do verbo. Also, they should not be Além disso, eles não devem ser
+coordinated as a like type with other clauses. coordenados como um tipo como acontece com outras cláusulas.
+Our best configuration on the development material is aug-port, with no Nosso melhor configuração sobre o material de desenvolvimento é agosto-porta, sem
+significant difference between using ptags or ttags. diferença significativa entre o uso ou ptags ttags. The performance aug- O desempenho de agosto
+port-ptags on the 1877 sentences in the test set is an f-score of 63.8% (64.7% porta-ptags a 1877 penas no conjunto de teste é uma F-pontuação de 63,8% (64,7%
+precision, 62.9% recall) and unlabeled dependency accuracy of 79.9%. precisão, recall 62,9%) e precisão de dependência sem rótulo de 79,9%. For aug- Para agosto -
+port-ttags, we obtain f-score of 63.3% (64.1% precision, 62.5% recall) and porta-ttags, obtemos f-pontuação de 63,3% (64,1% de precisão, recall 62,5%) e
+dependency score of 80.6%. Média de dependência de 80,6%. Both dependency scores overwhelmingly beat left Ambos os escores de dependência esmagadora bateu à esquerda
+and right linking baselines on the test material of 26.9% and 22.6%, respectively, e direito ligando linhas de base sobre o material de teste de 26,9% e 22,6%, respectivamente,
+and they are on par with the results obtained for Czech. e eles estão a par com os resultados obtidos para o tcheco.
+We also performed a basic error analysis, investigating the 60 sentences with Realizamos também uma análise de erros básicos, investigando as 60 frases com
+between 10 to 20 words with the worst dependency figures. entre 10 a 20 palavras com as figuras mais dependência. The largest source A maior fonte
+of error was coordination problems (58%), especially in the presence of multiple de erro é de problemas de coordenação (58%), especialmente na presença de múltiplos
+elements (57% of the coordination problems). elementos (57% dos problemas de coordenação). The second major source was rela- A segunda fonte importante foi rela -
+tivization problems (28%). problemas tivization (28%). Some of the additional issues were incorrect handling Manipulação Algumas das questões foram incorretas
+of subordination (20%), overly eager creation of verb groups (12%), and diffi- de subordinação (20%), excessivamente ansioso criação de grupos de verbo (12%) e difi -
+culties handling quoted sentences (12%), fragments (8%), and non-NP subjects culdades manipulação frases citadas (12%), fragmentos (8%), e não sujeitos NP
+(8%). (8%). 13% of the sentences revealed errors in the Floresta. 13% das sentenças revelou erros na Floresta. This analysis largely Esta análise muito
+vindicates the input transformations we chose. vindica as transformações de entrada que escolheu. It also points the way towards Ele também aponta o caminho para
+further work and has suggested some possible solutions – for example, many of trabalhos futuros, e propôs algumas soluções possíveis - por exemplo, muitos dos
+the relativization problems may stem from the lack of a clear syntactic category relativização dos problemas podem ter origem na falta de uma categoria sintática claro
+separating relative from non-relative pronouns. separação relativa de não-pronomes relativos.
+6 Conclusion 6 Conclusão
+In this paper, we provide the first results for probabilistic parsing of modern Por- Neste trabalho, apresentamos os primeiros resultados para análise probabilística de Por-moderna
+tuguese evaluated on significant amounts of human annotated syntactic analyses. portugueses avaliados em quantidades significativas de análise sintática humanos anotado.
+We show that an existing probabilistic parser, Bikel's multi-lingual parsing en- Nós mostramos que um analisador probabilísticos existentes, multi Bikel parsing-lingual en -
+gine, can be readily adapted for Portuguese, and that the accuracy of the parser gine, pode ser facilmente adaptado para o Português, e que a precisão do analisador
+can be greatly improved with a few relatively straightforward modifications to pode ser melhorada com algumas modificações relativamente simples
+the parser configuration and to the trees used as training material. a configuração do analisador e para as árvores utilizadas como material de treinamento. Our best O nosso melhor
+configuration on the development material, the aug-port configuration using configuração do material para o desenvolvimento, a configuração de agosto porta usando
+the tagger tags, achieves 80.6% unlabeled dependency accuracy on unseen test as tags de pegador, a precisão de dependência atinge 80,6% no teste sem rótulo invisível
+sentences. sentenças. This result is on par with the accuracy of 80.0% reported for Czech Este resultado está a par com a precisão de 80,0% relataram para Tcheco
+[1]. [1].
+Much more can be done to improve the parser. Muito mais pode ser feito para melhorar o analisador. In future work, we will perform Em trabalhos futuros, iremos realizar
+further modifications to the training trees, such as better handling of discontin- novas alterações na formação de árvores, como a melhor manipulação de discontin -
+uous constituents and introducing finer grained levels of structure instead of the uous componentes e introdução de níveis mais finos grãos da estrutura, em vez do
+extremely flat trees found in the Floresta. extremamente plana árvores encontradas na Floresta. We will also explore lexicalization of Vamos também explorar lexicalização de
+models using lemmas as well as full word forms. modelos usando lemas, bem como formas palavra inteira.
+Page 10 Page 10
+Acknowledgements Agradecimentos
+The authors would like to thank Dan Bikel for advice on modifying and parameterizing Os autores gostariam de agradecer ao Dan Bikel para aconselhamento sobre como modificar e parametrização
+the parser. analisador. We also thank Susana Afonso, Eckhard Bick, Luis Costa, Diana Santos, and Agradecemos também a Susana Afonso, Eckhard Bick, Luis Costa, Diana Santos, e
+Rui Vilela for their quick and extensive help with the Floresta Sintá(c)tica, and the Rui Vilela por sua ajuda rápida e extensa com o Sintá Floresta (c) tica, e os
+anonymous reviewers for their feedback. revisores anônimos por seus comentários.
+References Referências
+1. 1. Collins, M., Hajic, J., Ramshaw, L., Tillmann, C.: A statistical parser for Czech. Collins, M., Hajic, J., Ramshaw, L., Tillmann, C.: Um analisador estatístico para o tcheco.
+In: Proc. In: Proc. of the 37th ACL, College Park, Maryland, USA (1999) da ACL 37, College Park, Maryland, E.U.A. (1999)
+2. 2. Hajic, J.: Building a syntactically annotated corpus: Prague dependency treebank. Hajic, J.: Construindo um corpus anotado sintaticamente: Praga treebank dependência.
+In: Issues of Valency and Meaning, Karolinum, Prague (1998) 106–132 In: Problemas de Valency and Meaning, Karolinum, Praga (1998) 106-132
+3. 3. Collins, M.: Three generative, lexicalised models for statistical parsing. Collins, M.: Três generativo, modelos lexicalizada para análise estatística. In: Proc. In: Proc.
+of the 35th Annual Meeting of the ACL, Madrid, Spain (1997) 16–23 da 35 ª Reunião Anual da ACL, Madrid, Espanha (1997) 16-23
+4. 4. Dubey, A., Keller, F.: Probabilistic parsing for German using sister-head depen- Dubey, A., Keller, F.: Probabilistic análise para alemão usando irmã depen-cabeça
+dencies. dependências. In: Proc. In: Proc. of the 41st ACL. do ACL 41. (2003) 96–103 (2003) 96-103
+5. 5. Dubey, A.: What to do when lexicalization fails: Parsing German with suffix Dubey, A.: O que fazer quando lexicalização falhar: Análise de alemão com o sufixo
+analysis and smoothing. análise e de nivelamento. In: Proc. In: Proc. of the 43rd ACL, Ann Arbor, MI (2005) 314– da ACL 43, Ann Arbor, MI (2005) 314 --
+321 321
+6. 6. Arun, A., Keller, F.: Lexicalization in crosslinguistic probabilistic parsing: The Arun, A., Keller, F.: Lexicalização na análise probabilística interlingüístico: O
+case of French. caso do francês. In: Proc. In: Proc. of the 43rd ACL, Ann Arbor, MI, USA (2005) 306–313 da ACL 43, Ann Arbor, MI, E.U.A. (2005) 306-313
+7. 7. de Carvalho e Sousa, F.: Analisador sintático estatıstico orientado ao núcleo-léxico de Carvalho e Sousa, F.: Analisador sintático estatístico Orientado ao Núcleo-léxico
+para a lıngua portuguesa. Para a língua portuguesa. Master's thesis, Instituto de Matemática e Estatıstica Tese de Mestrado, Instituto de Matemática e Estatística
+da Universidade de S˜ao Paulo (2003) da Universidade de S ~ ao Paulo (2003)
+8. 8. Collins, M.: Head-driven statistical models for natural language parsing. Collins, M.: Head-driven modelos estatísticos para análise de linguagem natural. Compu- Compu -
+tational Linguistics 29(4) (2003) 589–638 Computational Linguistics 29 (4) (2003) 589-638
+9. 9. Bonfante, AG, das Graças Nunes, M.: The implementation process of a statistical Bonfante, AG, das Graças Nunes, M.: O processo de implementação de uma estatística
+parser for Brasilian Portuguese. analisador para Português do Brasil. In: Proc. In: Proc. of the IWPT '01. do IWPT '01. (2001) (2001)
+10. 10. Bonfante, AG: Parsing Probabilıstico para o Português do Brasil. Bonfante, AG: Parsing probabilístico para o Português do Brasil. PhD thesis, Tese de doutoramento,
+Instituto de Ciências Matemáticas e de Computaç˜ao da Universidade de S˜ao Paulo Instituto de Ciências Matemáticas e de Computac ~ ao da Universidade de S ~ ao Paulo
+(2003) (2003)
+11. 11. Afonso, S.: Árvores deitadas: Descriç˜ao do formato e das opç˜oes de análise na Afonso, S.: Árvores deitadas: Descriç ~ ao do formato e das opç ~ oes de análise na
+Floresta Sintáctica. Floresta Sintáctica. (2005) (2005)
+12. 12. Afonso, S., Bick, E., Haber, R., Santos, D.: Floresta sintá(c)tica: A treebank for Afonso, S., Bick, E., Haber, R., Santos, D.: Floresta sintá (c) tica: um para treebank
+Portuguese. Português. In Araujo, MGR.CPS, ed.: Proc. Em Araujo, MGR.CPS, ed.: Proc. of LREC 2002, Las Palmas de do LREC 2002, Las Palmas de
+Gran Canaria, Spain (2002) 1698–1703 Gran Canaria, Espanha (2002) 1698-1703
+13. 13. Bikel, D.: Design of a multi-lingual, parallel-processing statistical parsing engine. Bikel, D.: Design of a multi-lingual, paralelo mecanismo de processamento de análise estatística.
+In: Proc. In: Proc. of the 2nd International Conference on Human Language Technology da 2 ª Conferência Internacional sobre Tecnologia da Linguagem Humana
+Research, San Francisco (2002) Research, San Francisco (2002)
+14. 14. Bikel, D.: Intricacies of Collins' parsing model. Bikel, D.: meandros de um modelo de análise Collins. Computational Linguistics 30(4) Computational Linguistics 30 (4)
+(2004) 479–511 (2004) 479-511
+15. 15. Bick, E.: The Parsing System PALAVRAS, Automatic Grammatical Analysis Bick, E.: The Parsing System PALAVRAS, Automatic Grammatical Analysis
+of Portuguese in a Constraint Grammar Framework. de Português em uma Constraint Grammar Framework. Aarhus University Press, Aarhus University Press,
+Aarhus, Denmark (2000) Aarhus, Dinamarca (2000)
+Original English text:
+in the CoNLL-X shared task on dependency parsing, we need more complex
+Contribute a better translation
+

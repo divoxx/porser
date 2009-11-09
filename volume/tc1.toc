@@ -20,27 +20,33 @@
 \contentsline {subsubsection}{\numberline {2.2.2.5}Projeto Semantic Share}{16}
 \contentsline {paragraph}{\numberline {2.2.2.5.1}Esquema de Anota\IeC {\c c}\IeC {\~a}o do Projeto Semantic Share}{19}
 \contentsline {section}{\numberline {2.3}Diagrama geral do processo de \emph {parsing} estat\IeC {\'\i }stico baseado em \emph {corpus}}{21}
-\contentsline {section}{\numberline {2.4}\emph {Parsers} para Portugu\IeC {\^e}s}{22}
-\contentsline {section}{\numberline {2.5}\emph {CORPUS X CORPORA .....}}{22}
-\contentsline {chapter}{\numberline {3}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{23}
-\contentsline {section}{\numberline {3.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{23}
-\contentsline {section}{\numberline {3.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN }{26}
-\contentsline {section}{\numberline {3.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{28}
-\contentsline {section}{\numberline {3.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{28}
-\contentsline {section}{\numberline {3.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{29}
-\contentsline {section}{\numberline {3.6}History-based Models}{29}
-\contentsline {section}{\numberline {3.7}Modelos de Michael Collins}{30}
-\contentsline {subsection}{\numberline {3.7.1}Modelo 1}{30}
-\contentsline {subsubsection}{\numberline {3.7.1.1}Adicionando Dist\IeC {\^a}ncia}{32}
-\contentsline {subsection}{\numberline {3.7.2}Modelo 2}{33}
-\contentsline {subsection}{\numberline {3.7.3}Modelo 3}{33}
-\contentsline {chapter}{\numberline {4}Resultados Obtidos "REFAZER ........"}{35}
-\contentsline {section}{\numberline {4.1}Metodologia}{35}
-\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{37}
-\contentsline {section}{\numberline {4.3}Resultados}{39}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{43}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{44}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{44}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{47}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{48}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{50}
+\contentsline {section}{\numberline {2.4}\emph {Parsers} para Portugu\IeC {\^e}s}{23}
+\contentsline {subsection}{\numberline {2.4.1}Trabalho de Benjamin Wing e Jason Baldridge}{23}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Preparando o material de treino, adapta\IeC {\c c}\IeC {\~o}es no corpus}{23}
+\contentsline {subsubsection}{\numberline {2.4.1.2}Adapta\IeC {\c c}\IeC {\~o}es no analisador para o portugu\IeC {\^e}s}{24}
+\contentsline {subsubsection}{\numberline {2.4.1.3}Experimentos}{25}
+\contentsline {subsection}{\numberline {2.4.2}Parsing probabil\IeC {\'\i }stico para o portugu\IeC {\^e}s do Brasil de Andr\IeC {\'e}ia Gentil Bonfante}{26}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Experimentos}{27}
+\contentsline {chapter}{\numberline {3}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{29}
+\contentsline {section}{\numberline {3.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{29}
+\contentsline {section}{\numberline {3.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN }{32}
+\contentsline {section}{\numberline {3.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{34}
+\contentsline {section}{\numberline {3.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{34}
+\contentsline {section}{\numberline {3.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{35}
+\contentsline {section}{\numberline {3.6}History-based Models}{35}
+\contentsline {section}{\numberline {3.7}Modelos de Michael Collins}{36}
+\contentsline {subsection}{\numberline {3.7.1}Modelo 1}{36}
+\contentsline {subsubsection}{\numberline {3.7.1.1}Adicionando Dist\IeC {\^a}ncia}{38}
+\contentsline {subsection}{\numberline {3.7.2}Modelo 2}{39}
+\contentsline {subsection}{\numberline {3.7.3}Modelo 3}{39}
+\contentsline {chapter}{\numberline {4}Resultados Obtidos}{41}
+\contentsline {section}{\numberline {4.1}Metodologia}{41}
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de Avalia\IeC {\c c}\IeC {\~a}o}{43}
+\contentsline {section}{\numberline {4.3}Experimentos}{45}
+\contentsline {section}{\numberline {4.4}Resultados}{47}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es Finais}{51}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{52}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{52}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{55}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{56}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{58}

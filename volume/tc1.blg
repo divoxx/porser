@@ -2,44 +2,47 @@ This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: tc1.aux
 The style file: abnt.bst
 Database file #1: references.bib
-You've used 28 entries,
+Warning--entry type for "bikel02" isn't style-file defined
+--line 175 of file references.bib
+You've used 29 entries,
             1445 wiz_defined-function locations,
-            476 strings with 6480 characters,
-and the built_in function-call counts, 28101 in all, are:
-= -- 3500
+            479 strings with 6564 characters,
+and the built_in function-call counts, 29286 in all, are:
+= -- 3660
 > -- 0
-< -- 234
-+ -- 1821
-- -- 40
-* -- 901
-:= -- 2140
-add.period$ -- 108
-call.type$ -- 28
-change.case$ -- 112
+< -- 240
++ -- 1900
+- -- 41
+* -- 923
+:= -- 2230
+add.period$ -- 112
+call.type$ -- 29
+change.case$ -- 116
 chr.to.int$ -- 1
-cite$ -- 28
-duplicate$ -- 4119
-empty$ -- 1135
-format.name$ -- 272
-if$ -- 6409
+cite$ -- 29
+duplicate$ -- 4296
+empty$ -- 1178
+format.name$ -- 277
+if$ -- 6694
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 59
-num.names$ -- 56
-pop$ -- 346
+newline$ -- 61
+num.names$ -- 58
+pop$ -- 360
 preamble$ -- 1
-purify$ -- 140
+purify$ -- 145
 quote$ -- 0
-skip$ -- 1948
+skip$ -- 2037
 stack$ -- 0
-substring$ -- 1730
-swap$ -- 2464
-text.length$ -- 28
-text.prefix$ -- 56
+substring$ -- 1810
+swap$ -- 2561
+text.length$ -- 29
+text.prefix$ -- 58
 top$ -- 0
-type$ -- 224
+type$ -- 232
 warning$ -- 0
-while$ -- 114
-width$ -- 56
-write$ -- 30
+while$ -- 118
+width$ -- 58
+write$ -- 31
+(There was 1 warning)
