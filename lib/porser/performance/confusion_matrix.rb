@@ -47,6 +47,19 @@ module Porser
           end
         end
       end
+      
+      def pretty_string
+        sorted_keys = @keys.sort
+        
+        output = []
+        output << (["%-6s"] * sorted_keys.size).join(" | ") % sorted_keys
+        
+        sorted_keys.each do |key|
+          output << ("%-6s | " + ([" %#.2f "] * sorted_keys.size).join(" | ")) % [key, *sorted_keys.map { |k| @mappings[key][k] }]
+        end
+        
+        output.join("\n")
+      end
     end
   end
 end
