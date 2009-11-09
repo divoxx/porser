@@ -32,8 +32,9 @@ describe Corpus::Category do
   end
   
   it "should allow indexing the tree path" do
-    node = @root_category[1..3]
-    node.should_not be_nil
-    node.tag.should == "tree_1_3"
+    nodes = @root_category[1..3]
+    nodes.should_not be_empty
+    nodes.size.should == 1
+    nodes[0].tag.should == "tree_1_3"
   end
 end

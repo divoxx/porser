@@ -11,7 +11,7 @@ module Porser
       end
       
       def [](lookup_range)
-        find { |node, range| return node if range == lookup_range } 
+        find_all { |node, range| range == lookup_range }.map { |node, range| node }
       end
       
       def each(index = 0, &block)
