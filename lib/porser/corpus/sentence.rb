@@ -34,6 +34,10 @@ module Porser
         @root_node.each(&block)
       end
       
+      def each_range(&block)
+        @root_node.each_range(&block)
+      end
+      
       def pretty_string
         @root_node.pretty_string
       end

@@ -14,6 +14,23 @@ module Porser
         find_all { |node, range| range == lookup_range }.map { |node, range| node }
       end
       
+      def each_range
+        last_range = nil
+        in_range   = []
+        
+        each do |node, range|
+          if last_range != range
+            yield(last_range, in_range) unless in_range.empty?
+            in_range = []
+          end
+          
+          in_range << node
+          last_range = range
+        end
+        
+        yield(last_range, in_range) unless in_range.empty?
+      end
+      
       def each(index = 0, &block)
         start_index = index
         
