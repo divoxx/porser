@@ -64,6 +64,35 @@ module Porser
       `#{cmd}`
     end
     
+    def score_confusion!(what = :dev)
+       File.open(gold_path_for(what), "r") do |gold_fp|
+         File.open(parsed_path_for(what), "r") do |parsed_fp|
+           File.open(score_confusion_path_for(what), "w") do |conf_fp|
+             while gold = gold_fp.gets and parsed = parsed_fp.gets
+               pos_matrix = Performance::PartOfSpeechConfusionMatrix.new(gold, parsed)
+               cat_matrix = Performance::CategoryConfusionMatrix.new(gold, parsed)
+               
+               next if pos_matrix.correctness == 1.0 && cat_matrix.correctness == 1.0
+               
+               conf_fp.write(<<-EOF)
+GOLD   : #{gold.chomp}
+PARSED : #{parsed.chomp}
+
+Part Of Speech Matrix (#{"%.2f" % pos_matrix.correctness} correctness): 
+#{pos_matrix.pretty_string}
+
+Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
+#{cat_matrix.pretty_string}
+
+----
+
+               EOF
+             end
+           end
+         end
+       end
+    end
+    
     def document!(what = :dev)
       template = ERB.new(File.read(Porser.path.join('lib', 'templates', 'experiment.tex.erb')))
       File.open(documentation_path_for(what), "w") { |fp| fp.write(template.result(binding)) } 
@@ -139,6 +168,10 @@ module Porser
     
     def score_path_for(what)
       @path.join("score.#{what}.txt")
+    end
+    
+    def score_confusion_path_for(what)
+      @path.join("score_confusion.#{what}.txt")
     end
         
     def objects_path

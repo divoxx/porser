@@ -52,10 +52,10 @@ module Porser
         sorted_keys = @keys.sort
         
         output = []
-        output << (["%-6s"] * sorted_keys.size).join(" | ") % sorted_keys
+        output << (["%-10s"] * (sorted_keys.size + 1)).join(" | ") % ["TAG", *sorted_keys]
         
         sorted_keys.each do |key|
-          output << ("%-6s | " + ([" %#.2f "] * sorted_keys.size).join(" | ")) % [key, *sorted_keys.map { |k| @mappings[key][k] }]
+          output << ("%-10s | " + (["   %#.2f   "] * sorted_keys.size).join(" | ")) % [key, *sorted_keys.map { |k| @expected_counters[key] == 0 ? 1.0 : @mappings[key][k].to_f / @expected_counters[key].to_f }]
         end
         
         output.join("\n")

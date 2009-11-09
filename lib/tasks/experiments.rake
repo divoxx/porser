@@ -56,6 +56,19 @@ namespace :experiments do
     exec("less #{experiment.score_path_for(:dev)}")
   end
   
+  desc "Run the quantitative scoring process for an experiment"
+  task :score_confusion do
+    experiments = ask_experiment_path(ask_selection_path, :multiple => true)
+    puts "Building confusion matrices..."
+    experiments.each do |experiment_path|
+      experiment = Experiment.new(experiment_path)
+      puts " * #{experiment.path}"
+      experiment.score_confusion!(:dev)
+    end
+    puts "Done."
+    exec("less #{experiment.score_confusion_path_for(:dev)}")
+  end
+  
   desc "Generate the LaTeX documentation for the experiment"
   task :doc do
     experiment = Experiment.new(ask_experiment_path(ask_selection_path))
@@ -86,6 +99,12 @@ namespace :experiments do
       $stdout.print " * Scoring..."
       $stdout.flush
       experiment.score!(:dev)
+      $stdout.puts "Done."
+      $stdout.flush
+      
+      $stdout.print " * Building confusion matrices..."
+      $stdout.flush
+      experiment.score_confusion!(:dev)
       $stdout.puts "Done."
       $stdout.flush
       

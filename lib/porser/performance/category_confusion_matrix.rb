@@ -20,17 +20,19 @@ module Porser
           while expected_idx < stop_idx || got_idx < stop_idx
             expected = expected_nodes[expected_idx]
             got      = got_nodes[got_idx]
+
+            break if !expected && !got
             
-            if expected.tag == got.tag
+            if expected && got && expected.tag == got.tag
               expected_idx += 1
               got_idx      += 1
               store(expected.tag, got.tag)
-            elsif !expected || (got && (expected.tag <=> got.tag) == -1)
-              store(:not_found, got.tag)
-              got += 1
-            elsif !got || (expected && (expected.tag <=> got.tag) == +1)
-              store(expected.tag, :not_found)
-              expected += 1
+            elsif !expected && got or expected && got && ((expected.tag <=> got.tag) == -1)
+              store("#NF#", got.tag)
+              got_idx += 1
+            elsif !got && expected or expected && got && ((expected.tag <=> got.tag) == +1)
+              store(expected.tag, "#NF#")
+              expected_idx += 1
             end
           end
         end
