@@ -1,6 +1,4 @@
 require File.dirname(__FILE__) + "/../../spec_helper"
-require 'porser/cli/components/file_list'
-include Porser::CLI::Components
 
-describe FileList do
+describe CLI::Components::FileList do
 end

@@ -1,14 +1,12 @@
 require File.dirname(__FILE__) + "/../../spec_helper"
-require 'porser/cli/components/question'
-include Porser::CLI::Components
 
-describe Question do
+describe CLI::Components::Question do
   context 'without default answer' do
     before :each do
       @str      = "Are you sure?"
       @input    = mock(:input, :null_object => true)
       @output   = mock(:output, :null_object => true)
-      @question = Question.new(@str, :input => @input, :output => @output)
+      @question = CLI::Components::Question.new(@str, :input => @input, :output => @output)
     end
 
     it "should return true" do

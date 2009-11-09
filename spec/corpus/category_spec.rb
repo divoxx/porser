@@ -1,16 +1,14 @@
 require File.dirname(__FILE__) + "/../spec_helper"
-require 'porser/corpus/category'
-include Porser::Corpus
 
-describe Category do
+describe Corpus::Category do
   before :each do
-    @root_category = Category.new('root', [
-      Category.new('child_0', [
-        Category.new('child_0_0'),
-        Category.new('child_0_1')
+    @root_category = Corpus::Category.new('root', [
+      Corpus::Category.new('child_0', [
+        Corpus::Category.new('child_0_0'),
+        Corpus::Category.new('child_0_1')
       ]),
-      Category.new('child_1', [
-        Category.new('child_1_0')
+      Corpus::Category.new('child_1', [
+        Corpus::Category.new('child_1_0')
       ])
     ])
   end
