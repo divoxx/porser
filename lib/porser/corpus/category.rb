@@ -1,6 +1,8 @@
 module Porser
   module Corpus
     class Category
+      include Enumerable
+      
       attr_reader :tag, :children
       
       def initialize(tag, children = [])
@@ -8,16 +10,23 @@ module Porser
         @children = children
       end
       
-      def [](*index)
-        child = children[index.shift]
-        index.empty? ? child : child[*index]
+      def [](lookup_range)
+        find { |node, range| return node if range == lookup_range } 
       end
       
-      def each_node(index = [], &block)
-        @children.each_with_index do |child, idx|
-          yield(child, index + [idx])
-          child.each_node(index + [idx], &block) if child.respond_to?(:each_node)
+      def each(index = 0, &block)
+        start_index = index
+        
+        if @children.empty?
+          index += 1
+        else
+          @children.each do |child|
+            index = child.each(index, &block)
+          end
         end
+        
+        yield(self, start_index..index)
+        index
       end
       
       def <<(node)
