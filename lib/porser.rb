@@ -76,3 +76,12 @@ class Pathname
     self.check || raise("#{self} doesn't exist")
   end  
 end
+
+class Range
+  include Comparable
+  
+  def <=>(other)
+    min_order = self.min <=> other.min
+    min_order == 0 ? self.max <=> other.max : min_order
+  end
+end

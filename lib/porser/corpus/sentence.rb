@@ -38,12 +38,24 @@ module Porser
         @root_node.each_range(&block)
       end
       
+      def tag_ranges
+        @root_node.tag_ranges
+      end
+      
       def pretty_string
         @root_node.pretty_string
       end
-      
+            
       def to_s
         @root_node.to_s
+      end
+      
+      def clean_string
+        @root_node.clean_string
+      end
+      
+      def word_line_string
+        @root_node.clean_string.gsub(/\s+/, "\n")
       end
     end
   end

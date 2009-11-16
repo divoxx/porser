@@ -1,39 +1,54 @@
 module Porser
   module Performance
     class CategoryConfusionMatrix < ConfusionMatrix
-      def initialize(gold_sentence, parsed_sentence)
-        super()
-        @gold_sentence   = Corpus::Sentence(gold_sentence)
-        @parsed_sentence = Corpus::Sentence(parsed_sentence)
-        compare!
-      end
-
-    private
-      def compare!
-        @gold_sentence.each_range do |range, expected_nodes|
-          expected_nodes = expected_nodes.sort_by { |node| node.tag }
-          got_nodes      = @parsed_sentence[range].sort_by { |node| node.tag }
-          expected_idx   = 0
-          got_idx        = 0
-          stop_idx       = [expected_nodes.size, got_nodes.size].max
+      def account(gold_sentence, parsed_sentence)
+        gold_ranges   = Corpus::Sentence(gold_sentence).tag_ranges
+        parsed_ranges = Corpus::Sentence(parsed_sentence).tag_ranges
+        gold_index    = 0
+        parsed_index  = 0
+        
+        
+        STDERR.puts Corpus::Sentence(gold_sentence).clean_string
+        STDERR.puts ""
+        STDERR.puts "Gold Sentence:"
+        STDERR.puts gold_ranges.inspect
+        STDERR.puts ""
+        STDERR.puts "Parsed Sentence:"
+        STDERR.puts parsed_ranges.inspect
+        STDERR.puts "---"
+        
+        while gold = gold_ranges[gold_index] and parsed = parsed_ranges[parsed_index]
+          gold_range, gold_tag     = gold
+          parsed_range, parsed_tag = parsed
           
-          while expected_idx < stop_idx || got_idx < stop_idx
-            expected = expected_nodes[expected_idx]
-            got      = got_nodes[got_idx]
-
-            break if !expected && !got
+          if gold_range == parsed_range 
+            sub_index = parsed_index
             
-            if expected && got && expected.tag == got.tag
-              expected_idx += 1
-              got_idx      += 1
-              store(expected.tag, got.tag)
-            elsif !expected && got or expected && got && ((expected.tag <=> got.tag) == -1)
-              store("#NF#", got.tag)
-              got_idx += 1
-            elsif !got && expected or expected && got && ((expected.tag <=> got.tag) == +1)
-              store(expected.tag, "#NF#")
-              expected_idx += 1
+            while sub = parsed_ranges[sub_index]
+              sub_range, sub_tag = sub
+              break unless sub_range == gold_range
+              
+              if gold_tag == sub_tag
+                store(gold_tag, sub_tag)
+                parsed_ranges.delete([sub_range, sub_tag])
+                found = true
+              end
+              
+              sub_index += 1
             end
+            
+            unless found
+              store(gold_tag, parsed_tag)
+              parsed_index += 1
+            end
+              
+            gold_index += 1
+          elsif parsed_range.nil? || gold_range < parsed_range
+            store(gold_tag, "#NF#")
+            gold_index += 1
+          elsif gold_range.nil? || parsed_range < gold_range
+            store("#NF#", parsed_tag)
+            parsed_index += 1
           end
         end
       end

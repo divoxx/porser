@@ -1,0 +1,101 @@
+Reading default settings from resource
+	jar:file:/Users/rodrigo/Documents/Puc/TC/porser/vendor/dbparser.jar!/danbikel/parser/default-settings.properties
+Reading settings from
+	/Users/rodrigo/Documents/Puc/TC/porser/corpus/selections/2009.10.26_17.46.10/2009.10.26_17.58.24-remove_pron_subcategories/settings.properties
+danbikel.parser.Trainer: using global model structure number 1
+Training from trees in "/Users/rodrigo/Documents/Puc/TC/porser/corpus/selections/2009.10.26_17.46.10/2009.10.26_17.58.24-remove_pron_subcategories/corpus.train.gold.txt".
+Phase 0: reading trees and finding heads
+danbikel.parser.Trainer: processed 1000 sentences
+danbikel.parser.Trainer: processed 2000 sentences
+danbikel.parser.Trainer: processed 3000 sentences
+danbikel.parser.Trainer: processed 4000 sentences
+Phase 1: vocabulary counts
+Original vocab size is 17633.
+Phase 2: alter low-frequency words
+Transformed 0 original vocab items into word feature vectors.
+There is 1 distinct word feature vector.
+Original vocab size was 17633; new vocab size is 17633.
+Phase 3: collect stats
+danbikel.parser.Trainer: processed 1000 sentences
+danbikel.parser.Trainer: processed 2000 sentences
+danbikel.parser.Trainer: processed 3000 sentences
+danbikel.parser.Trainer: processed 4000 sentences
+danbikel.parser.Trainer: processed 4177 sentences in total
+Creating part-of-speech map...done (map has 17634 entries).
+danbikel.parser.Trainer: removing all TrainerEvent objects with counts less than 1.0
+Observation collection completed in 00:05.358.
+Writing observations to output file "/Users/rodrigo/Documents/Puc/TC/porser/corpus/selections/2009.10.26_17.46.10/2009.10.26_17.58.24-remove_pron_subcategories/observed.gz".
+Finished writing observations in 00:03.022.
+Deriving counts.
+Deriving events for prior probability computations...done.
+Derived transitions for danbikel.parser.ms.LexPriorModelStructure1 in 00:00.237.
+Derived transitions for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:00.164.
+Derived transitions for danbikel.parser.ms.TopNonterminalModelStructure1 in 00:00.029.
+Derived transitions for danbikel.parser.ms.TopLexModelStructure1 in 00:00.178.
+Derived transitions for danbikel.parser.ms.HeadModelStructure1 in 00:00.216.
+Derived transitions for danbikel.parser.ms.GapModelStructure1 in 00:00.000.
+Derived transitions for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:00.501.
+Derived transitions for danbikel.parser.ms.RightSubcatModelStructure1 in 00:00.166.
+Derived transitions for danbikel.parser.ms.ModNonterminalModelStructure3 in 00:01.853.
+Derived transitions for danbikel.parser.ms.ModWordModelStructure2 in 00:00.860.
+Deriving head-to-parent map.
+Deriving subcat maps.
+Deriving modifying nonterminal maps.
+Canonical events HashMap stats: size=841394; capacity=800077; load factor=1.5; non-empty buckets=466723; max. bucket size=11; avg. bucket size=1.0516412795268455; avg. bucket size (non-empty buckets)=1.8027695228218878
+Precomputed probabilities for danbikel.parser.ms.LexPriorModelStructure1 in 00:00.012.
+Computed entropy and JS divergence values for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:00.118.
+danbikel.parser.ms.NonterminalPriorModelStructure1: pruned 2123 of 2766 histories (76.753%) and of 2766 pruneable histories (76.753%) and 9260 of 11206 transitions (82.634%) in 00:00.208.
+Precomputed probabilities for danbikel.parser.ms.NonterminalPriorModelStructure1 in 00:00.285.
+Precomputed probabilities for danbikel.parser.ms.TopNonterminalModelStructure1 in 00:00.008.
+Computed entropy and JS divergence values for danbikel.parser.ms.TopLexModelStructure1 in 00:16.083.
+danbikel.parser.ms.TopLexModelStructure1: pruned 0 of 18895 histories (0.000%) and of 18895 pruneable histories (0.000%) and 0 of 27868 transitions (0.000%) in 00:16.724.
+Cleaned up in 00:00.038; removed 18873 histories and 27397 transitions.
+Precomputed probabilities for danbikel.parser.ms.TopLexModelStructure1 in 00:16.848.
+Computed entropy and JS divergence values for danbikel.parser.ms.HeadModelStructure1 in 00:01.455.
+danbikel.parser.ms.HeadModelStructure1: pruned 7195 of 37407 histories (19.234%) and of 37287 pruneable histories (19.296%) and 7450 of 38179 transitions (19.513%) in 00:02.448.
+Precomputed probabilities for danbikel.parser.ms.HeadModelStructure1 in 00:02.670.
+Computed entropy and JS divergence values for danbikel.parser.ms.GapModelStructure1 in 00:00.000.
+danbikel.parser.ms.GapModelStructure1: pruned 0 of 0 histories (?%) and of 0 pruneable histories (?%) and 0 of 0 transitions (?%) in 00:00.000.
+Precomputed probabilities for danbikel.parser.ms.GapModelStructure1 in 00:00.001.
+Computed entropy and JS divergence values for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:00.216.
+danbikel.parser.ms.LeftSubcatModelStructure1: pruned 0 of 33382 histories (0.000%) and of 33020 pruneable histories (0.000%) and 0 of 33382 transitions (0.000%) in 00:00.911.
+Precomputed probabilities for danbikel.parser.ms.LeftSubcatModelStructure1 in 00:01.020.
+Computed entropy and JS divergence values for danbikel.parser.ms.RightSubcatModelStructure1 in 00:00.260.
+danbikel.parser.ms.RightSubcatModelStructure1: pruned 0 of 33382 histories (0.000%) and of 33020 pruneable histories (0.000%) and 0 of 33444 transitions (0.000%) in 00:00.864.
+Precomputed probabilities for danbikel.parser.ms.RightSubcatModelStructure1 in 00:00.956.
+Computed entropy and JS divergence values for danbikel.parser.ms.ModNonterminalModelStructure3 in 00:29.436.
+danbikel.parser.ms.ModNonterminalModelStructure3: pruned 12723 of 107927 histories (11.789%) and of 106010 pruneable histories (12.002%) and 17955 of 132565 transitions (13.544%) in 00:31.378.
+Precomputed probabilities for danbikel.parser.ms.ModNonterminalModelStructure3 in 00:32.012.
+Computed entropy and JS divergence values for danbikel.parser.ms.ModWordModelStructure2 in 01:38.450.
+danbikel.parser.ms.ModWordModelStructure2: pruned 7570 of 51078 histories (14.820%) and of 49744 pruneable histories (15.218%) and 14680 of 80463 transitions (18.244%) in 01:39.202.
+Cleaned up in 00:00.069; removed 1801 histories and 2250 transitions.
+Precomputed probabilities for danbikel.parser.ms.ModWordModelStructure2 in 01:39.537.
+Finished deriving counts in 02:40.672.
+Writing out all derived counts to object file "/Users/rodrigo/Documents/Puc/TC/porser/corpus/selections/2009.10.26_17.46.10/2009.10.26_17.58.24-remove_pron_subcategories/objects.gz".
+Writing out canonicalEvents...done (00:00.000).
+Writing out lexPriorModel...done (00:00.240).
+Writing out nonterminalPriorModel...done (00:00.047).
+Writing out topNonterminalModel...done (00:00.001).
+Writing out topLexModel...done (00:00.068).
+Writing out headModel...done (00:00.362).
+Writing out gapModel...done (00:00.001).
+Writing out leftSubcatModel...done (00:00.408).
+Writing out rightSubcatModel...done (00:00.167).
+Writing out modNonterminalModel...done (00:01.531).
+Writing out modWordModel...done (00:01.053).
+Writing out vocabCounter...done (00:00.052).
+Writing out wordFeatureCounter...done (00:00.000).
+Writing out nonterminals...done (00:00.000).
+Writing out posMap...done (00:00.064).
+Writing out headToParentMap...done (00:00.004).
+Writing out leftSubcatMap...done (00:00.001).
+Writing out rightSubcatMap...done (00:00.001).
+Writing out modNonterminalMap...done (00:00.015).
+Writing out simpleModNonterminalMap...done (00:00.002).
+Writing out prunedPreterms...done (00:00.000).
+Writing out prunedPunctuation...done (00:00.000).
+Finished outputting derived counts in 00:04.188.
+
+Total elapsed time: 02:53.618.
+
+Have a nice day!

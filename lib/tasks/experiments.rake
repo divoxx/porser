@@ -58,13 +58,9 @@ namespace :experiments do
   
   desc "Run the quantitative scoring process for an experiment"
   task :score_confusion do
-    experiments = ask_experiment_path(ask_selection_path, :multiple => true)
+    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
     puts "Building confusion matrices..."
-    experiments.each do |experiment_path|
-      experiment = Experiment.new(experiment_path)
-      puts " * #{experiment.path}"
-      experiment.score_confusion!(:dev)
-    end
+    experiment.score_confusion!(:dev)
     puts "Done."
     exec("less #{experiment.score_confusion_path_for(:dev)}")
   end

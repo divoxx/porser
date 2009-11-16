@@ -14,6 +14,13 @@ module Porser
         find_all { |node, range| range == lookup_range }.map { |node, range| node }
       end
       
+      def tag_ranges
+        ranges = []
+        # TODO: Don't exclude POS here
+        each { |node, range| ranges << [range, node.tag] unless node.is_a?(Corpus::PartOfSpeech) }
+        ranges.sort!
+      end
+      
       def each_range
         last_range = nil
         in_range   = []
@@ -60,6 +67,10 @@ module Porser
       def to_s
         children_str = @children.map { |child| child.to_s }.join(" ")
         "(#{@tag} #{children_str})"
+      end
+      
+      def clean_string
+        @children.map { |child| child.clean_string }.join(" ")
       end
     end
   end

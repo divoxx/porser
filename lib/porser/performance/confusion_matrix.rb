@@ -40,7 +40,7 @@ module Porser
         sorted_keys.each do |expected|
           sorted_keys.each do |got|
             if @expected_counters[expected] == 0
-              yield(expected, got, 1.0)
+              yield(expected, got, 0.0)
             else
               yield(expected, got, @mappings[expected][got].to_f / @expected_counters[expected].to_f)
             end
@@ -55,7 +55,7 @@ module Porser
         output << (["%-10s"] * (sorted_keys.size + 1)).join(" | ") % ["TAG", *sorted_keys]
         
         sorted_keys.each do |key|
-          output << ("%-10s | " + (["   %#.2f   "] * sorted_keys.size).join(" | ")) % [key, *sorted_keys.map { |k| @expected_counters[key] == 0 ? 1.0 : @mappings[key][k].to_f / @expected_counters[key].to_f }]
+          output << ("%-10s | " + (["   %#.2f   "] * sorted_keys.size).join(" | ")) % [key, *sorted_keys.map { |k| @expected_counters[key] == 0 ? 0.0 : @mappings[key][k].to_f / @expected_counters[key].to_f }]
         end
         
         output.join("\n")

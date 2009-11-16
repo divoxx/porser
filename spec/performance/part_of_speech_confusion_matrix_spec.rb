@@ -5,7 +5,8 @@ describe Performance::PartOfSpeechConfusionMatrix do
     before :each do
       @gold_sentence   = "(S (NP (ART Um) (N revivalismo) (ADJP (ADJ refrescante))))"
       @parsed_sentence = "(S (NP (ART Um) (N revivalismo) (ADJP (ADJ refrescante))))"
-      @matrix          = Performance::PartOfSpeechConfusionMatrix.new(@gold_sentence, @parsed_sentence)
+      @matrix          = Performance::PartOfSpeechConfusionMatrix.new
+      @matrix.account(@gold_sentence, @parsed_sentence)
     end
   
     it "should have 100% of correctness" do
@@ -43,7 +44,8 @@ describe Performance::PartOfSpeechConfusionMatrix do
     before :each do
       @gold_sentence   = "(S (NP (ART Um) (N revivalismo) (ADJP (ADJ refrescante))))"
       @parsed_sentence = "(S (NP (N Um) (ART revivalismo) (ADJP (CONJ refrescante))))"
-      @matrix          = Performance::PartOfSpeechConfusionMatrix.new(@gold_sentence, @parsed_sentence)
+      @matrix          = Performance::PartOfSpeechConfusionMatrix.new
+      @matrix.account(@gold_sentence, @parsed_sentence)
     end
   
     it "should have 0% of correctness" do

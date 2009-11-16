@@ -5,7 +5,8 @@ describe Performance::CategoryConfusionMatrix do
     before :each do
       @gold_sentence   = "(S (NP (ART Um) (N revivalismo) (ADJP (ADJ refrescante))))"
       @parsed_sentence = "(S (NP (ART Um) (N revivalismo) (ADJP (ADJ refrescante))))"
-      @matrix          = Performance::CategoryConfusionMatrix.new(@gold_sentence, @parsed_sentence)
+      @matrix          = Performance::CategoryConfusionMatrix.new
+      @matrix.account(@gold_sentence, @parsed_sentence)
     end
 
     it "should have 100% of correctness" do

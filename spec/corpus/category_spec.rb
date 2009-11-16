@@ -56,4 +56,19 @@ describe Corpus::Category do
     nodes.size.should == 1
     nodes[0].tag.should == "3"
   end
+  
+  it "should return tag ranges ordered" do
+    expected = [
+      [0..1, '2'],
+      [0..3, '1'],
+      [0..4, '0'],
+      [1..2, '4'],
+      [1..3, '3'],
+      [2..3, '5'],
+      [3..4, '6'],
+      [3..4, '7']
+    ]
+    
+    @root_category.tag_ranges.should == expected
+  end
 end
