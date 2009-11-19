@@ -3,6 +3,7 @@ module Porser
     class LematizeAll
       def run(sentence)
         map(sentence.root_node, corpus)
+        sentence
       end
     
     protected

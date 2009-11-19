@@ -3,6 +3,7 @@ module Porser
     class LematizeAllAndAppendCategory
       def run(sentence)
         map(sentence.root_node)
+        sentence
       end
     
     protected

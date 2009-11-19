@@ -93,14 +93,14 @@ Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
     end
     
     def generate_corpus!
-      Dir["#{Porser.path.join('corpus', 'selection')}/*"].each do |path|
+      Dir["#{Porser.path.join('corpus', 'selection')}/corpus.*"].each do |path|
         File.open(path, "r") do |infp|
           File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.parseable.txt')), "w") do |parseable_outfp|
             File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.gold.txt')), "w") do |gold_outfp|
               corpus = $1.to_sym
               
               while line = infp.gets
-                sentence = Corpus::Sentence.parse(line)
+                sentence = Corpus::Sentence(line)
                 filters.each do |filter|
                   method = filter.method(:run)
                   

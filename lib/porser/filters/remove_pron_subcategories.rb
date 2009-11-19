@@ -3,6 +3,7 @@ module Porser
     class RemovePronSubcategories
       def run(sentence)
         map(sentence.root_node)
+        sentence
       end
 
     protected
