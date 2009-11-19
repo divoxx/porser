@@ -2,9 +2,9 @@ module Porser
   class Experiment
     attr_reader :path
     
-    def self.create!(selection, filters = [])
+    def self.create!(filters = [])
       filter_str = filters.empty? ? 'unchanged' : filters.join("-")
-      experiment = new(selection.path.join("#{Time.now.utc.strftime(TimeFormat)}-#{filter_str}"))
+      experiment = new(Porser.path.join('corpus', 'experiments', "#{Time.now.utc.strftime(TimeFormat)}-#{filter_str}"))
       Dir.mkdir(experiment.path)
       experiment.generate_corpus!      
       experiment
@@ -13,8 +13,7 @@ module Porser
     attr_reader :path, :selection
     
     def initialize(path)
-      @path      = Pathname.new(path.to_s)
-      @selection = Selection.new(File.dirname(@path))
+      @path = Pathname.new(path.to_s)
     end
     
     def name
@@ -94,7 +93,7 @@ Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
     end
     
     def generate_corpus!
-      @selection.corpus_paths.each do |path|
+      Dir["#{Porser.path.join('corpus', 'selection')}/*"].each do |path|
         File.open(path, "r") do |infp|
           File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.parseable.txt')), "w") do |parseable_outfp|
             File.open(@path.join(File.basename(path).gsub(/^corpus\.(.*?)\.txt$/, 'corpus.\1.gold.txt')), "w") do |gold_outfp|

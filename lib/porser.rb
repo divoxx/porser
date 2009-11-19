@@ -39,7 +39,6 @@ module Porser
   
   def self.require_all!
     require 'porser/experiment'
-    require 'porser/selection'
     require 'porser/cli/components/file_list'
     require 'porser/cli/components/file_list'
     require 'porser/cli/components/question'
