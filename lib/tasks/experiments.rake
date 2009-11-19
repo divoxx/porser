@@ -1,20 +1,13 @@
 namespace :experiments do
-  def ask_selection_path
-    selections_path = Porser.path.join("corpus", "selections")
-    selections_file_list = CLI::Components::FileList.new(selections_path, :title => "Available selections", :question => "Choose the selection that contains the experiment", :only_folder => true)
-    selections_file_list.ask or puts "No selection selected, aborting" && exit(1)
-  end
-  
-  def ask_experiment_path(selection_path, multiple = false)
-    experiments_file_list = CLI::Components::FileList.new(selection_path, :title => "Available experiments", :question => "Choose the experiment to train", :only_folder => true, :multiple => multiple)
+  def ask_experiment_path(multiple = false)
+    experiments_file_list = CLI::Components::FileList.new(Porser.path.join('corpus', 'experiments'), :title => "Available experiments", :question => "Choose the experiment to train", :only_folder => true, :multiple => multiple)
     experiments_file_list.ask or puts "No experiment selected, aborting" && exit(1)
   end
   
-  desc "Create a new experiment from a selection"
+  desc "Create a new experiment"
   task :create do
-    selection  = Selection.new(File.basename(ask_selection_path))
     filters    = CLI::Components::FileList.new(Porser.path.join('lib', 'porser', 'filters'), :title => "Available filters", :question => "Choose the filters to apply", :multiple => true, :full_path => false, :allow_none => true).ask
-    experiment = Experiment.create!(selection, filters)
+    experiment = Experiment.create!(filters)
     puts "Experiment created at #{experiment.path}"
     
     print "\nCopy config files from sample/ to the experiment directory? "
@@ -27,7 +20,7 @@ namespace :experiments do
   
   desc "Run the training process for an experiment"
   task :train do
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     puts "Training..."
     experiment.train!
     puts "Done."
@@ -36,7 +29,7 @@ namespace :experiments do
   
   desc "Run the parsing process for an experiment"
   task :parse do
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     puts "Parsing..."
     experiment.parse!(:dev)
     puts "Done."
@@ -49,7 +42,7 @@ namespace :experiments do
   
   desc "Run the scoring process for an experiment"
   task :score => 'vendor/scorer/evalb' do
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     puts "Scoring..."
     experiment.score!(:dev)
     puts "Done."
@@ -58,7 +51,7 @@ namespace :experiments do
   
   desc "Run the quantitative scoring process for an experiment"
   task :score_confusion do
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     puts "Building confusion matrices..."
     experiment.score_confusion!(:dev)
     puts "Done."
@@ -67,7 +60,7 @@ namespace :experiments do
   
   desc "Generate the LaTeX documentation for the experiment"
   task :doc do
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     puts "Scoring..."
     experiment.document!(:dev)
     puts "Done."
@@ -76,7 +69,7 @@ namespace :experiments do
   
   desc "Run the whole process for many experiments"
   task :run => 'vendor/scorer/evalb' do
-    experiments = ask_experiment_path(ask_selection_path, true).map { |path| Experiment.new(path) }
+    experiments = ask_experiment_path(true).map { |path| Experiment.new(path) }
     
     experiments.each do |experiment|
       $stdout.puts "Running experiment #{experiment.path}"
@@ -114,7 +107,7 @@ namespace :experiments do
   
   desc "Prettyprint"
   task :pretty_print, :what do |t, args|
-    experiment = Experiment.new(ask_experiment_path(ask_selection_path))
+    experiment = Experiment.new(ask_experiment_path)
     experiment.pretty_print!(args.what || "dev")
   end
 end
