@@ -1,12 +1,0 @@
-Este trabalho de conclusão terá como objetivos principais estudar e compreender as técnicas estatísticas de processamento de linguagem natural implementadas por Michael Collins, utilizar e analisar o \emph{parser} reimplementado por Dan Bikel, que tornou possível a parametrização e extensão das suas bibliotecas para possíveis adaptações do código. Os objetivos específicos são os seguintes:
-
-\begin{itemize}
-	\item Estudar as técnicas envolvidas no desenvolvimento de um \emph{parser}.
-	\item Estudar os modelos de \emph{parsing} de Collins.
-	\item Dominar o uso da ferramenta de \emph{parsing} de Bikel e, se necessário, a original de Collins.
-	\item Fazer um estudo detalhado dos parâmetros de implementação de Bikel, pois a eficácia dos algoritmos depende fundamentalmente dos ajustes desses parâmetros.
-	\item Utilizar a ferramenta de Bikel para construção de um \emph{parser} para a língua portuguesa. O treinamento do \emph{parser} será feito utilizando-se o \emph{corpus} anotado em desenvolvimento pelo projeto Semantic Share, da universidade de Lisboa \cite{semanticshare}.
-	\item Possivelmente, desenvolver módulos de processamento e as alterações de códigos que se mostrarem necessárias.
-\end{itemize}
-
-Detalhar melhor as ações ......

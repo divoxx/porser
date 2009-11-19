@@ -9,6 +9,7 @@
 \usepackage{longtable}
 \usepackage{url}
 
+
 \ifpdf
 \usepackage[pdftex]{graphicx}
 \else
@@ -31,13 +32,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{resumo}
 
-%O objetivo desse trabalho é desenvolver uma ferramenta de \emph{parsing} para o português baseado em modelos probabilísticos. Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática. Os modelos probabilísticos estudados são os desenvolvidos por Michael collins, e usaremos como base o parser implementado por Dan Bikel, avaliando as possibilidades de parametrização e extenção possíveis. 
-
-%Também será necessário o desenvolvimento de módulos de pré-processamento para adaptação do corpus utilizado.
-
-%Exploramos várias configurações em termos de parametrização possíveis do parser e melhorias no corpus utilizado para treino do parser.
-
-
 Este trabalho descreve a construção de um parser para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de corpus anotado. 
 Para este fim é utilizada a ferramenta de desenvolvimento construída por Dan Bikel para os modelos de Collins. 
 Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática.
@@ -46,16 +40,6 @@ O processo é inerentemente empírico. Utilizou-se uma metodologia incremental n
 Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é superior aos resultados obtidos em trabalhos semelhantes da literatura.
 
 \end{resumo}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{abstract}
-
-
-
-%\end{abstract}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \tableofcontents
@@ -81,6 +65,8 @@ Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é sup
 \label{sec:objetivos}
 	\input{tc1-objetivos}
 
+\newpage
+
 \section{Organização do texto}
 \label{sec:organizacao}
 	\input{tc1-organizacao}
@@ -89,31 +75,21 @@ Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é sup
 \label{cha:referencial_teorico}
 	\input{tc1-referencial-teorico}
 
-%\chapter{Projeto Semantic Share}
-%\label{cha:proj_semantic}
-%	\input{tc1-semantic}
-
-
 \chapter{Modelos Probabilísticos de Michael Collins}
 \label{cha:michael_collins}
 	\input{tc1-collins}
 
-%\chapter{Metodologia}
-%\label{cha:metodologia}
-%	\input{tc1-metodologia}
-
-%\section{Método de Avaliação}
-%\label{cha:avaliacao}
-%	\input{tc1-avaliacao}
-% entraram no capitulo resultados parciais
-
-\chapter{Experimentos e resultados Obtidos}
-\label{cha:resultados_parciais}
+\chapter{Experimentos e resultados obtidos}
+\label{cha:resultados_obtidos}
 	\input{tc1-result-obtidos}
 
-\chapter{Considerações Finais}
-\label{cha:consuderacoes_finais}
+\chapter{Considerações finais}
+\label{cha:consideracoes_finais}
 	\input{tc1-consideracoes-finais}
+
+\chapter{Trabalhos futuros}
+\label{cha:trabsfuturos}
+	\input{tc1-trabalhos-futuros}
 
 \appendix
 
@@ -122,8 +98,8 @@ Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é sup
 	\input{tc1-parsing-bikel}
 
 \bibliographystyle{abnt}
-%	\bibliography{tc1}
 
+%\bibliography{tc1}
 %\bibliographystyle{apalike}
 
 \renewcommand{\bibname}{Referência Bibliografia}

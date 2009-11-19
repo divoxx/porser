@@ -42,11 +42,21 @@ original.each_char do |char|
     output.write "#{$1}\n\(S "
     substr = "("
 
-  when /\A(.*)\((?!FRASE)([^\s]+)\s\z/m then
+  when /\A(.*)\((?!FRASE)([^\s]+)\s+([^\s])\z/m then
+    last_char = $3
+    is_pos    = ($3 != '(')
+
     output.write "#{$1}("
-    output.write $2.include?(":") ? $2.split(":")[1].upcase.gsub(/[^a-zA-Z_]+/, '').gsub(/_$/, '') : $2
+
+    if $2.include?(":")
+      parts = $2.split(":")
+      output.write parts[1].upcase.gsub(/[^a-zA-Z_]+/, '').gsub(/_$/, '')
+      output.write "-#{parts[2]}" if !parts[2].nil? && !parts[2].empty? && is_pos
+    else
+      $2
+    end
     output.write " "
-    substr = ""
+    substr = last_char
 
   when /\A(.*)\(([^\s]+)\)\z/m then
     output.write "#{$1}(#{$2} #{$2})"

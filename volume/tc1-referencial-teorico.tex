@@ -538,7 +538,7 @@ Estes corpora anotados representam recursos chave para o processamento do Portug
 \end{itemize}
 
 
-\paragraph{Esquema de Anotação do Projeto Semantic Share}\label{sub:semantic_anotacao}\hspace*{1in}\\
+\paragraph{Esquema de anotação}\label{sub:semantic_anotacao}\hspace*{1in}\\
 
 O esquema de anotação do projeto Semantic Share são visões baseadas na anotação base do projeto que utiliza HPSG \cite{branco08}.
 
@@ -667,21 +667,18 @@ No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o 
 
 \item{Desenvolvimento (ou teste de desenvolvimento): 
 
-Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do corpus, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} % (fold)
-
+Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do corpus, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting} 
+\footnote{O conceito de \emph{overfitting} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
 
 \label{sub:desenvolvimento_ou_teste_de_desenvolvimento_}
 
 
-O conceito de \emph{overfitting} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.
 
 
-
-% subsection desenvolvimento_ou_teste_de_desenvolvimento_ (end)
-
-\item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do parser. O objetivo é que a avaliação sobre este corpus seja insenta, sem efeito de \emph{overfitting}.} % (fold)
+\item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do parser. O objetivo é que a avaliação sobre este corpus seja insenta, sem efeito de \emph{overfitting}.}
 \label{sub:teste_final}
 \end{enumerate}
+
 
 O módulo de geração do \emph{parser} tem como entrada os exemplos do \emph{corpus} de treino e gera os parâmetros estatísticos que serão utilizados pelo \emph{parser} para tomar as decisões. Este módulo é parametrizável com informações linguísticas fornecidas pelo desenvolvedor, que guiam a interpretação do \emph{corpus} de treino. Por exemplo, a informação de que, quando um constituinte tem dois nomes seguidos, o núcleo é o da esquerda para o português e é o da direita para o inglês.
 

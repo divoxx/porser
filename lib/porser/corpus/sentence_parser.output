@@ -1,0 +1,184 @@
+
+
+-------- Grammar --------
+
+rule 1 sentence: node
+rule 2 node: category
+rule 3 node: part_of_speech
+rule 4 node_list: node_list node
+rule 5 node_list: 
+rule 6 category: "(" WORD node_list ")"
+rule 7 part_of_speech: "(" WORD "-" WORD WORD ")"
+rule 8 part_of_speech: "(" WORD WORD ")"
+
+------- Symbols -------
+
+**Nonterminals, with rules where they appear
+
+  $start (6)
+    on right: 
+    on left : 
+  sentence (7)
+    on right: 
+    on left : 1
+  node (8)
+    on right: 1 4
+    on left : 2 3
+  category (9)
+    on right: 2
+    on left : 6
+  part_of_speech (10)
+    on right: 3
+    on left : 7 8
+  node_list (11)
+    on right: 4 6
+    on left : 4 5
+
+**Terminals, with rules where they appear
+
+  $end (0) 
+  error (1) 
+  "(" (2) 6 7 8
+  WORD (3) 6 7 8
+  ")" (4) 6 7 8
+  "-" (5) 7
+
+--------- State ---------
+
+state 0
+
+
+  "("           shift, and go to state 5
+
+  sentence      go to state 1
+  node          go to state 2
+  category      go to state 3
+  part_of_speech  go to state 4
+
+state 1
+
+
+  $end          shift, and go to state 6
+
+
+state 2
+
+   1) sentence : node _
+
+  $default      reduce using rule 1 (sentence)
+
+
+state 3
+
+   2) node : category _
+
+  $default      reduce using rule 2 (node)
+
+
+state 4
+
+   3) node : part_of_speech _
+
+  $default      reduce using rule 3 (node)
+
+
+state 5
+
+   6) category : "(" _ WORD node_list ")"
+   7) part_of_speech : "(" _ WORD "-" WORD WORD ")"
+   8) part_of_speech : "(" _ WORD WORD ")"
+
+  WORD          shift, and go to state 7
+
+
+state 6
+
+
+  $end          shift, and go to state 8
+
+
+state 7
+
+   6) category : "(" WORD _ node_list ")"
+   7) part_of_speech : "(" WORD _ "-" WORD WORD ")"
+   8) part_of_speech : "(" WORD _ WORD ")"
+
+  WORD          shift, and go to state 11
+  "-"           shift, and go to state 10
+  $default      reduce using rule 5 (node_list)
+
+  node_list     go to state 9
+
+state 8
+
+
+  $default      accept
+
+
+state 9
+
+   4) node_list : node_list _ node
+   6) category : "(" WORD node_list _ ")"
+
+  "("           shift, and go to state 5
+  ")"           shift, and go to state 13
+
+  category      go to state 3
+  part_of_speech  go to state 4
+  node          go to state 12
+
+state 10
+
+   7) part_of_speech : "(" WORD "-" _ WORD WORD ")"
+
+  WORD          shift, and go to state 14
+
+
+state 11
+
+   8) part_of_speech : "(" WORD WORD _ ")"
+
+  ")"           shift, and go to state 15
+
+
+state 12
+
+   4) node_list : node_list node _
+
+  $default      reduce using rule 4 (node_list)
+
+
+state 13
+
+   6) category : "(" WORD node_list ")" _
+
+  $default      reduce using rule 6 (category)
+
+
+state 14
+
+   7) part_of_speech : "(" WORD "-" WORD _ WORD ")"
+
+  WORD          shift, and go to state 16
+
+
+state 15
+
+   8) part_of_speech : "(" WORD WORD ")" _
+
+  $default      reduce using rule 8 (part_of_speech)
+
+
+state 16
+
+   7) part_of_speech : "(" WORD "-" WORD WORD _ ")"
+
+  ")"           shift, and go to state 17
+
+
+state 17
+
+   7) part_of_speech : "(" WORD "-" WORD WORD ")" _
+
+  $default      reduce using rule 7 (part_of_speech)
+

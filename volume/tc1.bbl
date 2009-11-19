@@ -33,22 +33,12 @@
   coverage of english grammars}. In: \emph{ Proceedings of the DARPA Speech and
   Natural Language Workshop}, San Mateo, CA, USA., 1991.
 
-\bibitem[BLA93]{black93} Black, Ezra; Jelinek, Fred; Lafferty, John; Magerman,
-  David~M.; Mercer, Robin; Roukos, Salim. {\bf Towards history-based grammars}:
-  using richer models for probabilistic parsing. In: \emph{ Proceedings of 31st
-  Annual Meeting of the Association for Computational Linguistics}, Columbus,
-  OH, USA., 1993.
-
 \bibitem[BON03]{bonfante03} Bonfante, Andr{\'e}ia~Gentil. {\bf Parsing
   probabil{\'\i}stico para o portugu{\^e}s do brasil}. 2003. Tese de Doutorado.
 
 \bibitem[BRA08]{branco08} Branco, Antonio; Costa, Francisco. {\bf A
   computational grammar for deep linguistic processing of portuguese}: lxgram,
   version a.4.1. 2008.
-
-\bibitem[BRA09]{semanticshare} Branco, Ant{\'o}nio. {\bf Semantic share
-  project}. 2009. (http://semanticshare.di.fc.ul.pt/. ({\'U}ltimo acesso em
-  Abril 2009)).
 
 \bibitem[BRI95]{brill95} Brill, Eric. {\bf Transformation-based error-driven
   learning and natural language processing}: a case study in part-of-speech

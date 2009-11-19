@@ -1,12 +1,20 @@
 module Porser
   module Filters
     class RemoveNounSubcategories
-      def self.description
-        "Remove todas as subcategorias dos substantivos, transformando N_* em simplesmente N"
+      def run(sentence)
+        map(sentence.root_node)
       end
-      
-      def tag(tag)
-        tag =~ /^N_/ ? "N" : tag
+
+    protected
+      def map(node)
+        tag = (node.tag =~ /^N_/ ? "N" : node.tag)
+
+        case node
+        when Corpus::Category
+          Corpus::Category.new(tag, node.children.map { |child| map(child) })
+        when Corpus::PartOfSpeech
+          Corpus::PartOfSpeech.new(tag, node.word, node.extra)
+        end
       end
     end
   end

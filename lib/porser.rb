@@ -47,9 +47,6 @@ Porser.boot!
 
 require 'active_support'
 require 'erb'
-require 'porser/selection'
-require 'porser/experiment'
-require 'porser/filter_runner'
 
 Dir["#{Porser.path.join('lib', 'porser', 'filters')}/*"].each do |filter_path|
   require filter_path

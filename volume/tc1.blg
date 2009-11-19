@@ -4,45 +4,45 @@ The style file: abnt.bst
 Database file #1: references.bib
 Warning--entry type for "bikel02" isn't style-file defined
 --line 175 of file references.bib
-You've used 29 entries,
+You've used 27 entries,
             1445 wiz_defined-function locations,
-            479 strings with 6564 characters,
-and the built_in function-call counts, 29286 in all, are:
-= -- 3660
+            468 strings with 6149 characters,
+and the built_in function-call counts, 27788 in all, are:
+= -- 3518
 > -- 0
-< -- 240
-+ -- 1900
-- -- 41
-* -- 923
-:= -- 2230
-add.period$ -- 112
-call.type$ -- 29
-change.case$ -- 116
+< -- 218
++ -- 1816
+- -- 39
+* -- 840
+:= -- 2124
+add.period$ -- 103
+call.type$ -- 27
+change.case$ -- 108
 chr.to.int$ -- 1
-cite$ -- 29
-duplicate$ -- 4296
-empty$ -- 1178
-format.name$ -- 277
-if$ -- 6694
+cite$ -- 27
+duplicate$ -- 4084
+empty$ -- 1075
+format.name$ -- 247
+if$ -- 6379
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 61
-num.names$ -- 58
-pop$ -- 360
+newline$ -- 57
+num.names$ -- 54
+pop$ -- 333
 preamble$ -- 1
-purify$ -- 145
+purify$ -- 135
 quote$ -- 0
-skip$ -- 2037
+skip$ -- 1951
 stack$ -- 0
-substring$ -- 1810
-swap$ -- 2561
-text.length$ -- 29
-text.prefix$ -- 58
+substring$ -- 1744
+swap$ -- 2416
+text.length$ -- 27
+text.prefix$ -- 54
 top$ -- 0
-type$ -- 232
+type$ -- 216
 warning$ -- 0
-while$ -- 118
-width$ -- 58
-write$ -- 31
+while$ -- 110
+width$ -- 54
+write$ -- 29
 (There was 1 warning)
