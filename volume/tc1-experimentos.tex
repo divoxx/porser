@@ -1,10 +1,12 @@
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[scale=0.35]{diagrama_experimentos1.jpeg}
+%		\caption{\label{evolucao} Evolução dos resultados }		
+%	\end{center}
+%\end{figure}
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[scale=0.35]{diagrama_experimentos1.jpeg}
-		\caption{\label{evolucao} Evolução dos resultados }		
-	\end{center}
-\end{figure}
+
+
 
 
 Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos constituíntes que é essencial na implementação dos algorítmos de implementação dos modelos propostos por Collins \cite{collins99}.
@@ -16,23 +18,21 @@ A ferramenta de Bikel possibilita a utilização de um módulo para especificaç
 \subsection{Configurações}
 \label{sec:configuracoes}
 
-Primeiramente trabalhamos com a configuração default para o inglês, com parâmetros e head-find rules definidas para a gramática definida para o PTB. 
+A primeira estratégia abordada foi quanto as regras de definição do núcleo das sentenças. Serão experimentadas quatro configurações.
 
-A segunda configuração de testes usamos as configurações para o português definidas por Dan Bikel em seu parser e com as regras de head-find rules básicas, ou seja, primeiro o núcleo da sentença é a primeira palavra da direita para a esquerda, regra essa que é padrão na lingua inglesa, logo se alterou para que o núcleo da sentença seja a primeira palavra da esquerda para a direita, regra que ja se aproxima da regra de formação da lingua portuguesa. 
+A primeira configuração utilizada foi a default para o inglês, com regras de definição do núcleo especificas para o PTB, a segunda configuração de definição do núcleo foi a utilização das regras básicas, ou seja, o núcleo da sentença é a primeira palavra da direita para a esquerda, regra essa que é padrão na lingua inglesa, para terceira configuração se alterou as regras para que o núcleo da sentença seja a primeira palavra da esquerda para a direita, regra que ja se aproxima da regra de formação da lingua portuguesa. Para a quarta e última configuração desta bateria de experimentos foi definido regras de definição do núcleo das sentenças baseados na construção das sentenças para a lingua portuguesa.
 
-Após testes com essas configurações iniciais, trabalhou-se incrementalmente na evolução tanto de parametros melhores do parser quanto a definição das head-find rules para a lingua portuguesa.
+É interessante mensionar que a construção das regras foi incremental e experimentos paralelos com um conjunto menos de sentenças foram sendo feitos apenas para avaliar a qualidade das regras criadas.
 
-É interessante mensionar que a construção das regras foi incremental e experimentos foram sendo feitos para avaliar a qualidade das regras criadas como ilustrado na figura \ref{evolucao} ....
+O corpus utilizado tambem sofreu um processo incremental de avaliação, utilizou-se primeiramente o corpus apenas com as categorias de POS sintáticas principais, nesse experimento foi feito o agrupamento de TAGS que possuem subgrupos dentro da mesma categoria.
 
+O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. Acreditamos que não teremos ganho nos resultados tentando melhorar as regras de head-find, e sim se ajustarmos melhor os parâmetros da ferramenta.
 
-O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. Acreditamos que não teremos ganho incremento nos resultados tentando melhorar as regras de head-find, e sim se ajustarmos melhor os parâmetros da ferramenta.
+Para a segunda configuração de testes foi eleito a configuração vencedora como partida, usamos as configurações para o português definidas por Dan Bikel em seu parser e com as regras de de definição do núcleo das sentenças que atingiram melhor resultado.
 
-A segunda sequência de experimentos tera como objetivo avaliar a granularidade das POS tags no corpus utilizado. Será feito o agrupamento de TAGS que possuem subgrupos dentro da mesma categoria.
+A estratégia nessa segunda bateria de testes é avaliar a separação das TAGS de POS em subgrupos. A ideia básica é que tags devem ser distintos quando a categorias tem distribuições sintáticas diferentes, por outro lado se duas classes tem mesma distribuição ou distribuição próxima, separa-las apenas levará a perda de qualidade quanto a informação sintática constante nas sentenças, esse tipo de configuração também será observado na evolução dos experimentos.
 
-A ideia básica é que tags devem ser distintos quando a categorias tem distribuições sintáticas diferentes, por outro lado se duas classes tem mesma distribuição ou distribuição próxima, separa-las apenas levará a perda de qualidade quanto a informação sintática constante nas sentenças ...,  ...
-
-
-Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições ....
+Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições, primeiro será feito a distinção dos verbos que inicialmente foi testado apenas sob a TAG V, agora será avaliado as suas subcategorias VFIN, VINF, VPCP, VGER. Logo será feito avaliado com a TAG PRON e suas subcategorias PRONPERS PRONINDP, com a TAG CONJ e duas subcategorias CONJC e CONJS 
 
 
 Removendo subcategorias de verbo separadamente...

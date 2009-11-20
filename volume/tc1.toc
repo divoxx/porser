@@ -44,8 +44,8 @@
 \contentsline {section}{\numberline {4.1}Metodologia}{42}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{44}
 \contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos}{46}
-\contentsline {subsection}{\numberline {4.3.1}Configura\IeC {\c c}\IeC {\~o}es}{47}
-\contentsline {subsection}{\numberline {4.3.2}Dificuldades}{48}
+\contentsline {subsection}{\numberline {4.3.1}Configura\IeC {\c c}\IeC {\~o}es}{46}
+\contentsline {subsection}{\numberline {4.3.2}Dificuldades}{47}
 \contentsline {subsection}{\numberline {4.3.3}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{48}
 \contentsline {section}{\numberline {4.4}Resultados}{50}
 \contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{54}
