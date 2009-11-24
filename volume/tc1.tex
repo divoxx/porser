@@ -35,9 +35,9 @@
 Este trabalho descreve a construção de um parser para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de corpus anotado. 
 Para este fim é utilizada a ferramenta de desenvolvimento construída por Dan Bikel para os modelos de Collins. 
 Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática.
-São descritos aqui aspectos fundamentais do desenvolvimento do parser que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, bem como algorítmos de pré e pós processamento do corpus e outras estratégias utilizadas na busca melhorar a acuidade do parser. 
-O processo é inerentemente empírico. Utilizou-se uma metodologia incremental na busca de melhores configurações baseado em rigorosa avaliação quantitativa a cada passo seguindo os critérios do PARSEVAL. 
-Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é superior aos resultados obtidos em trabalhos semelhantes da literatura.
+São descritos aqui aspectos fundamentais do desenvolvimento do parser que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, algorítmos de pré e pós processamento do corpus, e outras estratégias utilizadas buscando melhorar a acuidade do parser. 
+O processo é inerentemente empírico. Utilizou-se uma metodologia incremental na busca de melhores configurações baseado em rigorosa avaliação quantitativa a cada passo seguindo os critérios de precisão e \emph{recall} de constituíntes rotulados do PARSEVAL. 
+Nossa melhor configuração tem precisão 00, \emph{recall} 00 e \emph{F-Score} 00, que é superior aos resultados obtidos em trabalhos semelhantes da literatura.
 
 \end{resumo}
 
@@ -50,7 +50,7 @@ Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é sup
 \input{tc1-abreviaturas}
 
 \pagenumbering{arabic}
-\setcounter{page}{1}
+\setcounter{page}{0}
 
 
 \chapter{Introdução}
@@ -87,9 +87,9 @@ Nossa melhor configuração com Precision 00, Recall 00 e F-Score 00, que é sup
 \label{cha:consideracoes_finais}
 	\input{tc1-consideracoes-finais}
 
-\chapter{Trabalhos futuros}
-\label{cha:trabsfuturos}
-	\input{tc1-trabalhos-futuros}
+%\chapter{Trabalhos futuros}
+%\label{cha:trabsfuturos}
+%	\input{tc1-trabalhos-futuros}
 
 \appendix
 

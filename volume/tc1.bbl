@@ -40,6 +40,10 @@
   computational grammar for deep linguistic processing of portuguese}: lxgram,
   version a.4.1. 2008.
 
+\bibitem[BRA09]{semanticshare} Branco, Ant{\'o}nio. {\bf Semantic share
+  project}. 2009. (http://semanticshare.di.fc.ul.pt/. ({\'U}ltimo acesso em
+  Abril 2009)).
+
 \bibitem[BRI95]{brill95} Brill, Eric. {\bf Transformation-based error-driven
   learning and natural language processing}: a case study in part-of-speech
   tagging. \emph{ Computational Linguistics}, 1995.
@@ -103,6 +107,10 @@
 
 \bibitem[SIN97]{sinclair97} Sinclair, John. {\bf Corpus evidence in language
   description}. 1997.
+
+\bibitem[SIN09]{florestasintatica} Sintática, Floresta. {\bf Projeto floresta
+  sintática}. 2009. (http://www.linguateca.pt/Floresta/ ({\'U}ltimo acesso em
+  Dezembro 2009)).
 
 \bibitem[WIN06]{baldridge06} Wing, Benjamim; Baldridge, Jason. {\bf Adaptation
   of data and models for probabilistic parsing of portuguese}. \emph{ PROPOR
