@@ -33,7 +33,7 @@ Esta fase é frequentemente chamada de \emph{part-of-speech tagging}, pois seu p
 
 Os algoritmos para etiquetagem fundamentam-se em dois modelos mais conhecidos: os baseados em regras e os estocásticos. Os algoritmos baseados em regras, como o nome diz, fazem uso de bases de regras para identificar a categoria de um certo item lexical. Neste caso, novas regras vão sendo integradas à base à medida que novas situações de uso do item vão sendo encontradas. Os algoritmos baseados em métodos estocásticos costumam resolver as ambiguidades através de um \emph{corpus} de treino, marcado corretamente (muitas vezes através de esforço manual), calculando a probabilidade que uma certa palavra ou item lexical terá de receber uma certa etiqueta em certo contexto. O etiquetador de Eric Brill \cite{brill95}, bastante conhecido na literatura, faz uso de uma combinação desses modelos.
 
-A escolha de um bom \emph{tagset} é fundamental para o sucesso de um \emph{parser}, embora não seja absolutamente claro como fazer este julgamento. Existem vários livros inteiros dedicados a este assunto \cite{abeille03} \cite{sardinha04}. Em linhas gerais, um bom \emph{tagset} para um \emph{parser} é aquele que possui uma boa caraterística de ""equivalência distribucional" em termos sintáticos; isto é, palavras que ocorrem tipicamente nas mesmas posições nas sentenças têm mesmo POS, enquanto que as que têm características de distribuição diferentes na mesma sentença têm POS diferente. Na abordagem de Collins \cite{collins99} que usamos neste trabalho a etiquetagem é parte integrande no algorítmo de \emph{parser}.
+A escolha de um bom \emph{tagset} é fundamental para o sucesso de um \emph{parser}, embora não seja absolutamente claro como fazer este julgamento. Existem vários livros inteiros dedicados a este assunto \cite{abeille03} \cite{sardinha04}. Em linhas gerais, um bom \emph{tagset} para um \emph{parser} é aquele que possui uma boa caraterística de "equivalência distribucional" em termos sintáticos; isto é, palavras que ocorrem tipicamente nas mesmas posições nas sentenças têm mesmo POS, enquanto que as que têm características de distribuição diferentes na mesma sentença têm POS diferente. Na abordagem de Collins \cite{collins99} que usamos neste trabalho a etiquetagem é parte integrande no algorítmo de \emph{parser}.
 
 O conjunto de tags (\emph{tagset}) utilizado nesse trabalho é definido em \cite{florestasintatica}
 
@@ -498,7 +498,7 @@ Uma descrição detalhada do tagset da Floresta é encontrado no website do proj
 \subsubsection{Projeto Semantic Share}
 \label{sub:sub_semantic_corpus}
 
-Um objetivo principal do SemanticShare é o desenvolvimento para o português de corpora anotados da mais recente geração e da próxima geração \cite{semanticshare} - um \emph{PropBank} e um \emph{LogicalFormBank} -, dos quais uma parte é paralela a bancos de dados similares que estão a ser produzidos para outros idiomas, em outros projetos.
+Um objetivo principal do SemanticShare é o desenvolvimento para o português de corpora anotados da mais recente geração e da próxima geração \cite{semanticshare}, um \emph{PropBank} e um \emph{LogicalFormBank}, dos quais uma parte é paralela a bancos de dados similares que estão a ser produzidos para outros idiomas, em outros projetos.
 
 Estes \emph{corpora} são diferentes materializações de um banco único de enunciados e correspondentes representações gramaticais. Contêm informação morfológica, sintática e semântica integradas, armazenadas internamente em HPSG \cite{branco08}, que podem ser apresentadas em uma ou mais de dentre várias visões:
 
@@ -629,9 +629,6 @@ Nota: Alguns sintagma são com informação de extração, por exemplo ``S/NP'' 
 
 \newpage
 
-%#####################################
-
-
 \section{Diagrama geral do processo de desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}} % (fold)
 \label{sec:diagrama_geral_do_processo_de_parsing_estatistico_baseado_em_corpus}
 
@@ -646,13 +643,12 @@ Uma visão geral do processo de \emph{parsing} estatístico pode ser observada n
 
 \begin{enumerate}
 
-
-\item{Treino: Composto por sentenças que o sistema usa para aprender.
-} % (fold)
+\item{Treino: Composto por sentenças que o sistema usa para aprender.} % (fold)
 \label{sub:treino}
 
-\item{Desenvolvimento (ou teste de desenvolvimento): Composto de sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting} \\ \\
-\footnote{O conceito de \emph{overfitting} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
+\item{Desenvolvimento (ou teste de desenvolvimento): Composto de sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. 
+
+Isto é conhecido como \emph{overfitting} \footnote{O conceito de \emph{overfitting} \cite{everitt2002cambridge} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a características muito específicas aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em conjunto de dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
 
 \label{sub:desenvolvimento_ou_teste_de_desenvolvimento_}
 
@@ -677,7 +673,7 @@ Conforme mencionado anteriormente, existem alguns trabalhos de construção de \
 \subsection{Trabalho de Benjamin Wing e Jason Baldridge} % (fold)
 \label{sec:wing_baldridge}
 
-Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como \emph{treebank} o Floresta Sintática com a ferramenta de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração de diversos parâmetros possíveis na utilização do parser, e em termos de composição do zemph{treebank}, foram feitas alterações nas estruturas e rótulos do \emph{treebank}.
+Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como \emph{treebank} o Floresta Sintática com a ferramenta de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração de diversos parâmetros possíveis na utilização do parser, e em termos de composição do \emph{treebank}, foram feitas alterações nas estruturas e rótulos do \emph{treebank}.
 
 Suas métricas de desempenho utilizadas foram o PARSEVAL padrão \footnote{AS métricas do PARSEVAL para precisão e \emph{recall} de constituíntes rotulados também são descritos na seção \ref{cha:avaliacao}}, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
 
@@ -693,7 +689,7 @@ Em principio a informação de núcleo (\emph{head}) dos sintagmas geralmente ma
 
 Outra mudança feita por Wing e Baldridge no \emph{corpus} foi com relação as cláusulas conjuntivas. Cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU' (\emph{Coordinating Unit})(Sintagma evidenciador de relação de coordenação), independente do tipo de constituintes coordenados. Isso faz com que no processo de treino de uma gramática, ocorram erros como confundir coordenação de sintagmas nominais com coordenações sentenciais com frequência. Neste sentido, foram alterados os labels para refletir mais especificamente as categorias dos sintágmas coordenados.
 
-Em termos de modificação das árvores do treebank outras transformações foram feitas, como aumentar cláusulas em NPs para distinguir cláusulas relativas das cláusulas em outras circunstâncias.
+Em termos de modificação das árvores do \emph{treebank} outras transformações foram feitas, como aumentar cláusulas em NPs para distinguir cláusulas relativas das cláusulas em outras circunstâncias.
 
 Wing e Baldridge reportaram o uso de uma série de filtros para lidar com a riqueza morfológida do português. Por exemplo: Foi usado uma lista de 39 inflexões verbais ou nominais reconhecidas par ao português, com cuidado para com falsos positivos e, ao mesmo tempo evitar a propagação de características das palavras. Deste modo temos únicos modos para lidar com varias terminações na terceira pessoa do plural do subjuntivo, mas separando 'ado' e 'ido' para evitar falsos positivo em substantivos como 'caldo' e 'Medo'. Além disso algumas terminações não são listadas como 'o' e 'a', porque elas são muito ambíguas e não são exatamente nominal ou verbal. Modificações no tratamento de plural 's' também foram necessárias pois no português quase sempre o plural é indicado por uma vogal seguida de 's', mas no ingles o plural pode ocorrer com 's' depois de várias consoantes diferentes. Este trabalho é bastante artesanal.
 
@@ -701,7 +697,7 @@ Wing e Baldridge reportaram o uso de uma série de filtros para lidar com a riqu
 \subsubsection{Experimentos} % (fold)
 \label{sec:wing_baldridge_experimentos}
 
-Wing e Baldridge trabalharam com três diferentes configurações de dados e parser para experimentar o parser proposto, que variam quanto ao esforço na alteração do treebank Floresta que foi utilizado como base.
+Wing e Baldridge trabalharam com três diferentes configurações de dados e parser para experimentar o parser proposto, que variam quanto ao esforço na alteração do \emph{treebank} Floresta que foi utilizado como base.
 
 A primeira configuração de testes leva em consideração o \emph{corpus} Floresta sem alteração e as configurações padrão da ferramenta de Bikel para o inglês. A segunda configuração leva em consideração o \emph{corpus} Floresta sem alteração mas utilizando o pacote de configuração para o português que eles construiram. O terceiro experimento utilizou o Floresta com alterações nas suas anotações e o pacote para o português.
 

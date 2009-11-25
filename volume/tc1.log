@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  24 NOV 2009 22:20
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  25 NOV 2009 10:06
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -787,20 +787,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--532
 [18] [19] [20] <parser_schema.pdf, id=197, 696.6025pt x 534.99875pt>
 File: parser_schema.pdf Graphic file (type pdf)
 
-<use parser_schema.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 654--656
-
- []
-
-[21 </home/administrador/Desktop/porser/volume/parser_schema.pdf>] [22]
-[23] [24]
-Overfull \hbox (13.05708pt too wide) in paragraph at lines 716--716
+<use parser_schema.pdf> [21 </home/administrador/Desktop/porser/volume/parser_s
+chema.pdf>] [22] [23] [24]
+Overfull \hbox (13.05708pt too wide) in paragraph at lines 712--712
 []\OT1/cmr/bx/n/14.4 Parsing pro-ba-bil^^S^^Pstico para o por-tugu^es do Bra-si
 l de Andr^^Seia
  []
 
 
-Overfull \hbox (2.18309pt too wide) in paragraph at lines 719--720
+Overfull \hbox (2.18309pt too wide) in paragraph at lines 715--716
 \OT1/cmr/m/n/12 uti-li-za-dos para ana-li-sar sen-ten^^Xcas da l^^S^^Pngua por-
 tu-guesa do Bra-sil, im-ple-men-tando o m^^Setodo
  []
@@ -1052,7 +1047,7 @@ t\OT1/cmr/m/n/12 . 2009.
 [59
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 []\OT1/cmr/m/n/12 Sint^^Satica, Flo-resta. \OT1/cmr/bx/n/12 Pro-jeto flo-resta 
 sint^^Satica\OT1/cmr/m/n/12 . 2009.
  []
@@ -1064,13 +1059,13 @@ sint^^Satica\OT1/cmr/m/n/12 . 2009.
 +-------------------------------------------------------------------+
 [61] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
- 4584 strings out of 94074
- 60985 string characters out of 1165153
- 132242 words of memory out of 1500000
- 7718 multiletter control sequences out of 10000+50000
+ 4585 strings out of 94074
+ 61007 string characters out of 1165153
+ 132250 words of memory out of 1500000
+ 7719 multiletter control sequences out of 10000+50000
  23402 words of font info for 86 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 29i,15n,32p,1363b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 29i,15n,32p,1426b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-tex
 live/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bl
 uesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx8.pfb>
@@ -1090,7 +1085,7 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (69 pages, 581310 bytes).
+Output written on tc1.pdf (69 pages, 581705 bytes).
 PDF statistics:
  591 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
