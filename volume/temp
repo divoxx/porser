@@ -1,0 +1,4 @@
+Wing e Baldridge reportaram o uso de uma série de filtros para lidar com a riqueza morfológida do português. Por exemplo: Foi usado uma lista de 39 inflexões verbais ou nominais reconhecidas par ao português, com cuidado para com falsos positivos e, ao mesmo tempo evitar a propagação de características das palavras. Deste modo temos únicos modos para lidar com varias terminações na terceira pessoa do plural do subjuntivo, mas separando 'ado' e 'ido' para evitar falsos positivo em substantivos como 'caldo' e 'Medo'. Além disso algumas terminações não são listadas como 'o' e 'a', porque elas são muito ambíguas e não são exatamente nominal ou verbal. Modificações no tratamento de plural 's' também foram necessárias pois no português quase sempre o plural é indicado por uma vogal seguida de 's', mas no ingles o plural pode ocorrer com 's' depois de várias consoantes diferentes. Este trabalho é bastante artesanal.
+
+ 
+

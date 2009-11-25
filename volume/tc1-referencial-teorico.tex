@@ -507,42 +507,28 @@ Estes \emph{corpora} são diferentes materializações de um banco único de enu
   \item Segmentos lexicais
   \item Lemas
   \item Traços de flexão
-  \item Etiquetas morfossintáticas Tabela \ref{tbl:semantic_share_cats}
+  \item Etiquetas morfossintáticas (Tabela \ref{tbl:semantic_share_cats})
   \item Entidades nomeadas e unidade multi-palavra
-  \item Árvores de constituintes Tabela \ref{tbl:semantic_share_pos}
+  \item Árvores de constituintes (Tabela \ref{tbl:semantic_share_pos})
   \item Árvores de funções e papéis semânticos
   \item Formas lógicas
 \end{enumerate}
 
-São arquivadas num formato de representação interno que é linguisticamente bem informado, seguindo um quadro gramatical de primeira linha para a lingüística computacional (HPSG);
-
 São apoiadas por ferramentas de desenvolvimento de corpora avançadas que asseguram uma extensão fácil das estruturas anotadas quando mais informação de mais dimensões lingüísticas possa ter de ser adicionada em extensões futuras (e.g. tempo, resolução de anáfora, etc), ou quando a cobertura da gramática seja aprofundada.
-
-Estes objetivos estão ao alcance do projeto na medida em que tiram partido da maioria das ferramentas e recursos desenvolvidos pela equipa do SemanticShare em projetos anteriores bem sucedidos, nomeadamente o projeto TagShare, do qual o SemanticShare é uma continuação. Eles constituem uma coleção única de ferramentas de última geração para o Português -- segmentador de frases e lexemas, etiquetador morfossintático, lematizador, analisador morfológico, reconhecedor de entidades nomeadas --, juntamente com o respectivo \emph{corpus} de 1 milhão de ocorrências, anotado com precisão de acordo com as dimensões 1.-6. acima (serviços online em http://nlxgroup.di.fc.ul.pt).
-
-Tudo isto será realizado com o apoio do consórcio DELPH-IN, uma iniciativa de nível mundial que visa dinamizar investigação de ponta em processamento lingüístico profundo através da partilha de ferramentas de desenvolvimento "open source", de recursos e de boas práticas (http://wiki.delph-in.net) entre os seus participantes convidados (vd. carta de convite em http://www.di.fc.ul.pt/~ahb/semanticshare.htm).
-
-A sua plataforma tecnológica e a sua ferramenta de anotação sem rivais permitem avanços rápidos na concretização dos objetivos do projeto, dando assim continuidade à cooperação anterior, nomeadamente no quadro do projeto GramaXing, em que uma gramática para o processamento lingüístico profundo foi desenvolvida e está a ser mantida.
-
-Para além disso, parte do banco lingüístico a ser desenvolvido é a componente portuguesa de bancos paralelos que estão a ser desenvolvidos para outros idiomas por outros membros do DELPH-IN, segundo requisitos similares.
 
 Estes corpora anotados representam recursos chave para o processamento do Português, incluindo:
 
 
 \begin{itemize}
-  \item fornecer uma base empírica para o estudo lingüístico deste idioma e para o desenvolvimento de ferramentas elaboradas manualmente;
-  \item treinar ferramentas de base estatística para o processamento superficial e profundo, incluindo parsers, etiquetadores de papéis semânticos, etc;
-  \item avaliar ferramentas de processamento;
-  \item  apoiar a experimentação de abordagens inovadoras em PLN multilingue, incluindo tradução automática estatística ou meta-anotação automática para a web semântica, etc...
+  \item fornecimento de uma base empírica para o estudo lingüístico deste idioma e para o desenvolvimento de ferramentas elaboradas manualmente;
+  \item treinamento de ferramentas de base estatística para o processamento superficial e profundo, incluindo parsers, etiquetadores de papéis semânticos, etc;
+  \item avaliação de ferramentas de processamento;
+  \item  apoio à a experimentação de abordagens inovadoras em PLN multilingue, incluindo tradução automática estatística ou meta-anotação automática para a web semântica, etc...
 \end{itemize}
 
+Em um dado momento este chegou a ser o corpus escolhido para o desenvolvimento do parser. No decorrer do desenvolvimento do trabalho mudou-se para o corpus Floresta Sintática, que se encontra em estágio mais consolidado.
 
 \paragraph{Esquema de anotação}\label{sub:semantic_anotacao}\hspace*{1in}\\
-
-O esquema de anotação do projeto Semantic Share são visões baseadas na anotação base do projeto que utiliza HPSG \cite{branco08}.
-
-A partir desta anotação são extraídas ``visões'' no formato de árvores de constituintes. Estas árvores formam o \emph{corpus} de pesquisa utilizado neste trabalho.
-
 
 A tabela \ref{tbl:semantic_share_pos} mostra os rótulos de POS e a tabela \ref{tbl:semantic_share_cats}, os rótulos sintáticos.
 
@@ -646,7 +632,7 @@ Nota: Alguns sintagma são com informação de extração, por exemplo ``S/NP'' 
 %#####################################
 
 
-\section{Diagrama geral do processo de \emph{parsing} estatístico baseado em \emph{corpus}} % (fold)
+\section{Diagrama geral do processo de desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}} % (fold)
 \label{sec:diagrama_geral_do_processo_de_parsing_estatistico_baseado_em_corpus}
 
 \begin{figure}
@@ -656,9 +642,7 @@ Nota: Alguns sintagma são com informação de extração, por exemplo ``S/NP'' 
 	\end{center}
 \end{figure}
 
-Uma visão geral do processo de \emph{parsing} estatístico pode ser observada na Figura \ref{schema}.
-
-No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o \emph{corpus} anotado é dividido em 3 partes:
+Uma visão geral do processo de \emph{parsing} estatístico pode ser observada na Figura \ref{schema}. No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o \emph{corpus} anotado é dividido em 3 partes:
 
 \begin{enumerate}
 
@@ -667,15 +651,10 @@ No desenvolvimento de um \emph{parser} estatístico baseado em \emph{corpus}, o 
 } % (fold)
 \label{sub:treino}
 
-\item{Desenvolvimento (ou teste de desenvolvimento): 
-
-Sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting} 
+\item{Desenvolvimento (ou teste de desenvolvimento): Composto de sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. Isto é conhecido como \emph{overfitting} \\ \\
 \footnote{O conceito de \emph{overfitting} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a muito específicas características aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
 
 \label{sub:desenvolvimento_ou_teste_de_desenvolvimento_}
-
-
-
 
 \item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do parser. O objetivo é que a avaliação sobre este \emph{corpus} seja insenta, sem efeito de \emph{overfitting}.}
 \label{sub:teste_final}
@@ -692,109 +671,75 @@ Cada vez que uma nova versão (ou seja, um novo conjunto de parâmetros estatís
 \section{\emph{Parsers} para Português} % (fold)
 \label{sec:parsers_para_portugues}
 
-Conforme mencionado anteriormente, existem alguns trabalhos de construção de \emph{parsers} para o português. Dentre eles, os de Eckhard Bick \cite{bick00}, baseado em regras, e portanto difícil de ser expandido ou adaptado; \cite{baldridge06} e \cite{bonfante03}, que também são estatísticos, baseados no modelo de Collins. Entretanto, revisando o que já referimos, os resultados até agora obtidos ainda estão distantes dos desejados.
+Conforme mencionado anteriormente, existem alguns trabalhos de construção de \emph{parsers} para o português. Dentre eles, o de Eckhard Bick \cite{bick00}, baseado em regras, e portanto difícil de ser expandido ou adaptado; e os de Wing e Baldridge \cite{baldridge06} e Bonfante \cite{bonfante03}, que assim como o que aqui descrevemos são estatísticos, baseados no modelo de Collins. Entretanto, repetindo o que já mensionamos anteriormente, os resultados até agora obtidos ainda estão distantes dos desejados. A seguir descreve-se os dois trabalhos baseados em \cite{collins99}
 
 
 \subsection{Trabalho de Benjamin Wing e Jason Baldridge} % (fold)
 \label{sec:wing_baldridge}
 
+Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como \emph{treebank} o Floresta Sintática com a ferramenta de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração de diversos parâmetros possíveis na utilização do parser, e em termos de composição do zemph{treebank}, foram feitas alterações nas estruturas e rótulos do \emph{treebank}.
 
-Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como treebank o Floresta Sintática com o parser de de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração dos diversos parâmetros possíveis na utilização do parser, e em termos de composição do treebank, foram feitas alterações nas estruturas e rótulos do treebank. 
+Suas métricas de desempenho utilizadas foram o PARSEVAL padrão \footnote{AS métricas do PARSEVAL para precisão e \emph{recall} de constituíntes rotulados também são descritos na seção \ref{cha:avaliacao}}, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
 
-%Uma das grandes dificuldades no trabalho de Wing e Baldridge para desenvolver um parser para o português foram com relação aos verbos, no português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos sintéticos, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica e muito a tarefa de análise morfológica.
-
-Suas métricas de desempenho utilizadas foram o PARSEVAL padrão, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
-
-Foi provado que fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluínddo sensibilidade morfológica	do português, resulta em sensivel melhora do desempenho atingindo 63,2{\%} de PARSEVAL F-Score em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
+Fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluindo sensibilidade morfológica ao português, mostraral sensível melhora do desempenho atingindo 63,2{\%} de \emph{F-Score} em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
 
 
 \subsubsection{Preparando o material de treino, adaptações no \emph{corpus}} % (fold)
 \label{sec:wing_baldridge_adapt_corpus}
- 
 
-Ao usar o Floresta Sintática para treino da ferramenta, Wing e Daldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB), para este trabalho tambem tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. O \emph{corpus} do Floresta possui constituintes descontínuos, que na conversão foram mapeados em componentes separados.
+Ao usar o Floresta Sintática para treino da ferramenta, Wing e Baldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB). Para este trabalho também tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. 
 
-Em principio a informação de núcleo (\emph{Head}) das sentenças geralmente marcada explicitamente no \emph{corpus} Florésta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em heads das sentenças usam complexos conjuntos de heurísticas para definir os heads das sentenças durante a análise. Wing e Baldridge utilizaram-se desta marcação disponível no Floresta. No entanto, como nem todas as sentenças possuem a informação de head, Wong e Baldridge, ainda tiveram que utilizar um complexo conjunto de heurísticas para resolver as omissõese casos em que discordaram da informação constante no \emph{corpus}. Neste trabalhos optamos por ignorar a marcação fornecida no \emph{corpus} e utilizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo das sentenças.
+Em principio a informação de núcleo (\emph{head}) dos sintagmas geralmente marcada explicitamente no \emph{corpus} Floresta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em núcleos dos sintagmas usam regras heurísticas para inferir os núcleos durante a análise. Wing e Baldridge utilizaram-se de marcação disponível no Floresta. No entanto, como nem todos os sintágma possuem a informação de núcleo, Wing e Baldridge, ainda assim tiveram que utilizar regras heurísticas para resolver as omissões casos em que discordaram da informação constante no \emph{corpus}. Em nosso trabalhos optamos por ignorar a marcação fornecida no \emph{corpus} e parametrizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo das sentenças.
 
-Outra mudança feita por Wing e Baldridge no \emph{corpus} foi com relação as cláusulas conjuntivas. Cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU' (\emph{Coordinating conjunction})(Sintagma evidenciador de relação de coordenação), independente do tipo de constituintes coordenados. Isso faz com que no processo de treino de uma gramática, ocorram erros como confundir coordenação de sintagmas nominais com coordenações sentenciais com frequência. Foi necessário aumentar os tipos sintáticos de orações na tentativa de que essa situação não ocorresse.
+Outra mudança feita por Wing e Baldridge no \emph{corpus} foi com relação as cláusulas conjuntivas. Cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU' (\emph{Coordinating Unit})(Sintagma evidenciador de relação de coordenação), independente do tipo de constituintes coordenados. Isso faz com que no processo de treino de uma gramática, ocorram erros como confundir coordenação de sintagmas nominais com coordenações sentenciais com frequência. Neste sentido, foram alterados os labels para refletir mais especificamente as categorias dos sintágmas coordenados.
 
 Em termos de modificação das árvores do treebank outras transformações foram feitas, como aumentar cláusulas em NPs para distinguir cláusulas relativas das cláusulas em outras circunstâncias.
 
+Wing e Baldridge reportaram o uso de uma série de filtros para lidar com a riqueza morfológida do português. Por exemplo: Foi usado uma lista de 39 inflexões verbais ou nominais reconhecidas par ao português, com cuidado para com falsos positivos e, ao mesmo tempo evitar a propagação de características das palavras. Deste modo temos únicos modos para lidar com varias terminações na terceira pessoa do plural do subjuntivo, mas separando 'ado' e 'ido' para evitar falsos positivo em substantivos como 'caldo' e 'Medo'. Além disso algumas terminações não são listadas como 'o' e 'a', porque elas são muito ambíguas e não são exatamente nominal ou verbal. Modificações no tratamento de plural 's' também foram necessárias pois no português quase sempre o plural é indicado por uma vogal seguida de 's', mas no ingles o plural pode ocorrer com 's' depois de várias consoantes diferentes. Este trabalho é bastante artesanal.
 
-\subsubsection{Adaptações no analisador para o português} % (fold)
-\label{sec:wing_baldridge_adapt_parser}
-
-Foi utilizado o parser desenvolvido por Dan Bikel \cite{bikel02} para treinar e executar a análise das sentenças do português, O analisador implementa e estende os modelos de análise de Michael Collins \cite{collins99}, que inclue análise lexicalizada orientada ao núcleo das sentenças, modelos que incorporam diferentes níveis de informações estruturais, que ja foram descritas anteriormente nesse trabalho.
-
-O modelo de análise utilizado é essencialmente o Modelo 2 de Collins \cite{collins99}.
-
-O analisador permite extenções específicas. Além de usar o pacote em inglês para determinar uma linha de base para análise de precisão, foi criado um pacote par ao português. Este pacote fornece regras para descoberta de heads das sentenças, tratamento especial para quando os heads são explicitamente marcados, características morfológicas, e algumas opções de ajuste do analisador ao Floresta.
-
-Modelos baseados no head das sentenças deve permitir saber quem é o filho do head anterior durante o processo de treino, Esta informação não é codificada no formato PTB, para o inglês o pacote fornece uma série de heurísticas para descobrir o head da sentença.
-
-Para o português, para cada tipo de componente uma lista ordenada de tipos sintáticos é fornecida. modificamos essas regras como apropriado para ser utilizado com o Floresta.
-
-Foi necessário tambem modificar o parser para indicação explícita dos heads, e utilização de arquivos de configuração dessas regras caso não esteja indicada no \emph{corpus}.
-
-Cada pacote de idioma também pode ser codificado com base nas características morfológicas de uma palavra, estas são especificamente importantes para palavras desconhecidas. Cinco características são codificadas para cada palavra, capitalização, hifenização, numérico, inflexão e derivação. Os três primeiros indicam respectivamente se as palavras estão capitalizadas contém hífem ou estão sob forma de número. Para a maior parte, o código para crialos não precisava mudanças. Já para os dois últimos ítens tivemos que fazer modificações para trabalhar corretamente com o português. Pois como falado anteriormente, inflexões verbais e derivações no português são os grandes problemas.
-
-As características inflexionais e derivacionais indicam a presença particular de sufixos nas palavras. Foi criado uma lista de 39 inflexões verbais ou nominais reconhecidas par ao português, isso exigiu cuidado para não bater falsos positivos e, ao mesmo tempo evitar a propagação de características das palavras. Deste modo temos únicos modos para lidar com varias terminações na terceira pessoa do plural do subjuntivo, mas separando 'ado' e 'ido' para evitar falsos positivo em substantivos como 'caldo' e 'Medo'.
-
-Além disso algumas terminações não são listadas como 'o' e 'a', porque elas são muito ambíguas e não são exatamente nominal ou verbal. Modificações no tratamento de plural 's' também foram necessárias pois no português quase sempre o plural é indicado por uma vogal seguida de 's', mas no ingles o plural pode ocorrer com 's' depois de várias consoantes diferentes.
-
-
-Outras pequenas modificações foram feitas no parser, por exemplo o modelo de Knesser-Ney foi utilizado ao invés de utilizar o padrão que é Witten-Bell. Outro exemplo foi utilizar o parametro nunkownWordThreshold=2 ao invés de 6 que é o padrão, e desligar todos os parametros que faze referencia ao PTB, e finalmente nao permitindo que oparser crie produções unárias.
-
- 
 
 \subsubsection{Experimentos} % (fold)
 \label{sec:wing_baldridge_experimentos}
 
 Wing e Baldridge trabalharam com três diferentes configurações de dados e parser para experimentar o parser proposto, que variam quanto ao esforço na alteração do treebank Floresta que foi utilizado como base.
 
-A primeira configuração de testes leva em consideração o \emph{corpus} Floresta sem alteração e as configurações padrão para o inglês. A segunda configuração leva em consideração o \emph{corpus} Floresta sem alteração mas utilizando o pacote de configuração para o português. O terceiro experimento utilizou o Floresta com alterações nas suas anotações e o pacote para o português.
+A primeira configuração de testes leva em consideração o \emph{corpus} Floresta sem alteração e as configurações padrão da ferramenta de Bikel para o inglês. A segunda configuração leva em consideração o \emph{corpus} Floresta sem alteração mas utilizando o pacote de configuração para o português que eles construiram. O terceiro experimento utilizou o Floresta com alterações nas suas anotações e o pacote para o português.
 
 O primeiro representa uma abordagem mais preguiçosa, ou seja não faça nada que não seja garantir que as árvores geradas possam ser analisadas pelo parser. O segundo faz o analisador de reconhecimento da linguagem, aplicando as regras definidas para o português e as configurações ajustadas. O terceiro e último experimento envolve mudar as próprias árvores do \emph{corpus} fornecendo para o parser mais informação para o processo de análise.
 
 Para estes experimentos foi criado um conjunto de 7497 sentenças dessas 1877 para testes e as restantes para treino.
 
-%Foi utilizado tambem três configurações diferentes de POS tags, obtidos a partir do próprio analisador (ptags), a partir de um POS tagger externo proveniente do toolkit OpenNLP (ttags), e da Floresta em si (gtags). Este último é utilizado apenas para mostrar um limite superior sobre o desempenho do analisador para cada configuração.
+O cálculo \emph{F-score} para o primeiro experimento foi de 38.06{\%}, para o segundo de 63.8{\%} e para o tereceiro de 67.1{\%} 
 
-O cálculo F-score para o primeiro experimento foi de 38.06{\%}, para o segundo de 63.8{\%} e para o tereceiro de 67.1{\%} 
-
-Os desempenhos com relação a configuração básica tiveram grande melhora, simplesmente colocando definindo o pacote para português ao invés de utilizar o padrão inglês.  
-
-Outra melhora substancial nos resultados se deve a informação de heads baseados nas regras do português informadas manualmente. Ao se adaptar um analisador como o de Bikel par auma nova linguagem vale claramente a pena colocar um mínimo de esforço para se definir um head-find rules razoavel.
+Os desempenhos com relação a configuração básica tiveram grande melhora, simplesmente inserindo o pacote de parâmetros para português ao invés de utilizar o padrão inglês, em particular, as regras de inferência do núcleo dos sintágmas. Ao se adaptar um analisador como o de Bikel par auma nova linguagem vale claramente a pena colocar um mínimo de esforço para se definir um cojunto de regras de inferência do núcleo dos sintãgmas razoável (head-find rules).
 
 \subsection{Parsing probabilístico para o português do Brasil de Andréia Gentil Bonfante} % (fold)
 \label{sec:bonfante}
 
-Bonfante em sua tese \cite{bonfante03}, faz uma investigação de métodos estatísticos quando utilizado para analisar sentenças da lingua portuguesa do Brasil. Implementando o método de modelo gerativo de Michael Collins \cite{collins99}. Como resultado apresenta uma ferramenta para processamento de linguagem natural PAPO formado por varios módulos que executam 3 funções básicas: o pré-processamento e a preparação dos dados do conjunto de sentenças usadas no treino, a geração de dois modelos probabilísticos de análise (PAPO I E PAPO II),  e um parser propriamente dito que usa um dos modelos gerados e produz as árvores sintáticas mais provaveis para uma sentença.
+Bonfante em sua tese \cite{bonfante03}, faz uma investigação de métodos estatísticos quando utilizados para analisar sentenças da língua portuguesa do Brasil, implementando o método de modelo gerativo de Michael Collins \cite{collins99}. Como resultado apresenta uma ferramenta para processamento de linguagem natural, PAPO, formada por vários módulos que executam 3 funções básicas: o pré-processamento e a preparação dos dados do conjunto de sentenças usadas no treino; a geração de dois modelos probabilísticos de análise (PAPO I e PAPO II); e um \emph{parser} propriamente dito que usa um dos modelos gerados e produz as árvores sintáticas mais provaveis para uma sentença.
 
-Nesta tese Bonfante não chegou a realizar uma avaliação abrangente e robusta de sua ferramenta, em nenhum de seus modelos. Bonfante preferiu realizar uma investigação qualitativa do desempenho do sistema, com o intuito de identificar problemas mais aparentes que surgissem na análise de um conjunto seleto de sentenças. Realizando análise apenas nas sentenças consideradas mais dificeis.
+Nesta tese Bonfante não chegou a realizar uma avaliação abrangente e robusta de sua ferramenta, em nenhum de seus modelos. Bonfante preferiu realizar uma investigação qualitativa do desempenho do sistema, com o intuito de identificar problemas mais aparentes que surgissem na análise de um conjunto seleto de sentenças, realizando análise apenas nas sentenças consideradas mais dificeis.
 
-Essa avaliação inicial motivou o surgimento da versão II de sua ferramenta, que salvo um único teste, jamais teve desempenho inferior a versão inicial, na verdade superou significativamente na maioria dos casos.
+Não é possível avaliar a qualidade dos resultados tanto da versao I quanto da versão II de sua ferramenta, uma vez que Bonfante usou um volume muito pequeno de casos de teste.
 
-Entretanto nao é possível avaliar a qualidade dos resultados tanto da versao I quanto da versão II de sua ferramenta, uma vez que Bonfante usou um volume muito pequeno de casos de teste. Foram identificados problemas quanto a ruídos na base de regras, segundo Bonfante provenientes do pré-processamento do treebank, e não originário dessa. E caracteristicas do modelo de análise sintatica do treebank utilizado que virtualmente impedem um aprendizado efetivo por parte de sua ferramenta, e que poderiam ser neutralizados de forma relativamente fácil por meio de um pré-processamento, ainda automático, mais elaborado.
+Em todos os experimentos realizados na tese de Bonfante, o sistema utiliza como fonte de exemplos de análise, o CENTENFolha, proveniente do Floresta Sintática.
 
-Em todos os experimentos realizados na tese de Bonfante, o sistema utiliza como fonte de exemplos de análise, o CENTENFolha, proveniente do Floresta Sintática. Um \emph{corpus} de cunho jornalístico anotado com o parser simbólico e o esquema de anotação propostos e descritos por Eckhard Bick \cite{bick00}. Como este esquema de anotação tem características bastante peculiares que tornam o pré-processamento não trivial, a ponto de inclusive ser uma fonte significativa de ruído existente na entrada do gerador de modelos para sua ferramenta.
+Assim como nos trabalhos semelhantes Bonfante teve que gerar um módulo de pré-processamento para as sentenças originais, um módulo de filtro de regras, que tem como entrada as sentenças do CENTENFolha e tem como saida regras, para que possam ser usadas na geração dos modelos de sua tese.
 
-Bonfante teve que gerar um módulo de pré-processamento para as sentenças originais, um módulo de filtro de regras, que tem como entrada as sentenças do CENTENFolha e tem como saida regras, para que possam ser usadas na geração dos modelos de sua tese.
-
-Além do filtro de regras foi preciso criar o filtro de núcleos de sentenças, os núcleos são identificados para cada regra. Para preencher o núcleo de um sintagma é necessário que seja recuperada a regra na qual ela é pai.
+Além do filtro de regras foi preciso criar o filtro de núcleos de sentenças, os núcleos são identificados para cada regra. 
 
 
 \subsubsection{Experimentos} % (fold)
 \label{sec:bonfante_experimentos}
 
 
-Para avaliara quantitativamente sua ferramenta Bonfante utilizou 23 sentenças absolutamente inéditas no sentido de não terem sido observadas no treebank utilizado para treino. Antes de serem processadas pelo seu parser de acordo com seus modelos de análise, estas sentenças foram anotadas morfossintaticamente com as TAGS do treebank.
+Para avaliar quantitativamente sua ferramenta Bonfante utilizou 23 sentenças absolutamente inéditas no sentido de não terem sido observadas no treebank utilizado para treino. Antes de serem processadas pelo seu parser de acordo com seus modelos de análise, estas sentenças foram anotadas morfossintaticamente com as TAGS do treebank.
 
-Para cada sentença configurou-se a ferramenta para que obtivesse no máximo as dez análises mais prováveis encontradas. Caso sua ferramenta não terminasse a analise de uma sentença no prazo máximo de cinco minutos, considera sem solução.
+Para cada sentença configurou-se a ferramenta para que obtivesse no máximo as dez análises mais prováveis encontradas. Caso sua ferramenta não terminasse a análise de uma sentença no prazo máximo de cinco minutos, considera-o sem solução.
 
-Os resultados sao apresentados de forma quantitativa e quanto ao tempo de processamento, para processar as 23 sentenças a ferramenta levou em média 47 segundos, seus melhores resultados quanto a Precision é de 79{\%} e recall 75{\%}.
+Os resultados sao apresentados de forma quantitativa e quanto ao tempo de processamento, para processar as 23 sentenças a ferramenta levou em média 47 segundos, seus melhores resultados quanto a precisão é de 79{\%} e \emph{recall} 75{\%}.
 
-Não achamos que seus resultados sejam relevantes para avaliar a performace de sua ferramenta uma vez que apenas 23 sentenças é um universo pequeno de casos para se avaliar uma ferramenta com tal proposito.
+Não achamos que seus resultados sejam relevantes para avaliar a performace de sua ferramenta uma vez que apenas 23 sentenças de origem dúbia é um universo pequeno de casos para se avaliar uma ferramenta com tal propósito.
 
 % section parsers_para_portugues (end)
 
