@@ -5,10 +5,6 @@
 %	\end{center}
 %\end{figure}
 
-
-
-
-
 Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos constituíntes que é essencial na implementação dos algorítmos de implementação dos modelos propostos por Collins \cite{collins99}.
 
 O corpus do Bosque ja tem anotados muitos dos \emph{heads} das sentenças disponibilizadas, porém o parser de bikel precisa de todos os \emph{heads}, e verificou-se que nem todas as sentenças possuem essa informação, tendo que ser analisada e construída de forma empírica.
@@ -54,6 +50,9 @@ Diferenciando conjunçao coordenada e subordinativa nao houve diferença signifi
 O último caso relativo a nomes refere-se  o que ... do corpus 
 
 Foi dada grande atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
+
+Quanto ao idioma, cada pacote de idioma também pode ser codificado com base nas características morfológicas de uma palavra, estas são especificamente importantes para palavras desconhecidas. Cinco características são codificadas para cada palavra, capitalização, hifenização, numérico, inflexão e derivação. Os três primeiros indicam respectivamente se as palavras estão capitalizadas contém hífem ou estão sob forma de número. Para a maior parte, o código para crialos não precisou mudanças. Já para os dois últimos ítens tivemos que fazer modificações para trabalhar corretamente com o português. Pois como falado anteriormente, inflexões verbais e derivações no português são os grandes problemas.
+
 
 \subsection{Experimentos com lematização das palavras}
 \label{sec:lematizacao}

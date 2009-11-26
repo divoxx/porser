@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  25 NOV 2009 18:52
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  26 NOV 2009 09:59
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -555,7 +555,7 @@ ras/facin.jpg>] [2
 (/home/administrador/Desktop/porser/volume/tc1-abreviaturas.tex [7
 
 ]
-Overfull \hbox (36.4553pt too wide) in alignment at lines 5--11
+Overfull \hbox (36.4553pt too wide) in alignment at lines 5--12
  [] [] [] 
  []
 
@@ -577,7 +577,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
 ) [3]
 (/home/administrador/Desktop/porser/volume/tc1-organizacao.tex)
-Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--74
+Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--75
 []\OT1/cmr/m/n/12 Este tra-ba-lho est^^Sa or-ga-ni-zado em cinco cap^^S^^Ptulos
 . Ini-ci-al-mente neste pri-meiro cap^^S^^Ptulo,
  []
@@ -943,108 +943,108 @@ Apendice A.
 (/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [52
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 47--48
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 43--44
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 66--67
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 62--63
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Overfull \hbox (38.40376pt too wide) in paragraph at lines 68--69
+Overfull \hbox (38.40376pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/bx/n/8 Par^ametros para Mo-de-los de Bi-kel, mas ^^Se ig-no-rado qua
 ndo o par^ametro dan-bi-kel.model.precomputeProbabilities
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 73--74
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 69--70
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 86--87
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 [54]
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 114--115
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 110--111
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-[55]
-Overfull \hbox (19.91684pt too wide) in paragraph at lines 153--154
+
+Overfull \hbox (19.91684pt too wide) in paragraph at lines 149--150
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[56] [57]) (/home/administrador/Desktop/porser/volume/tc1.bbl [58]
+[55] [56]) (/home/administrador/Desktop/porser/volume/tc1.bbl [57]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[59
+[58
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
@@ -1052,12 +1052,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--118
 sint^^Satica\OT1/cmr/m/n/12 . 2009.
  []
 
-[60])
+[59])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[61] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[60] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
  4585 strings out of 94074
  61007 string characters out of 1165153
@@ -1085,9 +1085,9 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (69 pages, 581656 bytes).
+Output written on tc1.pdf (68 pages, 581094 bytes).
 PDF statistics:
- 591 PDF objects out of 1000 (max. 8388607)
+ 588 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
