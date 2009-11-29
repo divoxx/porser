@@ -33,12 +33,6 @@
   coverage of english grammars}. In: \emph{ Proceedings of the DARPA Speech and
   Natural Language Workshop}, San Mateo, CA, USA., 1991.
 
-\bibitem[BLA93]{black93} Black, Ezra; Jelinek, Fred; Lafferty, John; Magerman,
-  David~M.; Mercer, Robin; Roukos, Salim. {\bf Towards history-based grammars}:
-  using richer models for probabilistic parsing. In: \emph{ Proceedings of 31st
-  Annual Meeting of the Association for Computational Linguistics}, Columbus,
-  OH, USA., 1993.
-
 \bibitem[BON03]{bonfante03} Bonfante, Andr{\'e}ia~Gentil. {\bf Parsing
   probabil{\'\i}stico para o portugu{\^e}s do brasil}. 2003. Tese de Doutorado.
 
@@ -64,6 +58,10 @@
 
 \bibitem[COL99]{collins99} Collins, Michael. {\bf Head-driven statistical
   models for natural language parsing}. 1999. Tese de Doutorado.
+
+\bibitem[EVE02]{everitt2002cambridge} Everitt, B.S.; Everitt, BS. {\bf {The
+  Cambridge dictionary of statistics}}.  Cambridge University Press Cambridge,
+  2002.
 
 \bibitem[G{\'O}M97]{cantossanches97.2} G{\'o}mez, Pascual~Cantos; P{\'e}rez,
   Aquilino~S{\'a}nchez. {\bf Predicability of word forms (types) and lemmas in
@@ -113,6 +111,10 @@
 
 \bibitem[SIN97]{sinclair97} Sinclair, John. {\bf Corpus evidence in language
   description}. 1997.
+
+\bibitem[SIN09]{florestasintatica} Sintática, Floresta. {\bf Projeto floresta
+  sintática}. 2009. (http://www.linguateca.pt/Floresta/ ({\'U}ltimo acesso em
+  Dezembro 2009)).
 
 \bibitem[WIN06]{baldridge06} Wing, Benjamim; Baldridge, Jason. {\bf Adaptation
   of data and models for probabilistic parsing of portuguese}. \emph{ PROPOR

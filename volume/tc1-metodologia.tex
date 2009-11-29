@@ -1,27 +1,16 @@
-Este trabalho possui um forte componente experimental e exploratório. Assim, em termos metodológicos, a cada experiência realizada, os resultados obtidos devem ser analisados quantitativa e qualitativamente, para orientar as correções nos parâmetros do \emph{parser} ou indicar a necessidade de alterações como: a) de pré-processamento ou pós-processamento dos casos; ou b) no código do \emph{parser}. Nesse sentido, a avaliação quantitativa é um componente importante e será feita de forma rigorosa. Pretende-se utilizar os métodos de avaliação tradicionais de \emph{precision/recall} \cite{black93} e possivelmente outras a definir.
-
-Será usado um sistema de controle de versão que permite que se trabalhe com diversas versões dos arquivos de trabalho
-e  versões do software durante nossos testes e implementações.
+Este trabalho possui um forte componente experimental e exploratório. Assim, em termos metodológicos, a cada experiência realizada, os resultados obtidos foram analisados quantitativa e qualitativamente, para orientar as correções nos parâmetros do \emph{parser} ou indicar a necessidade de alterações como: a) de pré-processamento ou pós-processamento dos casos; ou b) no código do \emph{parser}. Nesse sentido, a avaliação quantitativa é um componente importante e será feita de forma rigorosa. Pretende-se utilizar os métodos de avaliação tradicionais de \emph{precision/recall} \cite{black91}.
 
 Para trabalhar com o corpus no formato de entrada para o parser de Bikel foi necessário pré-processamento para eliminar ruídos e criar dados de entrada no formato PTB, mesmos obstáculos encontrados por Baldridge \cite{baldridge06} e Bonfante\cite{bonfante03} em seus trabalhos. 
 
-A presença de ruído nos dados do corpus é inevitável pois a maioria das sentenças são anotadas de maneira automática, e algumas inconsistências ainda foram encontradas no decorrer do trabalho. Ruídos são possívelmente provenientes da complexidade na construções da língua que pode gerar ambiguidade ou estruturas complexas, o que dificulta a análise (em alguns casos dificulta até a análise humana). %De um modo geral, é possível separar as incorreções encontradas, decorrentes da análise automática, basicamente em dois grupos:
+O Corpus de treino, desenvolvimento e teste utilizado é o Bosque da Floresta Sintática que contém um total de 5221 sentenças separadas em 4177 para treino 522 para desenvolvimento e 522 para teste, nas primeiras baterias de teste utilizamos pouco menos de 100 sentenças para ajustar parâmetros mais rapidamente, na última foi utilizado 520 sentenças na fase de desenvolvimento e teste.
 
-%- aquele em que as incorreções são fruto de algum tipo de ambiguidade na classificação morfológica e/ou sintática das palavras, e que são, de alguma forma simples de resolver com a intervenção humana;
+A presença de ruído nos dados do corpus é inevitável pois a maioria das sentenças são anotadas inicialmente de maneira automática, e mesmo após revisão manual algumas inconsistências ainda foram encontradas no decorrer do trabalho. Ruídos são possívelmente provenientes da complexidade na construções da língua que pode gerar ambiguidade ou estruturas complexas, o que dificulta a análise (em alguns casos dificulta até a análise humana). 
 
-%- e outro em que as incorreções são fruto de estruturas complexas da língua, de resolução difícil até para o revisor humano (tais casos requerem discussão e opinião de todo o grupo envolvido no projeto).
+%Não foi feita alteração quanto as TAGS utilizadas no corpus de trabalho, apenas quanto a granularidade das TAGS, agrupando em uma unica TAG quando houver sub grupo da mesma, para avaliar a necessidade de sintaticamente diferenciar paralvras com funções diferentes a pontuação de hífen, que será substituida por Underline.
 
-Não foi feita alteração quanto as TAGS utilizadas no corpus de trabalho, apenas quanto a pontuação de hífen, que será sibstituida por Underline.
+O Conjunto de experimentos foi dividido em subgrupos que tentam avaliar a melhor configuração com respeito a algum fator relevante quanto a utilização de subcategorias das TAGS, regras para determinar o núcleo das sentenças e parâmetro de utilização da ferramenta. Para cada grupo é eleita uma melhor configuração e a partir destes os prosseguem.
 
-Como experimento mais avançado foram feitos testes utilizado lematização das palavras do corpus, primeiro com todas as palavras das sentenças, logo apenas com os verbos. A fim de verificar a qualidade do treino executado pela ferramenta de Bikel.
-
-Nos primeiros experimentos foram feitas apenas alterações nas regras de \emph{head-find}. O Corpus de treino, desenvolvimento e teste utilizado é o Bosque da Floresta Sintática que contém um total de 5200 sentenças separadas em 4160 para treino 520 para desenvolvimento e 520 para teste, nas primeiras baterias de teste utilizamos pouco menos de 100 sentenças para ajustar parâmetros mais rapidamente, na última foi utilizado 520 sentenças na fase de desenvolvimento e teste.
-
-Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos constituíntes que é essencial na implementação dos algorítmos de implementação dos modelos propostos por Collins \cite{collins99}.
-
-O corpus do Bosque ja tem anotados muitos dos \emph{heads} das sentenças disponibilizadas, porém o parser de bikel precisa de todos os \emph{heads}, e verificou-se que nem todas as sentenças possuem essa informação, tendo que ser analisada e construída de forma empírica.
-
-A ferramenta de Bikel possibilita a utilização de um módulo para especificação de regras para determinar o \emph{head} de um constituinte e optou-se por se usar esse módulo e construir regras baseadas nas regras de formação da lingua portuguesa incrementalmente (já exemplificado em capítulo anterior). 
+Para agilizar este processo foi desenvolvido um ambiente de testes em que os experimentos são programados e automatizados. Em particular os aspectos de pré-processamento e criação das seleções do corpus quanto a filtros necessários para diferentes experimentos.
 
 
 
