@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  28 NOV 2009 16:33
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  29 NOV 2009 17:38
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -931,9 +931,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--33
 
  []
 
-) [42] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex [43]
-[44] [45]) [46] (/home/administrador/Desktop/porser/volume/tc1-resultados.tex
-[47] [48])) [49] [50]
+) [42] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex
+Overfull \hbox (10.24875pt too wide) in paragraph at lines 17--18
+[]\OT1/cmr/m/n/12 A pri-meira es-trat^^Segia abor-dada foi quanto as re-gras de
+ de-fini^^Xc~ao do n^^Sucleo dos sint^^Sagmas.
+ []
+
+[43] [44] [45]) [46]
+(/home/administrador/Desktop/porser/volume/tc1-resultados.tex [47] [48]))
+[49] [50]
 Cap\'{\i }tulo 5.
 (/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex)
 [51
@@ -1059,11 +1065,11 @@ sint^^Satica\OT1/cmr/m/n/12 . 2009.
 +-------------------------------------------------------------------+
 [60] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
- 4585 strings out of 94074
- 61007 string characters out of 1165153
+ 4586 strings out of 94074
+ 61021 string characters out of 1165153
  132250 words of memory out of 1500000
- 7719 multiletter control sequences out of 10000+50000
- 23402 words of font info for 86 fonts, out of 1200000 for 2000
+ 7720 multiletter control sequences out of 10000+50000
+ 23751 words of font info for 87 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  29i,15n,32p,1426b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/share/texmf-tex
@@ -1085,7 +1091,7 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (68 pages, 581113 bytes).
+Output written on tc1.pdf (68 pages, 583921 bytes).
 PDF statistics:
  588 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)

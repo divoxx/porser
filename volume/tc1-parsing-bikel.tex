@@ -1,8 +1,8 @@
-Dan Bikel desenvolveu uma ferramenta de \emph{parsing} estatístico extensível que permite diferentes tipos de configuração de modelos estatísticos e gerativos, incluindo emulação dos modelos de \emph{parsing} de Michael Collins com performance semelhante. Pode ser facilmente estendida para novos domínios e novas linguagens. 
+Dan Bikel desenvolveu uma ferramenta de \emph{parsing} estatístico extensível que permite diferentes tipos de configuração de modelos estatísticos e gerativos, incluindo emulação dos modelos de \emph{parsing} de Michael Collins \cite{collins99} com performance semelhante. Pode ser facilmente estendida para novos domínios e novas linguagens. 
 
 Baseada no modelo 2 de Collins \cite{collins99}, permite uma grande gama de parametrizações, implementa e estende o modelo de análise, que inclue análise lexicalizada orientada ao núcleo das sentenças, modelo que incorpora diferentes níveis de informações estruturais, que ja foram descritas anteriormente nesse trabalho. 
 
-O analisador permite extenções específicas. Além de usar o pacote em inglês para determinar uma linha de base para análise de precisão, foi criado um pacote par ao português. Este pacote fornece regras para descoberta dos núcleos dos sintágmas, tratamento especial para quando os heads são explicitamente marcados, características morfológicas, e algumas opções de ajuste do analisador ao Floresta.
+O analisador permite extenções específicas. Além de usar o pacote em inglês para determinar uma linha de base para análise de precisão, foi criado um pacote par ao português. Este pacote fornece regras para descoberta dos núcleos dos sintágmas, tratamento especial para quando os núcleos são explicitamente marcados, características morfológicas, e algumas opções de ajuste do analisador ao Floresta.
 
 Modelos baseados no núcleo dos sintágmas deve permitir saber quem é o filho do núcleo anterior durante o processo de treino, Esta informação não é codificada no formato PTB, para o inglês o pacote fornece uma série de heurísticas para inferir o núcleo do sintágma.
 
