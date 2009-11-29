@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# In order to activate external lexicon lookup
+# you have to uncomment the respective line below
+# i.e. remove the hash symbol in front of it.
+# The external lexicon must be stored in a file named
+# "german-lexicon.txt" in the subdirectory "lib".
+# See the Perl script "lookup.perl" for more information
+# on the format of this file.
+
+# Set these paths appropriately
+
+BIN=/Users/rodrigo/Downloads/treetagger/tree-tagger-MacOSX-3.2-intel/bin
+CMD=/Users/rodrigo/Downloads/treetagger/tree-tagger-MacOSX-3.2-intel/cmd
+LIB=/Users/rodrigo/Downloads/treetagger/tree-tagger-MacOSX-3.2-intel/lib
+
+OPTIONS="-token -lemma -sgml -pt-with-lemma"
+
+TOKENIZER=${CMD}/tokenize.pl
+TAGGER=${BIN}/tree-tagger
+ABBR_LIST=${LIB}/german-abbreviations
+PARFILE=${LIB}/german.par
+LEXFILE=${LIB}/german-lexicon.txt
+FILTER=${CMD}/filter-german-tags
+
+$TOKENIZER -a $ABBR_LIST $* |
+# external lexicon lookup
+perl $CMD/lookup.perl $LEXFILE |
+# tagging
+$TAGGER $OPTIONS $PARFILE  | 
+# error correction
+$FILTER

@@ -1,7 +1,7 @@
 module Porser
   module Corpus
     class PartOfSpeech
-      attr_reader :tag, :word, :extra
+      attr_accessor :tag, :word, :extra
   
       def initialize(tag, word, extra = {})
         @tag   = tag
@@ -9,8 +9,17 @@ module Porser
         @extra = extra
       end
       
+      def each(index = 0, &block)
+        yield(self, index..(index + 1))
+        index + 1
+      end
+      
       def pretty_string(level = 0)
         "\n" + ("  " * level) + to_s
+      end
+      
+      def clean_string
+        word
       end
       
       def to_s

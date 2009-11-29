@@ -1,7 +1,7 @@
 require 'pathname'
 
 module Porser  
-  TimeFormat = "%Y.%m.%d_%H.%M.%S"
+  TimeFormat = "%Y.%m.%d_%H.%M.%S" unless defined?(TimeFormat)
   
   def self.include_paths
     unless @include_paths
@@ -38,8 +38,19 @@ module Porser
   end
   
   def self.require_all!
-    paths = Dir["#{path.join('lib')}/**/**.rb"] - [File.expand_path(__FILE__)]
-    paths.each { |path| require(path)}
+    require 'porser/experiment'
+    require 'porser/cli/components/file_list'
+    require 'porser/cli/components/file_list'
+    require 'porser/cli/components/question'
+    require 'porser/corpus/category'
+    require 'porser/corpus/part_of_speech'
+    require 'porser/corpus/sentence_tokenizer'
+    require 'porser/corpus/sentence_parser'
+    require 'porser/corpus/sentence'
+    require 'porser/performance/confusion_matrix'
+    require 'porser/performance/category_confusion_matrix'
+    require 'porser/performance/part_of_speech_confusion_matrix'    
+    Dir["#{path.join('lib', 'filters')}/*.rb"].each { |path| require(path) }
   end
 end
 
@@ -63,4 +74,13 @@ class Pathname
   def check!
     self.check || raise("#{self} doesn't exist")
   end  
+end
+
+class Range
+  include Comparable
+  
+  def <=>(other)
+    min_order = self.min <=> other.min
+    min_order == 0 ? self.max <=> other.max : min_order
+  end
 end

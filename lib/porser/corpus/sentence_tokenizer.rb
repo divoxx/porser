@@ -9,8 +9,8 @@ module Porser
         while !@string.empty?
           case @string
           when /\A[^\s()-]+/m then yield([:WORD, $&])
-          when /\A[^\s]/m    then yield([$&, $&])
-          when /\A\s+/m      then nil
+          when /\A[^\s]/m     then yield([$&, $&])
+          when /\A\s+/m       then nil
           end
         
           @string = $'

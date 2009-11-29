@@ -1,19 +1,13 @@
 module Porser
   module Performance
-    class PartOfSpeechConfusionMatrix
-      attr_reader :matrix
-      
-      def initialize(gold_sentence, parsed_sentence)
-        @gold_sentence   = Corpus::Sentence(gold_sentence)
-        @parsed_sentence = Corpus::Sentence(parsed_sentence)
-        @matrix          = Hash.new { |h,k| h[k] = Hash.new { |h,k| h[k] = 0 }}
-        compare!
-      end
-      
-    private
-      def compare!
-        @parsed_sentence.each_pos do |pos, idx|
-          @matrix[pos.tag][@gold_sentence.part_of_speeches[idx].tag] += 1
+    class PartOfSpeechConfusionMatrix < ConfusionMatrix
+      def account(gold_sentence, parsed_sentence)
+        Corpus::Sentence(gold_sentence).each do |node, range|
+          if node.is_a?(Corpus::PartOfSpeech)
+            expected_tag = node.tag
+            result_tag   = Corpus::Sentence(parsed_sentence)[range][0].tag
+            store(expected_tag, result_tag)
+          end
         end
       end
     end

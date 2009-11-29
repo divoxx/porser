@@ -24,39 +24,38 @@ module Porser
         @root_node        = root_node
         @indexes          = {}
         @part_of_speeches = []
-        index!
       end
       
-      def [](*index)
-        @indexes[index]
-      end
-
-      def each_pos(&block)
-        @part_of_speeches.each_with_index(&block)
+      def [](lookup_range)
+        @root_node[lookup_range]
       end
       
-      def each_node(&block)
-        yield(@root_node, [0])
-        @root_node.each_node([0], &block)
+      def each(&block)
+        @root_node.each(&block)
+      end
+      
+      def each_range(&block)
+        @root_node.each_range(&block)
+      end
+      
+      def tag_ranges
+        @root_node.tag_ranges
       end
       
       def pretty_string
         @root_node.pretty_string
       end
-      
+            
       def to_s
         @root_node.to_s
       end
       
-    private
-      def index!        
-        each_node do |child, index|
-          @indexes[index] = child
-          
-          if child.is_a?(PartOfSpeech)
-            @part_of_speeches << child
-          end
-        end
+      def clean_string
+        @root_node.clean_string
+      end
+      
+      def word_line_string
+        @root_node.clean_string.gsub(/\s+/, "\n")
       end
     end
   end

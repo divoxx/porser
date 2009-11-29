@@ -3,3 +3,4 @@
 vendor/scorer/evalb
 vendor/scorer/evalb.dSYM/*
 *~
+coverage/
