@@ -18,6 +18,15 @@ namespace :experiments do
     end
   end
   
+  desc "Rebuild a corpus experiment"
+  task :rebuild do
+    ask_experiment_path(true).map { |path| Experiment.new(path) }.each do |experiment|
+      puts "* #{experiment.path}"
+      experiment.generate_corpus!
+      puts "Done."
+    end
+  end
+  
   desc "Run the training process for an experiment"
   task :train do
     experiment = Experiment.new(ask_experiment_path)

@@ -2,8 +2,7 @@ module Porser
   module Filters
     class RemoveVerbSubcategories
       def run(sentence)
-        map(sentence.root_node)
-        sentence
+        Corpus::Sentence.new(map(sentence.root_node))
       end
 
     protected

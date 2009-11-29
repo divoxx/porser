@@ -1,3 +1,0 @@
-Train - 4177
-Development - 522
-Test - 522
