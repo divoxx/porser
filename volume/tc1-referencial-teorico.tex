@@ -656,7 +656,6 @@ Isto é conhecido como \emph{overfitting} \footnote{O conceito de \emph{overfitt
 \label{sub:teste_final}
 \end{enumerate}
 
-
 O módulo de geração do \emph{parser} tem como entrada os exemplos do \emph{corpus} de treino e gera os parâmetros estatísticos que serão utilizados pelo \emph{parser} para tomar as decisões. Este módulo é parametrizável com informações linguísticas fornecidas pelo desenvolvedor, que guiam a interpretação do \emph{corpus} de treino. Por exemplo, a informação de que, quando um constituinte tem dois nomes seguidos, o núcleo é o da esquerda para o português e é o da direita para o inglês.
 
 O \emph{parser} gerado é composto pelo módulo de \emph{parsing} que recebe as sentenças de entrada e toma as decisões de análise guiado pelos parâmetros estatísticos aprendidos, gerando a sentença analisada.
@@ -677,7 +676,7 @@ Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvol
 
 Suas métricas de desempenho utilizadas foram o PARSEVAL padrão \footnote{AS métricas do PARSEVAL para precisão e \emph{recall} de constituíntes rotulados também são descritos na seção \ref{cha:avaliacao}}, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
 
-Fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluindo sensibilidade morfológica ao português, mostraral sensível melhora do desempenho atingindo 63,2{\%} de \emph{F-Score} em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
+Fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluindo sensibilidade morfológica ao português, mostraram sensível melhora do desempenho atingindo 63,2{\%} de \emph{F-Score} em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
 
 
 \subsubsection{Preparando o material de treino, adaptações no \emph{corpus}} % (fold)
@@ -685,7 +684,7 @@ Fazendo mudanças simples nos dados e na parametrização do parser de Bikel, in
 
 Ao usar o Floresta Sintática para treino da ferramenta, Wing e Baldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB). Para este trabalho também tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. 
 
-Em principio a informação de núcleo (\emph{head}) dos sintagmas geralmente marcada explicitamente no \emph{corpus} Floresta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em núcleos dos sintagmas usam regras heurísticas para inferir os núcleos durante a análise. Wing e Baldridge utilizaram-se de marcação disponível no Floresta. No entanto, como nem todos os sintágma possuem a informação de núcleo, Wing e Baldridge, ainda assim tiveram que utilizar regras heurísticas para resolver as omissões casos em que discordaram da informação constante no \emph{corpus}. Em nosso trabalhos optamos por ignorar a marcação fornecida no \emph{corpus} e parametrizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo das sentenças.
+Em principio a informação de núcleo (\emph{head}) dos sintagmas geralmente marcada explicitamente no \emph{corpus} Floresta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em núcleos dos sintagmas usam regras heurísticas para inferir os núcleos durante a análise. Wing e Baldridge utilizaram-se de marcação disponível no Floresta. No entanto, como nem todos os sintágma possuem a informação de núcleo, Wing e Baldridge, ainda assim tiveram que utilizar regras heurísticas para resolver as omissões casos em que discordaram da informação constante no \emph{corpus}. Em nosso trabalhos optamos por ignorar a marcação fornecida no \emph{corpus} e parametrizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo dos sintágmas.
 
 Outra mudança feita por Wing e Baldridge no \emph{corpus} foi com relação as cláusulas conjuntivas. Cláusulas conjuntivas no Floresta são normalmente marcadas com a TAG 'CU' (\emph{Coordinating Unit})(Sintagma evidenciador de relação de coordenação), independente do tipo de constituintes coordenados. Isso faz com que no processo de treino de uma gramática, ocorram erros como confundir coordenação de sintagmas nominais com coordenações sentenciais com frequência. Neste sentido, foram alterados os labels para refletir mais especificamente as categorias dos sintágmas coordenados.
 
@@ -703,7 +702,7 @@ A primeira configuração de testes leva em consideração o \emph{corpus} Flore
 
 O primeiro representa uma abordagem mais preguiçosa, ou seja não faça nada que não seja garantir que as árvores geradas possam ser analisadas pelo parser. O segundo faz o analisador de reconhecimento da linguagem, aplicando as regras definidas para o português e as configurações ajustadas. O terceiro e último experimento envolve mudar as próprias árvores do \emph{corpus} fornecendo para o parser mais informação para o processo de análise.
 
-Para estes experimentos foi criado um conjunto de 7497 sentenças dessas 1877 para testes e as restantes para treino.
+Para estes experimentos foi criado um conjunto de 7497 sentenças, dessas 1877 para testes e as restantes para treino.
 
 O cálculo \emph{F-score} para o primeiro experimento foi de 38.06{\%}, para o segundo de 63.8{\%} e para o tereceiro de 67.1{\%} 
 
@@ -712,7 +711,7 @@ Os desempenhos com relação a configuração básica tiveram grande melhora, si
 \subsection{Parsing probabilístico para o português do Brasil de Andréia Gentil Bonfante} % (fold)
 \label{sec:bonfante}
 
-Bonfante em sua tese \cite{bonfante03}, faz uma investigação de métodos estatísticos quando utilizados para analisar sentenças da língua portuguesa do Brasil, implementando o método de modelo gerativo de Michael Collins \cite{collins99}. Como resultado apresenta uma ferramenta para processamento de linguagem natural, PAPO, formada por vários módulos que executam 3 funções básicas: o pré-processamento e a preparação dos dados do conjunto de sentenças usadas no treino; a geração de dois modelos probabilísticos de análise (PAPO I e PAPO II); e um \emph{parser} propriamente dito que usa um dos modelos gerados e produz as árvores sintáticas mais provaveis para uma sentença.
+Bonfante em sua tese \cite{bonfante03}, faz uma investigação de métodos estatísticos quando utilizados para analisar sentenças da língua portuguesa do Brasil, implementando o método de modelo gerativo de Michael Collins \cite{collins99}. Como resultado apresenta uma ferramenta para processamento de linguagem natural, PAPO, formada por vários módulos que executam 3 funções básicas: o pré-processamento e a preparação dos dados do conjunto de sentenças usadas no treino; a geração de dois modelos probabilísticos de análise (PAPO I e PAPO II); e um \emph{parser} propriamente dito que usa um dos modelos gerados e produz as árvores sintáticas mais prováveis para uma sentença.
 
 Nesta tese Bonfante não chegou a realizar uma avaliação abrangente e robusta de sua ferramenta, em nenhum de seus modelos. Bonfante preferiu realizar uma investigação qualitativa do desempenho do sistema, com o intuito de identificar problemas mais aparentes que surgissem na análise de um conjunto seleto de sentenças, realizando análise apenas nas sentenças consideradas mais dificeis.
 
@@ -722,7 +721,7 @@ Em todos os experimentos realizados na tese de Bonfante, o sistema utiliza como 
 
 Assim como nos trabalhos semelhantes Bonfante teve que gerar um módulo de pré-processamento para as sentenças originais, um módulo de filtro de regras, que tem como entrada as sentenças do CENTENFolha e tem como saida regras, para que possam ser usadas na geração dos modelos de sua tese.
 
-Além do filtro de regras foi preciso criar o filtro de núcleos de sentenças, os núcleos são identificados para cada regra. 
+Além do filtro de regras foi preciso criar o filtro de núcleos de sentenças, os núcleos foram identificados para cada regra. 
 
 
 \subsubsection{Experimentos} % (fold)
@@ -733,7 +732,7 @@ Para avaliar quantitativamente sua ferramenta Bonfante utilizou 23 sentenças ab
 
 Para cada sentença configurou-se a ferramenta para que obtivesse no máximo as dez análises mais prováveis encontradas. Caso sua ferramenta não terminasse a análise de uma sentença no prazo máximo de cinco minutos, considera-o sem solução.
 
-Os resultados sao apresentados de forma quantitativa e quanto ao tempo de processamento, para processar as 23 sentenças a ferramenta levou em média 47 segundos, seus melhores resultados quanto a precisão é de 79{\%} e \emph{recall} 75{\%}.
+Os resultados são apresentados de forma quantitativa e quanto ao tempo de processamento, para processar as 23 sentenças a ferramenta levou em média 47 segundos, seus melhores resultados quanto a precisão é de 79{\%} e \emph{recall} 75{\%}.
 
 Não achamos que seus resultados sejam relevantes para avaliar a performace de sua ferramenta uma vez que apenas 23 sentenças de origem dúbia é um universo pequeno de casos para se avaliar uma ferramenta com tal propósito.
 
