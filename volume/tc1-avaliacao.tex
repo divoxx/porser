@@ -24,16 +24,16 @@ As medidas propostas no PARSEVAL partem de um pressuposto de que um constituinte
 
 
 Exemplo: Considere (1) gold e (2) análise do parser:\\ \\
-1. (Eles ((chegaram) ontem)) \\
-2. ((Eles (chegaram)) (ontem))
+
+1. (S (ACL (NP (ART Um) (N arquiteto)) (PP (PRP para) (NP (NUM 800) (M Km2)))))
+2. (S (NP (ART Um) (N arquiteto) (PP (PRP para) (NP (NUM 800) (M Km2)))))
 
 Temos:\\ \\
-limite para os sintagmas em (1): (0,2),(1,1) e (1,2). \\
-limite para os sintagmas em (2): (0,2),(1,1),(0,1) e (2,2).
+Limite para os sintagmas em (1): (S 0,4); (ACL 0,4); (NP 0,1); (PP 2,4); (NP 3,4). \\
+Limite para os sintagmas em (2): (S 0,4); (NP 0,1); (PP 2,4); (NP 3,4).
 
-Pontuações em (2): Labeled Precision = 2/4 = 50{\%}, Labeled Recall = 2/3 = 66.7{\%}
+Pontuações em (2): Labeled Precision = 4/4 = 100{\%}, Labeled Recall = 4/5 = 80{\%}
 
-Essas pontuações tem que ser consiteradas juntas para ter significado. Por exemplo, tratando a sentença como uma lista de palavras (Eles chegaram ontem) teriamos 100{\%} de Labeled Precision. Entretanto, Labeled Recall seria baixa (1/3 = 33{\%}).
 
 
 
