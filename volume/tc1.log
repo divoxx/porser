@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 10:06
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 10:14
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -850,40 +850,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
+Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
 ) [40] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex [41]
-Overfull \hbox (18.6447pt too wide) in paragraph at lines 81--82
-[]\OT1/cmr/m/n/10 Finalmente, foi feito um teste uti-li-zando um POS tag-ger e 
-le-ma-ti-za-dor ex-terno (Tre-e-Tag-ger), lematizando-
- []
-
-
+[42]
 Overfull \hbox (12.99036pt too wide) in paragraph at lines 86--100
  [] 
  []
 
-[42]) [43] (/home/administrador/Desktop/porser/volume/tc1-resultados.tex
-[44] [45])) [46] [47]
+[43]) [44] (/home/administrador/Desktop/porser/volume/tc1-resultados.tex
+[45] [46])) [47] [48]
 Cap\'{\i }tulo 5.
 (/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex)
-[48
+[49
 
 ]
 Apendice A.
-(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [49
+(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [50
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -905,7 +890,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-[50]
+[51]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 62--63
 [][] 
  []
@@ -956,7 +941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[51]
+[52]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 110--111
 [][] 
  []
@@ -981,13 +966,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[52] [53]) (/home/administrador/Desktop/porser/volume/tc1.bbl [54]
+[53] [54]) (/home/administrador/Desktop/porser/volume/tc1.bbl [55]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[55
+[56
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
@@ -995,12 +980,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--118
 sint^^Satica\OT1/cmr/m/n/12 . 2009.
  []
 
-[56])
+[57])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[57] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[58] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
  4589 strings out of 94074
  61102 string characters out of 1165153
@@ -1028,9 +1013,9 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8.p
 fb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.pfb>
-Output written on tc1.pdf (65 pages, 591116 bytes).
+Output written on tc1.pdf (66 pages, 590679 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
+ 585 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

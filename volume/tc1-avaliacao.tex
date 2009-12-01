@@ -22,10 +22,10 @@ Os limites dos sintagmas na resposta (análise produzida pelo parser) e no gold 
 
 As medidas propostas no PARSEVAL partem de um pressuposto de que um constituinte esta correto se corresponde ao mesmo conjunto de palavras (ignorando qualquer caractere de pontuação) e tem o mesmo rótulo que um constituínte no treebank.
 
-Exemplo: Considere (1) gold e (2) análise do parser:\\ \\
+Exemplo: Considere (1) gold e (2) análise do parser:
 
+\begin{center}
 \footnotesize
-
 \begin{verbatim}
 1.  (S
       (ACL
@@ -48,6 +48,7 @@ Exemplo: Considere (1) gold e (2) análise do parser:\\ \\
             (NUM 800)
             (N Km2)))))
 \end{verbatim}
+\end{center}
 
 Temos os seguintes limites dos sintagmas:\\ \\
 1. (S 0..4) (ACL 0..4) (NP 0..1) (PP 2..4) (NP 3..4)\\

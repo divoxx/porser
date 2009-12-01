@@ -44,11 +44,11 @@
 \contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{41}
 \contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{41}
 \contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{42}
-\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{43}
-\contentsline {section}{\numberline {4.4}Resultados}{44}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{48}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{49}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{50}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{52}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{54}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{55}
+\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{44}
+\contentsline {section}{\numberline {4.4}Resultados}{45}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{49}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{50}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{53}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{56}
