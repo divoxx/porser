@@ -10,7 +10,7 @@ $$F_{\beta=1} = \frac{2*LP*LR}{LP+LR}$$
 \\
 O termo \emph{Labeled} se refere ao fato de que uma constituinte, para contar como corretamente recuperado, deve acertar a extensão correta do texto bem como o rótulo do constituinte.
 
-O procedimento de avaliação compara a saída do parser com as análises anotadas no \emph{treebank}; usa a informação de parentização da representação do \emph{treebank} de uma sentença e a análise produzida pra computar tres medidas: \emph{crossing brackets, precision e recall}, neste trabalho não utilizaremos a medida de \emph{crossing braquets}.
+O procedimento de avaliação compara a saída do parser com as análises anotadas no \emph{treebank}; usa a informação de parentização da representação do \emph{treebank} de uma sentença e a análise produzida pra computar tres medidas: \emph{crossing brackets, precision e recall}, neste trabalho não utilizaremos a medida de \emph{crossing brackets}.
 
 Estas métricas são chamadas métricas estruturais, e são baseadas na avaliação dos limites dos sintagmas. Os algoritmos de parsing tem por objetivo otimizar uma métrica em comum, que é a probabilidade de se ter uma árvore corretamente rotulada, ou seja, com uma marcação correta dos limites dos constituíntes. Assim dado um nó em uma árvore sintática, a sequencia de palavras dominadas por esse nó forma um sintagma, sendo o limite do sintagma representado por um interválo inteiro \emph{[i,j]}, em que \emph{i} representa o índice da primeira palavra e \emph{j} o da última palavra do sintagma.
 
@@ -22,18 +22,36 @@ Os limites dos sintagmas na resposta (análise produzida pelo parser) e no gold 
 
 As medidas propostas no PARSEVAL partem de um pressuposto de que um constituinte esta correto se corresponde ao mesmo conjunto de palavras (ignorando qualquer caractere de pontuação) e tem o mesmo rótulo que um constituínte no treebank.
 
-
 Exemplo: Considere (1) gold e (2) análise do parser:\\ \\
 
-1. (S (ACL (NP (ART Um) (N arquiteto)) (PP (PRP para) (NP (NUM 800) (M Km2)))))
-2. (S (NP (ART Um) (N arquiteto) (PP (PRP para) (NP (NUM 800) (M Km2)))))
+\footnotesize
 
-Temos:\\ \\
-Limite para os sintagmas em (1): (S 0,4); (ACL 0,4); (NP 0,1); (PP 2,4); (NP 3,4). \\
-Limite para os sintagmas em (2): (S 0,4); (NP 0,1); (PP 2,4); (NP 3,4).
+\begin{verbatim}
+1.  (S
+      (ACL
+        (NP
+          (ART Um)
+          (N arquitecto))
+        (PP
+          (PRP para)
+          (NP
+            (NUM 800)
+            (N Km2)))))
 
-Pontuações em (2): Labeled Precision = 4/4 = 100{\%}, Labeled Recall = 4/5 = 80{\%}
+2.  (S
+      (NP
+        (ART Um)
+        (N arquitecto)
+        (PP
+          (PRP para)
+          (NP
+            (NUM 800)
+            (N Km2)))))
+\end{verbatim}
 
+Temos os seguintes limites dos sintagmas:\\ \\
+1. (S 0..4) (ACL 0..4) (NP 0..1) (PP 2..4) (NP 3..4)\\
+2. (S 0..4) (NP 0..4) (PP 2..4) (NP 3..4)
 
-
-
+Pontuações em (2): Labeled Precision = 3/4 = 75{\%}, Labeled Recall = 3/5 = 60{\%}. Essas pontuações tem que ser consideradas juntas para ter significado. 
+%Por exemplo, tratando a sentença como uma lista de palavras (Um arquiteto para 800 km2) teriamos 100{\%} de Labeled Precision. Entretanto, Labeled Recall seria baixa (1/5) = 20{\%}).
