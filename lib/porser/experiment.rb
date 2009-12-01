@@ -20,6 +20,10 @@ module Porser
       self.path.basename
     end
     
+    def human_name
+      File.read(self.path.join('name.txt')).chomp
+    end
+        
     def filters
       unless @filters
         token_list  = File.basename(@path).gsub(/--.*$/, '').split("-")[1..-1]
@@ -135,6 +139,11 @@ Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
     def score(what = :dev)
       @score ||= score_path_for(what).read
     end
+    
+    def summary(what)
+      @summary ||= score(what).gsub(/\A.*=== Summary ===/m, '').chomp.strip
+    end
+    
     
     def documentation_path_for(what)
       @path.join("document.#{what}.tex")

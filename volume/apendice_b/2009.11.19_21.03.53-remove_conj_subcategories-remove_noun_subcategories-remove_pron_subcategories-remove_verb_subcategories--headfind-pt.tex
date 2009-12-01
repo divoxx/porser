@@ -1,3 +1,48 @@
+\section{Head-Find Português} % (fold)
+\label{sec:exp:2009.11.19_21.03.53-remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove_verb_subcategories--headfind-pt}
+
+Filtros Aplicados:
+
+
+\begin{itemize}
+  
+  \item{\emph{RemoveConjSubcategories}}
+  
+  \item{\emph{RemoveNounSubcategories}}
+  
+  \item{\emph{RemovePronSubcategories}}
+  
+  \item{\emph{RemoveVerbSubcategories}}
+  
+\end{itemize}
+
+
+\emph{Head-Find rules} utilizada:
+
+\scriptsize
+\begin{verbatim}
+(
+(NP (l N PROP PRON_PERS PRON_INDP PRON NADJ NP))
+(VP (l V_FIN V_INF V_PCP V_GER V) (l VP))
+(ADJP (l ADJ ADJP) (l PRON_DET PRON))
+(ADVP (r ADV ADVP))
+(CU (r CONJ_C CONJ CU , ;))
+(X (l VP))
+(PP (l PRP PP))
+(FCL (l VP) (l NP))
+(ICL (l VP) (l NP))
+(ACL (l VP) (l NP))
+(* (l))
+)
+
+\end{verbatim}
+
+\normalsize
+
+Configurações do parser:
+
+\scriptsize
+\begin{verbatim}
 #     WordNet Parser
 #    Settings to emulate Mike Collins' 1997 Model 2
 #
@@ -60,3 +105,44 @@ parser.decoder.useSimpleModNonterminalMap=true
 parser.wordfeatures.portuguese.useUnderscores=true
 parser.headtable.portuguese=head-rules.lisp
 parser.training.metadata.portuguese=training-metadata.lisp
+\end{verbatim}
+
+\normalsize
+
+Resultados obtidos:
+
+\scriptsize
+\begin{verbatim}
+-- All --
+Number of sentence        =    522
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    522
+Bracketing Recall         =  68.46
+Bracketing Precision      =  68.95
+Complete match            =  13.60
+Average crossing          =   3.00
+No crossing               =  36.40
+2 or less crossing        =  61.49
+Tagging accuracy          =  92.78
+
+-- len<=40 --
+Number of sentence        =    425
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =    425
+Bracketing Recall         =  72.95
+Bracketing Precision      =  73.62
+Complete match            =  16.71
+Average crossing          =   1.77
+No crossing               =  44.71
+2 or less crossing        =  74.35
+Tagging accuracy          =  92.94
+No. of matched brackets   = 4808
+No. of gold brackets      = 6591
+No. of test brackets      = 6531
+\end{verbatim}
+
+\normalsize
+
+% section exp:2009.11.19_21.03.53-remove_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove_verb_subcategories--headfind-pt (end)

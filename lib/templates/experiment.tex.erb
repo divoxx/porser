@@ -1,13 +1,17 @@
-\section{<%= name %>} % (fold)
+\section{<%= human_name %>} % (fold)
 \label{sec:exp:<%= name %>}
 
 Filtros Aplicados:
 
+<% if filters.empty? %>
+Nenhum filtro foi aplicado.
+<% else %>
 \begin{itemize}
   <% for filter in filters %>
-  \item{\emph{<%= filter.class.name.demodulize %>}
+  \item{\emph{<%= filter.class.name.demodulize %>}}
   <% end %>
 \end{itemize}
+<% end %>
 
 \emph{Head-Find rules} utilizada:
 
@@ -31,7 +35,7 @@ Resultados obtidos:
 
 \scriptsize
 \begin{verbatim}
-<%= score(what) %>
+<%= summary(what) %>
 \end{verbatim}
 
 \normalsize

@@ -1,0 +1,1 @@
+Com lemas do TreeTagger e categorias de V concatenadas

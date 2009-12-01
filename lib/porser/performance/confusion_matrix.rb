@@ -48,6 +48,11 @@ module Porser
         end
       end
       
+      def latex
+        template = ERB.new(File.read(Porser.path.join('lib', 'templates', 'confusion_matrix.tex.erb')))
+        template.result(binding)
+      end
+      
       def pretty_string
         sorted_keys = @keys.sort
         

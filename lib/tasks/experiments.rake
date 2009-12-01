@@ -69,9 +69,9 @@ namespace :experiments do
   
   desc "Generate the LaTeX documentation for the experiment"
   task :doc do
-    experiment = Experiment.new(ask_experiment_path)
-    puts "Scoring..."
-    experiment.document!(:dev)
+    experiments = ask_experiment_path(true).map { |p| Experiment.new(p) }
+    puts "Documenting..."
+    experiments.each { |e| e.document!(:dev) }
     puts "Done."
     exec("less #{experiment.documentation_path_for(:dev)}")
   end

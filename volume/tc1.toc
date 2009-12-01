@@ -1,6 +1,6 @@
 \select@language {brazil}
-\contentsline {chapter}{Lista de Figuras}{vi}
-\contentsline {chapter}{Lista de Tabelas}{vii}
+\contentsline {chapter}{Lista de Figuras}{vii}
+\contentsline {chapter}{Lista de Tabelas}{viii}
 \contentsline {chapter}{Lista de Abreviaturas}{}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {section}{\numberline {1.1}Motiva\IeC {\c c}\IeC {\~a}o}{2}
@@ -41,14 +41,28 @@
 \contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{37}
 \contentsline {section}{\numberline {4.1}Metodologia}{37}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{39}
-\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{41}
-\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{41}
-\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{42}
-\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{44}
-\contentsline {section}{\numberline {4.4}Resultados}{45}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{49}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{50}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{53}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{56}
+\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{42}
+\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{42}
+\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{43}
+\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{45}
+\contentsline {section}{\numberline {4.4}Resultados}{46}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{50}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{51}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{52}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{54}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{56}
+\contentsline {chapter}{Ap\^endice{} B{} -$\tmspace -\thinmuskip {.1667em}$-{} Experimentos}{57}
+\contentsline {section}{\numberline {B.1}Head-Find Standard}{57}
+\contentsline {section}{\numberline {B.2}Head-Find Left Most}{60}
+\contentsline {section}{\numberline {B.3}Head-Find Right Most}{62}
+\contentsline {section}{\numberline {B.4}Head-Find Portugu\IeC {\^e}s}{64}
+\contentsline {section}{\numberline {B.5}Com subcategorias de V}{67}
+\contentsline {section}{\numberline {B.6}Com categorias de V, e N}{69}
+\contentsline {section}{\numberline {B.7}Com categorias de V e CONJ}{71}
+\contentsline {section}{\numberline {B.8}Com categorias de V e PRON}{74}
+\contentsline {section}{\numberline {B.9}Com subcategorias de V, PRON, CONJ e N}{76}
+\contentsline {section}{\numberline {B.10}Com lemas do corpus}{78}
+\contentsline {section}{\numberline {B.11}Com lemas do corpus com categorias concatenada}{81}
+\contentsline {section}{\numberline {B.12}Com lemas do corpus com categorias de V concatenadas}{83}
+\contentsline {section}{\numberline {B.13}Com lemas do TreeTagger e categorias de V concatenadas}{85}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{89}
