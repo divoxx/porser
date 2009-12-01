@@ -5,18 +5,18 @@
 %	\end{center}
 %\end{figure}
 
-Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos sintágmas que é essencial na implementação dos algorítmos dos modelos propostos por Collins \cite{collins99}.
+Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos sintagmas que é essencial na implementação dos algorítmos dos modelos propostos por Collins \cite{collins99}.
 
-O corpus do Bosque ja tem anotados muitos dos núcleos (\emph{heads}) dos sintágmas \footnote{Sintagma é uma unidade formada por uma ou várias palavras que, juntas, desempenham uma função na sentença}, porém o modelo de Collins precisa de todos os núcleos, e verificou-se que nem todos os sintagmas possuem essa informação, tendo que ser analisada e construída de forma empírica.
+O corpus do Bosque ja tem anotados muitos dos núcleos (\emph{heads}) dos sintagmas \footnote{Sintagma é uma unidade formada por uma ou várias palavras que, juntas, desempenham uma função na sentença}, porém o modelo de Collins precisa de todos os núcleos, e verificou-se que nem todos os sintagmas possuem essa informação, tendo que ser analisada e construída de forma empírica.
 
-A ferramenta de Bikel possibilita a utilização de um módulo para especificação de regras para determinar o núcleo de um sintágma e optou-se por se usar esse módulo e construir regras baseadas nas regras de formação da língua portuguesa incrementalmente.
+A ferramenta de Bikel possibilita a utilização de um módulo para especificação de regras para determinar o núcleo de um sintagma e optou-se por se usar esse módulo e construir regras baseadas nas regras de formação da língua portuguesa incrementalmente.
 
 \subsection{Experimentos iniciais}
 \label{sec:configuracoes}
 
 Os primeiros experimentos abordam as regras de definição do núcleo dos sintagmas. Foram experimentadas quatro configurações.
 
-A primeira configuração utilizada foi a \emph{default} para o inglês, com regras de definição do núcleo especificas para o PTB, a segunda configuração de definição do núcleo foi a utilização das regras básicas, ou seja, o núcleo do sintágma é a primeira palavra da direita para a esquerda. Para terceira configuração alterou-se as regras para que o núcleo do sintagma seja a primeira palavra da esquerda para a direita. Para a quarta e última configuração desta bateria de experimentos foi definido regras de definição do núcleo dos sintagmas baseados na construção das sentenças para a língua portuguesa.
+A primeira configuração utilizada foi a \emph{default} para o inglês, com regras de definição do núcleo especificas para o PTB, a segunda configuração de definição do núcleo foi a utilização das regras básicas, ou seja, o núcleo do sintagma é a primeira palavra da direita para a esquerda. Para terceira configuração alterou-se as regras para que o núcleo do sintagma seja a primeira palavra da esquerda para a direita. Para a quarta e última configuração desta bateria de experimentos foi definido regras de definição do núcleo dos sintagmas baseados na construção das sentenças para a língua portuguesa.
 
 
 \begin{center}
