@@ -2,15 +2,15 @@ As medidas de avaliação do \emph{parser} seguirão a proposta de GEIC/Parseval
 
 Em particular, serão usadas as medidas de \emph{Labeled Precision} (LP) e \emph{Labeled Recall} (LR) e sua média harmônica ($F_{\beta=1}$) ou \emph{F-Score}, descritas abaixo:
 \\
-$$LP = \frac{n\acute{u}mero\; de\; constituintes\; corretas\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; da\; an\acute{a}lise\; proposta}$$
+$$LP = \frac{n\acute{u}mero\; de\; constituintes\; corretos\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; da\; an\acute{a}lise\; proposta}$$
 \\
-$$LR = \frac{n\acute{u}mero\; de\; constituintes\; corretas\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; do\; \mathit{treebank}\; analisado}$$
+$$LR = \frac{n\acute{u}mero\; de\; constituintes\; corretos\; na\; an\acute{a}lise\; proposta}{n\acute{u}mero\; de\; constituintes\; do\; \mathit{treebank}\; analisado}$$
 \\
 $$F_{\beta=1} = \frac{2*LP*LR}{LP+LR}$$
 \\
 O termo \emph{Labeled} se refere ao fato de que uma constituinte, para contar como corretamente recuperado, deve acertar a extensão correta do texto bem como o rótulo do constituinte.
 
-O procedimento de avaliação compara a saída do parser com as análises anotadas no \emph{treebank}; usa a informação de parentização da representação do \emph{treebank} de uma sentença e a análise produzida pra computar tres medidas: \emph{crossing braqkets, precision e recall}, neste trabalho não utilizaremos a medida de \emph{crossing braquets}.
+O procedimento de avaliação compara a saída do parser com as análises anotadas no \emph{treebank}; usa a informação de parentização da representação do \emph{treebank} de uma sentença e a análise produzida pra computar tres medidas: \emph{crossing brackets, precision e recall}, neste trabalho não utilizaremos a medida de \emph{crossing braquets}.
 
 Estas métricas são chamadas métricas estruturais, e são baseadas na avaliação dos limites dos sintagmas. Os algoritmos de parsing tem por objetivo otimizar uma métrica em comum, que é a probabilidade de se ter uma árvore corretamente rotulada, ou seja, com uma marcação correta dos limites dos constituíntes. Assim dado um nó em uma árvore sintática, a sequencia de palavras dominadas por esse nó forma um sintagma, sendo o limite do sintagma representado por um interválo inteiro \emph{[i,j]}, em que \emph{i} representa o índice da primeira palavra e \emph{j} o da última palavra do sintagma.
 
