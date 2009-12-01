@@ -56,6 +56,7 @@ end
 
 Porser.boot!
 
+require 'csv'
 require 'active_support'
 require 'erb'
 

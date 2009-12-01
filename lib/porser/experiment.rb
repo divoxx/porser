@@ -71,27 +71,25 @@ module Porser
     end
     
     def score_confusion!(what = :dev)
-       File.open(gold_path_for(what), "r") do |gold_fp|
-         File.open(parsed_path_for(what), "r") do |parsed_fp|
-           File.open(score_confusion_path_for(what), "w") do |conf_fp|
-             pos_matrix = Performance::PartOfSpeechConfusionMatrix.new
-             cat_matrix = Performance::CategoryConfusionMatrix.new
+      File.open(gold_path_for(what), "r") do |gold_fp|
+        File.open(parsed_path_for(what), "r") do |parsed_fp|
+          pos_matrix = Performance::PartOfSpeechConfusionMatrix.new
+          cat_matrix = Performance::CategoryConfusionMatrix.new
              
-             while gold = gold_fp.gets and parsed = parsed_fp.gets
-               pos_matrix.account(gold, parsed)
-               cat_matrix.account(gold, parsed)
-              end
+          while gold = gold_fp.gets and parsed = parsed_fp.gets
+            pos_matrix.account(gold, parsed)
+            cat_matrix.account(gold, parsed)
+          end
               
-             conf_fp.write(<<-EOF)
-Part Of Speech Matrix (#{"%.2f" % pos_matrix.correctness} correctness): 
-#{pos_matrix.pretty_string}
-
-Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
-#{cat_matrix.pretty_string}
-             EOF
-           end
-         end
-       end
+          File.open(pos_score_confusion_path_for(what), "w") do |conf_fp|
+            conf_fp.write(pos_matrix.csv)
+          end
+          
+          File.open(cat_score_confusion_path_for(what), "w") do |conf_fp|
+            conf_fp.write(cat_matrix.csv)
+          end
+        end
+      end
     end
     
     def document!(what = :dev)
@@ -144,7 +142,6 @@ Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
       @summary ||= score(what).gsub(/\A.*=== Summary ===/m, '').chomp.strip
     end
     
-    
     def documentation_path_for(what)
       @path.join("document.#{what}.tex")
     end
@@ -177,8 +174,12 @@ Sintatic Matrix (#{"%.2f" % cat_matrix.correctness} correctness):
       @path.join("score.#{what}.txt")
     end
     
-    def score_confusion_path_for(what)
-      @path.join("score_confusion.#{what}.txt")
+    def pos_score_confusion_path_for(what)
+      @path.join("score_confusion.#{what}.pos.csv")
+    end
+    
+    def cat_score_confusion_path_for(what)
+      @path.join("score_confusion.#{what}.cat.csv")
     end
         
     def objects_path

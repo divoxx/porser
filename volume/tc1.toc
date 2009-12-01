@@ -44,7 +44,8 @@
 \contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{42}
 \contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{42}
 \contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{43}
-\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{45}
+\contentsline {subsection}{\numberline {4.3.3}Avalia\IeC {\c c}\IeC {\~a}o Quantitativa}{45}
+\contentsline {subsection}{\numberline {4.3.4}Dificuldades}{45}
 \contentsline {section}{\numberline {4.4}Resultados}{46}
 \contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{50}
 \contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{51}

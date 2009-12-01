@@ -48,9 +48,18 @@ module Porser
         end
       end
       
-      def latex
-        template = ERB.new(File.read(Porser.path.join('lib', 'templates', 'confusion_matrix.tex.erb')))
-        template.result(binding)
+      def csv
+        sorted_keys = @keys.sort
+        
+        CSV.generate do |csv|
+          csv << [" "] + sorted_keys
+          sorted_keys.each do |row_key|
+            csv << [row_key] + sorted_keys.map do |col_key| 
+              n = (@expected_counters[row_key] == 0 ? 0 : @mappings[row_key][col_key].to_f / @expected_counters[row_key].to_f)
+              "%.2f%%" % (n * 100)
+            end
+          end
+        end
       end
       
       def pretty_string

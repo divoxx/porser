@@ -106,6 +106,13 @@ Para os experimentos realizados nesse trabalho, foi utilizado o lematizadorde pa
 
 A lematização dos verbos principalmente torna-se importante porque o português é uma língua morfologicamente rica, onde um verbo pode aparecer em dezenas de formas,diferentemente do inglês. Acreditávamos que a lematização poderia contribuir para se atingir melhores resultados.
 
+\subsection{Avaliação Quantitativa}
+
+Para ajudar a avaliar a performance do parser e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{gold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos parseados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
+
+Podemos avaliar o experimento \emph{Lemas com categorias de V usando TreeTagger} na Figura \ref{confusion_matrix_cat}. Por exemplo, percebe-se que o parser teve uma quantidade relativamente baixa de acertos quanto à classificação de orações (ACL, ICL, FCL), e também com conjunções, e a \emph{tag} X foi marcada 9.09\% das vezes como FCL, e a \emph{tag} PP não foi encontrada na sentença resultante 29.20\% das vezes.
+
+Essa avaliação nos permite identificar quais problemas o parser está tendo e tentar resolver problemas mais especificos.
 
 \subsection{Dificuldades}
 \label{sec:dificuldades}
@@ -114,5 +121,9 @@ Uma das grandes dificuldades encontradas neste trabalho, foi com relação aos v
 
 Foi dada grande atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
 
-
-
+\begin{figure}
+  \begin{center}
+	\includegraphics[scale=0.65]{score_confusion_cat.pdf}
+	\caption{\label{confusion_matrix_cat} Matriz de Confusão: Categorias Sintáticas}		
+  \end{center}
+\end{figure}
