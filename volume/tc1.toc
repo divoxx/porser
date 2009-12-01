@@ -29,27 +29,26 @@
 \contentsline {subsubsection}{\numberline {2.4.2.1}Experimentos}{26}
 \contentsline {chapter}{\numberline {3}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{27}
 \contentsline {section}{\numberline {3.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{27}
-\contentsline {section}{\numberline {3.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN }{30}
-\contentsline {section}{\numberline {3.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{32}
+\contentsline {section}{\numberline {3.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN}{29}
+\contentsline {section}{\numberline {3.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{31}
 \contentsline {section}{\numberline {3.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{32}
-\contentsline {section}{\numberline {3.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{33}
-\contentsline {section}{\numberline {3.6}History-based Models}{33}
-\contentsline {section}{\numberline {3.7}Modelos de Michael Collins}{34}
-\contentsline {subsection}{\numberline {3.7.1}Modelo 1}{34}
-\contentsline {subsubsection}{\numberline {3.7.1.1}Adicionando Dist\IeC {\^a}ncia}{36}
-\contentsline {subsection}{\numberline {3.7.2}Modelo 2}{37}
-\contentsline {subsection}{\numberline {3.7.3}Modelo 3}{37}
-\contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{39}
-\contentsline {section}{\numberline {4.1}Metodologia}{39}
-\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{41}
-\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{43}
-\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{43}
-\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{44}
-\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{46}
-\contentsline {section}{\numberline {4.4}Resultados}{47}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{51}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{52}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{53}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{55}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{57}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{58}
+\contentsline {section}{\numberline {3.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{32}
+\contentsline {section}{\numberline {3.6}Modelos de Michael Collins}{32}
+\contentsline {subsection}{\numberline {3.6.1}Modelo 1}{33}
+\contentsline {subsubsection}{\numberline {3.6.1.1}Adicionando Dist\IeC {\^a}ncia}{34}
+\contentsline {subsection}{\numberline {3.6.2}Modelo 2}{35}
+\contentsline {subsection}{\numberline {3.6.3}Modelo 3}{36}
+\contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{37}
+\contentsline {section}{\numberline {4.1}Metodologia}{37}
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{39}
+\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{41}
+\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{41}
+\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{42}
+\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{44}
+\contentsline {section}{\numberline {4.4}Resultados}{45}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{49}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{50}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{53}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{56}
