@@ -41,14 +41,14 @@
 \contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{37}
 \contentsline {section}{\numberline {4.1}Metodologia}{37}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{39}
-\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{41}
-\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{41}
-\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{42}
+\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{42}
+\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{42}
+\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{43}
 \contentsline {subsection}{\numberline {4.3.3}Dificuldades}{44}
-\contentsline {section}{\numberline {4.4}Resultados}{45}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{49}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{50}
-\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{51}
-\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{53}
-\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{55}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{56}
+\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais e trabalhos futuros}{46}
+\contentsline {section}{\numberline {5.1}Trabalhos futuros}{47}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{48}
+\contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{49}
+\contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{51}
+\contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{53}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{54}

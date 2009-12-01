@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 10:16
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 17:03
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -485,18 +485,18 @@ File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
 (/home/administrador/Desktop/porser/volume/tc1.aux)
 \openout1 = `tc1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -577,7 +577,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
 ) [3]
 (/home/administrador/Desktop/porser/volume/tc1-organizacao.tex)
-Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--75
+Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--74
 []\OT1/cmr/m/n/12 Este tra-ba-lho est^^Sa or-ga-ni-zado em cinco cap^^S^^Ptulos
 . Ini-ci-al-mente neste pri-meiro cap^^S^^Ptulo,
  []
@@ -598,189 +598,189 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--102
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
 []\OT1/cmr/bx/n/10.95 Lan^^Xcamento,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
 \OT1/cmr/bx/n/10.95 re-fer^encia na
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 175--175
+Underfull \hbox (badness 3168) in paragraph at lines 169--169
 []\OT1/cmr/m/n/10.95 Longman Wri-ten Ame-ri-can
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 []\OT1/cmr/m/n/10.95 ingl^es brit^anico
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 181--181
+Underfull \hbox (badness 2027) in paragraph at lines 175--175
 []\OT1/cmr/m/n/10.95 CHILDES (Child Lan-guage
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 185--185
+Underfull \hbox (badness 1895) in paragraph at lines 179--179
 \OT1/cmr/m/n/10.95 ver-sity Stan-dart Cor-pus of
  []
 
 
-Underfull \hbox (badness 7362) in paragraph at lines 185--185
+Underfull \hbox (badness 7362) in paragraph at lines 179--179
 \OT1/cmr/m/n/10.95 Present-day Ame-ri-can En-
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 []\OT1/cmr/m/n/10.95 Conjun^^Xc~ao Co-or-de-na-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
 []\OT1/cmr/m/n/10.95 Preposi^^Xc~ao ou con-
  []
 
 
-Underfull \hbox (badness 4518) in paragraph at lines 241--242
+Underfull \hbox (badness 4518) in paragraph at lines 235--236
 []\OT1/cmr/m/n/10.95 Verbo par-tic^^S^^Ppio pas-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 []\OT1/cmr/m/n/10.95 Determinador in-ter-ro-
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 251--252
+Underfull \hbox (badness 3907) in paragraph at lines 245--246
 []\OT1/cmr/m/n/10.95 Pronome in-ter-ro-ga-tivo
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 285--285
+Underfull \hbox (badness 3977) in paragraph at lines 279--279
 []\OT1/cmr/m/n/10.95 Sintagma de clau-sula
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 285--286
+Underfull \hbox (badness 2261) in paragraph at lines 279--280
 []\OT1/cmr/m/n/10.95 Sintagma de sen-ten^^Xca
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 287--287
+Underfull \hbox (badness 2261) in paragraph at lines 281--281
 []\OT1/cmr/m/n/10.95 Sintagma de sen-ten^^Xca
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 []\OT1/cmr/m/n/10.95 Sintagma de-cla-ra-tivo
  []
 
 
-Underfull \hbox (badness 6380) in paragraph at lines 289--289
+Underfull \hbox (badness 6380) in paragraph at lines 283--283
 []\OT1/cmr/m/n/10.95 Sintagma de quest~ao
  []
 
 
-Underfull \hbox (badness 5832) in paragraph at lines 289--289
+Underfull \hbox (badness 5832) in paragraph at lines 283--283
 \OT1/cmr/m/n/10.95 sim/n~ao e sub-cons-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 []\OT1/cmr/m/n/10.95 Sintagma de cons-ti-
  []
 
 
-Underfull \hbox (badness 7238) in paragraph at lines 319--319
+Underfull \hbox (badness 7238) in paragraph at lines 313--313
 []\OT1/cmr/m/n/10.95 portugu^es bra-si-
  []
 
 
-Underfull \hbox (badness 4886) in paragraph at lines 323--323
+Underfull \hbox (badness 4886) in paragraph at lines 317--317
 \OT1/cmr/m/n/10.95 MCT), (Flo-resta Sint^^Satica,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 []\OT1/cmr/m/n/10.95 Projeto Lin-gua-
  []
 
 
-Underfull \hbox (badness 7238) in paragraph at lines 327--327
+Underfull \hbox (badness 7238) in paragraph at lines 321--321
 []\OT1/cmr/m/n/10.95 portugu^es bra-si-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 []\OT1/cmr/m/n/10.95 portugu^es dos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 \OT1/cmr/m/n/10.95 v^^Sarios pa^^S^^Pses
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 \OT1/cmr/m/n/10.95 lus^^Sofonos, com
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 \OT1/cmr/m/n/10.95 pre-do-min^ancia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 \OT1/cmr/m/n/10.95 da va-ri-e-dade
  []
 
 
-Underfull \hbox (badness 3568) in paragraph at lines 331--332
+Underfull \hbox (badness 3568) in paragraph at lines 325--326
 []\OT1/cmr/m/n/10.95 CLUL - Cen-tro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 \OT1/cmr/m/n/10.95 Uni-ver-si-dade de
  []
 
 
-Underfull \hbox (badness 7238) in paragraph at lines 335--335
+Underfull \hbox (badness 7238) in paragraph at lines 329--329
 []\OT1/cmr/m/n/10.95 portugu^es bra-si-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 \OT1/cmr/m/n/10.95 CAR, UNESP
  []
 
 [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 [15]
-Overfull \hbox (0.1308pt too wide) in paragraph at lines 379--380
+Overfull \hbox (0.1308pt too wide) in paragraph at lines 373--374
 []\OT1/cmr/m/n/12 A cada pa-la-vra tamb^^Sem ^^Se as-so-ci-ado o seu lema, e in
 -forma^^Xc~oes mor-fos-sint^^Saticas (g^enero,
  []
 
 
-Overfull \hbox (8.34122pt too wide) in paragraph at lines 381--382
+Overfull \hbox (8.34122pt too wide) in paragraph at lines 375--376
 \OT1/cmr/m/n/12 resta Sint^^Satica em $\OT1/cmtt/m/n/12 http : / / linguateca .
  dei . uc . pt / Floresta / BibliaFlorestal / anexo1 .
  []
 
 [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
@@ -789,13 +789,13 @@ File: parser_schema.pdf Graphic file (type pdf)
 
 <use parser_schema.pdf> [21 </home/administrador/Desktop/porser/volume/parser_s
 chema.pdf>] [22] [23] [24]
-Overfull \hbox (13.05708pt too wide) in paragraph at lines 711--711
+Overfull \hbox (13.05708pt too wide) in paragraph at lines 703--703
 []\OT1/cmr/bx/n/14.4 Parsing pro-ba-bil^^S^^Pstico para o por-tugu^es do Bra-si
 l de Andr^^Seia
  []
 
 
-Overfull \hbox (2.18309pt too wide) in paragraph at lines 714--715
+Overfull \hbox (2.18309pt too wide) in paragraph at lines 706--707
 \OT1/cmr/m/n/12 uti-li-za-dos para ana-li-sar sen-ten^^Xcas da l^^S^^Pngua por-
 tu-guesa do Bra-sil, im-ple-men-tando o m^^Setodo
  []
@@ -854,21 +854,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
-) [40] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex [41]
-[42]
-Overfull \hbox (12.99036pt too wide) in paragraph at lines 86--100
+) [40] [41] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex
+[42] [43]
+Overfull \hbox (12.99036pt too wide) in paragraph at lines 87--101
  [] 
  []
 
-[43]) [44] (/home/administrador/Desktop/porser/volume/tc1-resultados.tex
-[45] [46])) [47] [48]
+[44]) [45])
 Cap\'{\i }tulo 5.
-(/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex)
-[49
+(/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex
+[46
 
-]
+]) [47]
 Apendice A.
-(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [50
+(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [48
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -890,7 +889,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-[51]
+[49]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 62--63
 [][] 
  []
@@ -941,7 +940,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[52]
+[50]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 110--111
 [][] 
  []
@@ -966,13 +965,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[53] [54]) (/home/administrador/Desktop/porser/volume/tc1.bbl [55]
+[51] [52]) (/home/administrador/Desktop/porser/volume/tc1.bbl [53]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[56
+[54
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
@@ -980,15 +979,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--118
 sint^^Satica\OT1/cmr/m/n/12 . 2009.
  []
 
-[57])
+[55])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[58] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[56] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
- 4589 strings out of 94074
- 61102 string characters out of 1165153
+ 4586 strings out of 94074
+ 60975 string characters out of 1165153
  132278 words of memory out of 1500000
  7722 multiletter control sequences out of 10000+50000
  24586 words of font info for 90 fonts, out of 1200000 for 2000
@@ -1013,9 +1012,9 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8.p
 fb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.pfb>
-Output written on tc1.pdf (66 pages, 590688 bytes).
+Output written on tc1.pdf (64 pages, 586180 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
+ 579 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

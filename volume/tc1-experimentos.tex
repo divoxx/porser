@@ -31,12 +31,11 @@ A primeira configuração utilizada foi a \emph{default} para o inglês, com reg
 		\hline		
 		\emph{Left most} & 92.87 & 67.58 & 68.40 & 67.99\\
 		\hline		
-		Regras PT & 92.78 & 68.95 & 68.46 & 68.70\\
+		Regras Português & 92.78 & 68.95 & 68.46 & 68.70\\
 		\hline
 	\end{tabular}
 	\label{tab:primeiro_experimento}
 \end{center}
-
 
 O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. 
 
@@ -44,7 +43,9 @@ A estratégia da segunda bateria de testes é avaliar a separação das TAGS de 
 
 Nos testes anteriores foram usadas apenas as categorias principais de TAGS do Floresta Sintática. Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições, primeiro foi feita a distinção dos verbos e foram avaliadas as suas subcategorias VFIN, VINF, VPCP, VGER. Foi percebido uma melhora considerável nos resultados, portanto mantivemos os verbos com suas subcategorias. 
 
-Em seguinda foi avaliado adicionando, também, as subcategorias da TAG PRON (PRONPERS e PRONINDP), a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG N que possui distinção no corpus como N e N-ADJ. Acreditmaos que essa anotação se deu em função do anotador não ter certeza se a palavra anotada é adjetivo ou nome. Por último, foi avaliado com todas as subcategorias existentes no corpus.
+Em seguinda foi avaliado adicionando, também, as subcategorias da TAG N que possui distinção no corpus como N e N-ADJ, a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG PRON (PRONPERS e PRONINDP). Por último, foi avaliado com todas as subcategorias existentes no corpus.
+
+%Quanto a TAG N e N-ADJ acreditamos que essa distinção na anotação se deu em função do anotador não ter certeza se a palavra anotada é adjetivo ou nome.
 
 \begin{center}
    \footnotesize
@@ -54,11 +55,11 @@ Em seguinda foi avaliado adicionando, também, as subcategorias da TAG PRON (PRO
 		\hline
 		Subcategorias de V & 92.49 & 70.51 & 69.90 & 70.20\\
 		\hline		
-		Subcategorias de V e PRON & 92.53 & 71.06 & 70.47 & 70.76\\
+		Subcategorias de V e N & 92.45 & 70.58 & 69.93 & 70.25\\
 		\hline		
 		Subcategorias de V e CONJ & 92.51 & 70.54 & 70.07 & 70.30\\
 		\hline		
-		Subcategorias de V e N & 92.45 & 70.58 & 69.93 & 70.25\\
+		Subcategorias de V e PRON & 92.53 & 71.06 & 70.47 & 70.76\\
 		\hline
 		Subcategorias de V, PRON, CONJ e N & 92.61 & 71.23 & 70.72 & 70.97\\
 		\hline
@@ -99,7 +100,6 @@ Finalmente, foi feito um teste utilizando um POS tagger e lematizador externo (T
 	\label{tab:terceiro_experimento}
 \end{center}
 
-
 Para os experimentos realizados nesse trabalho, foi utilizado o lematizadorde palavras TreeTagger \footnote{O TreeTagger é uma ferramenta para anotação de texto com a POS e informação de lema. Ele foi desenvolvido por Helmut Schmid no \emph{CT Project} do Instituto de Linguística Computacional da Universidade de Stuttgart. O TreeTagger tem sido usada com sucesso para tag Alemão, Inglês, francês, italiano, holandês, espanhol, búlgaro, russo, grego, Português, chinês e os antigos textos em francês e é adaptável a outros idiomas, se um léxico e um corpus de treinamento estão disponíveis tags manualmente.}e os arquivos de configuração necessárias para o portugês criados por Pablo Gamallo Otero do Grupo de Procesamento de Linguagem Natural da Universidade de Santiago de Compostela, que tem a função de receber uma palavra e retornar o lema e sua TAG.
 
 A lematização dos verbos principalmente torna-se importante porque o português é uma língua morfologicamente rica, onde um verbo pode aparecer em dezenas de formas,diferentemente do inglês.
@@ -110,7 +110,9 @@ A lematização dos verbos principalmente torna-se importante porque o portuguê
 
 Uma das grandes dificuldades encontradas neste trabalho, foi com relação aos verbos. No português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos com representação morfológica diferente, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica e muito a tarefa de análise morfológica. Dificuldade esta também relatada por Wing e Baldridge em seu trabalho.
 
-Foi dada grande atenção quando ao tratamento das palavras desconhecidas pois acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
+%Quando ao tratamento das palavras desconhecidas percebemos que os parametros acreditamos que um ajuste nesse ponto se pode alcançar desempenhos melhores.
+
+
 
 
 
