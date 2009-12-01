@@ -42,10 +42,10 @@
 \contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{39}
 \contentsline {section}{\numberline {4.1}Metodologia}{39}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{41}
-\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos}{43}
-\contentsline {subsection}{\numberline {4.3.1}Configura\IeC {\c c}\IeC {\~o}es}{43}
-\contentsline {subsection}{\numberline {4.3.2}Dificuldades}{44}
-\contentsline {subsection}{\numberline {4.3.3}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{45}
+\contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{43}
+\contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{43}
+\contentsline {subsection}{\numberline {4.3.2}Experimentos com lematiza\IeC {\c c}\IeC {\~a}o das palavras}{44}
+\contentsline {subsection}{\numberline {4.3.3}Dificuldades}{46}
 \contentsline {section}{\numberline {4.4}Resultados}{47}
 \contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{51}
 \contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{52}
