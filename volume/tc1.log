@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  30 NOV 2009 22:56
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 01:07
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -819,12 +819,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--72
 File: ambig.jpg Graphic file (type jpg)
  <use ambig.jpg> [30 </home/administrador/Desktop/porser/volume/ambig.jpg>] [31
 ] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
  []
 
@@ -833,13 +833,8 @@ Cap\'{\i }tulo 4.
 (/home/administrador/Desktop/porser/volume/tc1-result-obtidos.tex
 (/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [37
 
-]
-Overfull \hbox (2.66179pt too wide) in paragraph at lines 13--14
-\OT1/cmr/m/n/12 men-tos s~ao pro-gra-ma-dos e au-to-ma-ti-za-dos. Em par-ti-cu-
-lar os as-pec-tos de pr^^Se-processamento
- []
-
-) [38] (/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
+]) [38]
+(/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
@@ -1028,7 +1023,7 @@ b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
 texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1
 /bluesky/cm/cmtt8.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.p
 fb>
-Output written on tc1.pdf (66 pages, 583697 bytes).
+Output written on tc1.pdf (66 pages, 583465 bytes).
 PDF statistics:
  581 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
