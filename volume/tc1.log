@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.10.27)  2 DEC 2009 16:16
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.10.27)  2 DEC 2009 16:37
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -846,8 +846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--185
 Cap\'{\i }tulo 4.
 (./tc1-result-obtidos.tex (./tc1-metodologia.tex [37
 
-]) [38]
-(./tc1-avaliacao.tex
+]) (./tc1-avaliacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
@@ -862,22 +861,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-[39]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
-) [40] [41] (./tc1-experimentos.tex [42] [43]
+[39]) (./tc1-experimentos.tex [40] [41]
 Overfull \hbox (12.99036pt too wide) in paragraph at lines 80--94
  [] 
  []
 
-
+[42]
 Overfull \hbox (5.9371pt too wide) in paragraph at lines 104--112
  [] 
  []
 
-[44] <score_confusion_cat.pdf, id=462, 711.71394pt x 223.12473pt>
+[43] <score_confusion_cat.pdf, id=459, 711.71394pt x 223.12473pt>
 File: score_confusion_cat.pdf Graphic file (type pdf)
 
 <use score_confusion_cat.pdf>
@@ -885,13 +884,13 @@ Overfull \hbox (7.36447pt too wide) in paragraph at lines 131--132
  [] 
  []
 
-) [45]) [46 <./score_confusion_cat.pdf>]
+)) [44 <./score_confusion_cat.pdf>]
 Cap\'{\i }tulo 5.
-(./tc1-consideracoes-finais.tex [47
+(./tc1-consideracoes-finais.tex [45
 
-]) [48]
+]) [46]
 Apendice A.
-(./tc1-parsing-bikel.tex [49
+(./tc1-parsing-bikel.tex [47
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -913,7 +912,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-[50]
+[48]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 62--63
 [][] 
  []
@@ -964,7 +963,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[51]
+[49]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 110--111
 [][] 
  []
@@ -989,7 +988,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[52] [53]) [54]
+[50] [51]) [52]
 Apendice B.
 
 (./apendice_b/2009.11.19_20.59.13-remove_conj_subcategories-remove_noun_subcate
@@ -1007,35 +1006,35 @@ Overfull \hbox (118.51413pt too wide) in paragraph at lines 55--55
 l $) (l CD) (l QP) (l PRP) (l VBG) (l JJ) (l JJS) (l JJR) (l ADJP) (l FW))[] 
  []
 
-[55
+[53
 
-] [56])
+] [54])
 (./apendice_b/2009.11.19_21.01.19-remove_conj_subcategories-remove_noun_subcate
 gories-remove_pron_subcategories-remove_verb_subcategories--headfind-left.tex
-[57] [58] [59])
+[55] [56] [57])
 (./apendice_b/2009.11.19_21.02.34-remove_conj_subcategories-remove_noun_subcate
 gories-remove_pron_subcategories-remove_verb_subcategories--headfind-right.tex
-[60] [61])
+[58] [59])
 (./apendice_b/2009.11.19_21.03.53-remove_conj_subcategories-remove_noun_subcate
 gories-remove_pron_subcategories-remove_verb_subcategories--headfind-pt.tex
-[62] [63])
+[60] [61])
 (./apendice_b/2009.11.19_21.05.31-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories.tex [64] [65] [66])
+gories-remove_pron_subcategories.tex [62] [63] [64])
 (./apendice_b/2009.11.19_21.09.51-remove_conj_subcategories-remove_pron_subcate
-gories.tex [67] [68])
+gories.tex [65] [66])
 (./apendice_b/2009.11.19_21.10.45-remove_noun_subcategories-remove_pron_subcate
-gories.tex [69] [70] [71])
+gories.tex [67] [68] [69])
 (./apendice_b/2009.11.19_21.11.19-remove_conj_subcategories-remove_noun_subcate
-gories.tex [72] [73]) (./apendice_b/2009.11.19_21.11.39-unchanged.tex [74]
-[75]) (./apendice_b/2009.11.23_11.16.16-lematize_all.tex [76] [77] [78])
-(./apendice_b/2009.11.23_11.16.35-lematize_all_and_append_category.tex [79]
-[80])
+gories.tex [70] [71]) (./apendice_b/2009.11.19_21.11.39-unchanged.tex [72]
+[73]) (./apendice_b/2009.11.23_11.16.16-lematize_all.tex [74] [75] [76])
+(./apendice_b/2009.11.23_11.16.35-lematize_all_and_append_category.tex [77]
+[78])
 (./apendice_b/2009.11.23_11.17.20-lematize_all_and_append_category_only_to_verb
-.tex [81] [82])
+.tex [79] [80])
 (./apendice_b/2009.11.23_11.17.37-lematize_all_and_append_category_only_to_verb
-_using_tree_tagger.tex [83] [84] [85]) [86]
+_using_tree_tagger.tex [81] [82] [83]) [84]
 Apendice C.
-(./tc1-ferramenta.tex [87
+(./tc1-ferramenta.tex [85
 
 ]
 Overfull \hbox (29.26285pt too wide) in paragraph at lines 45--45
@@ -1049,7 +1048,7 @@ Overfull \hbox (37.76297pt too wide) in paragraph at lines 45--45
 , possui l^^Sogica de execu^^Xc~ao de todas etapas do experimento.[] 
  []
 
-[88]
+[86]
 Overfull \hbox (50.51315pt too wide) in paragraph at lines 89--89
 []    \OT1/cmtt/m/n/8 remove_noun_subcategories-remove_pron_subcategories-lemat
 ize_all_and_append_category_only_to_verb_using_tree_tagger[] 
@@ -1061,13 +1060,13 @@ Overfull \hbox (12.2626pt too wide) in paragraph at lines 115--115
 to parseado corrigido para an^^Salise de performance[] 
  []
 
-[89]) (./tc1.bbl [90]
+[87]) (./tc1.bbl [88]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[91
+[89
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
@@ -1075,12 +1074,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--118
 sint^^Satica\OT1/cmr/m/n/12 . 2009.
  []
 
-[92])
+[90])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[93] (./tc1.aux) ) 
+[91] (./tc1.aux) ) 
 Here is how much of TeX's memory you used:
  4714 strings out of 493876
  66442 string characters out of 1150567
@@ -1112,9 +1111,9 @@ xlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmti8.pfb></usr/local/texlive/2008
 st/fonts/type1/bluesky/cm/cmtt12.pfb></usr/local/texlive/2008/texmf-dist/fonts/
 type1/bluesky/cm/cmtt8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/publ
 ic/cmex/fmex8.pfb>
-Output written on tc1.pdf (102 pages, 671216 bytes).
+Output written on tc1.pdf (100 pages, 670384 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
+ 713 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
