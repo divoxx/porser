@@ -1,0 +1,134 @@
+\section{Visão Geral}
+
+Durante o desenvolvimento desse trabalho, construímos uma ferramenta para auxiliar na construção e organização de experimentos que possibilita criar filtros plugáveis de pré-processamento e programar experimentos a serem executados em sequência, mantendo os resultados de cada experimento armazenado para a posteridade.
+
+Nesse apêndice, vamos explicar o seu funcionamento para que outras pessoas possam utiliza-las, também.
+
+A ferramenta foi desenvolvida utilizando a linguagem de programção Ruby na versão 1.9 e está disponível com o código aberto no seguinte repositório: \url{http://github.com/divoxx/porser}.
+
+\section{Instalação}
+
+Para poder utilizar a aplicação é necessário ter Ruby >= 1.9 instalado, e o rubygem Rake. A linguagem Ruby pode ser baixada em \url{http://ruby-lang.org/} e o Rake pode ser instalado pelo seguinte comando: \verb|sudo gem install rake|.
+
+\section{Utilizando a ferramenta}
+
+A ferramenta possui uma organização de diretórios pré-definida, permitindo a automatização de sua execução, da seguinte forma:
+
+\scriptsize
+\begin{verbatim}
+  + corpus              # Dados relacionados a corpus.
+  |-+ experiments       # Os experimentos que vão sendo criados e documentados.
+  |-+ originals         # Corpus originais.
+  |-+ pre-processed     # Corpus pre-processados, por exemplo o Bosque transformato no formato PTB.
+  |-+ selection         # As seleções bases dos experimentos, por exemplo: desenvolvimento, teste e treino.
+  + coverage            # Informações de cobertura de testes.
+  + ext                 # Pacote java que extende o parser do Bikel.
+  |-+ build             # Pacote compilado que é automaticamente incluido no classpath durante execução do parser.
+  |-+ src               # Código fonte do pacote java
+  + lib                 # Código em ruby da ferramente
+  |-+ porser            # Código principal da ferramenta
+    |-+ cli             # Classes de auxilio em interação com usuário usando Command Line Interface.
+    |-+ corpus          # Classes de parsing, e representação de informação de corpus, como sentenças.
+    |-+ experiment.rb   # Representação de um experimento, possui lógica de execução de todas etapas do experimento.
+    |-+ filters         # Filtros plugáveis de pré-processamento de corpus, tal como lematização.
+    |-+ performance     # Classes de análise de performance, como construção de matriz de confusão.
+  |-+ porser.rb         # Arquivo de boot.
+  |-+ tasks             # Rake tasks para uso do parser.
+  |-+ templates         # Alguns templates para geração de informação, como doc latex dos experimentos.
+  Rakefile              # Arquivo rake (http://rake.rubyforge.org)
+  + samples             # Arquivos exemplos de configuração do parser.
+  + scripts             # Scripts de utilidade.
+  |-+ bosque_cleanup.rb # Script para transformar o Bosque no formato PTB.
+  + spec                # Specs (testes) de desenvolvimento.
+  + vendor              # Outras aplicações e bibliotecas utilizadas, incluindo o próprio parser do Bikel.
+  + volume              # Volume, esse próprio trabalho.
+\end{verbatim}
+\normalsize
+
+Para facilitar a utilização da ferramenta, utilizamos o Rake, que nos permite definir tarefas que podem ser executas pelo usuário, semelhante a ferramenta make e ant. Para executar uma tarefa basta executar: \verb|rake <nome_da_tarefa>|, sendo as tarefas disponíveis:
+
+\scriptsize
+\begin{verbatim}
+  $ rake -T
+  rake build                           # Compile and build the java extension
+  rake clobber_spec                    # Remove rcov products for spec
+  rake experiments:create              # Create a new experiment
+  rake experiments:doc                 # Generate the LaTeX documentation for the experiment
+  rake experiments:parse               # Run the parsing process for an experiment
+  rake experiments:pretty_print[what]  # Prettyprint
+  rake experiments:rebuild             # Rebuild a corpus experiment
+  rake experiments:run                 # Run the whole process for many experiments
+  rake experiments:score               # Run the scoring process for an experiment
+  rake experiments:score_confusion     # Run the quantitative scoring process for an experiment
+  rake experiments:train               # Run the training process for an experiment
+  rake spec                            # Run all examples
+\end{verbatim}
+\normalsize
+
+O fluxo e utilização da ferramenta é, basicamente, a criação de um ou vários experimentos, e posteriormente a execução. Por exemplo, ao criar um experimento o usuário poderá informar quais filtros quer aplicar no pré-processamento, sendo a ordem importante, e se deseja copiar os arquivos exemplos de configuração para a pasta do experimento:
+
+\scriptsize
+\begin{alltt}
+  $ rake experiments:create
+  (in /Users/rodrigo/Documents/Puc/TC/porser)
+  Available filters:
+    [0] None
+    [1] lematize_all.rb
+    [2] lematize_all_and_append_category.rb
+    [3] lematize_all_and_append_category_only_to_verb.rb
+    [4] lematize_all_and_append_category_only_to_verb_using_tree_tagger.rb
+    [5] lematize_only_verb.rb
+    [6] lematize_only_verb_and_append_category.rb
+    [7] remove_conj_subcategories.rb
+    [8] remove_noun_subcategories.rb
+    [9] remove_pron_subcategories.rb
+    [10] remove_verb_subcategories.rb
+  Choose the filters to apply (Multiple options allowed, separated by comma, or * for all): 7,8,9,4
+  
+  Experiment created at corpus/experiments/2009.11.20_16.28.36-remove_conj_subcategories-
+    remove_noun_subcategories-remove_pron_subcategories-lematize_all_and_append_category_only_to_verb_using_tree_tagger
+
+  Copy config files from sample/ to the experiment directory? y
+\end{alltt}
+\normalsize
+
+Então, uma nova pasta será criada dentro de \verb|corpus/experiments| usando o corpus base definido em \verb|corpus/selection|. Após isso, pode-se manualmente alterar os arquivos na pasta do experimento, como por exemplo a configuração do parser. Quando tudo estiver pronto, pode-se criar outro experimento, sucessivamente até que se deseje executa-los:
+
+\scriptsize
+\begin{alltt}
+  $ rake experiments:run
+  (in /Users/rodrigo/Documents/Puc/TC/porser)
+  Available experiments:
+    [0] 2009.11.20_16.28.36-remove_conj_subcategories-remove_noun_subcategories-
+      remove_pron_subcategories-lematize_all_and_append_category_only_to_verb_using_tree_tagger
+  Choose the experiment to train (Multiple options allowed, separated by comma, or * for all): *
+\end{alltt}
+\normalsize
+
+Os experimentos vão ser executados em série, incluindo treino, \emph{parsing} do corpus de desenvolvimento e análise qualitativa e quantitativa do mesmo. Por exemplo, esse experimento que acabamos de criar teria os seguinter arquivos:
+
+\scriptsize
+\begin{alltt}
+  corpus.dev.gold.txt               # Corpus de desenvolvimento anotado
+  corpus.dev.parseable.txt          # Corpus de desenvolvimento sem anotação
+  corpus.dev.parseable.txt.parsed   # Corpus de desenvolvimento análisado pelo parser
+  corpus.dev.parseable.txt.scorable # Corpus de desenvolvimento parseado corrigido para análise de performance
+  corpus.test.gold.txt              # Corpus de teste anotado
+  corpus.test.parseable.txt         # Corpus de teste sem anotação
+  corpus.train.gold.txt             # Corpus de treino anotado
+  corpus.train.parseable.txt        # Corpus de treino sem anotação
+  document.dev.tex                  # Documentação tex incluindo parametros e resultados
+  head-rules.lisp                   # Regras de \emph{head finding}
+  log.parse.dev.txt                 # Log do processo de parsing
+  log.score.dev.txt                 # Log de processo de \emph{scoring}
+  log.train.train.txt               # Log do proceso de treino
+  objects.gz                        # Arquivo contendo as probabilidades e informações derivadas do treino
+  observed.gz                       # Arquivo de observações derivado do treino
+  score.dev.txt                     # Análise qualitativa precision/recall
+  score_confusion.dev.txt           # Matriz de confusão, analise quantitativa.
+  settings.properties               # Configurações e paramêtros pro parser
+  training-metadata.lisp            # Metadata de treino
+\end{alltt}
+\normalsize
+
+O uso da ferramenta é simples e não iremos entrar nos detalhes de implementação, já que o mesmo não é o foco do trabalho e o código fonte encontra-se disponível.

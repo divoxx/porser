@@ -65,4 +65,8 @@
 \contentsline {section}{\numberline {B.11}Com lemas do corpus com categorias concatenada}{78}
 \contentsline {section}{\numberline {B.12}Com lemas do corpus com categorias de V concatenadas}{80}
 \contentsline {section}{\numberline {B.13}Com lemas do TreeTagger e categorias de V concatenadas}{82}
-\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{86}
+\contentsline {chapter}{Ap\^endice{} C{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta Desenvolvida}{86}
+\contentsline {section}{\numberline {C.1}Vis\IeC {\~a}o Geral}{86}
+\contentsline {section}{\numberline {C.2}Instala\IeC {\c c}\IeC {\~a}o}{86}
+\contentsline {section}{\numberline {C.3}Utilizando a ferramenta}{86}
+\contentsline {chapter}{Refer\IeC {\^e}ncia Bibliografia}{90}
