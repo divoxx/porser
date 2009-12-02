@@ -1,10 +1,3 @@
-%\begin{figure}
-%	\begin{center}
-%		\includegraphics[scale=0.35]{diagrama_experimentos1.jpeg}
-%		\caption{\label{evolucao} Evolução dos resultados }		
-%	\end{center}
-%\end{figure}
-
 Na execução dos experimentos inicialmente trabalhamos sobre a influêcia da escolha do núcleo \emph{(Head)} dos sintagmas que é essencial na implementação dos algorítmos dos modelos propostos por Collins \cite{collins99}.
 
 O corpus do Bosque ja tem anotados muitos dos núcleos (\emph{heads}) dos sintagmas \footnote{Sintagma é uma unidade formada por uma ou várias palavras que, juntas, desempenham uma função na sentença}, porém o modelo de Collins precisa de todos os núcleos, e verificou-se que nem todos os sintagmas possuem essa informação, tendo que ser analisada e construída de forma empírica.
@@ -43,7 +36,7 @@ A estratégia da segunda bateria de testes é avaliar a separação das TAGS de 
 
 Nos testes anteriores foram usadas apenas as categorias principais de TAGS do Floresta Sintática. Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições, primeiro foi feita a distinção dos verbos e foram avaliadas as suas subcategorias VFIN, VINF, VPCP, VGER. Foi percebido uma melhora considerável nos resultados, portanto mantivemos os verbos com suas subcategorias. 
 
-Em seguinda foi avaliado adicionando, também, as subcategorias da TAG N que possui distinção no corpus como N e N-ADJ, a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG PRON (PRONPERS e PRONINDP). Por último, foi avaliado com todas as subcategorias existentes no corpus.
+Em seguida foi avaliado adicionando, também, as subcategorias da TAG N que possui distinção no corpus como N e N-ADJ, a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG PRON (PRONPERS e PRONINDP). Por último, foi avaliado com todas as subcategorias existentes no corpus.
 
 %Quanto a TAG N e N-ADJ acreditamos que essa distinção na anotação se deu em função do anotador não ter certeza se a palavra anotada é adjetivo ou nome.
 
@@ -77,7 +70,7 @@ Para verificar o efeito do uso de lematização, primeiramente foram substituida
 
 Primeiro lematizou-se todas as palavras das sentenças, simplesmente substituindo-as pelos respectivos lemas. Porém, ao lematizar todas as palavras, aumenta-se a ambiguidade léxica, então, como segundo experimento dessa bateria de testes, experimentou-se colocar as POS TAGs concatenadas ao lema, corrigindo assim as suas distribuições e mitigando o problema de ambiguidade. 
 
-Sabendo que esses experimentos não são realísticos pois não podemos depender somente dos lemas disponiveis para as sentenças contidas no corpus, e que ao introduzir um lematizador e POS tagger externo para identificar e concatenar as POS tags com os lemas iria gerar diferenças entre as TAGS e os lemas do corpus, resolvemos experimentar a concatenação somente para os verbos, cuja distribuição tem maior impacto na derivação sintática.
+Sabemos que esses experimentos utilizando lemas do corpus produzem um resultado irreal, pois não podemos depender somente dos lemas disponiveis para as sentenças contidas no corpus, e que ao introduzir um lematizador e POS tagger externo para identificar e concatenar as POS tags com os lemas, iria gerar diferenças entre as TAGS e os lemas do corpus, então resolvemos experimentar a concatenação somente para os verbos, cuja distribuição tem maior impacto na derivação sintática.
 
 Finalmente, foi feito um teste utilizando um POS tagger e lematizador externo (TreeTagger), lematizando-se todas as palavras e concatenando a categoria somente aos verbos.
 
@@ -100,17 +93,17 @@ Finalmente, foi feito um teste utilizando um POS tagger e lematizador externo (T
 	\label{tab:terceiro_experimento}
 \end{center}
 
-Para os experimentos realizados nesse trabalho, foi utilizado o lematizadorde palavras TreeTagger \footnote{O TreeTagger é uma ferramenta para anotação de texto com a POS e informação de lema. Ele foi desenvolvido por Helmut Schmid no \emph{CT Project} do Instituto de Linguística Computacional da Universidade de Stuttgart. O TreeTagger tem sido usada com sucesso para tag Alemão, Inglês, francês, italiano, holandês, espanhol, búlgaro, russo, grego, Português, chinês e os antigos textos em francês e é adaptável a outros idiomas, se um léxico e um corpus de treinamento estão disponíveis tags manualmente.}e os arquivos de configuração necessárias para o portugês criados por Pablo Gamallo Otero do Grupo de Procesamento de Linguagem Natural da Universidade de Santiago de Compostela, que tem a função de receber uma palavra e retornar o lema e sua TAG.
+Para os experimentos realizados nesse trabalho, foi utilizado o lematizadorde palavras TreeTagger\footnote{O TreeTagger é uma ferramenta para anotação de texto com a POS e informação de lema. Ele foi desenvolvido por Helmut Schmid no \emph{CT Project} do Instituto de Linguística Computacional da Universidade de Stuttgart. O TreeTagger tem sido usada com sucesso para tag Alemão, Inglês, francês, italiano, holandês, espanhol, búlgaro, russo, grego, português, chinês e os antigos textos em francês e é adaptável a outros idiomas, se um léxico e um corpus de treinamento estão disponíveis tags manualmente.} e os arquivos de configuração necessárias para o portugês criados por Pablo Gamallo Otero do Grupo de Procesamento de Linguagem Natural da Universidade de Santiago de Compostela, que tem a função de receber uma palavra e retornar o lema e sua TAG.
 
 A lematização dos verbos principalmente torna-se importante porque o português é uma língua morfologicamente rica, onde um verbo pode aparecer em dezenas de formas,diferentemente do inglês.
 
 \subsection{Avaliação Quantitativa}
 
-Para ajudar a avaliar a performance do parser e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{gold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos parseados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
+Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{gold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos parseados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
 
-Podemos avaliar o experimento \emph{Lemas com categorias de V usando TreeTagger} na Figura \ref{confusion_matrix_cat}. Por exemplo, percebe-se que o parser teve uma quantidade relativamente baixa de acertos quanto à classificação de orações (ACL, ICL, FCL), e também com conjunções, e a \emph{tag} X foi marcada 9.09\% das vezes como FCL, e a \emph{tag} PP não foi encontrada na sentença resultante 29.20\% das vezes.
+Podemos avaliar o experimento \emph{Lemas com categorias de V usando TreeTagger} na Figura \ref{confusion_matrix_cat}. Por exemplo, percebe-se que o \emph{parser} teve uma quantidade relativamente baixa de acertos quanto à classificação de orações (ACL, ICL, FCL), e também com conjunções, e a \emph{tag} X foi marcada 9.09\% das vezes como FCL, e a \emph{tag} PP não foi encontrada na sentença resultante 29.20\% das vezes.
 
-Essa avaliação nos permite identificar quais problemas o parser está tendo e tentar resolver problemas mais especificos.
+Essa avaliação nos permite identificar quais problemas o \emph{parser} está tendo e tentar resolver problemas mais especificos.
 
 \subsection{Dificuldades}
 \label{sec:dificuldades}

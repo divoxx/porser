@@ -11,7 +11,7 @@ Segundo Bonfante \cite{bonfante03}, as gramáticas probabilísticas têm muitas 
 
 A ambigüidade é o maior problema na análise de sentenças. Uma gramática probabilística oferece solução para este problema, escolhendo a interpretação mais provável no momento da análise.
 
-Vamos exemplificar: Na frase "vi o homem no monte com os binóculos", Supondo a gramática parcial,
+Vamos exemplificar: Na frase ``vi o homem no monte com os binóculos", Supondo a gramática parcial,
 
 \begin{enumerate}
   \item $ S \rightarrow S \  SP^1 \ |\ SV $
@@ -63,14 +63,14 @@ Podemos usar uma PCFG para estimar a probabilidade associada a uma dada árvore,
 
 Considerando a hipótese assumida pelas PCFG de que a probabilidade de expansão de cada constituinte é independente do contexto em que aparece na árvore global de análise, a probabilidade associada a cada árvore é o produto das probabilidades das regras usadas na sua derivação. Nas folhas da árvore, usam-se as probabilidades POS $P(\alpha_i|w_i)$, onde  $\alpha_i$ é a palavra e $w_i$ é a POS atribuída a palavra.
 
-A estimativa das probabilidades associadas a cada regra pode ser feita usando um corpus anotado de sentenças.
+A estimativa das probabilidades associadas a cada regra pode ser feita usando um \emph{corpus} anotado de sentenças.
 
 Supondo que haja n diferentes regras para expansão de A $A \rightarrow \alpha_i $, i de 1 a n.
 \\
 Pode-se então estimar $P(A \rightarrow \alpha_i|A)$ como:
 \\
 
-$ P(A \rightarrow \alpha_i) = \frac{count(A \rightarrow \alpha_i)}{\sum_{j=1}^n count(A \rightarrow \alpha_j)} = \frac{count(A \rightarrow \alpha_i)}{count(A)} $, onde count($A \rightarrow \alpha_i$) é o número de vezes que uma ocorrência de A é expandida pela regra $A \rightarrow \alpha_i$ no corpus e count(A) é o número de vezes que uma ocorrência de A é expandida.
+$ P(A \rightarrow \alpha_i) = \frac{count(A \rightarrow \alpha_i)}{\sum_{j=1}^n count(A \rightarrow \alpha_j)} = \frac{count(A \rightarrow \alpha_i)}{count(A)} $, onde count($A \rightarrow \alpha_i$) é o número de vezes que uma ocorrência de A é expandida pela regra $A \rightarrow \alpha_i$ no \emph{corpus} e count(A) é o número de vezes que uma ocorrência de A é expandida.
 
 Consegue-se deste modo associar probabilidades às regras e construir uma gramática probabilística, por exemplo:
 
@@ -87,7 +87,7 @@ Consegue-se deste modo associar probabilidades às regras e construir uma gramá
 
 Segundo Manning e Sch{\"u}tze \cite{manning99}, o aprendizado estatístico se insere num contexto cuja linha de pesquisa é chamada de empírica, uma vez que se baseia em exemplos já prontos e aprende como lidar com aqueles ainda não vistos. A linha empiricista, que entre as décadas de 60 e 80 ficou nas sombras de crenças racionalistas encabeçadas por Chomsky (1965), cujo reflexo dentro da Inteligência Artificial caracterizava-se pela criação de sistemas inteligentes com grande quantidade de conhecimento inicial codificado à mão, ressurgiu na década de 90, com a idéia de que o conhecimento pode ser induzido a partir de algumas operações básicas de associação e generalização. Assim, segundo o empiricismo, uma máquina poderia aprender a estrutura de uma linguagem apenas observando uma grande quantidade de exemplos, usando procedimentos estatísticos gerais e métodos de associação e generalização indutiva, como aprendizado indutivo de regras.
 
-Segundo Bonfante \cite{bonfante03}, o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambiguidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença "A menina viu o menino de binóculo", a atribuição dos sintagmas sintáticos pode mudar a interpretação que se faz da frase. Duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
+Segundo Bonfante \cite{bonfante03}, o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambiguidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença ``A menina viu o menino de binóculo", a atribuição dos sintagmas sintáticos pode mudar a interpretação que se faz da frase. Duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
 
 \begin{figure}
 	\begin{center}
@@ -99,7 +99,7 @@ Segundo Bonfante \cite{bonfante03}, o maior obstáculo encontrado pelos sistemas
 Assim, segundo Bonfante \cite{bonfante03}, para que o \emph{parser} pudesse fazer a atribuição procurada, ele precisaria de uma certa interpretação de significado que o ajudasse a fazer a escolha correta. No entanto, tais sistemas são totalmente desprovidos de quaisquer informações nesse sentido. Muitos acham que essa não é uma função do \emph{parser}, delegando tal responsabilidade a uma unidade especial de desambiguação. Os \emph{parsers} estatísticos utilizam medidas de probabilidades observadas em sentenças previamente analisadas como critério de desempate em prováveis ações de desambiguação. Portanto, para que funcione, é necessário que se tenha um conjunto bastante representativo de sentenças com suas respectivas árvores sintáticas. Desse modo, o \emph{parser} atribuirá probabilidades às possíveis análises de uma sentença, apresentando como resposta aquela de maior probabilidade, sendo isso feito em três passos: (1) encontra todas as possíveis análises; (2) atribui-lhes probabilidades, e (3) seleciona a de mais alta probabilidade.
 
 
-Um importante fator influenciador nas pesquisas no campo de PLN foi a disponibilização de grandes corpora (\emph{treebanks}) anotados usados para treino dos analisadores probabilísticos.
+Um importante fator influenciador nas pesquisas no campo de PLN foi a disponibilização de grandes \emph{corpora} (\emph{treebanks}) anotados usados para treino dos analisadores probabilísticos.
 
 \section{Problemas encontrados  na Gramática Livre de Contexto Probabilística}
 \label{sec:prob_encontrados}
@@ -208,7 +208,7 @@ Conforme os complementos são gerados, eles são removidos do conjunto de subcat
 \label{sub:modelo3}
 
 
-O Modelo 3, segundo Bonfante \cite{bonfante03}, é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-movement}\footnote{A modificação do modelo 3 não se mostra relevante e não é contemplada no \emph{parser} do Bikel, nem neste trabalho.}. Introduz parâmetros TRACES e Wh-Movement. Por exemplo, na frase "The store that IBM bought last week", o modelo usaria as regras para gerá-la:
+O Modelo 3, segundo Bonfante \cite{bonfante03}, é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-movement}\footnote{A modificação do modelo 3 não se mostra relevante e não é contemplada no \emph{parser} do Bikel, nem neste trabalho.}. Introduz parâmetros TRACES e Wh-Movement. Por exemplo, na frase ``\emph{The store that IBM bought last week}", o modelo usaria as regras para gerá-la:
 
 \begin{enumerate}
   \item $SN \rightarrow SN SBAR(+gap)$

@@ -12,9 +12,9 @@
 \contentsline {subsection}{\numberline {2.1.2}An\IeC {\'a}lise sint\IeC {\'a}tica ou \emph {Parsing}}{7}
 \contentsline {section}{\numberline {2.2}\emph {Corpus} Anotado}{9}
 \contentsline {subsection}{\numberline {2.2.1}Extens\IeC {\~a}o do \emph {Corpus}}{9}
-\contentsline {subsection}{\numberline {2.2.2}Corpus para processamento de linguagem natural}{11}
+\contentsline {subsection}{\numberline {2.2.2}\emph {Corpus} para processamento de linguagem natural}{11}
 \contentsline {subsubsection}{\numberline {2.2.2.1}Corpora da L\IeC {\'\i }ngua Inglesa}{11}
-\contentsline {subsubsection}{\numberline {2.2.2.2}Penn TreeBank}{11}
+\contentsline {subsubsection}{\numberline {2.2.2.2}\emph {Penn TreeBank}}{11}
 \contentsline {subsubsection}{\numberline {2.2.2.3}Corpora da L\IeC {\'\i }ngua Portuguesa}{12}
 \contentsline {subsubsection}{\numberline {2.2.2.4}Floresta Sint\IeC {\'a}tica (Projeto Linguateca)}{12}
 \contentsline {paragraph}{\numberline {2.2.2.4.1}Esquema de anota\IeC {\c c}\IeC {\~a}o}{15}
@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Trabalho de Benjamin Wing e Jason Baldridge}{23}
 \contentsline {subsubsection}{\numberline {2.4.1.1}Preparando o material de treino, adapta\IeC {\c c}\IeC {\~o}es no \emph {corpus}}{23}
 \contentsline {subsubsection}{\numberline {2.4.1.2}Experimentos}{24}
-\contentsline {subsection}{\numberline {2.4.2}Parsing probabil\IeC {\'\i }stico para o portugu\IeC {\^e}s do Brasil de Andr\IeC {\'e}ia Gentil Bonfante}{25}
+\contentsline {subsection}{\numberline {2.4.2}\emph {Parsing} probabil\IeC {\'\i }stico para o portugu\IeC {\^e}s do Brasil de Andr\IeC {\'e}ia Gentil Bonfante}{25}
 \contentsline {subsubsection}{\numberline {2.4.2.1}Experimentos}{26}
 \contentsline {chapter}{\numberline {3}Modelos Probabil\IeC {\'\i }sticos de Michael Collins}{27}
 \contentsline {section}{\numberline {3.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{27}
@@ -47,8 +47,7 @@
 \contentsline {subsection}{\numberline {4.3.3}Avalia\IeC {\c c}\IeC {\~a}o Quantitativa}{44}
 \contentsline {subsection}{\numberline {4.3.4}Dificuldades}{45}
 \contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais e trabalhos futuros}{46}
-\contentsline {section}{\numberline {5.1}Trabalhos futuros}{47}
-\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de parsing estat\IeC {\'\i }stico de Dan Bikel}{48}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} Ferramenta de \emph {parsing} estat\IeC {\'\i }stico de Dan Bikel}{48}
 \contentsline {section}{\numberline {A.1}Par\IeC {\^a}metros de utiliza\IeC {\c c}\IeC {\~a}o do \emph {parser} de Dan Bikel}{49}
 \contentsline {section}{\numberline {A.2}Formato do arquivo de par\IeC {\^a}metros}{51}
 \contentsline {section}{\numberline {A.3}Formato do arquivo de \emph {head-find rules}}{53}

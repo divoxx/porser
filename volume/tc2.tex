@@ -32,12 +32,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{resumo}
-Este trabalho descreve a construção de um análisador sintático (também conhecido pelo termo em inglês \emph{parser}) para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de \emph{corpus} anotado. 
+Este trabalho descreve a construção de um parser para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de corpus anotado. 
 Para este fim é utilizada a ferramenta de desenvolvimento construída por Dan Bikel para os modelos de Collins. 
 Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática.
-São descritos aqui aspectos fundamentais do desenvolvimento do \emph{parser} que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, algorítmos de pré- e pós-processamento do \emph{corpus}, e outras estratégias utilizadas buscando melhorar a acuidade do \emph{parser}. 
+São descritos aqui aspectos fundamentais do desenvolvimento do parser que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, algorítmos de pré- e pós-processamento do corpus, e outras estratégias utilizadas buscando melhorar a acuidade do parser. 
 O processo é inerentemente empírico. Utilizou-se uma metodologia incremental na busca de melhores configurações baseado em rigorosa avaliação quantitativa a cada passo seguindo os critérios de precisão e \emph{recall} de constituíntes rotulados do PARSEVAL. 
-Nossa melhor configuração tem precisão 72.08{\%}, \emph{recall} 71,51{\%} e \emph{F-Score} 71,79{\%}, que é superior aos resultados obtidos em trabalhos semelhantes da literatura. Resultados melhores foram obtidos durante testes com lematização, porém não podem ser computados como testes válidos, pois utilizam os lemas das palavras do próprio \emph{corpus}, estes resultados apenas servem como \emph{upper bound} para avaliar a utilização de lematização real.
+Nossa melhor configuração tem precisão 72.08{\%}, \emph{recall} 71,51{\%} e \emph{F-Score} 71,79{\%}, que é superior aos resultados obtidos em trabalhos semelhantes da literatura. Resultados melhores foram obtidos quando utilizados os lemas das palavras do próprio corpus, mas estes resultados apenas servem como \emph{upper bound} para avaliar a utilização de lematização real.
 
 \end{resumo}
 
@@ -94,7 +94,7 @@ Nossa melhor configuração tem precisão 72.08{\%}, \emph{recall} 71,51{\%} e \
 
 \appendix
 
-\chapter{Ferramenta de \emph{parsing} estatístico de Dan Bikel}
+\chapter{Ferramenta de parsing estatístico de Dan Bikel}
 \label{cha:dan_bikel1}
 	\input{tc1-parsing-bikel}
 

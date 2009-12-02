@@ -5,7 +5,7 @@
 	\end{center}
 \end{figure}
 
-A Figura \ref{fases} sumariza a insersão deste trabalho na área de processamento de linguagem natural. O parser desenvolvido para o português é um parser probabilístico que usa estatísticas derivadas de \emph{corpus} anotados sintaticamente para estimar os parâmetros do parser. No texto que segue abordamos alguns assuntos que fundamentam nosso trabalho.
+A Figura \ref{fases} sumariza a insersão deste trabalho na área de processamento de linguagem natural. O \emph{parser} desenvolvido para o português é um \emph{parser} probabilístico que usa estatísticas derivadas de \emph{corpus} anotados sintaticamente para estimar os parâmetros do \emph{parser}. No texto que segue abordamos alguns assuntos que fundamentam nosso trabalho.
 
 \section{Análise de Sentença} % (fold)
 \label{sec:analise_da_sentenca}
@@ -33,7 +33,7 @@ Esta fase é frequentemente chamada de \emph{part-of-speech tagging}, pois seu p
 
 Os algoritmos para etiquetagem fundamentam-se em dois modelos mais conhecidos: os baseados em regras e os estocásticos. Os algoritmos baseados em regras, como o nome diz, fazem uso de bases de regras para identificar a categoria de um certo item lexical. Neste caso, novas regras vão sendo integradas à base à medida que novas situações de uso do item vão sendo encontradas. Os algoritmos baseados em métodos estocásticos costumam resolver as ambiguidades através de um \emph{corpus} de treino, marcado corretamente (muitas vezes através de esforço manual), calculando a probabilidade que uma certa palavra ou item lexical terá de receber uma certa etiqueta em certo contexto. O etiquetador de Eric Brill \cite{brill95}, bastante conhecido na literatura, faz uso de uma combinação desses modelos.
 
-A escolha de um bom \emph{tagset} é fundamental para o sucesso de um \emph{parser}, embora não seja absolutamente claro como fazer este julgamento. Existem vários livros inteiros dedicados a este assunto \cite{abeille03} \cite{sardinha04}. Em linhas gerais, um bom \emph{tagset} para um \emph{parser} é aquele que possui uma boa caraterística de "equivalência distribucional" em termos sintáticos; isto é, palavras que ocorrem tipicamente nas mesmas posições nas sentenças têm mesmo POS, enquanto que as que têm características de distribuição diferentes na mesma sentença têm POS diferente. Na abordagem de Collins \cite{collins99} que usamos neste trabalho a etiquetagem é parte integrande no algorítmo de \emph{parser}.
+A escolha de um bom \emph{tagset} é fundamental para o sucesso de um \emph{parser}, embora não seja absolutamente claro como fazer este julgamento. Existem vários livros inteiros dedicados a este assunto \cite{abeille03} \cite{sardinha04}. Em linhas gerais, um bom \emph{tagset} para um \emph{parser} é aquele que possui uma boa caraterística de ``equivalência distribucional" em termos sintáticos; isto é, palavras que ocorrem tipicamente nas mesmas posições nas sentenças têm mesmo POS, enquanto que as que têm características de distribuição diferentes na mesma sentença têm POS diferente. Na abordagem de Collins \cite{collins99} que usamos neste trabalho a etiquetagem é parte integrande no algorítmo de \emph{parser}.
 
 O conjunto de tags (\emph{tagset}) utilizado nesse trabalho é definido em \cite{florestasintatica}
 
@@ -54,7 +54,7 @@ A tarefa de um \emph{parser} para a linguagem natural é construir a estrutura s
 	\end{center}
 \end{figure}
 
-Por exemplo, a frase "O João vendeu para Pedro o seu velho computador de mesa", seria anotada gramaticalmente da seguinte forma:
+Por exemplo, a frase ``O João vendeu para Pedro o seu velho computador de mesa", seria anotada gramaticalmente da seguinte forma:
 
 \begin{verbatim}
   (S
@@ -73,7 +73,7 @@ Por exemplo, a frase "O João vendeu para Pedro o seu velho computador de mesa",
 			
 A Figura \ref{tree} ilustra a mesma árvore em formato gráfico.
 
-O conjunto de rótulos sintáticos utilizados nas árvores sintáticas do parser que construímos para o português esta em \cite{florestasintatica}.
+O conjunto de rótulos sintáticos utilizados nas árvores sintáticas do \emph{parser} que construímos para o português esta em \cite{florestasintatica}.
 
 
 % subsection análise_sintática_ou_parsing (end)
@@ -105,7 +105,7 @@ Leech \cite{leech91} fala de 1 milhão de palavras com uma taxa usual (\emph{goi
    \small
 %%   \setlength{\arrayrulewidth}{2\arrayrulewidth}
 %%   \setlength{\belowcaptionskip}{10pt}
-   \caption{\it Tamanho de um Corpus.}
+   \caption{\it Tamanho de um \emph{Corpus}.}
 
    \begin{tabular}{| c | c |}
       \hline
@@ -142,7 +142,7 @@ Leech \cite{leech91} fala de 1 milhão de palavras com uma taxa usual (\emph{goi
 
 \newpage
 
-\subsection{Corpus para processamento de linguagem natural} % (fold)
+\subsection{\emph{Corpus} para processamento de linguagem natural} % (fold)
 \label{sub:corpus_pln}
 
 
@@ -161,25 +161,25 @@ A tabela \ref{tbl:corpora} lista alguns dos corpora anotados sintaticamente mais
 
    \begin{tabular}{ | p{5cm} | p{3cm} | p{3cm} | p{3cm} | }
       \hline
-        \textbf{Corpus} & \textbf{Lançamento, referência na literatura} & \textbf{Palavras}& \textbf{Composição}\\
+        \textbf{\emph{Corpus}} & \textbf{Lançamento, referência na literatura} & \textbf{Palavras}& \textbf{Composição}\\
         \hline
         \hline
-        Bank of English & 1987 \footnotemark[1] & 459 milhões & inglês britânico\\
+        \emph{Bank of English} & 1987 \footnotemark[1] & 459 milhões & inglês britânico\\
         \hline
-        Longman Writen American Corpus & 1997 & 100 milhões  & inglês americano, escrito ( jornais e livros )\\
+        \emph{Longman Writen American Corpus} & 1997 & 100 milhões  & inglês americano, escrito ( jornais e livros )\\
         \hline
-        DNC ( British National Corpus ) & 1995 & 100 milhões  & inglês britânico escrito e falado.\\
+        \emph{DNC ( British National Corpus )} & 1995 & 100 milhões  & inglês britânico escrito e falado.\\
         \hline
-        LLEC ( Longman-Lancaster English Language Corpus ) & 1988 & 30 milhões  & inglês de vários tipos , escrito e falado.\\
+        \emph{LLEC ( Longman-Lancaster English Language Corpus )} & 1988 & 30 milhões  & inglês de vários tipos , escrito e falado.\\
         \hline
-        CHILDES (Child Language Data Exchange) & 1990 & 20 milhões & inglês infantil, falado.\\
+        \emph{CHILDES (Child Language Data Exchange)} & 1990 & 20 milhões & inglês infantil, falado.\\
         \hline
-        The Penn TreeBank & 1989 & 10 milhões & inglês americano, escrito e falado.\\
+        \emph{The Penn TreeBank} & 1989 & 10 milhões & inglês americano, escrito e falado.\\
         \hline
-        Brown Corpus ( Brown University Standart Corpus of Present-day American English ) & 1964 & 1 milhão  & ingles americano, escrito\\
+        \emph{Brown Corpus ( Brown University Standart Corpus of Present-day American English )} & 1964 & 1 milhão  & ingles americano, escrito\\
         \hline
    \end{tabular}
-   \footnotemark[1]{Data refere-se ao Birmingham Corpus, do qual o Bank of English derivou}
+   \footnotemark[1]{Data refere-se ao Birmingham \emph{Corpus}, do qual o Bank of English derivou}
    \label{tbl:corpora}
 \end{table}
 
@@ -188,21 +188,21 @@ Existem outros corpora além dos acima elencados, que possuem um número menor d
 Brown, BNC e Bank of English. O \emph{corpus} Brown é um marco por razões óbvias: é o primeiro. O BNC é de destaque porque foi o primeiro a conter 100 milhões de palavras. Enquanto o Brown e o BNC são \emph{corpus} de amostragem, planejados e fechados, O Bank of English é um \emph{corpus} monitor, orgânico e em crescente expansão.
 
 
-\subsubsection{Penn TreeBank}
+\subsubsection{\emph{Penn TreeBank}}
 \label{sub:corpus_ingles_esquema_pen}
 
-O Penn TreeBank é um dos principais \emph{corpus} disponíveis, contem aproximadamente 7 milhões de palavras com anotação de POS, 3 milhões de palavras com ``esqueleto de parsing", mais de 2 milhões de palavras de texto anotado com informação predicado-argumento (\emph{predicate-argument structure}), e 1.6 milhões de palavras de transcrição de conversas. O material anotado possui diferentes origens e gêneros como manuais de computadores da IBM, anotações de enfermeiras, artigos do Wall Street Journal e transcrições de conversas telefônicas, entre outras.
+O \emph{Penn TreeBank} é um dos principais \emph{corpus} disponíveis, contem aproximadamente 7 milhões de palavras com anotação de POS, 3 milhões de palavras com ``esqueleto de \emph{parsing}", mais de 2 milhões de palavras de texto anotado com informação predicado-argumento (\emph{predicate-argument structure}), e 1.6 milhões de palavras de transcrição de conversas. O material anotado possui diferentes origens e gêneros como manuais de computadores da IBM, anotações de enfermeiras, artigos do Wall Street Journal e transcrições de conversas telefônicas, entre outras.
 
-A maioria das anotações do Penn Treebank consiste em anotação de POS, estrutura sintática e estrutura predicado-argumento dos textos escritos como os artigos do Wall Street Journal.
+A maioria das anotações do \emph{Penn Treebank} consiste em anotação de POS, estrutura sintática e estrutura predicado-argumento dos textos escritos como os artigos do Wall Street Journal.
 
-O conjunto de rótulos sintáticos e de POS (\emph{tagset}) usado no Penn Treebank, como muitos outros \emph{corpus}, foi baseado no Brown Corpus e é mostrado nas tabelas \ref{tbl:penn_treebank_pos} (Rótulos de Part-of-Speech) e \ref{tbl:penn_treebank_cats} (Rótulos de Categorias Sintáticas), contendo 36 tags de POS, 9 tags para pontuação e 17 tags para anotação sintática. Uma descrição detalhada do \emph{tagset} do Penn Treebank é encontrado no \emph{website} do projeto Penn Treebank em http://www.cis.upenn.edu/~treebank.
+O conjunto de rótulos sintáticos e de POS (\emph{tagset}) usado no \emph{Penn Treebank}, como muitos outros \emph{corpus}, foi baseado no \emph{Brown Corpus} e é mostrado nas tabelas \ref{tbl:penn_treebank_pos} (Rótulos de \emph{Part-of-Speech}) e \ref{tbl:penn_treebank_cats} (Rótulos de Categorias Sintáticas), contendo 36 tags de POS, 9 tags para pontuação e 17 tags para anotação sintática. Uma descrição detalhada do \emph{tagset} do \emph{Penn Treebank} é encontrado no \emph{website} do projeto \emph{Penn Treebank} em http://www.cis.upenn.edu/~treebank.
 
 \begin{table}
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Rótulos de Part-of-Speech do Penn Treebank.}
+   \caption{\it Rótulos de \emph{Part-of-Speech} do \emph{Penn Treebank}.}
 
    \begin{tabular}{| p{2cm} | p{4cm} | p{2cm} | p{4cm} |}
 
@@ -267,7 +267,7 @@ O conjunto de rótulos sintáticos e de POS (\emph{tagset}) usado no Penn Treeba
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Rótulos de Categorias Sintáticas do Penn Treebank.}
+   \caption{\it Rótulos de Categorias Sintáticas do \emph{Penn Treebank}.}
 
    \begin{tabular}{ | p{2cm} | p{4cm} | p{2cm} | p{4cm} |}
 
@@ -306,7 +306,7 @@ Na língua portuguesa, há alguns corpora eletrônicos de destaque. A tabela \re
 
     \begin{tabular}{ | p{5cm} | p{3cm} | p{3cm} | p{3cm} | }
       \hline
-        \textbf{Corpus} & \textbf{Palavras} & \textbf{Composição}& \textbf{Localização}\\
+        \textbf{\emph{Corpus}} & \textbf{Palavras} & \textbf{Composição}& \textbf{Localização}\\
         \hline
         \hline
 
@@ -314,15 +314,15 @@ Na língua portuguesa, há alguns corpora eletrônicos de destaque. A tabela \re
 
         \hline
 
-        CETEMPublico ( Corpus de extração de Textos eletrônicos MCT), (Floresta Sintática, Bosque) & 220 milhões & jornal português, ``público'' & Projeto Linguateca \\
+        CETEMPublico ( \emph{Corpus} de extração de Textos eletrônicos MCT), (Floresta Sintática, Bosque) & 220 milhões & jornal português, ``público'' & Projeto Linguateca \\
 
         \hline
 
-        Corpus UNESP/Araraquara/ Usos do português & 200 milhões & português brasileiro, escrito & UNESP / Araraquara \\
+        \emph{Corpus} UNESP/Araraquara/ Usos do português & 200 milhões & português brasileiro, escrito & UNESP / Araraquara \\
 
         \hline
 
-        CRPC( COrpus de referencia do português contemporâneo) & 152 milhões & português dos vários países lusófonos, com predominância da variedade européia & CLUL - Centro de lingüística da Universidade de Lisboa. \\
+        CRPC( \emph{Corpus} de referencia do português contemporâneo) & 152 milhões & português dos vários países lusófonos, com predominância da variedade européia & CLUL - Centro de lingüística da Universidade de Lisboa. \\
 
         \hline
 
@@ -357,7 +357,7 @@ Uma quantificação das etiquetas usadas no Bosque pode ser encontrada no anexo 
 
 \paragraph{Esquema de anotação}\label{par:corpus_bosque_esquema}\hspace*{1in}\\ \\
 
-A Floresta Sintática foi o corpus utilizado para desenvolver o parser aqui descrito, e portanto as árvores geradas pelo parser seguem o esquema de anotação da Floresta.
+A Floresta Sintática foi o \emph{corpus} utilizado para desenvolver o \emph{parser} aqui descrito, e portanto as árvores geradas pelo \emph{parser} seguem o esquema de anotação da Floresta.
 
 Na Floresta, a cada palavra são associadas etiquetas (ou rótulos) principais (de função e de forma) e secundárias. Estas etiquetas aparecem como FUNÇÃO:forma, aonde forma corresponde ao conceito de POS. Em ``a menina gulosa", por exemplo, temos:
 
@@ -379,7 +379,7 @@ Uma descrição detalhada do tagset da Floresta é encontrado no website do proj
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Tags de Part-of-Speech da Floresta Sintática.}
+   \caption{\it Tags de \emph{Part-of-Speech} da Floresta Sintática.}
 
     \begin{tabular}{ | p{3cm} | p{10cm} |}
       \hline
@@ -519,7 +519,7 @@ Estes corpora anotados representam recursos chave para o processamento do Portug
   \item  apoio à a experimentação de abordagens inovadoras em PLN multilingue, incluindo tradução automática estatística ou meta-anotação automática para a web semântica, etc...
 \end{itemize}
 
-Em um dado momento este chegou a ser o corpus escolhido para o desenvolvimento do parser. No decorrer do desenvolvimento do trabalho mudou-se para o corpus Floresta Sintática, que se encontra em estágio mais consolidado.
+Em um dado momento este chegou a ser o \emph{corpus} escolhido para o desenvolvimento do \emph{parser}. No decorrer do desenvolvimento do trabalho mudou-se para o \emph{corpus} Floresta Sintática, que se encontra em estágio mais consolidado.
 
 \paragraph{Esquema de anotação}\label{sub:semantic_anotacao}\hspace*{1in}\\
 
@@ -531,7 +531,7 @@ A tabela \ref{tbl:semantic_share_pos} mostra os rótulos de POS e a tabela \ref{
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
    %%\setlength{\belowcaptionskip}{10pt}
-   \caption{\it Tags de Part-of-Speech do projeto Semantic Share.}
+   \caption{\it Tags de \emph{Part-of-Speech} do projeto Semantic Share.}
 
     \begin{tabular}{ | p{3cm} | p{10cm} | }
       \hline
@@ -639,13 +639,13 @@ Uma visão geral do processo de \emph{parsing} estatístico pode ser observada n
 \item{Treino: Composto por sentenças que o sistema usa para aprender.} % (fold)
 \label{sub:treino}
 
-\item{Desenvolvimento (ou teste de desenvolvimento): Composto de sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do parser é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o parser ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. 
+\item{Desenvolvimento (ou teste de desenvolvimento): Composto de sentenças utilizadas para avaliar a qualidade do \emph{parser} obtidas a cada passo do desenvolvimento. Como o processo de sintonia do \emph{parser} é incremental e baseado em realimentação do \emph{corpus}, pode haver uma tendência de o \emph{parser} ser ajustado para se adaptar ao conjunto de sentenças submetidas aos testes. Como a análise também é qualitativa, o processo de realimentação para correção do \emph{parser} tem, fatalmente, um aspecto tendencioso. Ou seja, com o tempo, o \emph{corpus} de desenvolvimento perde a isenção para representar resultados confiáveis, pois o desenvolvedor acaba adaptando o \emph{parser} para corrigir especificamente os erros feitos naquelas sentenças. 
 
-Isto é conhecido como \emph{overfitting} \footnote{O conceito de \emph{overfitting} \cite{everitt2002cambridge} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a características muito específicas aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em conjunto de dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
+Isto é conhecido como \emph{overfitting}\footnote{O conceito de \emph{overfitting} \cite{everitt2002cambridge} é importante na aprendizagem de máquina. Geralmente, um algoritmo de aprendizagem é treinado utilizando algum conjunto de exemplos de treinamento, ou seja, situações exemplares para que a saída desejada seja acertada. Quem aprende assume como correto o que aprendeu para também ser capaz de acertar a saída correta para outros exemplos, generalizando-se a situações não apresentados durante o treinamento (baseado em seu viés indutivo). No entanto, especialmente nos casos em que a aprendizagem foi realizada muito tempo ou quando são raros exemplos de treinamento, quem aprende pode adaptar-se a características muito específicas aleatórias dos dados de treinamento, que não têm nenhuma relação causal para a função de destino. Este processo de adaptação também ocorre com relação ao conjunto de sentenças de teste e desenvolvimento se submetidos exaustivamente à análise. Neste processo de \emph{overfitting}, o desempenho nos exemplos de formação continua a aumentar, enquanto o desempenho em conjunto de dados invisível torna-se pior.}. Para mitigar este efeito usa-se um terceiro conjunto de sentenças somente analisadas ao final do processo.} 
 
 \label{sub:desenvolvimento_ou_teste_de_desenvolvimento_}
 
-\item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do parser. O objetivo é que a avaliação sobre este \emph{corpus} seja insenta, sem efeito de \emph{overfitting}.}
+\item{Teste final: É semelhante ao de desenvolvimento, porém não é usado para sintonia do \emph{parser}. O objetivo é que a avaliação sobre este \emph{corpus} seja insenta, sem efeito de \emph{overfitting}.}
 \label{sub:teste_final}
 \end{enumerate}
 
@@ -665,16 +665,16 @@ Conforme mencionado anteriormente, existem alguns trabalhos de construção de \
 \subsection{Trabalho de Benjamin Wing e Jason Baldridge} % (fold)
 \label{sec:wing_baldridge}
 
-Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um parser para o português. Assim como neste trabalho, foi utilizado como \emph{treebank} o Floresta Sintática com a ferramenta de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração de diversos parâmetros possíveis na utilização do parser, e em termos de composição do \emph{treebank}, foram feitas alterações nas estruturas e rótulos do \emph{treebank}.
+Wing e Baldridge apresentaram seus resultados em \cite{baldridge06}, do desenvolvimento de um \emph{parser} para o português. Assim como neste trabalho, foi utilizado como \emph{treebank} o Floresta Sintática com a ferramenta de Dan Bikel \cite{bikel02}. Foi desenvolvido um trabalho de exploração de diversos parâmetros possíveis na utilização do \emph{parser}, e em termos de composição do \emph{treebank}, foram feitas alterações nas estruturas e rótulos do \emph{treebank}.
 
-Suas métricas de desempenho utilizadas foram o PARSEVAL padrão \footnote{AS métricas do PARSEVAL para precisão e \emph{recall} de constituíntes rotulados também são descritos na seção \ref{cha:avaliacao_parceval}}, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
+Suas métricas de desempenho utilizadas foram o PARSEVAL padrão\footnote{AS métricas do PARSEVAL para precisão e \emph{recall} de constituíntes rotulados também são descritos na seção \ref{cha:avaliacao_parceval}}, que também utilizamos nesse trabalho, e análise de dependência não rotulada. Para a análise de dependência no entanto foi necessário um trabalho \emph{ad-hoc} de tranformação do \emph{corpus} para criação de um \emph{corpus} com as relações de dependência.
 
-Fazendo mudanças simples nos dados e na parametrização do parser de Bikel, incluindo sensibilidade morfológica ao português, mostraram sensível melhora do desempenho atingindo 63,2{\%} de \emph{F-Score} em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
+Fazendo mudanças simples nos dados e na parametrização do \emph{parser} de Bikel, incluindo sensibilidade morfológica ao português, mostraram sensível melhora do desempenho atingindo 63,2{\%} de \emph{F-Score} em sua melhor configuração. Em capítulo posterior reportaremos nossos resultados sensivelmente superiores a este.
 
 \subsubsection{Preparando o material de treino, adaptações no \emph{corpus}} % (fold)
 \label{sec:wing_baldridge_adapt_corpus}
 
-Ao usar o Floresta Sintática para treino da ferramenta, Wing e Baldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB). Para este trabalho também tivemos que fazer tal conversão uma vez que o parser de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. 
+Ao usar o Floresta Sintática para treino da ferramenta, Wing e Baldridge fizeram uma conversão do formato nativo para o formato PennTreebank (PTB). Para este trabalho também tivemos que fazer tal conversão uma vez que o \emph{parser} de Dan Bikel espera como entrada arquivos nesse formato. Foram feitas modificações também quando a pontuação para que esta seja melhor interpretada pelo parser em formato PTB, por exemplo '.', '?' e '!' foram marcadas como '.'. 
 
 Em principio a informação de núcleo (\emph{head}) dos sintagmas geralmente marcada explicitamente no \emph{corpus} Floresta Sintática, seria de grande ajuda no processo. O PTB não contempla essa informação. Normalmente os analisadores baseados em núcleos dos sintagmas usam regras heurísticas para inferir os núcleos durante a análise. Wing e Baldridge utilizaram-se de marcação disponível no Floresta. No entanto, como nem todos os sintagma possuem a informação de núcleo, Wing e Baldridge, ainda assim tiveram que utilizar regras heurísticas para resolver as omissões casos em que discordaram da informação constante no \emph{corpus}. Em nosso trabalhos optamos por ignorar a marcação fornecida no \emph{corpus} e parametrizar o mecanismo disponibilizado pela ferramenta de Bikel para definir o núcleo dos sintagmas.
 
@@ -688,11 +688,11 @@ Wing e Baldridge reportaram o uso de uma série de filtros para lidar com a riqu
 \subsubsection{Experimentos} % (fold)
 \label{sec:wing_baldridge_experimentos}
 
-Wing e Baldridge trabalharam com três diferentes configurações de dados e parser para experimentar o parser proposto, que variam quanto ao esforço na alteração do \emph{treebank} Floresta que foi utilizado como base.
+Wing e Baldridge trabalharam com três diferentes configurações de dados e \emph{parser} para experimentar o \emph{parser} proposto, que variam quanto ao esforço na alteração do \emph{treebank} Floresta que foi utilizado como base.
 
 A primeira configuração de testes leva em consideração o \emph{corpus} Floresta sem alteração e as configurações padrão da ferramenta de Bikel para o inglês. A segunda configuração leva em consideração o \emph{corpus} Floresta sem alteração mas utilizando o pacote de configuração para o português que eles construiram. O terceiro experimento utilizou o Floresta com alterações nas suas anotações e o pacote para o português.
 
-O primeiro representa uma abordagem mais preguiçosa, ou seja não faça nada que não seja garantir que as árvores geradas possam ser analisadas pelo parser. O segundo faz o analisador de reconhecimento da linguagem, aplicando as regras definidas para o português e as configurações ajustadas. O terceiro e último experimento envolve mudar as próprias árvores do \emph{corpus} fornecendo para o parser mais informação para o processo de análise.
+O primeiro representa uma abordagem mais preguiçosa, ou seja não faça nada que não seja garantir que as árvores geradas possam ser analisadas pelo \emph{parser}. O segundo faz o analisador de reconhecimento da linguagem, aplicando as regras definidas para o português e as configurações ajustadas. O terceiro e último experimento envolve mudar as próprias árvores do \emph{corpus} fornecendo para o \emph{parser} mais informação para o processo de análise.
 
 Para estes experimentos foi criado um conjunto de 7497 sentenças, dessas 1877 para testes e as restantes para treino.
 
@@ -700,7 +700,7 @@ O cálculo \emph{F-score} para o primeiro experimento foi de 38.06{\%}, para o s
 
 Os desempenhos com relação a configuração básica tiveram grande melhora, simplesmente inserindo o pacote de parâmetros para português ao invés de utilizar o padrão inglês, em particular, as regras de inferência do núcleo dos sintagmas. Ao se adaptar um analisador como o de Bikel par auma nova linguagem vale claramente a pena colocar um mínimo de esforço para se definir um cojunto de regras de inferência do núcleo dos sintagmas razoável (head-find rules).
 
-\subsection{Parsing probabilístico para o português do Brasil de Andréia Gentil Bonfante} % (fold)
+\subsection{\emph{Parsing} probabilístico para o português do Brasil de Andréia Gentil Bonfante} % (fold)
 \label{sec:bonfante}
 
 Bonfante em sua tese \cite{bonfante03}, faz uma investigação de métodos estatísticos quando utilizados para analisar sentenças da língua portuguesa do Brasil, implementando o método de modelo gerativo de Michael Collins \cite{collins99}. Como resultado apresenta uma ferramenta para processamento de linguagem natural, PAPO, formada por vários módulos que executam 3 funções básicas: o pré-processamento e a preparação dos dados do conjunto de sentenças usadas no treino; a geração de dois modelos probabilísticos de análise (PAPO I e PAPO II); e um \emph{parser} propriamente dito que usa um dos modelos gerados e produz as árvores sintáticas mais prováveis para uma sentença.
@@ -718,7 +718,7 @@ Além do filtro de regras foi preciso criar o filtro de núcleos de sentenças, 
 \subsubsection{Experimentos} % (fold)
 \label{sec:bonfante_experimentos}
 
-Para avaliar quantitativamente sua ferramenta Bonfante utilizou 23 sentenças absolutamente inéditas no sentido de não terem sido observadas no treebank utilizado para treino. Antes de serem processadas pelo seu parser de acordo com seus modelos de análise, estas sentenças foram anotadas morfossintaticamente com as TAGS do treebank.
+Para avaliar quantitativamente sua ferramenta Bonfante utilizou 23 sentenças absolutamente inéditas no sentido de não terem sido observadas no treebank utilizado para treino. Antes de serem processadas pelo seu \emph{parser} de acordo com seus modelos de análise, estas sentenças foram anotadas morfossintaticamente com as TAGS do treebank.
 
 Para cada sentença configurou-se a ferramenta para que obtivesse no máximo as dez análises mais prováveis encontradas. Caso sua ferramenta não terminasse a análise de uma sentença no prazo máximo de cinco minutos, considera-o sem solução.
 

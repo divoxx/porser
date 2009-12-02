@@ -1,24 +1,14 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.10.27)  1 DEC 2009 17:16
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  1 DEC 2009 21:34
 entering extended mode
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**tc1.tex
-(./tc1.tex
-LaTeX2e <2005/12/01>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
-abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
-h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
-tin, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, r
-omanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turki
-sh, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(./abnt.cls
+**\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
+(/home/administrador/Desktop/porser/volume/tc1.tex
+(/home/administrador/Desktop/porser/volume/abnt.cls
 Document Class: abnt 2002/11/27 versao 1.1 patch 1 da Classe LaTeX2e ABNT
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/calc.sty
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
 Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count79
 \calc@Bcount=\count80
@@ -31,7 +21,7 @@ LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count81
 \calc@Cskip=\skip43
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/multicol.sty
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
 Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \c@tracingmulticols=\count82
 \mult@box=\box26
@@ -78,9 +68,9 @@ Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/report.cls
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/size12.clo
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
 File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count90
@@ -96,7 +86,7 @@ File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip47
 \bibindent=\dimen112
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/setspace/setspace.sty
+(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
 Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 
 Package: `setspace' 6.7 <2000/12/01>
@@ -105,22 +95,22 @@ Package: `setspace' 6.7 <2000/12/01>
 \ABNTsignwidth=\skip49
 \ABNTsignthickness=\skip50
 \ABNTsignskip=\skip51
- (/usr/local/texlive/2008/texmf-dist/tex/latex/tools/indentfirst.sty
+ (/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2006/05/05 v1.1b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def
 File: utf8.def 2006/03/30 v1.1i UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encodingT1
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2006/03/30 v1.1i UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -270,7 +260,7 @@ File: t1enc.dfu 2006/03/30 v1.1i UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encodingOT1
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2006/03/30 v1.1i UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -301,7 +291,7 @@ File: ot1enc.dfu 2006/03/30 v1.1i UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encodingOMS
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2006/03/30 v1.1i UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -325,10 +315,10 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2002/01/22 v2.2d
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2001/10/25 v2.2f
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -336,24 +326,24 @@ Package: amsfonts 2001/10/25 v2.2f
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen113
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen114
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count99
@@ -394,26 +384,26 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2008/07/06 v3.8l The Babel package
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2005/11/23 v3.8h The Babel package
 
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/portuges.ldf
-Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+(/usr/share/texmf-texlive/tex/generic/babel/portuges.ldf
+Language: portuges 2005/03/31 v1.2p Portuguese support from the babel system
 
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2008/07/06 v3.8l Babel common definitions
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2005/11/23 v3.8h Babel common definitions
 \babel@savecnt=\count111
 \U@D=\dimen122
 )
 Package babel Info: Making " an active character on input line 145.
 )
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/portuges.ldf
-Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+(/usr/share/texmf-texlive/tex/generic/babel/portuges.ldf
+Language: portuges 2005/03/31 v1.2p Portuguese support from the babel system
 \l@brazil = a dialect from \language\l@portuges 
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/boxedminipage.sty)
-(/usr/local/texlive/2008/texmf-dist/tex/latex/listings/listings.sty
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/boxedminipage.sty)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks22
 )
@@ -428,68 +418,73 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \lst@width=\dimen125
 \lst@newlines=\count116
 \lst@lineno=\count117
+\c@lstlisting=\count118
 \lst@maxwidth=\dimen126
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count118
-\lst@skipnumbers=\count119
+(/usr/share/texmf-texlive/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
 \lst@framebox=\box55
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2004/09/05 1.3 listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+Package: listings 2004/10/17 1.3b (Carsten Heinz)
 
-(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2007/12/12 v1.6 Provides the ifpdf switch (HO)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2006/02/20 v1.4 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/longtable.sty
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip55
 \LTright=\skip56
 \LTpre=\skip57
 \LTpost=\skip58
-\LTchunksize=\count120
+\LTchunksize=\count121
 \LTcapwidth=\dimen127
 \LT@head=\box56
 \LT@firsthead=\box57
 \LT@foot=\box58
 \LT@lastfoot=\box59
-\LT@cols=\count121
-\LT@rows=\count122
-\c@LT@tables=\count123
-\c@LT@chunks=\count124
+\LT@cols=\count122
+\LT@rows=\count123
+\c@LT@tables=\count124
+\c@LT@chunks=\count125
 \LT@p@ftn=\toks24
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/url.sty
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/lscape.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2008/texmf/tex/latex/config/graphics.cfg
+(/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 90.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2008/09/08 v0.04l Graphics/color for pdfTeX
-\Gread@gobject=\count125
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count126
 )))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen128
 \Gin@req@width=\dimen129
-) (./tc1.aux)
+)
+(/home/administrador/Desktop/porser/volume/tc1.aux)
 \openout1 = `tc1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -504,8 +499,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
-\c@lstlisting=\count126
- (/usr/local/texlive/2008/texmf-dist/tex/context/base/supp-pdf.tex
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
 \scratchdimen=\dimen130
@@ -517,15 +512,15 @@ LaTeX Font Info:    ... okay on input line 24.
 \MPscratchDim=\dimen131
 \MPnumerator=\count131
 \everyMPtoPDFconversion=\toks26
-) (./tc1-capa.tex
+) (/home/administrador/Desktop/porser/volume/tc1-capa.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
 <./Figuras/puc.jpg, id=1, 62.48344pt x 81.30376pt>
@@ -535,29 +530,31 @@ File: ./Figuras/puc.jpg Graphic file (type jpg)
 File: ./Figuras/facin.jpg Graphic file (type jpg)
  <use ./Figuras/facin.jpg>) [1
 
-{/usr/local/texlive/2008/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Figur
-as/puc.jpg> <./Figuras/facin.jpg>] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figuras/puc.jpg> <./Figu
+ras/facin.jpg>] [2
 
 
-] (./tc1.toc [3
+] (/home/administrador/Desktop/porser/volume/tc1.toc
+[3
 
 ] [4] [5])
 \tf@toc=\write3
 \openout3 = `tc1.toc'.
 
- [6]
-(./tc1.lof)
+ [6] (/home/administrador/Desktop/porser/volume/tc1.lof)
 \tf@lof=\write4
 \openout4 = `tc1.lof'.
 
  [7
 
 
-] (./tc1.lot)
+]
+(/home/administrador/Desktop/porser/volume/tc1.lot)
 \tf@lot=\write5
 \openout5 = `tc1.lot'.
 
- (./tc1-abreviaturas.tex [8
+
+(/home/administrador/Desktop/porser/volume/tc1-abreviaturas.tex [8
 
 ]
 Overfull \hbox (36.4553pt too wide) in alignment at lines 5--12
@@ -568,18 +565,20 @@ Overfull \hbox (36.4553pt too wide) in alignment at lines 5--12
 
 ]
 Cap\'{\i }tulo 1.
-(./tc1-introducao.tex [1
+(/home/administrador/Desktop/porser/volume/tc1-introducao.tex [1
 
-]) (./tc1-motivacao.tex [2]) (./tc1-objetivos.tex
+])
+(/home/administrador/Desktop/porser/volume/tc1-motivacao.tex [2])
+(/home/administrador/Desktop/porser/volume/tc1-objetivos.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
 ) [3]
-(./tc1-organizacao.tex)
+(/home/administrador/Desktop/porser/volume/tc1-organizacao.tex)
 Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--74
 []\OT1/cmr/m/n/12 Este tra-ba-lho est^^Sa or-ga-ni-zado em cinco cap^^S^^Ptulos
 . Ini-ci-al-mente neste pri-meiro cap^^S^^Ptulo,
@@ -587,15 +586,15 @@ Overfull \hbox (0.70663pt too wide) in paragraph at lines 1--74
 
 [4]
 Cap\'{\i }tulo 2.
-(./tc1-referencial-teorico.tex <fases.pdf, id=52, 460.72125pt x 450.68375pt>
+(/home/administrador/Desktop/porser/volume/tc1-referencial-teorico.tex
+<fases.pdf, id=53, 460.72125pt x 450.68375pt>
 File: fases.pdf Graphic file (type pdf)
+ <use fases.pdf> [5
 
-<use fases.pdf> [5
-
-] [6 <./fases.pdf>]
-<tree.pdf, id=132, 765.86125pt x 365.365pt>
+] [6 </home/administrador/Desktop/porser/volume/fases.pdf>]
+<tree.pdf, id=133, 765.86125pt x 365.365pt>
 File: tree.pdf Graphic file (type pdf)
- <use tree.pdf> [7] [8 <./tree.pdf>]
+ <use tree.pdf> [7] [8 </home/administrador/Desktop/porser/volume/tree.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
@@ -611,8 +610,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--164
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 169--169
-[]\OT1/cmr/m/n/10.95 Longman Wri-ten Ame-ri-can
+Underfull \hbox (badness 3343) in paragraph at lines 169--169
+[]\OT1/cmr/m/it/10.95 Longman Wri-ten Ame-ri-can
  []
 
 
@@ -621,18 +620,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 175--175
-[]\OT1/cmr/m/n/10.95 CHILDES (Child Lan-guage
+Underfull \hbox (badness 1038) in paragraph at lines 173--173
+[]\OT1/cmr/m/it/10.95 LLEC ( Longman-Lancaster
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 179--179
-\OT1/cmr/m/n/10.95 ver-sity Stan-dart Cor-pus of
+Underfull \hbox (badness 3713) in paragraph at lines 175--175
+[]\OT1/cmr/m/it/10.95 CHILDES (Child Lan-guage
  []
 
 
-Underfull \hbox (badness 7362) in paragraph at lines 179--179
-\OT1/cmr/m/n/10.95 Present-day Ame-ri-can En-
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+[]\OT1/cmr/m/it/10.95 Brown Cor-pus ( Brown
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 179--179
+\OT1/cmr/m/it/10.95 Uni-ver-sity Stan-dart Cor-pus
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+\OT1/cmr/m/it/10.95 of Present-day Ame-ri-can
  []
 
 [11]
@@ -787,13 +796,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
-[18] [19] [20] <parser_schema.pdf, id=198, 696.6025pt x 534.99875pt>
+[18] [19] [20] <parser_schema.pdf, id=201, 696.6025pt x 534.99875pt>
 File: parser_schema.pdf Graphic file (type pdf)
 
-<use parser_schema.pdf> [21 <./parser_schema.pdf>] [22] [23] [24]
-Overfull \hbox (13.05708pt too wide) in paragraph at lines 703--703
-[]\OT1/cmr/bx/n/14.4 Parsing pro-ba-bil^^S^^Pstico para o por-tugu^es do Bra-si
-l de Andr^^Seia
+<use parser_schema.pdf> [21 </home/administrador/Desktop/porser/volume/parser_s
+chema.pdf>] [22] [23] [24]
+Overfull \hbox (17.69826pt too wide) in paragraph at lines 703--703
+[]\OT1/cmr/bx/it/14.4 Parsing \OT1/cmr/bx/n/14.4 pro-ba-bil^^S^^Pstico para o p
+or-tugu^es do Bra-sil de Andr^^Seia
  []
 
 
@@ -804,7 +814,7 @@ tu-guesa do Bra-sil, im-ple-men-tando o m^^Setodo
 
 [25]) [26]
 Cap\'{\i }tulo 3.
-(./tc1-collins.tex
+(/home/administrador/Desktop/porser/volume/tc1-collins.tex
 Overfull \hbox (10.74171pt too wide) in paragraph at lines 8--9
 []\OT1/cmr/m/n/12 Segundo Col-lins [[]], o uso de t^^Secnicas es-tat^^S^^Pstica
 s para o apren-di-zado de gram^^Saticas
@@ -817,9 +827,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--72
 
  []
 
-[29] <ambig.jpg, id=413, 496.85625pt x 471.26062pt>
+[29] <ambig.jpg, id=416, 496.85625pt x 471.26062pt>
 File: ambig.jpg Graphic file (type jpg)
- <use ambig.jpg> [30 <./ambig.jpg>] [31] [32] [33] [34]
+ <use ambig.jpg> [30 </home/administrador/Desktop/porser/volume/ambig.jpg>] [31
+] [32] [33] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
@@ -831,10 +842,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
 [35]) [36]
 Cap\'{\i }tulo 4.
-(./tc1-result-obtidos.tex (./tc1-metodologia.tex [37
+(/home/administrador/Desktop/porser/volume/tc1-result-obtidos.tex
+(/home/administrador/Desktop/porser/volume/tc1-metodologia.tex [37
 
 ]) [38]
-(./tc1-avaliacao.tex
+(/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
@@ -854,26 +866,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
-) [40] [41] (./tc1-experimentos.tex [42] [43]
-Overfull \hbox (12.99036pt too wide) in paragraph at lines 87--101
+) [40] [41] (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex
+[42] [43]
+Overfull \hbox (12.99036pt too wide) in paragraph at lines 80--94
  [] 
  []
 
-[44] <score_confusion_cat.pdf, id=462, 711.71394pt x 223.12473pt>
+[44] <score_confusion_cat.pdf, id=465, 711.71394pt x 223.12473pt>
 File: score_confusion_cat.pdf Graphic file (type pdf)
 
 <use score_confusion_cat.pdf>
-Overfull \hbox (7.36447pt too wide) in paragraph at lines 124--125
+Overfull \hbox (7.36447pt too wide) in paragraph at lines 117--118
  [] 
  []
 
-) [45 <./score_confusion_cat.pdf>])
+) [45 </home/administrador/Desktop/porser/volume/score_confusion_cat.pdf>])
 Cap\'{\i }tulo 5.
-(./tc1-consideracoes-finais.tex [46
+(/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex
+[46
 
 ]) [47]
 Apendice A.
-(./tc1-parsing-bikel.tex [48
+(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [48
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -974,9 +988,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 [51] [52]) [53]
 Apendice B.
 
-(./apendice_b/2009.11.19_20.59.13-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories-remove_verb_subcategories--headfind-standard.t
-ex
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_20.59.13-remov
+e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
+_verb_subcategories--headfind-standard.tex
 Overfull \hbox (161.01474pt too wide) in paragraph at lines 55--55
 []\OT1/cmtt/m/n/8 ((ADJP (l NNS) (l QP) (l NN) (l $) (l ADVP) (l JJ) (l VBN) (l
  VBG) (l ADJP) (l JJR) (l NP) (l JJS) (l DT) (l FW) (l RBR) (l RBS) (l SBAR) (l
@@ -992,30 +1006,35 @@ l $) (l CD) (l QP) (l PRP) (l VBG) (l JJ) (l JJS) (l JJR) (l ADJP) (l FW))[]
 [54
 
 ] [55])
-(./apendice_b/2009.11.19_21.01.19-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories-remove_verb_subcategories--headfind-left.tex
-[56] [57] [58])
-(./apendice_b/2009.11.19_21.02.34-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories-remove_verb_subcategories--headfind-right.tex
-[59] [60])
-(./apendice_b/2009.11.19_21.03.53-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories-remove_verb_subcategories--headfind-pt.tex
-[61] [62])
-(./apendice_b/2009.11.19_21.05.31-remove_conj_subcategories-remove_noun_subcate
-gories-remove_pron_subcategories.tex [63] [64] [65])
-(./apendice_b/2009.11.19_21.09.51-remove_conj_subcategories-remove_pron_subcate
-gories.tex [66] [67])
-(./apendice_b/2009.11.19_21.10.45-remove_noun_subcategories-remove_pron_subcate
-gories.tex [68] [69] [70])
-(./apendice_b/2009.11.19_21.11.19-remove_conj_subcategories-remove_noun_subcate
-gories.tex [71] [72]) (./apendice_b/2009.11.19_21.11.39-unchanged.tex [73]
-[74]) (./apendice_b/2009.11.23_11.16.16-lematize_all.tex [75] [76] [77])
-(./apendice_b/2009.11.23_11.16.35-lematize_all_and_append_category.tex [78]
-[79])
-(./apendice_b/2009.11.23_11.17.20-lematize_all_and_append_category_only_to_verb
-.tex [80] [81])
-(./apendice_b/2009.11.23_11.17.37-lematize_all_and_append_category_only_to_verb
-_using_tree_tagger.tex [82] [83] [84]) (./tc1.bbl [85]
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.01.19-remov
+e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
+_verb_subcategories--headfind-left.tex [56] [57] [58])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.02.34-remov
+e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
+_verb_subcategories--headfind-right.tex [59] [60])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.03.53-remov
+e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
+_verb_subcategories--headfind-pt.tex [61] [62])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.05.31-remov
+e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories.tex
+[63] [64] [65])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.09.51-remov
+e_conj_subcategories-remove_pron_subcategories.tex [66] [67])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.10.45-remov
+e_noun_subcategories-remove_pron_subcategories.tex [68] [69] [70])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.11.19-remov
+e_conj_subcategories-remove_noun_subcategories.tex [71] [72])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.11.39-uncha
+nged.tex [73] [74])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.16.16-lemat
+ize_all.tex [75] [76] [77])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.16.35-lemat
+ize_all_and_append_category.tex [78] [79])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.17.20-lemat
+ize_all_and_append_category_only_to_verb.tex [80] [81])
+(/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.17.37-lemat
+ize_all_and_append_category_only_to_verb_using_tree_tagger.tex [82] [83]
+[84]) (/home/administrador/Desktop/porser/volume/tc1.bbl [85]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
@@ -1034,44 +1053,37 @@ sint^^Satica\OT1/cmr/m/n/12 . 2009.
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[88] (./tc1.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[88] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
- 4697 strings out of 493876
- 66132 string characters out of 1150567
- 142225 words of memory out of 3000000
- 7780 multiletter control sequences out of 10000+50000
- 24586 words of font info for 90 fonts, out of 3000000 for 5000
- 714 hyphenation exceptions out of 8191
- 28i,15n,32p,1361b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx10.pfb></usr/l
-ocal/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pfb></usr/local/texl
-ive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx8.pfb></usr/local/texlive/2008/t
-exmf-dist/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/local/texlive/2008/texmf-di
-st/fonts/type1/bluesky/cm/cmex10.pfb></usr/local/texlive/2008/texmf-dist/fonts/
-type1/bluesky/cm/cmmi12.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/blu
-esky/cm/cmmi6.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cm
-mi8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></
-usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/
-texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr17.pfb></usr/local/texlive/20
-08/texmf-dist/fonts/type1/bluesky/cm/cmr6.pfb></usr/local/texlive/2008/texmf-di
-st/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2008/texmf-dist/fonts/ty
-pe1/bluesky/cm/cmr8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky
-/cm/cmss12.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmsy1
-0.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmsy8.pfb></us
-r/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/t
-exlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmti12.pfb></usr/local/texlive/20
-08/texmf-dist/fonts/type1/bluesky/cm/cmti8.pfb></usr/local/texlive/2008/texmf-d
-ist/fonts/type1/bluesky/cm/cmtt10.pfb></usr/local/texlive/2008/texmf-dist/fonts
-/type1/bluesky/cm/cmtt12.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bl
-uesky/cm/cmtt8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/public/cmex/
-fmex8.pfb>
-Output written on tc1.pdf (97 pages, 649207 bytes).
+ 4658 strings out of 94074
+ 67529 string characters out of 1165153
+ 132385 words of memory out of 1500000
+ 7749 multiletter control sequences out of 10000+50000
+ 25650 words of font info for 93 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 29i,15n,32p,1425b,342s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/share/texmf-tex
+live/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bl
+uesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx8.pfb>
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type
+1/bluesky/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi6.
+pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texm
+f-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type
+1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr17.p
+fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf-
+texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/b
+luesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmss12.pfb>
+</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-t
+exlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/b
+luesky/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti12.pf
+b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-
+texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1
+/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8.p
+fb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.pfb>
+Output written on tc1.pdf (97 pages, 655386 bytes).
 PDF statistics:
- 700 PDF objects out of 1000 (max. 8388607)
+ 704 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
