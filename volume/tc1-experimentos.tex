@@ -97,6 +97,20 @@ Para os experimentos realizados nesse trabalho, foi utilizado o lematizadorde pa
 
 A lematização dos verbos principalmente torna-se importante porque o português é uma língua morfologicamente rica, onde um verbo pode aparecer em dezenas de formas,diferentemente do inglês.
 
+Para verificar que os ajustes feitos não sofreram influência de \emph{overfitting}, efetuamos o último experimento sobre o \emph{corpus} de teste que não inclui as sentenças de treino nem de desenvolvimento. Os resultados foram:
+
+\begin{center}
+   \footnotesize
+	\begin{tabular}{|p{7cm}|c|c|c|c|}
+		\hline
+		\textbf{Experimento} &  \textbf{\emph{Tagging Accuracy}} & \textbf{Precisão} & \textbf{\emph{Recall}} & \textbf{\emph{F-Score}} \\
+		\hline
+		Lemas com categoria de V usando TreeTagger sob corpus de testes & 93.35 & 71.51 & 71.25 & 71.38\\
+		\hline		
+	\end{tabular}
+	\label{tab:experimento_corpus_teste}
+\end{center}
+
 \subsection{Avaliação Quantitativa}
 
 Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{gold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos parseados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).

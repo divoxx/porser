@@ -1,4 +1,6 @@
 namespace :experiments do
+  what = ENV['WHAT'] || 'dev'
+  
   def ask_experiment_path(multiple = false)
     experiments_file_list = CLI::Components::FileList.new(Porser.path.join('corpus', 'experiments'), :title => "Available experiments", :question => "Choose the experiment to train", :only_folder => true, :multiple => multiple)
     experiments_file_list.ask or puts "No experiment selected, aborting" && exit(1)
@@ -40,9 +42,9 @@ namespace :experiments do
   task :parse do
     experiment = Experiment.new(ask_experiment_path)
     puts "Parsing..."
-    experiment.parse!(:dev)
+    experiment.parse!(what)
     puts "Done."
-    exec("less #{experiment.log_path_for(:parse, :dev)}")
+    exec("less #{experiment.log_path_for(:parse, what)}")
   end
   
   file 'vendor/scorer/evalb' => 'vendor/scorer/evalb.c' do |t|
@@ -53,27 +55,27 @@ namespace :experiments do
   task :score => 'vendor/scorer/evalb' do
     experiment = Experiment.new(ask_experiment_path)
     puts "Scoring..."
-    experiment.score!(:dev)
+    experiment.score!(what)
     puts "Done."
-    exec("less #{experiment.score_path_for(:dev)}")
+    exec("less #{experiment.score_path_for(what)}")
   end
   
   desc "Run the quantitative scoring process for an experiment"
   task :score_confusion do
     experiment = Experiment.new(ask_experiment_path)
     puts "Building confusion matrices..."
-    experiment.score_confusion!(:dev)
+    experiment.score_confusion!(what)
     puts "Done."
-    exec("less #{experiment.score_confusion_path_for(:dev)}")
+    exec("less #{experiment.score_confusion_path_for(what)}")
   end
   
   desc "Generate the LaTeX documentation for the experiment"
   task :doc do
     experiments = ask_experiment_path(true).map { |p| Experiment.new(p) }
     puts "Documenting..."
-    experiments.each { |e| e.document!(:dev) }
+    experiments.each { |e| e.document!(what) }
     puts "Done."
-    exec("less #{experiment.documentation_path_for(:dev)}")
+    exec("less #{experiment.documentation_path_for(what)}")
   end
   
   desc "Run the whole process for many experiments"
@@ -90,25 +92,25 @@ namespace :experiments do
       
       $stdout.print " * Parsing..."
       $stdout.flush
-      experiment.parse!(:dev)
+      experiment.parse!(what)
       $stdout.puts "Done."
       $stdout.flush
       
       $stdout.print " * Scoring..."
       $stdout.flush
-      experiment.score!(:dev)
+      experiment.score!(what)
       $stdout.puts "Done."
       $stdout.flush
       
       $stdout.print " * Building confusion matrices..."
       $stdout.flush
-      experiment.score_confusion!(:dev)
+      experiment.score_confusion!(what)
       $stdout.puts "Done."
       $stdout.flush
       
       $stdout.print " * Generating LaTeX documentation..."
       $stdout.flush
-      experiment.document!(:dev)
+      experiment.document!(what)
       $stdout.puts "Done."
       $stdout.flush
     end
