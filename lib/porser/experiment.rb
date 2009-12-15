@@ -33,7 +33,7 @@ module Porser
     end
     
     def train!(what = :train, heap_size = 1000)
-      cmd = "rm -f #{observed_path} #{objects_path} && "
+      cmd = "rm -f \"#{observed_path}\" \"#{objects_path}\" && "
       cmd << "/usr/bin/env java"
       cmd << " -Xms#{heap_size}\\m -Xmx#{heap_size}\\m"
       cmd << " -cp \"#{Porser.java_classpath}:#{@path}\""
@@ -41,8 +41,8 @@ module Porser
       cmd << " -Dparser.settingsDir=\"#{@path}\""
       cmd << " -Dparser.settingsFile=\"#{settings_path.check!}\""
       cmd << " danbikel.parser.Trainer"
-      cmd << " -i #{gold_path_for(what).check!} -o #{observed_path} -od #{objects_path}"
-      cmd << " > #{log_path_for(:train, what)} 2>&1"
+      cmd << " -i \"#{gold_path_for(what).check!}\" -o \"#{observed_path}\" -od \"#{objects_path}\""
+      cmd << " > \"#{log_path_for(:train, what)}\" 2>&1"
       `#{cmd}`
     ensure
       `rm -rf #{Porser.path.join('*.prune-log')}`
@@ -56,17 +56,17 @@ module Porser
       cmd << " -Dparser.settingsDir=\"#{@path}\""
       cmd << " -Dparser.settingsFile=\"#{settings_path.check!}\""
       cmd << " danbikel.parser.Parser"
-      cmd << " -is #{objects_path} -sa #{parseable_path_for(what)}"
-      cmd << " > #{log_path_for(:parse, what)} 2>&1"
+      cmd << " -is \"#{objects_path}\" -sa \"#{parseable_path_for(what)}\""
+      cmd << " > \"#{log_path_for(:parse, what)}\" 2>&1"
       `#{cmd}`
     end
     
     def create_scorable_file(what = :dev)
-      `/usr/bin/env java -Xms200m -Xmx200m -cp \"#{Porser.java_classpath}:#{@path}\" danbikel.parser.util.AddFakePos #{gold_path_for(what)} #{parsed_path_for(what)} 2> #{log_path_for(:score, what)} | iconv -f ISO-8859-1 -t UTF-8 > #{scorable_file_for(what)}`
+      `/usr/bin/env java -Xms200m -Xmx200m -cp \"#{Porser.java_classpath}:#{@path}\" danbikel.parser.util.AddFakePos \"#{gold_path_for(what)}\" \"#{parsed_path_for(what)}\" 2> \"#{log_path_for(:score, what)}\" | iconv -f ISO-8859-1 -t UTF-8 > \"#{scorable_file_for(what)}\"`
     end
     
     def score!(what = :dev)
-      cmd = " ./vendor/scorer/evalb -p vendor/scorer/BIKEL.prm #{gold_path_for(what)} #{parsed_path_for(what)} > #{score_path_for(what)} 2>&1"
+      cmd = " ./vendor/scorer/evalb -p vendor/scorer/BIKEL.prm \"#{gold_path_for(what)}\" \"#{parsed_path_for(what)}\" > \"#{score_path_for(what)}\" 2>&1"
       `#{cmd}`
     end
     

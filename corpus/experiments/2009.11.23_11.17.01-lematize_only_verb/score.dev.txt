@@ -1,0 +1,1 @@
+Can't open gold file (/Users/rodrigo/Documents/Puc/TC/porser/corpus/experiments/2009.11.23_11.17.01-lematize_only_verb/corpus.dev.gold.txt)

@@ -53,11 +53,13 @@ namespace :experiments do
   
   desc "Run the scoring process for an experiment"
   task :score => 'vendor/scorer/evalb' do
-    experiment = Experiment.new(ask_experiment_path)
-    puts "Scoring..."
-    experiment.score!(what)
-    puts "Done."
-    exec("less #{experiment.score_path_for(what)}")
+    ask_experiment_path(true).each do |e| 
+      experiment = Experiment.new(e)
+      puts "Scoring... #{e}"
+      experiment.score!(what)
+      puts "Done."
+    end
+    # exec("less #{experiment.score_path_for(what)}")
   end
   
   desc "Run the quantitative scoring process for an experiment"

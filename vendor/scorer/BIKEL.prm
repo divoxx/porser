@@ -54,6 +54,7 @@ DELETE_LABEL .
 DELETE_LABEL NON_ALPHABETIC
 DELETE_LABEL NON_ALPHABETIC_NUMERICAL
 DELETE_LABEL NON_ALPHABETIC_PUNCTUATION
+DELETE_LABEL S
 
 ##------------------------------------------##
 ## Delete labels for length calculation     ##
