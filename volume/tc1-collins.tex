@@ -1,7 +1,7 @@
 \section{Gramática Livre de Contexto Probabilística}
 \label{sec:pcfg}
 
-Para descrever os modelos  probabilísticos  de \emph{parsing} de Michael Collins antes precisamos entender um pouco Gramática Livre de Contexto Probabilística (PCFG - \emph{Probabilistic context-free grammar}).
+Para descrever os modelos  probabilísticos  de \emph{parsing} de Michael Collins antes precisamos entender um pouco de Gramática Livre de Contexto Probabilística (PCFG - \emph{Probabilistic context-free grammar}).
 
 PCFGs são uma extensão das gramáticas livres de contexto, só que existe uma probabilidade associada a cada regra de substituição.
 
@@ -11,7 +11,7 @@ Segundo Bonfante \cite{bonfante03}, as gramáticas probabilísticas têm muitas 
 
 A ambiguidade é o maior problema na análise de sentenças. Uma gramática probabilística oferece solução para este problema, escolhendo a interpretação mais provável no momento da análise.
 
-Vamos exemplificar: Na frase ``vi o homem no monte com os binóculos", Supondo a gramática parcial,
+Vamos exemplificar: na frase ``vi o homem no monte com os binóculos", supondo a gramática parcial,
 
 \begin{enumerate}
   \item $ S \rightarrow S \  SP^1 \ |\ SV $
@@ -31,7 +31,7 @@ Vamos exemplificar: Na frase ``vi o homem no monte com os binóculos", Supondo a
 
 Existe grande quantidade de árvores geradas, pois seria possível relacionar \emph{os binóculos} com \emph{no monte} com vários núcleos de sintagma como argumento ou modificador.
 
-O caso anterior é genuinamente ambíguo (ambiguidade semântica), mas há muitos casos de ambiguidade que se devem apenas à gramática em si, ou seja,leitores percebem apenas uma interpretação.
+O caso anterior é genuinamente ambíguo (ambiguidade semântica), mas há muitos casos de ambiguidade que se devem apenas à gramática em si, ou seja, leitores percebem apenas uma interpretação.
 
 Portanto, temos um problema quanto a descobrir qual a árvore de análise correta. Como solução poderíamos deixar que as situações de ambigüidade sejam resolvidas pela análise semântica, usar regras de desambiguação manuais ou usar modelos probabilísticos para atribuir probabilidades às diferentes árvores.
 
@@ -87,7 +87,7 @@ Consegue-se deste modo associar probabilidades às regras e construir uma gramá
 
 Segundo Manning e Sch{\"u}tze \cite{manning99}, o aprendizado estatístico se insere num contexto cuja linha de pesquisa é chamada de empírica, uma vez que se baseia em exemplos já prontos e aprende como lidar com aqueles ainda não vistos. A linha empiricista, que entre as décadas de 60 e 80 ficou nas sombras de crenças racionalistas encabeçadas por Chomsky (1965), cujo reflexo dentro da Inteligência Artificial caracterizava-se pela criação de sistemas inteligentes com grande quantidade de conhecimento inicial codificado à mão, ressurgiu na década de 90, com a idéia de que o conhecimento pode ser induzido a partir de algumas operações básicas de associação e generalização. Assim, segundo o empiricismo, uma máquina poderia aprender a estrutura de uma linguagem apenas observando uma grande quantidade de exemplos, usando procedimentos estatísticos gerais e métodos de associação e generalização indutiva, como aprendizado indutivo de regras.
 
-Segundo Bonfante \cite{bonfante03}, o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambiguidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença ``A menina viu o menino de binóculo", a atribuição dos sintagmas sintáticos pode mudar a interpretação que se faz da frase. Duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
+Segundo Bonfante \cite{bonfante03}, o maior obstáculo encontrado pelos sistemas automáticos de \emph{parsing} (\emph{parsers}) surge quando estes se deparam com sentenças que possuem algum tipo de ambiguidade sintática, ou seja, sentenças com duas ou mais árvores possíveis. Por exemplo, na sentença ``A menina viu o menino de binóculo", a atribuição dos \emph{TAGS} sintáticos pode mudar a interpretação que se faz da frase. Duas árvores de representação são possíveis para a mesma sentença, nas quais, de acordo com a estrutura da primeira, a menina é que estava de binóculo e observou o menino, e na segunda, a menina observou o menino que estava de binóculo conforme ilustrado na Figura \ref{ambiguidade}. Nesses casos, é necessário que o \emph{parser} opte por uma delas, e que, de preferência, seja a que se esteja buscando.
 
 \begin{figure}
 	\begin{center}
@@ -125,11 +125,14 @@ Segundo Collins \cite{collins99}, existem pelo menos duas razões para o desenvo
 \section{Modelos de Michael Collins}
 \label{sec:modelos_collins}
 
+\begin{quote}
+\footnotesize
 Segundo Bonfante \cite{bonfante03}, Michael Collins propõe um modelo baseado em dependências lexicais entre bigramas. Este modelo usa informações lexicais para modelar relações núcleo-modificador. Também introduz um conceito de distância nesse modelo baseado em dependências entre bigramas. Segundo ele, a distância é uma variável crucial quando se decide se duas palavras estão relacionadas.
+\end{quote}
 
 Após isso, Collins \cite{collins97} propõe três novos modelos gerativos de \emph{parsing}, que usam uma nova abordagem para melhorar o modelo de bigramas, todos eles baseados na noção \emph{head-centering}, em que o núcleo é o elemento principal e direcionador de todo o processo de geração de uma árvore sintática.
 
-Collins define uma probabilidade conjunta P(AS; S) sobre pares árvore-sentença. Ele usa um modelo baseado no histórico de análise: uma árvore sintática é representada como uma seqüência de decisões, a partir de uma derivação \emph{top-down} e centrada no núcleo da árvore sintática. Segundo o autor, a representação da árvore sintática dessa forma permite que suposições de independência sejam feitas, levando a parâmetros condicionados a núcleos lexicais: parâmetros de projeção do núcleo, subcategorização, colocação de complemento/adjunto, dependência, distância, ente outros parâmetros.
+Collins define uma probabilidade conjunta P(AS; S) sobre pares árvore-sentença. Ele usa um modelo baseado no histórico de análise: uma árvore sintática é representada como uma seqüência de decisões, a partir de uma derivação \emph{top-down} e centrada no núcleo da árvore sintática. Segundo o autor, a representação da árvore sintática dessa forma permite que suposições de independência sejam feitas, levando a parâmetros condicionados a núcleos lexicais: parâmetros de projeção do núcleo, subcategorização, colocação de complemento/adjunto, dependência, distância, entre outros parâmetros.
 
 A seguir é apresentado cada um dos modelos. O Modelo 2 representa uma evolução em relação ao Modelo 1; e o Modelo 3, em relação ao Modelo 2.
 

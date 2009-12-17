@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {2.1}An\IeC {\'a}lise de Senten\IeC {\c c}a}{5}
 \contentsline {subsection}{\numberline {2.1.1}An\IeC {\'a}lise morfol\IeC {\'o}gica ou \emph {Part-of-Speech Tagging}}{5}
 \contentsline {subsection}{\numberline {2.1.2}An\IeC {\'a}lise sint\IeC {\'a}tica ou \emph {Parsing}}{7}
-\contentsline {section}{\numberline {2.2}\emph {Corpus} Anotado}{9}
+\contentsline {section}{\numberline {2.2}\emph {Corpus} Anotado}{8}
 \contentsline {subsection}{\numberline {2.2.1}Extens\IeC {\~a}o do \emph {Corpus}}{9}
 \contentsline {subsection}{\numberline {2.2.2}\emph {Corpus} para processamento de linguagem natural}{11}
 \contentsline {subsubsection}{\numberline {2.2.2.1}Corpora da L\IeC {\'\i }ngua Inglesa}{11}
@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {3.6.2}Modelo 2}{35}
 \contentsline {subsection}{\numberline {3.6.3}Modelo 3}{36}
 \contentsline {chapter}{\numberline {4}Experimentos e resultados obtidos}{37}
-\contentsline {section}{\numberline {4.1}Metodologia}{37}
+\contentsline {section}{\numberline {4.1}M\IeC {\'e}todo}{37}
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}todo de avalia\IeC {\c c}\IeC {\~a}o}{38}
 \contentsline {section}{\numberline {4.3}Descri\IeC {\c c}\IeC {\~a}o dos experimentos e resultados}{40}
 \contentsline {subsection}{\numberline {4.3.1}Experimentos iniciais}{40}

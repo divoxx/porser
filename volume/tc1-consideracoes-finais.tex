@@ -1,21 +1,21 @@
 Segundo Bonfante \cite{bonfante03}, para que um \emph{parser} tenha robustez e precisão satisfatória, é necessário ter como base uma gramática complexa que consiga abranger grande parte das variedades sintáticas existentes. Métodos de aprendizado de máquina podem ser utilizados para obtençâo de gramática a partir de grandes conjuntos de sentenças analisadas (treebanks). 
 
-Acreditamos que o uso do Floresta Sintática como treebank alimentador do processo foi um grande facilitador, pois é um corpus ja estabelecido e bastante revisado, com isso, abrangente o suficiente para o propósito de implementação de um \emph{parser} probabilístico baseado em \emph{corpus} anotado.
+Acreditamos que o uso do Floresta Sintática como treebank alimentador do processo foi um grande facilitador, pois é um \emph{corpus} já estabelecido e bastante revisado, com isso, abrangente o suficiente para o propósito de implementação de um \emph{parser} probabilístico baseado em \emph{corpus} anotado.
 
 Também a escolha de um bom \emph{tagset} é fundamental para o sucesso de um \emph{parser}. Um bom \emph{tagset} para um \emph{parser} é aquele que possui uma boa caraterística de ``equivalência distribucional" em termos sintáticos; isto é, palavras que ocorrem tipicamente nas mesmas posições nas sentenças têm mesmo POS, enquanto que as que têm características de distribuição diferentes na mesma sentença têm POS diferente. 
 
-Do ponto de vista experimental, obtivemos resultados de treinamento razoáveis, cuja qualidade parece bastante dependente de uma anotação bem feita. 
+%Do ponto de vista experimental, obtivemos resultados de treinamento razoáveis em comparação com o trabalho de Wing e Baldridge, cuja qualidade parece bastante dependente de uma anotação bem feita. 
 
-Mostramos também que a ferramenta Dan Bikel pode ser facilmente adaptada para o Português, e que a precisão do \emph{parser}
+Mostramos também que a ferramenta de Dan Bikel pode ser facilmente adaptada para o Português, e que a precisão do \emph{parser}
 pode ser melhorada significativamente com algumas modificações relativamente simples na configuração dos seu parâmetros.
 
 O \emph{Parser} de Bikel, além de permitir emular os modelos de Collins, também possibilita diferentes parametrizações quanto a algoritmos utilizados, implementação de regras de \emph{head-find} e geração de árvores sintáticas, por exemplo. Ajustes nos parâmetros influenciam fortemente na performance do parser no momento de análise das sentenças, o tempo no processo de \emph{parsing} pode aumentar significativamente, uma vez que pode ser possível parametrizar o quão profunda a análise pode chegar no sentido de geração de árvores sintáticas possíveis geradas para cada sentença submetida para análise, já estes mesmos parâmetros de configurações permitem que o tempo de análise das sentenças seja menor, ou seja, o processo acelera, menos árvores sintáticas de representação são geradas, e assim a qualidade do resultado pode diminuir.
 
-Percebemos claramente a implementação do modelo baseados na noção \emph{head-centering}, em que o núcleo é o elemento principal e direcionador de todo o processo de geração de uma árvore sintática, que se mostrou evidente durante o processo de ajuste das regras de \emph{head-find} nos primeiros experimentos, a medida que eram incrementalmente melhoradas as regras de escolha do núcleo dos sintagmas, os resultados melhoravam.
+Percebemos claramente a implementação do modelo baseados na noção \emph{head-centering}, em que o núcleo é o elemento principal e direcionador de todo o processo de geração de uma árvore sintática, que se mostrou evidente durante o processo de ajuste das regras de \emph{head-find} nos primeiros experimentos, à medida que eram incrementalmente melhoradas as regras de escolha do núcleo dos sintagmas, os resultados melhoravam.
 
 Outro fator de grande influência no incremento dos resultados foi a utilização de lematização das palavras do corpus, mais especificamente dos verbos, experimento este não abordado pelos trabalhos anteriores na literatura, acreditamos que a lematização contribuiu no processo de aprendizado do \emph{parser}, melhorando significativamente os resultados.
 
-Muito mais pode ser feito para melhorar o \emph{parser}, como trabalho futuro, pensamos que uma análise de um ponto de vista estrutural das regras implementadas por Bikel em sua ferramenta, pois percebemos que existem algumas regras, provavelmente de otimização, que estão \emph{hard coded} no código fonte que são dependentes do corpus utilizado originalmente (Penn TreeBank). 
+Muito mais pode ser feito para melhorar o \emph{parser}. Como trabalho futuro, pensamos em uma análise de um ponto de vista estrutural das regras implementadas por Bikel em sua ferramenta, pois percebemos que existem algumas regras, provavelmente de otimização, que estão \emph{hard coded} no código fonte que são dependentes do corpus utilizado originalmente (Penn TreeBank). 
 
 Também achamos que uma atenção quanto a ajustes nos parâmetros que o \emph{parser} necessita para tratar as palavras desconhecidas podem levar a melhor ganho na performace.
 
