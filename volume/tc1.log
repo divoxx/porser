@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  17 DEC 2009 22:25
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.2)  17 DEC 2009 22:54
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/administrador/Desktop/porser/volume/tc1.tex"}
@@ -826,20 +826,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--72
 [30] <ambig.jpg, id=419, 496.85625pt x 471.26062pt>
 File: ambig.jpg Graphic file (type jpg)
  <use ambig.jpg> [31 </home/administrador/Desktop/porser/volume/ambig.jpg>] [32
-] [33] [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
 
-[36]) [37]
+[35]) [36]
 Cap\'{\i }tulo 4.
 (/home/administrador/Desktop/porser/volume/tc1-result-obtidos.tex
-(/home/administrador/Desktop/porser/volume/tc1-metodo.tex [38
+(/home/administrador/Desktop/porser/volume/tc1-metodo.tex [37
 
 ])
 (/home/administrador/Desktop/porser/volume/tc1-avaliacao.tex
@@ -857,23 +857,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-[39]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 53--56
 
  []
 
-[40]) (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex [41]
-[42]
+[39]) (/home/administrador/Desktop/porser/volume/tc1-experimentos.tex [40]
+[41]
 Overfull \hbox (12.99036pt too wide) in paragraph at lines 87--101
  [][] 
  []
 
-[43]
+[42]
 Overfull \hbox (5.9371pt too wide) in paragraph at lines 113--121
  [][] 
  []
 
-[44] <score_confusion_cat.pdf, id=465, 711.71394pt x 223.12473pt>
+[43] <score_confusion_cat.pdf, id=465, 711.71394pt x 223.12473pt>
 File: score_confusion_cat.pdf Graphic file (type pdf)
 
 <use score_confusion_cat.pdf>
@@ -881,14 +881,14 @@ Overfull \hbox (7.36447pt too wide) in paragraph at lines 133--134
  [] 
  []
 
-)) [45 </home/administrador/Desktop/porser/volume/score_confusion_cat.pdf>]
+)) [44 </home/administrador/Desktop/porser/volume/score_confusion_cat.pdf>]
 Cap\'{\i }tulo 5.
 (/home/administrador/Desktop/porser/volume/tc1-consideracoes-finais.tex
-[46
+[45
 
-]) [47]
+]) [46]
 Apendice A.
-(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [48
+(/home/administrador/Desktop/porser/volume/tc1-parsing-bikel.tex [47
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -910,7 +910,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-[49]
+[48]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 62--63
 [][] 
  []
@@ -961,7 +961,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[50]
+[49]
 Overfull \hbox (19.91684pt too wide) in paragraph at lines 110--111
 [][] 
  []
@@ -986,7 +986,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[51] [52]) [53]
+[50] [51]) [52]
 Apendice B.
 
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_20.59.13-remov
@@ -1004,40 +1004,40 @@ Overfull \hbox (118.51413pt too wide) in paragraph at lines 55--55
 l $) (l CD) (l QP) (l PRP) (l VBG) (l JJ) (l JJS) (l JJR) (l ADJP) (l FW))[] 
  []
 
-[54
+[53
 
-] [55])
+] [54])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.01.19-remov
 e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
-_verb_subcategories--headfind-left.tex [56] [57] [58])
+_verb_subcategories--headfind-left.tex [55] [56] [57])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.02.34-remov
 e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
-_verb_subcategories--headfind-right.tex [59] [60])
+_verb_subcategories--headfind-right.tex [58] [59])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.03.53-remov
 e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories-remove
-_verb_subcategories--headfind-pt.tex [61] [62])
+_verb_subcategories--headfind-pt.tex [60] [61])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.05.31-remov
 e_conj_subcategories-remove_noun_subcategories-remove_pron_subcategories.tex
-[63] [64] [65])
+[62] [63] [64])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.09.51-remov
-e_conj_subcategories-remove_pron_subcategories.tex [66] [67])
+e_conj_subcategories-remove_pron_subcategories.tex [65] [66])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.10.45-remov
-e_noun_subcategories-remove_pron_subcategories.tex [68] [69] [70])
+e_noun_subcategories-remove_pron_subcategories.tex [67] [68] [69])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.11.19-remov
-e_conj_subcategories-remove_noun_subcategories.tex [71] [72])
+e_conj_subcategories-remove_noun_subcategories.tex [70] [71])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.19_21.11.39-uncha
-nged.tex [73] [74])
+nged.tex [72] [73])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.16.16-lemat
-ize_all.tex [75] [76] [77])
+ize_all.tex [74] [75] [76])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.16.35-lemat
-ize_all_and_append_category.tex [78] [79])
+ize_all_and_append_category.tex [77] [78])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.17.20-lemat
-ize_all_and_append_category_only_to_verb.tex [80] [81])
+ize_all_and_append_category_only_to_verb.tex [79] [80])
 (/home/administrador/Desktop/porser/volume/apendice_b/2009.11.23_11.17.37-lemat
-ize_all_and_append_category_only_to_verb_using_tree_tagger.tex [82] [83]
-[84]) [85]
+ize_all_and_append_category_only_to_verb_using_tree_tagger.tex [81] [82]
+[83]) [84]
 Apendice C.
-(/home/administrador/Desktop/porser/volume/tc1-ferramenta.tex [86
+(/home/administrador/Desktop/porser/volume/tc1-ferramenta.tex [85
 
 ]
 Overfull \hbox (29.26285pt too wide) in paragraph at lines 45--45
@@ -1051,7 +1051,7 @@ Overfull \hbox (37.76297pt too wide) in paragraph at lines 45--45
 , possui l^^Sogica de execu^^Xc~ao de todas etapas do experimento.[] 
  []
 
-[87]
+[86]
 Overfull \hbox (50.51315pt too wide) in paragraph at lines 89--89
 []    \OT1/cmtt/m/n/8 remove_noun_subcategories-remove_pron_subcategories-lemat
 ize_all_and_append_category_only_to_verb_using_tree_tagger[] 
@@ -1063,13 +1063,13 @@ Overfull \hbox (16.51266pt too wide) in paragraph at lines 115--115
 to analisado corrigido para an^^Salise de performance[] 
  []
 
-[88]) (/home/administrador/Desktop/porser/volume/tc1.bbl [89]
+[87]) (/home/administrador/Desktop/porser/volume/tc1.bbl [88]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 Branco, Ant^^Sonio. \OT1/cmr/bx/n/12 Se-man-tic share pro-jec
 t\OT1/cmr/m/n/12 . 2009.
  []
 
-[90
+[89
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 64--68
@@ -1077,7 +1077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--68
 ml ([]Ultimo
  []
 
-[91]
+[90]
 Underfull \hbox (badness 2932) in paragraph at lines 119--124
 \OT1/cmr/bx/n/12 of-speech and lemma in-for-ma-tion\OT1/cmr/m/n/12 . Uni-ver-si
 ty of Stutt-gart, 2009.
@@ -1100,7 +1100,7 @@ sint^^Satica\OT1/cmr/m/n/12 . 2009.
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[92] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
+[91] (/home/administrador/Desktop/porser/volume/tc1.aux) ) 
 Here is how much of TeX's memory you used:
  4739 strings out of 94074
  68697 string characters out of 1165153
@@ -1115,23 +1115,25 @@ uesky/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx8.pfb>
 </usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/share/texmf
 -texlive/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type
 1/bluesky/cm/cmitt10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi1
-2.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/te
-xmf-texlive/fonts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr12
-.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr17.pfb></usr/share/tex
-mf-texlive/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type
-1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr8.pfb
-></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmss12.pfb></usr/share/texmf-
-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
-/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.p
-fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti12.pfb></usr/share/texm
-f-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type
-1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt12
-.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/cmex/fmex8.pfb>
-Output written on tc1.pdf (101 pages, 672685 bytes).
+0.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/t
+exmf-texlive/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/t
+ype1/bluesky/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi
+8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/bluesky/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr6.
+pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/
+bluesky/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.p
+fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1
+/bluesky/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti12.
+pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texm
+f-texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8
+.pfb></usr/share/texmf-texlive/fonts/type1/public/cmex/fmex8.pfb>
+Output written on tc1.pdf (100 pages, 684334 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
+ 729 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -125,21 +125,27 @@ Segundo Collins \cite{collins99}, existem pelo menos duas razões para o desenvo
 \section{Modelos de Michael Collins}
 \label{sec:modelos_collins}
 
-\begin{quote}
+%``''
+
+\begin{quotation}
 \footnotesize
-Segundo Bonfante \cite{bonfante03}, Michael Collins propõe um modelo baseado em dependências lexicais entre bigramas. Este modelo usa informações lexicais para modelar relações núcleo-modificador. Também introduz um conceito de distância nesse modelo baseado em dependências entre bigramas. Segundo ele, a distância é uma variável crucial quando se decide se duas palavras estão relacionadas.
-\end{quote}
+``Segundo Bonfante (\cite{bonfante03}, p. 45), Michael Collins propõe um modelo baseado em dependências lexicais entre bigramas. Este modelo usa informações lexicais para modelar relações núcleo-modificador. Também introduz um conceito de distância nesse modelo baseado em dependências entre bigramas. Segundo ele, a distância é uma variável crucial quando se decide se duas palavras estão relacionadas.
 
 Após isso, Collins \cite{collins97} propõe três novos modelos gerativos de \emph{parsing}, que usam uma nova abordagem para melhorar o modelo de bigramas, todos eles baseados na noção \emph{head-centering}, em que o núcleo é o elemento principal e direcionador de todo o processo de geração de uma árvore sintática.
 
 Collins define uma probabilidade conjunta P(AS; S) sobre pares árvore-sentença. Ele usa um modelo baseado no histórico de análise: uma árvore sintática é representada como uma seqüência de decisões, a partir de uma derivação \emph{top-down} e centrada no núcleo da árvore sintática. Segundo o autor, a representação da árvore sintática dessa forma permite que suposições de independência sejam feitas, levando a parâmetros condicionados a núcleos lexicais: parâmetros de projeção do núcleo, subcategorização, colocação de complemento/adjunto, dependência, distância, entre outros parâmetros.
 
-A seguir é apresentado cada um dos modelos. O Modelo 2 representa uma evolução em relação ao Modelo 1; e o Modelo 3, em relação ao Modelo 2.
+A seguir é apresentado cada um dos modelos. O Modelo 2 representa uma evolução em relação ao Modelo 1; e o Modelo 3, em relação ao Modelo 2.''
+\end{quotation}
 
 \subsection{Modelo 1}
 \label{sub:modelo1}
 
-Segundo Bonfante \cite{bonfante03}, este modelo apresenta uma proposta de como estender uma Gramática Livre de Contexto Probabilística (PCFG) para uma gramática lexicalizada (que considera itens lexicais). O Modelo 1 tem ainda parâmetros que correspondem a dependências entre pares de núcleos; a distância também é incorporada como uma medida, generalizando o modelo para uma abordagem baseada na história da análise.
+%``''
+
+\begin{quotation}
+\footnotesize
+``Segundo Bonfante (\cite{bonfante03}, p. 53), este modelo apresenta uma proposta de como estender uma Gramática Livre de Contexto Probabilística (PCFG) para uma gramática lexicalizada (que considera itens lexicais). O Modelo 1 tem ainda parâmetros que correspondem a dependências entre pares de núcleos; a distância também é incorporada como uma medida, generalizando o modelo para uma abordagem baseada na história da análise.
 
 A geração do lado direito da regra é quebrada em uma seqüência de pequenos passos. Cada regra passa a ter a forma:
 
@@ -172,12 +178,15 @@ $$P_{dir}(D_j(pd_j)|E_1(pe_1)...E_{n+1}(pe_{n+1}),D_1(pd_1)...D_{j-1}(pd_{j-1}),
 $$P_{dir}(D_j(pd_j)|Pai(nuc),NUC)$$
 
 A geração de um lado direito de um regra, dado o lado esquerdo, é então feita em
-três passos, sucessivamente, até que toda a árvore seja construída: (1) gera-se o núcleo (NUC); (2) geram-se modificadores à esquerda (E) e (3) geram-se modificadores à direita (D).
+três passos, sucessivamente, até que toda a árvore seja construída: (1) gera-se o núcleo (NUC); (2) geram-se modificadores à esquerda (E) e (3) geram-se modificadores à direita (D).''
+\end{quotation}
 
 \subsubsection{Adicionando Distância}
 \label{sub:distancia}
 
-Segundo Bonfante \cite{bonfante03}, Michael Collins também adiciona distância a esse modelo. Essa adição é importante para capturar preferências relacionadas a modificação à direita (por exemplo, \emph{right pp attachment}) por estruturas de ligação à direita (que quase sempre traduz a preferência por dependências entre palavras adjacentes) e a preferência por dependências que não cruzam um verbo. A distância pode ser incorporada adicionando uma quantidade de dependência entre os modificadores.
+\begin{quotation}
+\footnotesize
+``Segundo Bonfante (\cite{bonfante03}, p. 55), Michael Collins também adiciona distância a esse modelo. Essa adição é importante para capturar preferências relacionadas a modificação à direita (por exemplo, \emph{right pp attachment}) por estruturas de ligação à direita (que quase sempre traduz a preferência por dependências entre palavras adjacentes) e a preferência por dependências que não cruzam um verbo. A distância pode ser incorporada adicionando uma quantidade de dependência entre os modificadores.
 
 $$P_{esq}(E_i(pe_i)|Pai,NUC, nuc,E_1(pe_1)...E_{i-1}(pe_{i - 1}) = $$
 $$P_{esq}(E_i(pe_i)|NUC, Pai, nuc, distancia_{esq}(i - 1))$$
@@ -186,12 +195,15 @@ $$P_{dir}(D_i(pd_i)|Pai,NUC, nuc,D_1(pd_1)...D_{i-1}(pd_{i - 1}) = $$
 $$P_{dir}(D_i(pd_i)-NUC, Pai, nuc, distancia_{dir}(i - 1))$$
 \\
 
-A distância é um vetor contendo duas informações: adjacência (que permite aprender preferências associadas a modificadores à direita) e existência de um verbo entre eles (que permite aprender a preferência pela modificação do verbo mais recente).
+A distância é um vetor contendo duas informações: adjacência (que permite aprender preferências associadas a modificadores à direita) e existência de um verbo entre eles (que permite aprender a preferência pela modificação do verbo mais recente).''
+\end{quotation}
 
 \subsection{Modelo 2}
 \label{sub:modelo2}
 
-Segundo Bonfante \cite{bonfante03}, este modelo proposto por Collins, introduz a distinção entre complemento/adjunto. Os complementos  são acrescidos do sufixo ``C''. Assim, o modelo é estendido para fazer essa distinção e também para ter parâmetros que correspondam diretamente a distribuições de probabilidade sobre subcategorizações para núcleos.
+\begin{quotation}
+\footnotesize
+``Segundo Bonfante (\cite{bonfante03}, p. 56), este modelo proposto por Collins, introduz a distinção entre complemento/adjunto. Os complementos  são acrescidos do sufixo ``C''. Assim, o modelo é estendido para fazer essa distinção e também para ter parâmetros que correspondam diretamente a distribuições de probabilidade sobre subcategorizações para núcleos.
 O processo gerativo passa então a incluir escolha probabilística de subcategorização à esquerda ou à direita:
 
 \begin{enumerate}
@@ -205,13 +217,15 @@ $P_{dir}(D_i(pd_i)|NUC, Pai, nuc, distancia_{dir}(i - 1),D - C)$
 
 \end{enumerate}
 
-Conforme os complementos são gerados, eles são removidos do conjunto de subcategorização (SUBCAT) apropriado. A probabilidade de gerar o símbolo STOP é 1 quando SUBCAT estiver vazio, e a probabilidade de gerar um complemento será 0 quando ela não estiver no SUBCAT.
+Conforme os complementos são gerados, eles são removidos do conjunto de subcategorização (SUBCAT) apropriado. A probabilidade de gerar o símbolo STOP é 1 quando SUBCAT estiver vazio, e a probabilidade de gerar um complemento será 0 quando ela não estiver no SUBCAT.''
+\end{quotation}
 
 \subsection{Modelo 3}
 \label{sub:modelo3}
 
-
-O Modelo 3, segundo Bonfante \cite{bonfante03}, é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-movement}\footnote{A modificação do modelo 3 não se mostra relevante e não é contemplada no \emph{parser} do Bikel, nem neste trabalho.}. Introduz parâmetros TRACES e Wh-Movement. Por exemplo, na frase ``\emph{The store that IBM bought last week}", o modelo usaria as regras para gerá-la:
+\begin{quotation}
+\footnotesize
+``Segundo Bonfante (\cite{bonfante03}, p. 57), o modelo 3 é estendido da gramática de estrutura de frase generalizada para possibilitar tratamento de \emph{Wh-movement}\footnote{A modificação do modelo 3 não se mostra relevante e não é contemplada no \emph{parser} do Bikel, nem neste trabalho.}. Introduz parâmetros TRACES e Wh-Movement. Por exemplo, na frase ``\emph{The store that IBM bought last week}", o modelo usaria as regras para gerá-la:
 
 \begin{enumerate}
   \item $SN \rightarrow SN SBAR(+gap)$
@@ -221,7 +235,8 @@ O Modelo 3, segundo Bonfante \cite{bonfante03}, é estendido da gramática de es
 \end{enumerate}
 
 
-SBAR é a representação para subcláusula; gap é a indicação de que falta algo naquele espaço
+SBAR é a representação para subcláusula; gap é a indicação de que falta algo naquele espaço.''
+\end{quotation}
 
 %\section{Casos especiais}
 %\label{sec:modelo3_casos_especiais}
