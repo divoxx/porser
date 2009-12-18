@@ -122,7 +122,7 @@ Para verificar que os ajustes feitos não sofreram influência de \emph{overfitt
 
 \subsection{Avaliação Quantitativa}
 
-Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{egold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos parseados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
+Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{egold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos analisados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
 
 Podemos avaliar o experimento \emph{Lemas com categorias de V usando TreeTagger} na Figura \ref{confusion_matrix_cat}. Por exemplo, percebe-se que o \emph{parser} teve uma quantidade relativamente baixa de acertos quanto à classificação de orações (ACL, ICL, FCL), e também com conjunções, e a \emph{tag} X foi marcada 9.09\% das vezes como FCL, e a \emph{tag} PP não foi encontrada na sentença resultante 29.20\% das vezes.
 
