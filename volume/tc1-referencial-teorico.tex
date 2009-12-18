@@ -1,4 +1,4 @@
-\begin{figure}
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{fases.pdf}
 		\caption{\label{fases} Inserção deste trabalho no contexto do processamento de linguagem natural proposto neste trabalho}		
@@ -100,7 +100,7 @@ Leech \cite{leech91} fala de 1 milhão de palavras com uma taxa usual (\emph{goi
 \item Histórica: fundamenta-se na monitoração dos \emph{corpora} eletivamente usados pela comunidade. Por exemplo, Berber Sardinha \cite{sardinha04} sugere uma classificação baseada na observação dos \emph{corpora} utilizados, segundo 4 anos de conferências de \emph{corpus}. Tabela de tamanho de \emph{corporas}:
 \\
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
 %%   \setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -152,7 +152,7 @@ Leech \cite{leech91} fala de 1 milhão de palavras com uma taxa usual (\emph{goi
 
 A Tabela \ref{tbl:corpora} lista alguns dos corpora anotados sintaticamente mais relevantes, que são da língua inglesa.
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -168,7 +168,7 @@ A Tabela \ref{tbl:corpora} lista alguns dos corpora anotados sintaticamente mais
         \hline
         \emph{Longman Writen American Corpus} & 1997 & 100 milhões  & inglês americano, escrito (jornais e livros)\\
         \hline
-        \emph{DNC (British National Corpus)} & 1995 & 100 milhões  & inglês britânico escrito e falado.\\
+        \emph{BNC (British National Corpus)} & 1995 & 100 milhões  & inglês britânico escrito e falado.\\
         \hline
         \emph{LLEC (Longman-Lancaster English Language Corpus)} & 1988 & 30 milhões  & inglês de vários tipos , escrito e falado.\\
         \hline
@@ -185,7 +185,9 @@ A Tabela \ref{tbl:corpora} lista alguns dos corpora anotados sintaticamente mais
 
 Existem outros corpora além dos acima elencados, que possuem um número menor de palavras. Três corpora da lista servem como marcos de referência históricos:
 
-Brown, BNC e Bank of English. O \emph{corpus} Brown é um marco por razões óbvias: é o primeiro. O BNC é de destaque porque foi o primeiro a conter 100 milhões de palavras. Enquanto o Brown e o BNC são \emph{corpus} de amostragem, planejados e fechados, O Bank of English é um \emph{corpus} monitor e em crescente expansão.
+Brown, BNC e Bank of English. O \emph{corpus} Brown é um marco por razões óbvias: é o primeiro. O BNC é de destaque porque foi o primeiro a conter 100 milhões de palavras. Enquanto o Brown e o BNC são \emph{corpus} de amostragem, planejados e fechados.
+
+%, O Bank of English é um \emph{corpus} monitor e em crescente expansão.
 
 
 \subsubsection{\emph{Penn TreeBank}}
@@ -197,7 +199,7 @@ A maioria das anotações do \emph{Penn Treebank} consiste em anotação de POS,
 
 O conjunto de \emph{TAGS} sintáticos e de POS (\emph{tagset}) usado no \emph{Penn Treebank}, como muitos outros \emph{corpus}, foi baseado no \emph{Brown Corpus} e é mostrado nas Tabelas \ref{tbl:penn_treebank_pos} (\emph{TAGS} de \emph{Part-of-Speech}) e \ref{tbl:penn_treebank_cats} (\emph{TAGS} de Categorias Sintáticas), contendo 36 tags de POS, 9 tags para pontuação e 17 tags para anotação sintática. Uma descrição detalhada do \emph{tagset} do \emph{Penn Treebank} é encontrada no \emph{website} do projeto \emph{Penn Treebank} em http://www.cis.upenn.edu/~treebank.
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -262,7 +264,7 @@ O conjunto de \emph{TAGS} sintáticos e de POS (\emph{tagset}) usado no \emph{Pe
 \end{table}
 
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -297,7 +299,7 @@ O conjunto de \emph{TAGS} sintáticos e de POS (\emph{tagset}) usado no \emph{Pe
 
 Na língua portuguesa, há alguns corpora eletrônicos de destaque. A Tabela \ref{tbl:corpora_port} apresenta um pequeno resumo dos \emph{corpus} existentes para o português.
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -348,14 +350,17 @@ Atualmente, o \emph{corpus} da Floresta Sintá(c)tica tem 4 partes, que diferem 
 
 Para nosso estudos de desenvolvimento de um \emph{parser} probabilístico para a língua portuguesa e treino da ferramenta desenvolvida por Bikel , será utilizado o Bosque, parte da floresta sintática completamente revisada por linguistas.
 
-O Bosque é composto por 9.368 frases, retiradas dos primeiros 1000 extratos (aproximadamente) dos corpora CETENFolha e CETEMPúblico. Desde 2007, o Bosque vem passando por um contínuo processo de revisão, em que foram corrigidas algumas pequenas inconsistências e acrescentadas novas etiquetas. A versão final, disponível para consulta e download, é o Bosque 8.0.
+O Bosque é composto por frases retiradas dos primeiros 1000 extratos (aproximadamente) dos corpora CETENFolha e CETEMPúblico. Desde 2007, este \emph{corpus} vem passando por um contínuo processo de revisão, em que foram corrigidas algumas pequenas inconsistências e acrescentadas novas etiquetas.
+
+Uma descrição detalhada do tagset da Floresta é encontrado no website do projeto Floresta Sintática em \cite{bosque}. A versão atual do Bosque é 8.0, de 13 de Outubro de 2008, com 9.437 árvores revistas, correspondendo a 1.962 extratos, 215.420 unidades e aproximadamente 183.619 palavras.
+
 
 Este é o \emph{corpus} mais correto da Floresta, e por isso o mais aconselhado para pesquisas em que não se prioriza tanto a quantidade, mas sim a precisão dos resultados.
 
 Uma quantificação das etiquetas usadas no Bosque pode ser encontrada no Anexo 4 da Bíblia Florestal \cite{florestasintatica}, e uma extensa documentação das opções lingüísticas tomadas durante o projeto.
 
 
-\paragraph{Esquema de anotação}\label{par:corpus_bosque_esquema}\hspace*{1in}\\ \\
+\paragraph{Esquema de anotação}\label{par:corpus_bosque_esquema}\hspace*{1in}
 
 A Floresta Sintática foi o \emph{corpus} utilizado para desenvolver o \emph{parser} aqui descrito, e portanto as árvores geradas pelo \emph{parser} seguem o esquema de anotação da Floresta.
 
@@ -372,9 +377,7 @@ A anotação ``$>$N'' para a palavra ``a'' de função, indica que a palavra em 
 
 A cada palavra também é associado o seu lema, e informações morfossintáticas (gênero, número, tempo, modo e pessoa para os verbos e, eventualmente, outras etiquetas indicativas de fenômenos como elipse, construções de foco etc.). As etiquetas de POS ou forma estão listadas na Tabela \ref{tbl:floresta_sintatica_pos}. O \emph{TAGS} sintáticos são listados na Tabela \ref{tbl:floresta_sintatica_cats}.
 
-Uma descrição detalhada do tagset da Floresta é encontrado no website do projeto Floresta Sintática em \url{http://linguateca.dei.uc.pt/Floresta/BibliaFlorestal/anexo1.html}. A versão atual do Bosque é 8.0, de 13 de Outubro de 2008, com 9.437 árvores revistas, correspondendo a 1.962 extratos, 215.420 unidades e aproximadamente 183.619 palavras.
-
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -429,7 +432,7 @@ Uma descrição detalhada do tagset da Floresta é encontrado no website do proj
 \end{table}
 
 
-\begin{table}
+\begin{table}[H]
    \centering
    \small
    %%\setlength{\arrayrulewidth}{2\arrayrulewidth}
@@ -523,7 +526,7 @@ Em um dado momento este chegou a ser o \emph{corpus} escolhido para o desenvolvi
 \paragraph{Esquema de anotação}\label{sub:semantic_anotacao}\hspace*{1in}\\
 
 
-\begin{table}
+\begin{table}[H]
 
    \centering
    \small
@@ -572,7 +575,7 @@ Em um dado momento este chegou a ser o \emph{corpus} escolhido para o desenvolvi
 \end{table}
 
 
-\begin{table}
+\begin{table}[H]
 
    \centering
    \small

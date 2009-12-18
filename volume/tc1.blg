@@ -3,54 +3,54 @@ The top-level auxiliary file: tc1.aux
 The style file: abnt.bst
 Database file #1: references.bib
 Warning--entry type for "bikel02" isn't style-file defined
---line 220 of file references.bib
-Warning--entry type for "collins97" isn't style-file defined
 --line 232 of file references.bib
+Warning--entry type for "collins97" isn't style-file defined
+--line 244 of file references.bib
 Warning--entry type for "marcus94" isn't style-file defined
---line 280 of file references.bib
+--line 292 of file references.bib
 Warning--": annotating predicate argument structure}" isn't a brace-balanced string for entry marcus94
 while executing--line 963 of file abnt.bst
 Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-balanced string for entry cantossanches97.2
 while executing--line 963 of file abnt.bst
-You've used 32 entries,
+You've used 33 entries,
             1445 wiz_defined-function locations,
-            518 strings with 7541 characters,
-and the built_in function-call counts, 34132 in all, are:
-= -- 4337
+            522 strings with 7710 characters,
+and the built_in function-call counts, 34870 in all, are:
+= -- 4421
 > -- 0
-< -- 256
-+ -- 2227
-- -- 93
-* -- 1098
-:= -- 2607
-add.period$ -- 130
-call.type$ -- 32
-change.case$ -- 128
+< -- 262
++ -- 2268
+- -- 94
+* -- 1124
+:= -- 2659
+add.period$ -- 135
+call.type$ -- 33
+change.case$ -- 132
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 4926
-empty$ -- 1301
-format.name$ -- 288
-if$ -- 7835
+cite$ -- 33
+duplicate$ -- 5028
+empty$ -- 1345
+format.name$ -- 293
+if$ -- 8007
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 67
-num.names$ -- 64
-pop$ -- 394
+newline$ -- 69
+num.names$ -- 66
+pop$ -- 407
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 165
 quote$ -- 0
-skip$ -- 2428
+skip$ -- 2479
 stack$ -- 0
-substring$ -- 2203
-swap$ -- 2936
-text.length$ -- 32
-text.prefix$ -- 64
+substring$ -- 2245
+swap$ -- 2997
+text.length$ -- 33
+text.prefix$ -- 66
 top$ -- 0
-type$ -- 256
+type$ -- 264
 warning$ -- 0
-while$ -- 139
-width$ -- 64
-write$ -- 34
+while$ -- 143
+width$ -- 66
+write$ -- 35
 (There were 5 warnings)

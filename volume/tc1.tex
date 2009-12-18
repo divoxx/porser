@@ -37,7 +37,7 @@
 \begin{resumo}
 Este trabalho descreve a construção de um análisador sintático (também conhecido pelo termo em inglês \emph{parser}) para o português utilizando os modelos probabilísticos desenvolvidos por Michael Collins para aprendizado supervisionado a partir de \emph{corpus} anotado. 
 Para este fim é utilizada a ferramenta de desenvolvimento construída por Dan Bikel para os modelos de Collins. 
-Como \emph{treebank} alimentador do processo utilizamos o Floresta Sintática.
+Como \emph{treebank} alimentador do processo utilizamos o \emph{corpus} Floresta Sintática.
 São descritos aqui aspectos fundamentais do desenvolvimento do \emph{parser} que envolve extenso trabalho de sintonia dos parâmetros da ferramenta de Bikel, algoritmos de pré- e pós-processamento do \emph{corpus}, e outras estratégias utilizadas buscando melhorar a acuidade do \emph{parser}. 
 O processo é inerentemente empírico. Utilizou-se um método incremental na busca de melhores configurações baseada em rigorosa avaliação quantitativa a cada passo, seguindo os critérios de precisão e \emph{recall} de constituintes rotulados do PARSEVAL. 
 Nossa melhor configuração tem precisão 72.08{\%}, \emph{recall} 71,51{\%} e \emph{F-Score} 71,79{\%}, que é superior aos resultados obtidos em trabalhos semelhantes da literatura, para a lingua portuguesa. Resultados melhores foram obtidos durante testes com lematização, porém não podem ser computados como testes válidos, pois utilizam os lemas das palavras do próprio \emph{corpus}. Estes resultados apenas servem como \emph{upper bound} para avaliar a utilização de lematização real.

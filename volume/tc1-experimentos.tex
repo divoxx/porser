@@ -9,7 +9,7 @@ A ferramenta de Bikel possibilita a utilização de um módulo para especificaç
 
 Os primeiros experimentos abordam as regras de definição do núcleo dos sintagmas. Foram experimentadas quatro configurações.
 
-A primeira configuração utilizada foi a \emph{default} para o inglês, com regras de definição do núcleo específicas para o PTB. A segunda configuração de definição do núcleo foi a utilização das regras básicas, ou seja, o núcleo do sintagma é a primeira palavra da direita para a esquerda. Para terceira configuração alteram-se as regras para que o núcleo do sintagma seja a primeira palavra da esquerda para a direita. Para a quarta e última configuração desta bateria de experimentos foi definido regras de definição do núcleo dos sintagmas baseados na construção das sentenças para a língua portuguesa.
+A primeira configuração utilizada foi a \emph{default} para o inglês, com regras de definição do núcleo específicas para o PTB. A segunda configuração de definição do núcleo foi a utilização das regras básicas, ou seja, o núcleo do sintagma é a primeira palavra da direita para a esquerda. Para terceira configuração alteram-se as regras para que o núcleo do sintagma seja a primeira palavra da esquerda para a direita. Para a quarta e última configuração desta bateria de experimentos foram construídas regras de definição do núcleo dos sintagmas baseados na construção das sentenças para a língua portuguesa.
 
 \begin{table}[H]
 \centering
@@ -35,11 +35,11 @@ A primeira configuração utilizada foi a \emph{default} para o inglês, com reg
 
 O último conjunto de regras utilizado é o que estamos usando atualmente, bem melhor que o original conforme resultados apresentados. 
 
-A estratégia da segunda bateria de testes é avaliar a separação das POS de TAGS em subgrupos. A ideia básica é que tags devem ser distintos quando as categorias têm distribuições sintáticas diferentes, por outro lado se duas classes têm mesma distribuição ou distribuição próxima, separá-las apenas levará a perda de qualidade quanto a informação sintática constante nas sentenças. Esse tipo de configuração também será observado na evolução dos experimentos.
+A estratégia da segunda bateria de testes é avaliar a separação das POS de TAGS em subgrupos. A ideia básica é que tags devem ser distintos quando as categorias têm distribuições sintáticas diferentes. Por outro lado se duas classes têm mesma distribuição ou distribuição próxima, separá-las apenas levará a perda de qualidade quanto à informação sintática constante nas sentenças. Esse tipo de configuração também será observado na evolução dos experimentos.
 
-Nos testes anteriores foram usadas apenas as categorias principais de TAGS do Floresta Sintática. Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições, primeiro foi feita a distinção dos verbos e foram avaliadas as suas subcategorias VFIN, VINF, VPCP, VGER. Foi percebida uma melhora considerável nos resultados, portanto mantivemos os verbos com suas subcategorias. 
+Nos testes anteriores foram usadas apenas as categorias principais de TAGS do Floresta Sintática. Para avaliar o efeito da distinção de categoria verbal em diferentes distribuições, primeiro foi feita a distinção dos verbos e foram avaliadas as suas subcategorias VFIN, VINF, VPCP, VGER (respectivamente forma finita, infinitiva, particípio e gerúndio). Foi percebida uma melhora considerável nos resultados, portanto mantivemos os verbos com suas subcategorias. 
 
-Em seguida o sistema foi avaliado adicionando, também, as subcategorias da TAG N que possuem distinção no corpus como N e N-ADJ, a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG PRON (PRONPERS e PRONINDP). Por último, foi avaliado com todas as subcategorias existentes no corpus.
+Em seguida o sistema foram avaliados também, as subcategorias da TAG N que possuem distinção no corpus como N e N-ADJ, a TAG CONJ e duas subcategorias (CONJC e CONJS) e, finalmente, a TAG PRON (PRONPERS e PRONINDP). Por último, foi avaliado com todas as subcategorias existentes no corpus.
 
 %Quanto a TAG N e N-ADJ acreditamos que essa distinção na anotação se deu em função do anotador não ter certeza se a palavra anotada é adjetivo ou nome.
 
@@ -122,11 +122,18 @@ Para verificar que os ajustes feitos não sofreram influência de \emph{overfitt
 
 \subsection{Avaliação Quantitativa}
 
-Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{egold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos analisados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna).
+Para ajudar a avaliar a performance do \emph{parser} e identificar erros, construímos um analisador que constrói uma matriz de confusão comparando o \emph{egold standard} com o arquivo resultante do \emph{parser}. Na matriz, as linhas representam o \emph{gold standard} e as colunas os arquivos analisados, portanto os valores representam a porcentagem das vezes que uma \emph{tag} do \emph{gold standard} (linha) foi marcada como uma \emph{tag} no arquivo resultante (coluna). Existe um marcador para quando a TAG não foi encontrada no arquivo analisado chamada de {\#NF\#}. 
 
 Podemos avaliar o experimento \emph{Lemas com categorias de V usando TreeTagger} na Figura \ref{confusion_matrix_cat}. Por exemplo, percebe-se que o \emph{parser} teve uma quantidade relativamente baixa de acertos quanto à classificação de orações (ACL, ICL, FCL), e também com conjunções, e a \emph{tag} X foi marcada 9.09\% das vezes como FCL, e a \emph{tag} PP não foi encontrada na sentença resultante 29.20\% das vezes.
 
 Essa avaliação nos permite identificar quais problemas o \emph{parser} está tendo e tentar resolver problemas mais específicos.
+
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[scale=0.65]{score_confusion_cat.pdf}
+	\caption{\label{confusion_matrix_cat} Matriz de Confusão: Categorias Sintáticas}		
+  \end{center}
+\end{figure}
 
 \subsection{Dificuldades}
 \label{sec:dificuldades}
@@ -134,10 +141,3 @@ Essa avaliação nos permite identificar quais problemas o \emph{parser} está t
 Uma das grandes dificuldades encontradas neste trabalho, foi com relação aos verbos. No português as inflexões verbais são significativamente mais complexas. Os verbos são conjugados em seis pessoas e em dez tempos com representação morfológica diferente, além de em diversas formas não finitas. Além disso muitas terminações de verbos são idênticas aos sufixos flexionais ou derivacionais usados para formar substantivos, isso complica em muito a tarefa de análise morfológica. Dificuldade esta também relatada por Wing e Baldridge em seu trabalho \cite{baldridge06}.
 
 Apesar de considerarmos importante, não foi dada grande atenção quanto ao tratamento das palavras desconhecidas. Trabalhamos com uma configuração bem próxima da padrão definida por Bikel. Acreditamos que com um ajuste nesse ponto se pode alcançar desempenhos ainda melhores.
-
-\begin{figure}
-  \begin{center}
-	\includegraphics[scale=0.65]{score_confusion_cat.pdf}
-	\caption{\label{confusion_matrix_cat} Matriz de Confusão: Categorias Sintáticas}		
-  \end{center}
-\end{figure}
