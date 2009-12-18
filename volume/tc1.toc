@@ -31,10 +31,10 @@
 \contentsline {section}{\numberline {3.1}Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{28}
 \contentsline {section}{\numberline {3.2}Trabalhos Anteriores, hist\IeC {\'o}rico de \emph {Parsing} Probabil\IeC {\'\i }stico para PLN}{30}
 \contentsline {section}{\numberline {3.3}Problemas encontrados na Gram\IeC {\'a}tica Livre de Contexto Probabil\IeC {\'\i }stica}{32}
-\contentsline {section}{\numberline {3.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{33}
+\contentsline {section}{\numberline {3.4}M\IeC {\'e}todos Probabil\IeC {\'\i }sticos com aumento de sensibilidade estrutural ou ao contexto}{32}
 \contentsline {section}{\numberline {3.5}Formalismo incluindo depend\IeC {\^e}ncia lexical}{33}
 \contentsline {section}{\numberline {3.6}Modelos de Michael Collins}{33}
-\contentsline {subsection}{\numberline {3.6.1}Modelo 1}{34}
+\contentsline {subsection}{\numberline {3.6.1}Modelo 1}{33}
 \contentsline {subsubsection}{\numberline {3.6.1.1}Adicionando Dist\IeC {\^a}ncia}{35}
 \contentsline {subsection}{\numberline {3.6.2}Modelo 2}{35}
 \contentsline {subsection}{\numberline {3.6.3}Modelo 3}{36}
