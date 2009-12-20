@@ -20,13 +20,13 @@ A primeira configuração utilizada foi a \emph{default} para o inglês, com reg
 		\hline
 		\textbf{Experimento} &  \textbf{\emph{Tagging Accuracy}} & \textbf{Precisão} & \textbf{\emph{Recall}} & \textbf{\emph{F-Score}} \\
 		\hline
-		\emph{Standard} & 92.26 & 63.98 & 63.83 & 63.90\\
+		\emph{Standard} & 92.26\% & 62.09\% & 61.94\% & 62.01\%\\
 		\hline		
-		\emph{Right most} & 92.09 & 66.44 & 64.30 & 65.35\\
+		\emph{Right most} & 92.09\% & 64.62\% & 62.53\% & 63.56\%\\
 		\hline		
-		\emph{Left most} & 92.87 & 67.58 & 68.40 & 67.99\\
+		\emph{Left most} & 92.87\% & 65.90\% & 66.75\% & 66.32\%\\
 		\hline		
-		Regras Português & 92.78 & 68.95 & 68.46 & 68.70\\
+		Regras Português & 92.78\% & 67.31\% & 66.81\% & 67.06\%\\
 		\hline
 	\end{tabular}
 	\label{tab:primeiro_experimento}
@@ -51,15 +51,15 @@ Em seguida o sistema foram avaliados também, as subcategorias da TAG N que poss
 		\hline
 		\textbf{Experimento} &  \textbf{\emph{Tagging Accuracy}} & \textbf{Precisão} & \textbf{\emph{Recall}} & \textbf{\emph{F-Score}} \\
 		\hline
-		Subcategorias de V & 92.49 & 70.51 & 69.90 & 70.20\\
+		Subcategorias de V & 92.49\% & 68.95\% & 68.32\% & 68.63\%\\
 		\hline		
-		Subcategorias de V e N & 92.45 & 70.58 & 69.93 & 70.25\\
+		Subcategorias de V e N & 92.45\% & 69.03\% & 68.35\% & 68.69\%\\
 		\hline		
-		Subcategorias de V e CONJ & 92.51 & 70.54 & 70.07 & 70.30\\
+		Subcategorias de V e CONJ & 92.51\% & 68.99\% & 68.50\% & 68.74\%\\
 		\hline		
-		Subcategorias de V e PRON & 92.53 & 71.06 & 70.47 & 70.76\\
+		Subcategorias de V e PRON & 92.53\% & 69.53\% & 68.93\% & 69.23\%\\
 		\hline
-		Subcategorias de V, PRON, CONJ e N & 92.61 & 71.23 & 70.72 & 70.97\\
+		Subcategorias de V, PRON, CONJ e N & 92.61\% & 69.71\% & 69.19\% & 69.45\%\\
 		\hline
 	\end{tabular}
 	\label{tab:segundo_experimento}
@@ -88,13 +88,13 @@ Finalmente, foi feito um teste utilizando um POS tagger e lematizador externo, l
 		\hline
 		\textbf{Experimento} &  \textbf{\emph{Tagging Accuracy}} & \textbf{Precisão} & \textbf{\emph{Recall}} & \textbf{\emph{F-Score}} \\
 		\hline
-		Lemas do corpus & 92.27 & 70.54 & 70.40 & 70.47\\
+		Lemas do corpus & 92.27\% & 68.99\% & 68.85\% & 68.92\%\\
 		\hline		
-		Lemas do corpus com categorias & 96.15 & 73.50 & 73.18 & 73.34\\
+		Lemas do corpus com categorias & 96.15\% & 72.10\% & 71.78\% & 71.94\%\\
 		\hline		
-		Lemas do corpus com categorias de V & 94.40 & 72.62 & 72.20 & 72.41\\
+		Lemas do corpus com categorias de V & 94.40\% & 71.17\% & 70.74\% & 70.95\%\\
 		\hline		
-		Lemas com categorias de V usando TreeTagger & 93.53 & 72.08 & 71.51 & 71.79\\
+		Lemas com categorias de V usando TreeTagger & 93.53\% & 70.60\% & 70.02\% & 70.31\%\\
 		\hline
 	\end{tabular}
 	\label{tab:terceiro_experimento}
@@ -114,7 +114,7 @@ Para verificar que os ajustes feitos não sofreram influência de \emph{overfitt
 		\hline
 		\textbf{Experimento} &  \textbf{\emph{Tagging Accuracy}} & \textbf{Precisão} & \textbf{\emph{Recall}} & \textbf{\emph{F-Score}} \\
 		\hline
-		Lemas com categoria de V usando TreeTagger sob corpus de testes & 93.35 & 71.51 & 71.25 & 71.38\\
+		Lemas com categoria de V usando TreeTagger sob corpus de testes & 93.35\% & 69.92\% & 69.35\% & 69.63\%\\
 		\hline		
 	\end{tabular}
 	\label{tab:experimento_corpus_teste}
