@@ -3,48 +3,50 @@ The top-level auxiliary file: tc1.aux
 The style file: abnt.bst
 Database file #1: references.bib
 Warning--entry type for "bikel02" isn't style-file defined
---line 232 of file references.bib
+--line 236 of file references.bib
 Warning--entry type for "collins97" isn't style-file defined
---line 244 of file references.bib
+--line 248 of file references.bib
 Warning--entry type for "marcus94" isn't style-file defined
---line 292 of file references.bib
+--line 295 of file references.bib
+Warning--": An introduction to natural language processing, computational linguistics, and speech recognition}" isn't a brace-balanced string for entry jurafsky
+while executing--line 963 of file abnt.bst
 Warning--": annotating predicate argument structure}" isn't a brace-balanced string for entry marcus94
 while executing--line 963 of file abnt.bst
 Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-balanced string for entry cantossanches97.2
 while executing--line 963 of file abnt.bst
 You've used 33 entries,
             1445 wiz_defined-function locations,
-            522 strings with 7710 characters,
-and the built_in function-call counts, 34870 in all, are:
-= -- 4421
+            527 strings with 7822 characters,
+and the built_in function-call counts, 34774 in all, are:
+= -- 4411
 > -- 0
-< -- 262
-+ -- 2268
+< -- 258
++ -- 2257
 - -- 94
-* -- 1124
-:= -- 2659
+* -- 1120
+:= -- 2648
 add.period$ -- 135
 call.type$ -- 33
 change.case$ -- 132
 chr.to.int$ -- 0
 cite$ -- 33
-duplicate$ -- 5028
-empty$ -- 1345
-format.name$ -- 293
-if$ -- 8007
+duplicate$ -- 5009
+empty$ -- 1349
+format.name$ -- 285
+if$ -- 7998
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
 newline$ -- 69
 num.names$ -- 66
-pop$ -- 407
+pop$ -- 403
 preamble$ -- 1
 purify$ -- 165
 quote$ -- 0
-skip$ -- 2479
+skip$ -- 2475
 stack$ -- 0
-substring$ -- 2245
-swap$ -- 2997
+substring$ -- 2242
+swap$ -- 2984
 text.length$ -- 33
 text.prefix$ -- 66
 top$ -- 0
@@ -53,4 +55,4 @@ warning$ -- 0
 while$ -- 143
 width$ -- 66
 write$ -- 35
-(There were 5 warnings)
+(There were 6 warnings)

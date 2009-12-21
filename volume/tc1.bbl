@@ -1,7 +1,7 @@
 \begin{thebibliography}{G{\'O}M97}
 
 \bibitem[ABE03]{abeille03}  (Abeill{\'e}, Anne,Eds.). {\bf Treebanks}: building
-  and using parsed corpora.  Kluwer Academic Publishers, 2003.
+  and using parsed corpora. Paris, France Kluwer Academic Publishers, 2003.
 
 \bibitem[ALL95]{allen95} Allen, James. {\bf Natural language understanding}.
   The Benjamin/Cummings Publishing Company, Inc., 1995.
@@ -21,10 +21,12 @@
   framework}.  Aarhus University Press, 2000.
 
 \bibitem[BIK02]{bikel02} Bikel, D.M. {\bf {Design of a multi-lingual,
-  parallel-processing statistical parsing engine}}. 2002. p.178--182.
+  parallel-processing statistical parsing engine}}. San Francisco, CA, USA,
+  2002. p.178--182.
 
 \bibitem[BIK04]{bikel04} Bikel, D.M. {\bf {Intricacies of Collins' parsing
-  model}}. \emph{ Computational Linguistics}, v.30, n.4, p.479--511, 2004.
+  model}}. \emph{ Computational Linguistics}, MIT Press, v.30, n.4, p.479--511,
+  2004.
 
 \bibitem[BLA91]{black91} Black, Ezra; Abney, Steven; Gdaniec, C.; Grishman,
   Ralph; Harrison, P.; Hindle, Don; Ingria, R.; Jelinek, Fred; Klavans, Judith;
@@ -48,18 +50,19 @@
   learning and natural language processing}: a case study in part-of-speech
   tagging. \emph{ Computational Linguistics}, 1995.
 
-\bibitem[CHA97]{charniak97} Charniak, E. {\bf {Statistical techniques for
-  natural language parsing}}. \emph{ AI magazine}, v.18, n.4, p.33--44, 1997.
+\bibitem[CHA97]{charniak97} Charniak, E. {\bf Statistical techniques for
+  natural language parsing}. \emph{ AI magazine}, Menlo Park, California, v.18,
+  n.4, p.33--44, 1997.
 
 \bibitem[COL97]{collins97} Collins, M. {\bf {Three generative, lexicalised
-  models for statistical parsing}}. 1997. p.16--23.
+  models for statistical parsing}}. Morristown, NJ, USA, 1997. p.16--23.
 
 \bibitem[COL99]{collins99} Collins, Michael. {\bf Head-driven statistical
   models for natural language parsing}. 1999. Tese de Doutorado.
 
 \bibitem[EVE02]{everitt2002cambridge} Everitt, B.S.; Everitt, BS. {\bf {The
-  Cambridge dictionary of statistics}}.  Cambridge University Press Cambridge,
-  2002.
+  Cambridge dictionary of statistics}}. Cambridge Cambridge University Press
+  Cambridge, 2002.
 
 \bibitem[FLO09]{bosque} Floresta~Sintática, Bosque. {\bf Projeto floresta
   sintática, bosque}. 2009.
@@ -74,9 +77,9 @@
   Atlantis: Revista de la Asociaci{\'o}n Espa{\~n}ola de Estudios
   Anglo-Norteamericanos, 1997.
 
-\bibitem[JUR00]{jurafsky} Jurafsky, D.; Martin, J.H.; Kehler, A.;
-  Vander~Linden, K.; Ward, N. {\bf {Speech and language processing}}.  Prentice
-  Hall New York, 2000.
+\bibitem[JUR00]{jurafsky} Jurafsky, D.; Martin, J.H.; Kehler, A. {\bf {Speech
+  and language processing}: an introduction to natural language processing,
+  computational linguistics, and speech recognition}.  MIT Press, 2000.
 
 \bibitem[LEE91]{leech91} Leech, Geoffrey. {\bf The state of art in corpus
   linguistics}. 1991.
@@ -114,7 +117,7 @@
   Linguistics}, v.2, n.2, p.259--280, 1997.
 
 \bibitem[SAR04]{sardinha04} Sardinha, Tony~Berber. {\bf Lingu{\'\i}stica de
-  corpus}.  Manole, 2004.
+  corpus}. Brasil, São Paulo Manole, 2004.
 
 \bibitem[SCH09]{treetagger} Schmid, Helmut. {\bf Treetagger, tool for
   annotating text with part-of-speech and lemma information}. University of
@@ -131,6 +134,6 @@
 
 \bibitem[WIN06]{baldridge06} Wing, B.; Baldridge, J. {\bf {Adaptation of data
   and models for probabilistic parsing of portuguese}}. \emph{ Lecture Notes in
-  Computer Science}, v.3960, p.140, 2006.
+  Computer Science}, Itatiaia, Brasil, PROPOR, v.3960, p.140, Maio, 2006.
 
 \end{thebibliography}
