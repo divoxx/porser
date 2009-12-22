@@ -12,7 +12,7 @@ Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-bal
 while executing--line 963 of file abnt.bst
 You've used 33 entries,
             1445 wiz_defined-function locations,
-            539 strings with 8742 characters,
+            539 strings with 8761 characters,
 and the built_in function-call counts, 34798 in all, are:
 = -- 4404
 > -- 0
