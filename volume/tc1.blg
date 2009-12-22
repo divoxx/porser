@@ -4,51 +4,51 @@ The style file: abnt.bst
 Database file #1: references.bib
 Warning--entry type for "bikel02" isn't style-file defined
 --line 230 of file references.bib
-Warning--entry type for "collins97" isn't style-file defined
---line 242 of file references.bib
+`journal' is a missing field, not a string, for entry collins97
+while executing---line 963 of file abnt.bst
 Warning--": An introduction to natural language processing, computational linguistics, and speech recognition}" isn't a brace-balanced string for entry jurafsky
 while executing--line 963 of file abnt.bst
 Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-balanced string for entry cantossanches97.2
 while executing--line 963 of file abnt.bst
 You've used 33 entries,
             1445 wiz_defined-function locations,
-            539 strings with 8813 characters,
-and the built_in function-call counts, 34800 in all, are:
-= -- 4404
+            537 strings with 8705 characters,
+and the built_in function-call counts, 34592 in all, are:
+= -- 4379
 > -- 0
 < -- 258
-+ -- 2254
-- -- 91
-* -- 1137
-:= -- 2643
-add.period$ -- 133
++ -- 2242
+- -- 85
+* -- 1128
+:= -- 2629
+add.period$ -- 130
 call.type$ -- 33
 change.case$ -- 132
 chr.to.int$ -- 0
 cite$ -- 33
-duplicate$ -- 5017
-empty$ -- 1373
+duplicate$ -- 4998
+empty$ -- 1359
 format.name$ -- 285
-if$ -- 8012
+if$ -- 7961
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
 newline$ -- 69
 num.names$ -- 66
-pop$ -- 402
+pop$ -- 398
 preamble$ -- 1
 purify$ -- 165
 quote$ -- 0
-skip$ -- 2458
+skip$ -- 2438
 stack$ -- 0
-substring$ -- 2235
-swap$ -- 2993
+substring$ -- 2216
+swap$ -- 2982
 text.length$ -- 33
 text.prefix$ -- 66
 top$ -- 0
 type$ -- 264
 warning$ -- 0
-while$ -- 142
+while$ -- 141
 width$ -- 66
 write$ -- 35
-(There were 4 warnings)
+(There was 1 error message)

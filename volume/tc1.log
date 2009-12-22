@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.12.22)  22 DEC 2009 18:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.12.22)  22 DEC 2009 18:56
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -888,31 +888,41 @@ ca, 2009.
 [47
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 77--82
+./tc1.bbl:66: Extra }, or forgotten \endgroup.
+l.66   models for statistical parsing}}. }
+                                          , Dept. of Computer and Information
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
 \OT1/cmr/m/n/12 (http://linguateca.dei.uc.pt/Floresta/BibliaFlorestal/anexo1.ht
 ml ([]Ultimo
  []
 
 [48]
-Underfull \hbox (badness 2932) in paragraph at lines 142--147
+Underfull \hbox (badness 2932) in paragraph at lines 143--148
 \OT1/cmr/bx/n/12 of-speech and lemma in-for-ma-tion\OT1/cmr/m/n/12 . Uni-ver-si
 ty of Stutt-gart, 2009.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--147
+Underfull \hbox (badness 10000) in paragraph at lines 143--148
 \OT1/cmr/m/n/12 (http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ (
 []Ultimo
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 151--155
+Underfull \hbox (badness 2318) in paragraph at lines 152--156
 []\OT1/cmr/m/n/12 Sint^^Satica, Flo-resta. \OT1/cmr/bx/n/12 Pro-jeto flo-resta 
 sint^^Satica\OT1/cmr/m/n/12 . Uni-ver-si-dade de Lis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--155
+Underfull \hbox (badness 10000) in paragraph at lines 152--156
 \OT1/cmr/m/n/12 boa, Fa-cul-dade de Ci^encias, De-par-ta-mento de In-form^^Sati
 ca, 2009.
  []
@@ -1133,7 +1143,7 @@ lic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2009basic/texmf-dist/fonts/type1
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2009basic/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2009basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on tc1.pdf (100 pages, 838551 bytes).
+Output written on tc1.pdf (100 pages, 838609 bytes).
 PDF statistics:
  725 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
