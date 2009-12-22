@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.12.22)  22 DEC 2009 19:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2009.12.22)  22 DEC 2009 19:07
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -1143,7 +1143,7 @@ lic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2009basic/texmf-dist/fonts/type1
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2009basic/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2009basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on tc1.pdf (100 pages, 838639 bytes).
+Output written on tc1.pdf (100 pages, 838659 bytes).
 PDF statistics:
  725 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

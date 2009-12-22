@@ -12,37 +12,37 @@ Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-bal
 while executing--line 963 of file abnt.bst
 You've used 33 entries,
             1445 wiz_defined-function locations,
-            538 strings with 8804 characters,
-and the built_in function-call counts, 34592 in all, are:
+            539 strings with 8830 characters,
+and the built_in function-call counts, 34598 in all, are:
 = -- 4379
 > -- 0
 < -- 258
 + -- 2242
 - -- 85
-* -- 1128
+* -- 1130
 := -- 2629
 add.period$ -- 130
 call.type$ -- 33
 change.case$ -- 132
 chr.to.int$ -- 0
 cite$ -- 33
-duplicate$ -- 4998
-empty$ -- 1359
+duplicate$ -- 4999
+empty$ -- 1360
 format.name$ -- 285
-if$ -- 7961
+if$ -- 7962
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
 newline$ -- 69
 num.names$ -- 66
-pop$ -- 398
+pop$ -- 397
 preamble$ -- 1
 purify$ -- 165
 quote$ -- 0
 skip$ -- 2438
 stack$ -- 0
 substring$ -- 2216
-swap$ -- 2982
+swap$ -- 2984
 text.length$ -- 33
 text.prefix$ -- 66
 top$ -- 0
