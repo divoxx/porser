@@ -40,8 +40,8 @@
   Natural Language Workshop}, San Mateo, CA, USA., 1991.
 
 \bibitem[BON03]{bonfante03} Bonfante, Andr{\'e}ia~Gentil. {\bf Parsing
-  probabil{\'\i}stico para o portugu{\^e}s do brasil}. USP - São Carlos, 2003.
-  Tese de Doutorado.
+  probabil{\'\i}stico para o portugu{\^e}s do brasil}. ICMC-USP, São Carlos,
+  2003. Tese de Doutorado.
 
 \bibitem[BRA08]{branco08} Branco, Antonio; Costa, Francisco. {\bf A
   computational grammar for deep linguistic processing of portuguese}: lxgram,
@@ -66,8 +66,9 @@
   models for statistical parsing}}. Morristown, NJ, USA, 1997. p.16--23.
 
 \bibitem[COL99]{collins99} Collins, Michael. {\bf Head-driven statistical
-  models for natural language parsing}. University of Pennsylvania,
-  Philadelphia, PA, USA, 1999. Tese de Doutorado.
+  models for natural language parsing}. Department of Computer and Information
+  Science, University of Pennsylvania, Philadelphia, PA, USA, 1999. Tese de
+  Doutorado.
 
 \bibitem[EVE02]{everitt2002cambridge} Everitt, B.S.; Everitt, BS. {\bf {The
   Cambridge dictionary of statistics}}. The Edinburgh Building, Cambridge CB2
@@ -125,7 +126,8 @@
 
 \bibitem[PRO03]{prolo03} Prolo, Carlos~A. {\bf {LR} parsing for {Tree}
   {Adjoining} {Grammars} and its application to corpus-based natural language
-  parsing}. June, 2003. Tese de Doutorado.
+  parsing}. Department of Computer and Information Science, University of
+  Pennsylvania, June, 2003. Tese de Doutorado.
 
 \bibitem[S{\'A}N97]{cantossanches97.2} S{\'a}nchez, A.; Cantos, P. {\bf
   {Predictability of word forms(types) and lemmas in linguistic corpora. A case

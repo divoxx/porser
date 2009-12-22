@@ -3,23 +3,23 @@ The top-level auxiliary file: tc1.aux
 The style file: abnt.bst
 Database file #1: references.bib
 Warning--entry type for "bikel02" isn't style-file defined
---line 232 of file references.bib
+--line 230 of file references.bib
 Warning--entry type for "collins97" isn't style-file defined
---line 244 of file references.bib
+--line 242 of file references.bib
 Warning--": An introduction to natural language processing, computational linguistics, and speech recognition}" isn't a brace-balanced string for entry jurafsky
 while executing--line 963 of file abnt.bst
 Warning--": An 8-million-word Corpus of contemporary Spanish}" isn't a brace-balanced string for entry cantossanches97.2
 while executing--line 963 of file abnt.bst
 You've used 33 entries,
             1445 wiz_defined-function locations,
-            539 strings with 8761 characters,
-and the built_in function-call counts, 34798 in all, are:
+            539 strings with 8813 characters,
+and the built_in function-call counts, 34800 in all, are:
 = -- 4404
 > -- 0
 < -- 258
 + -- 2254
 - -- 91
-* -- 1136
+* -- 1137
 := -- 2643
 add.period$ -- 133
 call.type$ -- 33
@@ -27,9 +27,9 @@ change.case$ -- 132
 chr.to.int$ -- 0
 cite$ -- 33
 duplicate$ -- 5017
-empty$ -- 1372
+empty$ -- 1373
 format.name$ -- 285
-if$ -- 8011
+if$ -- 8012
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
@@ -39,7 +39,7 @@ pop$ -- 402
 preamble$ -- 1
 purify$ -- 165
 quote$ -- 0
-skip$ -- 2459
+skip$ -- 2458
 stack$ -- 0
 substring$ -- 2235
 swap$ -- 2993
