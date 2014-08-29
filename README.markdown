@@ -24,4 +24,4 @@ Authors
 -------
 
 * Rodrigo Kochenburger <divoxx@gmail.com>
-* Marglon Gomes Lopes <marlonglopes@gmail.com>
+* Marlon Gomes Lopes <marlonglopes@gmail.com>
